@@ -4,8 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "3cfed268605e409f",
+        "id": "ededdc21f6368957",
         "type": "tabs",
+        "dimension": 46.65605095541402,
         "children": [
           {
             "id": "7084a7a51ad6cccb",
@@ -13,12 +14,55 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Grad1Notes/AeroEnvironment/Lecture 1.md",
+                "file": "Grad1Notes/DataAnalysis/Lecture Notes/Lecture 1 Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 1"
+              "title": "Lecture 1 Notes"
+            }
+          }
+        ]
+      },
+      {
+        "id": "fc5dc17603b815c2",
+        "type": "tabs",
+        "dimension": 53.34394904458599,
+        "children": [
+          {
+            "id": "7a5695eaef798a02",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Grad1Notes/DataAnalysis/Slides/Lecture_1.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture_1"
+            }
+          },
+          {
+            "id": "42f260be84c6739a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Grad1Notes/DataAnalysis/ASEN5307_Syllabus_2026.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ASEN5307_Syllabus_2026"
+            }
+          },
+          {
+            "id": "7b4bd2f2cdf35f73",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Grad1Notes/DataAnalysis/ASEN5307_Fall2026_Schedule.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ASEN5307_Fall2026_Schedule"
             }
           }
         ]
@@ -40,7 +84,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -83,7 +127,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 241.03449630737305
   },
   "right": {
     "id": "34286f98268cccb2",
@@ -189,15 +233,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "7084a7a51ad6cccb",
+  "active": "f6ed6037a77c33cb",
   "lastOpenFiles": [
-    "Grad1Notes/DataAnalysis/Lecture 1.md",
+    "Grad1Notes/Figures/Pasted image 20260820140138.png",
+    "Grad1Notes/Figures/Pasted image 20260820140042.png",
+    "Grad1Notes/Figures/Pasted image 20260820135746.png",
+    "Grad1Notes/Figures/Pasted image 20260820135420.png",
+    "Grad1Notes/Figures/Pasted image 20260820135323.png",
+    "Grad1Notes/DataAnalysis/Slides/Lecture_1.pdf",
+    "Grad1Notes/Figures",
+    "Grad1Notes/DataAnalysis/Lecture Notes/Lecture 1 Notes.md",
+    "Grad1Notes/Figures/Pasted image 20260820134517.png",
+    "Grad1Notes/DataAnalysis/ASEN5307_Syllabus_2026.pdf",
+    "Grad1Notes/DataAnalysis/ASEN5307_Fall2026_Schedule.pdf",
+    "Grad1Notes/READINGS/The Space Environment and Its Effects on Space Systems_ -- Vincent L_ Pisacane -- 2022 -- bdf6651f29d61637efa9415a0e863bda -- Anna’s Archive.pdf",
+    "Grad1Notes/READINGS/MATLAB® Recipes for Earth Sciences.pdf",
+    "Grad1Notes/READINGS/Python Recipes for Earth Sciences.pdf",
+    "Grad1Notes/READINGS/Just enough project management [electronic resource] _ the -- Cook, Curtis R_, 1946- -- 1 edition, 2005 -- New York _ McGraw-Hill -- isbn13 9780071445405 -- b738dfe28d25f69516260cc998081997 -- Anna’s Archive.pdf",
+    "Grad1Notes/READINGS/Global Positioning System _ Signals, Measurements, and -- Misra, Pratap, Enge, Per -- 2nd edition, Lincoln, Mass, cop_ 2006 -- Lincoln, Mass_ _ -- isbn13 9780970954411 -- 3ecd77ee1772d6b7bd47bb9bb5444453 -- Anna’s Archive.pdf",
+    "Grad1Notes/READINGS",
+    "Grad1Notes/DataAnalysis/Untitled.md",
     "Grad1Notes/AeroEnvironment/Lecture 1.md",
-    "Grad1Notes/DataAnalysis",
-    "Grad1Notes/AeroEnvironment",
-    "Grad1Notes",
     "Welcome.md",
-    "Aero Environment/Lectue 1.md",
-    "Aero Environment"
+    "Aero Environment/Lectue 1.md"
   ]
 }
