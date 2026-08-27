@@ -19,7 +19,7 @@ R = sqrt(xa.^2 + h0^2);
 R_dot = xa.*v0.*(xa.^2+h0^2).^(-1/2);
 
 % Zenith Equation
-z = atan2(xa,h0);
+z = rad2deg(atan2(abs(xa),h0));
 
 
 % Plotting Results
@@ -43,5 +43,8 @@ subplot(3,1,3)
 plot(xa, z, 'LineWidth', 1.5)
 grid on
 xlabel('x_A')
-ylabel('z (rad)')
+ylabel('z (deg)')
 title('Zenith Angle')
+
+% Save figure as PNG
+exportgraphics(gcf, 'HW1_sensitivity.png', 'Resolution', 300);

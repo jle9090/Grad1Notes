@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% ---------- Paragraph Formatting ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ASEN 5090 Introduction to GNSS}
+\rhead{Justin Le}
+\cfoot{\thepage}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+    {\Large \textbf{Homework 1}}\\[0.5em]
+    {\large ASEN 5090 Introduction to GNSS}\\[0.5em]
+    Justin Le\\
+    \today
+\end{center}
+
+\vspace{1em}
+
+% ============================================================
+% Problem 1
+% ============================================================
+
+\section*{Problem 1}
+
+\subsection*{(a)} 
+ PL1 = 550 [m] \newline
+ PL2 = 500 [m]
+
+% ---------- Figure ----------
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{figure_name.png}
+    \caption{Insert figure caption here.}
+    \label{fig:problem1}
+\end{figure}
+
+Let
+\[
+\rho^{k}=\sqrt{(x^{k}-x)^2+(y^{k}-y)^2+(z^{k}-z)^2}+b.
+\]
+
+Given the setup, this can be constrained to a 1D problem on the $x$ axis,
+\[
+\rho^{k}=\sqrt{(x^{k}-x)^2}+b.
+\]
+
+Which is equivalent to,
+\[
+\rho^{k}=|(x^{k}-x)|+b.
+\]
+
+Given the setup on a line, we have the $\rho^{1}$, the observed position be $550m$, and $x^{1}$ 
+position on the line being 0. Likewise $\rho^{2}=500m$ and $x^{2}=1000m$.
+This gives a set of equations
+
+PL1:
+\[
+\begin{aligned}
+550m &= |0-x|+b \\
+550m &= x+b
+\end{aligned}
+\]
+
+PL2:
+\[
+\begin{aligned}
+500m &= |1000m-x|+b \\
+-500m &= -x+b
+\end{aligned}
+\]
+
+This can be solved by elimination, eliminating the bias $b$ giving,
+\[
+1050m = 2x
+\]
+\[
+\boxed{\therefore\quad x = 525\,[m]}
+\]
+
+Rewrite the PL1 equation to solve for $b$.
+\[
+\boxed{
+\begin{aligned}
+b &= 550m-x \\
+\therefore\quad b &= 25\,[m]
+\end{aligned}
+}
+\]
+
+
+\subsection*{b.}
+
+\[
+\begin{aligned}
+\text{PL1} &= 400\,[m] \\
+\text{PL2} &= 1400\,[m]
+\end{aligned}
+\]
+
+The solution method remains the same, where we develop a system of equations from 
+the observed ranging measurements and based on the known locations of the sat.
+
+PL1:
+\[
+\begin{aligned}
+400m &= |x|+b \\
+\end{aligned}
+\]
+
+PL2:
+
+\[
+\begin{aligned}
+1400m &= |1000-x|+b
+\end{aligned}
+\]
+
+And with eliminaton and eliminating $x$ this time, we obtain,
+\[
+\begin{aligned}
+800m = 2b \\
+\boxed{\therefore b = 400 [m]}
+\end{aligned}
+\]
+
+And solve for $x$ with 
+\[
+\begin{aligned}
+x = b-400 \\
+\boxed{\therefore x = 0}
+\end{aligned}
+\]
+
+
+% ============================================================
+% Problem 2
+% ============================================================
+
+\section*{Problem 2}
+
+\subsection*{(a)}
+
+\begin{figure}{htbp}
+\centering
+% \includegraphics[width=0.7\textwidth]{figure_name.png}
+\caption{Insert figure caption here.}
+\label{fig:problem2}
+\end{figure}
+
+From the diagram above, we are able to create solve for the
+following equations as functions of $x_{a}, v_{0}, h_{0}$.
+\[
+\begin{aligned}
+R(x_{a}, v_{0}, h_{0}) \\
+\dot{R}(x_{a}, v_{0}, h_{0}) \\
+z(x_{a}, v_{0}, h_{0})
+\end{aligned}
+\]
+
+When solving for range, one can simply use the pythagorean
+theorum given $h_{0}$ is constant.
+\[
+\boxed{ R = \sqrt{x_a^2 + h_0^2} }
+\]
+
+Solving for range rate, take the differential w.r.t time.
+
+\[
+\begin{aligned}
+R &= \sqrt{x_a^2+h_0^2} \\[2pt]
+\dot{R}
+  &= \frac{dR}{dt} \\
+  &= \frac{1}{2}\left(x_a^2+h_0^2\right)^{-1/2}
+     \left(2x_a\dot{x}_a+2h_0\dot{h}_0\right) \\
+  &= \frac{x_a\dot{x}_a+h_0\dot{h}_0}
+     {\sqrt{x_a^2+h_0^2}}
+\end{aligned}
+\]
+
+Since $h_0$ is constant, $\dot{h}_0=0$, and $\dot{x}_a=v_0$:
+
+\[
+\boxed{
+\dot{R}
+= \frac{x_a v_0}{\sqrt{x_a^2+h_0^2}}
+}
+\]
+
+Solving for zenith, looking at the diagram, finding $z$ as a function of $x_a$
+can simply be
+
+\[
+\boxed{z = \arctan( \frac{x_a}{h_0})}
+\]
+
+
+\subsection*{(b)}
+
+See attached MATLAB script. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../HW1_sensitivity.png}
+    \caption{MATLAB Script Results}
+    \label{fig:sensitivity}
+\end{figure}
+
+
+\subsection*{(c)}
+
+Write your solution here.
+
+% ============================================================
+% Problem 3
+% ============================================================
+
+\section*{Problem 3}
+
+\subsection*{(a)}
+
+Write your solution here.
+
+\subsection*{(b)}
+
+Write your solution here.
+
+% ============================================================
+% Problem 4
+% ============================================================
+
+\section*{Problem 4}
+
+Write your solution here.
+
+% ============================================================
+
+\end{document}
