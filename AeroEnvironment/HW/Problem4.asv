@@ -1,0 +1,12 @@
+%% ASEN 5335 Aerospace Environment
+%% Justin Le
+%% HW1 Problem 4
+
+clc;clear;close all
+
+% Defining constants
+c = 3E8; %[m/s]
+meV_2_KE = 1.602E-13; %[J]
+m_0 = 1.67E-27; %[kg]
+
+% Given conditions 
