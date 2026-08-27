@@ -165,3 +165,5 @@ Spring left off
 * immidiate next steps
 	* SCT
 	* demonstrate tracking for some lasp sat
+for swarmex sat
+* hydra talking with lithium, enables CET and SCT
