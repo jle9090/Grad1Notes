@@ -1,0 +1,16 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% HW1 Script
+
+clc; clear; close all
+
+% Defining constants
+v0 = 50; % [m/s]
+x0 = 250; % [m]
+h0 = 100; % [m]
+
+% Ranging Equation
+
+% Range Rate Equation
+
+% Zenith Equation
