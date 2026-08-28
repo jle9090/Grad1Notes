@@ -115,24 +115,119 @@ corona. We then find,
 % Problem 3
 % ============================================================
 
-\section*{Problem 3}
+\section*{Problem 3: Solar Wind}
 
-\subsection*{(a)}
+\subsection*{(i.)}
 
-Write your solution here.
+Given quiescent solar wind density $n = 5 \, \mathrm{ions/cm^3}$,
+and $V = 400 \, \mathrm{km/s}$ at Earth, we can use the mass flow equation
+\[
+\begin{gathered}
+    \dot{m} =\rho*V*A
+\end{gathered}
+\]
 
-\subsection*{(b)}
+To find $A$, we calculat the surface area of a sphere given the radius of Earth,
+\[
+\begin{gathered}
+    A = 4 \pi r^2 \\
+    r_{Earth} = 149.6*10^9\mathrm{m} \\
+    \therefore A = 1.87*10^{12} \mathrm{m}
+\end{gathered}
+\]
 
-Write your solution here.
+Convert the ion density to density in terms of $\mathrm{kg/m^3}$, 
+given the mass of a proton being $m_{proton} = 1.67 *10^{-27} \, \mathrm{kg/ion}$,
+we calculate,
+
+\[
+\begin{gathered}
+    \dot{m} = {5 \, \mathrm{ions/cm^3}} * 1.67*10^{-27} \mathrm{kg/ion} * \frac{1 \mathrm{cm^3}}{1*10^{-6} \mathrm{m^3}}* 400*10^3 \mathrm{m} \\
+    \boxed{\dot{m} = 939,332,865.8 \, \mathrm{kg/s}}
+\end{gathered}
+\]
+
+
+\subsection*{(ii.)}
+
+Finding the flux at the orbit of Jupiter, we are able to use the inverse square
+relation. We find flux at Earth,
+\[
+\begin{aligned}
+    &\phi_{Earth} =rho * V \\
+    &\phi_{Earth} = \frac{5 \mathrm{ions}}{1*10^{-6} \mathrm{m^3}} * 400*10^3 \mathrm{m/s} \\
+    &\phi_{Earth} = 2*10^{12} \mathrm{ions/m^2/s}
+\end{aligned}
+\]
+
+With inverse square law if $r_{Earth} = 1 \mathrm{AU}$ and $r_{Jupiter} = 5.2 \mathrm{AU}$
+
+\[
+\begin{aligned}
+    &\phi_{Jupiter} = \phi_{Earth}*\frac{1}{5.2}^2 \\
+    &\phi_{Jupiter} = 7.396*10^{10} \, \mathrm{ions/m^2/s} \\
+    &\boxed{\phi_{Jupiter} = 7.396*10^{14} \, \mathrm{ions/cm^2/s}}
+\end{aligned}
+\]
 
 % ============================================================
 % Problem 4
 % ============================================================
 
-\section*{Problem 4}
+\section*{Problem 4: Relativistic Protons}
 
-Write your solution here.
+Plotting distance travled in AU w.r.t for multiple protons of varying MeV.
 
-% ============================================================
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{AeroEnvHW1P4_solarparticle.png}
+    \caption{AU travled vs time}
+    \label{fig:AU_time}
+\end{figure}
+
+To solve for how long it takes in hours to for each of these energies 
+to each Earth, we are able to use,
+
+\[
+\begin{gathered}
+    KE = \left(\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}-1\right)m_0c^2 \\
+    \text{where we can convert MeV to Joules with,} \\
+    MeV = 1.602*10^{-13} \, \mathrm{J} \\
+    \\
+    \text{This can be rearranged to,}\\
+    V = \sqrt{1 - \frac{1}{(\frac{KE}{m_0 c^2}+1)^2}}
+\end{gathered}
+\]
+
+We are able to use this equation to calculate all the velocities given the MeVs.
+Assuming this velocity is constant through the process, we can simply find some 
+distance $d$, which is the distance between the lower corona of the Sun and the Earth,
+\[
+\begin{gathered}
+d = 1 \mathrm{AU} - 2R_{S} \\
+1\, \mathrm{AU} = 1.496*10^{11} \mathrm{m} \\
+1\, R_{s} = 6.957*10^8  \mathrm{m} \\
+\therefore d = 1.4821*10^{11} \, \mathrm{m}
+\end{gathered}
+\]
+
+Which time $t$ can be calculated with simply $t = d/v$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{} & \textbf{1 MeV} & \textbf{10 MeV} & \textbf{100 MeV} & \textbf{500 MeV} \\
+\hline
+\textbf{Velocity [m/s]} & 1.384e+07 & 4.345e+07 & 1.285e+08 & 2.274e+08 \\
+\hline
+\textbf{Time [s]} & 1.071e+04 & 3.411e+03 & 1.154e+03 & 6.518e+02 \\
+\hline
+\textbf{Time [hr]} & 2.975 & 0.947 & 0.320 & 0.181 \\
+\hline
+\end{tabular}
+\caption{Properties of Lower Corona Proton at varying MeV}
+\label{tab:my_table}
+\end{table}
 
 \end{document}

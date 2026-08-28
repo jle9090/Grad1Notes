@@ -27,6 +27,7 @@ v_ms = c*sqrt(1 - 1./(KE./(m_0*c^2) + 1).^2); %[m/s]
 
 % Finding time from v=d/t
 t_s = d./v_ms;
+t_h = t_s * (1/3600);
 
 %% Plot distance traveled vs. time
 
