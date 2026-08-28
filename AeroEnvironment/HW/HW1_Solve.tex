@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% ---------- Paragraph Formatting ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ASEN 5335 Aerospace Environment}
+\rhead{Justin Le}
+\cfoot{\thepage}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+    {\Large \textbf{Homework 1}}\\[0.5em]
+    {\large ASEN 5335 Aerospace Environment}\\[0.5em]
+    Justin Le\\
+    \today
+\end{center}
+
+\vspace{1em}
+
+% ============================================================
+% Problem 1
+% ============================================================
+
+\section*{Problem 1: Radiation from Corona}
+
+\subsection*{(i)}
+
+Given $T$ of the corona region to be $T=2MK$. We can use the equation,
+\[
+\lambda_{max}T = \alpha
+\]
+
+Where $\alpha = \text{constant}(2.98*10^-3 K)$.
+
+Rearrange to solve for wavelength.
+\[
+\lambda_{max} = \frac{T}{\alpha}
+\]
+
+The corona region's temperature can be substituted and solved.
+\[
+\boxed{\lambda_{max}  = 1.449*10^-9 \, \mathrm{m} = 14.49*10^-10 \, \mathrm{m}}
+\]
+
+This would also be in the same range for X-rays, $\approx 10^-10 \, \mathrm{m}$.
+
+\subsection*{(ii)}
+For the region photosphere region at a cooler $T=5,778 \, \mathrm{K}$,
+the process is the same.
+
+\[
+\boxed{\lambda_{max}  = 5.01*10^-7 \, \mathrm{m} = 50.15*10^-8 \, \mathrm{m}}
+\]
+
+This would be in the same range for UV $\approx 10^-8 \, \mathrm{m}$.
+
+% ============================================================
+% Problem 2
+% ============================================================
+
+\section*{Problem 2: Thermal Escape}
+
+From Wikipedia we can obtain an equation for most probable thermal velocity
+of a particle.
+
+\[
+\begin{aligned}
+v_{\mathrm{th}} &= \sqrt{\frac{2k_B T}{m}} \\[4pt]
+k_B &= 1.38 \times 10^{-23}\,\mathrm{J/K} \\[4pt]
+m &= m_{\mathrm{proton}} = 1.673 \times 10^{-27}\,\mathrm{kg} \\[4pt]
+T &= 2\,\mathrm{MK} = 2 \times 10^6\,\mathrm{K} \\
+&\boxed{\therefore v_{th} = 181,644 \, \mathrm{m/s}}
+\end{aligned}
+\]
+
+We then calculate the escape velocity using the equation,
+\[
+\begin{aligned}
+v_{escape} = \sqrt{ \frac{2GM}{r} } \\
+G = 6.674*10^{-11} \, \mathrm{Nm^2/kg^2} \\
+M = 1.989*10^{30} \, \mathrm{kg} \\
+r = 10*10^{6}*10^3 \, \mathrm{m}
+\end{aligned}
+\]
+
+Where $G$ is the unversial gravitational constant, $M$ is
+the mass of the sun, and $r$ is the radius of the of the outer
+corona. We then find,
+
+\[
+\boxed{v_{escape} = 163,000 \, \mathrm{m/s}}
+\]
+
+\[
+\begin{gathered}
+\because v_{th} < v_{escape} \\
+\boxed{\text{It is possible for the coronal protons to escape the sun's gravity}}
+\end{gathered}
+\]
+
+% ============================================================
+% Problem 3
+% ============================================================
+
+\section*{Problem 3}
+
+\subsection*{(a)}
+
+Write your solution here.
+
+\subsection*{(b)}
+
+Write your solution here.
+
+% ============================================================
+% Problem 4
+% ============================================================
+
+\section*{Problem 4}
+
+Write your solution here.
+
+% ============================================================
+
+\end{document}
