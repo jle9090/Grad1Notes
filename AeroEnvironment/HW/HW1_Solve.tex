@@ -30,10 +30,6 @@
 
 \vspace{1em}
 
-% ============================================================
-% Problem 1
-% ============================================================
-
 \section*{Problem 1: Radiation from Corona}
 
 \subsection*{(i)}
@@ -66,10 +62,6 @@ the process is the same.
 \]
 
 This would be in the same range for UV $\approx 10^-8 \, \mathrm{m}$.
-
-% ============================================================
-% Problem 2
-% ============================================================
 
 \section*{Problem 2: Thermal Escape}
 
@@ -110,10 +102,6 @@ corona. We then find,
 \boxed{\text{It is possible for the coronal protons to escape the sun's gravity}}
 \end{gathered}
 \]
-
-% ============================================================
-% Problem 3
-% ============================================================
 
 \section*{Problem 3: Solar Wind}
 
@@ -169,10 +157,6 @@ With inverse square law if $r_{Earth} = 1 \mathrm{AU}$ and $r_{Jupiter} = 5.2 \m
     &\boxed{\phi_{Jupiter} = 7.396*10^{14} \, \mathrm{ions/cm^2/s}}
 \end{aligned}
 \]
-
-% ============================================================
-% Problem 4
-% ============================================================
 
 \section*{Problem 4: Relativistic Protons}
 
@@ -230,4 +214,71 @@ Which time $t$ can be calculated with simply $t = d/v$.
 \label{tab:my_table}
 \end{table}
 
+
+\section*{Problem 5: Heliopause}
+In order to calculate the heliopause we first seek the pressure as a result 
+of the velocity and ion density at Earth. The inverser square law can then be 
+applied to solve for the heliopause distance.
+
+\[
+\begin{gathered}
+P_{Earth} = n_{Earth}mv^2 \\
+n_{Earth} = 5 \, \mathrm{ions/cm^3} = 0.005 \, \mathrm{ions/m^3}\\
+m = 1.673*10^{-27} \, \mathrm{kg/ion}\\
+v = 400*10^3 \, \mathrm{m/s} \\
+\therefore P_{Earth} = 1.3384*10^{-21}
+\end{gathered}
+\]
+
+
+\section*{(Problem 6: Spacecraft Temperature)}
+
+\subsection*{(i.)}
+Given aluminum with $\alpha = 0.15$ and $\epsilon = 0.05$,
+to find equalibrium temperature at Earth, we use $r = 149.6*10^9 \mathrm{m}$
+and then use the equation for thermal equalibrium,
+
+\[
+\begin{gathered}
+T = (\frac{\alpha}{\epsilon})^{\frac{1}{4}} (\frac{SA_n}{\sigma A_{tot}})^{\frac{1}{4}} \\
+S = 1361 \, \mathrm{W/m^2} \\
+\sigma = 5.67*10^{-8} \, \mathrm{W/m^2/K^4}\\
+A_n = \pi (149.6*10^9)^2 \, \mathrm{m^2} \\
+A_{tot} = 4\pi(149.6*10^9)^2 \, \mathrm{m^2} \\
+\boxed{\therefore T = 366.3 \, \mathrm{K}}
+\end{gathered}
+\]
+
+Where $S$ is solar flux, $\sigma$ is the Stefan-Boltzmann constant, $A_n$ is the 
+cross sectional area normal to the Sun, and $A_{tot}$ is the surface area 
+at Earth's orbit.
+
+\subsection*{(ii.)}
+For Jupiter, we modify the $r$ used to be the $r$ at Jupiter. The 
+process remains the same substituting $r = 778*10^9 \, \mathrm{m}$
+
+\[
+\boxed{\therefore T = 366.3 \, \mathrm{K}}
+\]
+
+Interestingly it remains very close to the thermal equalibrium for Earth as well.
+
+\subsection*{(iii.)}
+When repeating the process for GSFC White Paint NS-74 with $\alpha = 0.17$
+and $\epsilon = 0.92$, we get,
+
+\[
+\boxed{T = 182.5 \, \mathrm{K}}
+\]
+
+I think this paint was designed with the explicit purpose of being able to 
+have a lower equalibrium temperature as a result of radiation from the Sun 
+for satellite missions. High temperatures can be detrimental to equipment
+onboard and the strategy to paint the spacecraft with paint that improves
+its emmissivity by a considerable amount would be very useful in the space 
+environment by lowering the equalibrium temperature. 
+
+\section*{Problem 7: Solar Outputs}
+
 \end{document}
+
