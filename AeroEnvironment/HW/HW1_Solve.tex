@@ -24,8 +24,9 @@
 \begin{center}
     {\Large \textbf{Homework 1}}\\[0.5em]
     {\large ASEN 5335 Aerospace Environment}\\[0.5em]
-    Justin Le\\
+    Justin Le\\ 
     \today
+    \\[0.5em]
 \end{center}
 
 \vspace{1em}
@@ -254,14 +255,19 @@ cross sectional area normal to the Sun, and $A_{tot}$ is the surface area
 at Earth's orbit.
 
 \subsection*{(ii.)}
-For Jupiter, we modify the $r$ used to be the $r$ at Jupiter. The 
-process remains the same substituting $r = 778*10^9 \, \mathrm{m}$
+For Jupiter, we modify the $r$ used to be the $r$ at Jupiter, however use the inverse square
+relation to find the new solar flux $S$. 
+\[
+\begin{gathered}
+S_{Jupiter} = S_{Earth}*(\frac{1 \, \mathrm{AU}}{5.2 \, \mathrm{AU}})^2 \\
+S_{Jupiter} = 50.3 \, \mathrm{W/m^2}
+\end{gathered}
+\]
+The process remains the same substituting $r = 778*10^9 \, \mathrm{m}$
 
 \[
-\boxed{\therefore T = 366.3 \, \mathrm{K}}
+\boxed{\therefore T = 160.6 \, \mathrm{K}}
 \]
-
-Interestingly it remains very close to the thermal equalibrium for Earth as well.
 
 \subsection*{(iii.)}
 When repeating the process for GSFC White Paint NS-74 with $\alpha = 0.17$
@@ -271,7 +277,7 @@ and $\epsilon = 0.92$, we get,
 \boxed{T = 182.5 \, \mathrm{K}}
 \]
 
-I think this paint was designed with the explicit purpose of being able to 
+\hspace*{2em}I think this paint was designed with the explicit purpose of being able to 
 have a lower equalibrium temperature as a result of radiation from the Sun 
 for satellite missions. High temperatures can be detrimental to equipment
 onboard and the strategy to paint the spacecraft with paint that improves
@@ -280,5 +286,61 @@ environment by lowering the equalibrium temperature.
 
 \section*{Problem 7: Solar Outputs}
 
-\end{document}
 
+\subsection*{{(a.)}}
+Based on the Figure provided, the minimum
+radiative energy flux of an M-Class flare
+would be $10^{-5} \, \mathrm{W/m^2}$.
+
+\subsection*{{(b.)}}
+Assuming the peak energy of the flare being $\phi_{1AU}=5*10^{-4} \, \mathrm{W/m^2}$, 
+we can find the corresponding energy flux at the emmision source at $1.5 \, \mathrm{solar radii}$
+to be a result from the inverse square law.
+
+\[
+\begin{gathered}
+\frac{\phi_{1AU}}{\phi_{1.5 solar radii}} = (\frac{1. 5solar radii}{1AU})^2 \\
+1.5_{solarradii} = 1.04*10^9 \\
+1AU = 1.496*10^11 \\
+\text{We rearrange for } \phi_{1.5 solar radii} \\
+\phi_{1.5 solar radii} = \phi_{1AU}(\frac{1.496*10^11 \, \mathrm{m}}{1.04*10^9 \, \mathrm{m}})^2 \\
+\boxed{\therefore \phi_{1.5 solar radii} = 0.0719 \, \mathrm{W/m^2}}
+\end{gathered}
+\]
+
+\subsection*{{(c.)}}
+According to this chart, the pattern of a sharp rise and
+slow decay over time seems to occur only twice, once on the 7th
+and once again on the 13th. Meaning that there was likely 2 CMEs
+launched into the Heliosphere in this time period.
+
+
+
+\subsection*{{(d.)}}
+When comparing the relation between X-ray flares and the flux of
+solar protons, notice that when there is a X flare event, there is 
+an increase in solar proton flux. 
+
+\subsection*{{(e.)}}
+When comparing the relation between cosmic rays and proton flux and
+radiative energy flux, we can see that when the solar proton flux decreases
+over time as a result of an X-Flare, the cosmic rays measured would be negative
+of $(\mathrm{\% \, of\, Baseline})$, meanwhile near the start where it is at more of a 
+steady conditon, there is a positive and more steady $(\mathrm{\% \, of \, Baseline})$
+
+\section*{(Problem 8: Parker Solar Probe)}
+\hspace*{2em}My favorite instrument aboard the Parker Solar Probe would be the
+FIELDS insturment. It's purpose is to measure magnetic fields of the
+solar corona during the PSP mission to study the Sun. FIELDS has two fluxgate magnetometers,
+one serach coil magnetometer, and five voltage sensors. It is accompanied
+by four whip antennas. This can then measure Electric Field, Magnetif Field,
+EM waves, and RF emmisions using this combination of antennas and magnetometers, being able to sample at 2 MHz.
+It's SWAP would depend on how one classifies the size of the instrument. The 
+accompanying antennas are approximately 2 meters, and the magnetometer boom is ~3.5 meters,
+though the size of the magnetometers are about the size of a fist.
+As a whole it would weigh roughly 23 kg, and roughly 22 watts. The instrument contributes
+to the PSP's parent investigation of characterizing the dynamic region close to the Sun by
+being the one to take the field measurements with its antennas and set of magnetometers.
+
+
+\end{document}
