@@ -36,8 +36,8 @@ first16 = XGiCA_code_a(1:16);
 last16 = XGiCA_code_a(end-15:end);
 
 %Convert to hex for checking
-firstHex_a = dec2hex(bin2dec(char(first16 + '0')), 4)
-lastHex_a  = dec2hex(bin2dec(char(last16 + '0')), 4)
+firstHex = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex  = dec2hex(bin2dec(char(last16 + '0')), 4)
 
 % This verifies that with the first 16 chips of PRN 19
 % generated here is E6D6.
@@ -74,3 +74,6 @@ XGiCA_code_diff = sum(XGiCA_code_a-XGiCA_code_b)
 % Find that XGiCA_code_diff = 0, therefore both are identical,
 % this is expected as the codes should repeat after some time
 
+% c. Repeat a for PRN 25.
+
+% d. Repeat a for PRN 5.
