@@ -74,3 +74,77 @@ XGiCA_code_diff = sum(XGiCA_code_a-XGiCA_code_b)
 % Find that XGiCA_code_diff = 0, therefore both are identical,
 % this is expected as the codes should repeat after some time
 
+% c. Repeat a for PRN 25.
+% We can simply repeat what was done for a. and change the scheme
+
+% Load both G1 and G2 shift registers with all 1s
+G1 = ones(1,10);
+G2 = ones(1,10);
+
+% Calcualate first bit output, then perform corresponding bit shifts
+% for PRN25
+
+XGiCA_code_c = zeros(1,1023);
+
+for i = 1:1023
+    % Phase Selector
+    S1 = G2(5);
+    S2 = G2(7);
+    G2i = mod(S1+S2,2);
+    
+    %CA Code output
+    XGiCA_code_c(i) = mod(G1(10)+G2i,2);
+
+    % G1:
+    G1_newBit = mod(G1(3)+G1(10),2);
+    G1 = [G1_newBit G1(1:9)];
+    
+    % G2:
+    G2_newBit = mod(G2(2)+G2(3)+G2(6)+G2(8)+G2(9)+G2(10),2);
+    G2 = [G2_newBit G2(1:9)];
+end
+
+% Obtain first and last 16 bits
+first16 = XGiCA_code_c(1:16);
+last16 = XGiCA_code_c(end-15:end);
+
+%Convert to hex for checking
+firstHex_c = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex_c  = dec2hex(bin2dec(char(last16 + '0')), 4)
+
+% d. Repeat a for PRN 5.
+
+% Load both G1 and G2 shift registers with all 1s
+G1 = ones(1,10);
+G2 = ones(1,10);
+
+% Calcualate first bit output, then perform corresponding bit shifts
+% for PRN25
+
+XGiCA_code_d = zeros(1,1023);
+
+for i = 1:1023
+    % Phase Selector
+    S1 = G2(1);
+    S2 = G2(9);
+    G2i = mod(S1+S2,2);
+    
+    %CA Code output
+    XGiCA_code_d(i) = mod(G1(10)+G2i,2);
+
+    % G1:
+    G1_newBit = mod(G1(3)+G1(10),2);
+    G1 = [G1_newBit G1(1:9)];
+    
+    % G2:
+    G2_newBit = mod(G2(2)+G2(3)+G2(6)+G2(8)+G2(9)+G2(10),2);
+    G2 = [G2_newBit G2(1:9)];
+end
+
+% Obtain first and last 16 bits
+first16 = XGiCA_code_d(1:16);
+last16 = XGiCA_code_d(end-15:end);
+
+%Convert to hex for checking
+firstHex_d = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex_d  = dec2hex(bin2dec(char(last16 + '0')), 4)
