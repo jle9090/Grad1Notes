@@ -177,17 +177,35 @@ noise = 4*randn(1,1023);
 
 % Plotting with subplots x1,x2,x3, and noise
 figure()
+
 subplot(4,1,1)
-plot(1:length(x1), x1)
+plot(1:length(x1), x1, LineWidth=1.5)
+title('x_1: PRN 19 Delayed by 350 Chips')
+ylabel('Amplitude')
+ylim([-20 20])
+grid on
 
 subplot(4,1,2)
-plot(1:length(x2), x2)
+plot(1:length(x2), x2, LineWidth=1.5)
+title('x_2: PRN 25 Delayed by 905 Chips')
+ylabel('Amplitude')
+ylim([-20 20])
+grid on
 
 subplot(4,1,3)
-plot(1:length(x3), x3)
+plot(1:length(x3), x3, LineWidth=1.5)
+title('x_3: PRN 5 Delayed by 75 Chips')
+ylabel('Amplitude')
+ylim([-20 20])
+grid on
 
 subplot(4,1,4)
-plot(1:length(noise), noise)
+plot(1:length(noise), noise, LineWidth=1.5)
+title('Gaussian Noise')
+xlabel('Chip Number')
+ylabel('Amplitude')
+ylim([-20 20])
+grid on
 exportgraphics(gcf, 'subplot_x1x2x3_noise.png', 'Resolution', 300);
 
 % g.

@@ -5,6 +5,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{float}
 
 % ---------- Paragraph Formatting ----------
 \setlength{\parindent}{0pt}
@@ -40,7 +41,6 @@
  PL1 = 550 [m] \newline
  PL2 = 500 [m]
 
-% ---------- Figure ----------
 \begin{figure}[htbp]
     \centering
     % \includegraphics[width=0.7\textwidth]{figure_name.png}
@@ -145,11 +145,6 @@ x = b-400 \\
 \end{aligned}
 \]
 
-
-% ============================================================
-% Problem 2
-% ============================================================
-
 \section*{Problem 2}
 
 \subsection*{(a)}
@@ -208,11 +203,11 @@ can simply be
 \]
 
 
-\subsection*{(b)}
+\subsection*{(b.)}
 
 See attached MATLAB script. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../HW1_sensitivity.png}
     \caption{MATLAB Script Results}
@@ -220,31 +215,156 @@ See attached MATLAB script.
 \end{figure}
 
 
-\subsection*{(c)}
-The three types of measurements for determining $x_a$ varies. 
+\subsection*{(c.)}
+\hspace*{2em}The three types of measurements for determining $x_a$ varies. 
+Taking a look at the sensitivity of each measurement compared to the
+aircraft position. We see that there is different slopes at these 
+different aircraft postitions, when farther away from the ground station,
+Range rate and Zenith angle's slopes are more gradual, leading to less sensitivity.
+However when closer to the ground station, the pattern changes where Range rate
+and Zenith angle would have more steep slopes and be more sensitive. This is 
+opposed to Range, where when close the ground station it would be less sensitive
+and more useful in this section.
 
-% ============================================================
-% Problem 3
-% ============================================================
+\subsection*{(d.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../HW1_sensitivity_low_alt.png}
+    \caption{MATLAB Sensitivity at Lower Altitude}
+    \label{fig:sensitivity low alt}
+\end{figure}
+
+\hspace*{2em}The sensitivity/utility of the observations at a lower altitude
+would depend on the parameter being examined and aircraft position. Taking a look at Figure \ref{fig:sensitivity low alt}, we can 
+see the change in behavior, where when further away from the ground
+station, there is more sharper slopes for Range, but more smooth behavior
+from Range Rate and Zenith Angle. The is inverted as the aircraft gets closer
+to the ground station.
 
 \section*{Problem 3}
 
-\subsection*{(a)}
+\subsection*{(a.)}
 
-Write your solution here.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../hex_console_results.png}
+    \caption{MATLAB C/A Code Generation Results}
+    \label{fig:CA code gen results}
+\end{figure}
 
-\subsection*{(b)}
+When examning the outputs for the first 16 chips expressed
+in hex, we do indeed obtain E6D6.
 
-Write your solution here.
+\subsection*{(b.)}
+When we create the C/A code form 1024 to 2046, we actually obtain
+the same code as we did in part (a.). This can be verified by taking 
+the difference between the two vectors and then finding summing up
+all the elements, we obtain 0. This means they are identical. 
 
-% ============================================================
-% Problem 4
-% ============================================================
+\subsection*{(c.)}
+Repeating what we do for (a.), we are able to verify that it is the 
+correct C/A code generated with the first 16 chips expressed in hex 
+to be F8F4.
+
+\subsection*{(d.)}
+Repeating what we do for (a.), we are able to verify that it is the 
+correct C/A code generated with the first 16 chips expressed in hex 
+to be 96C4.
 
 \section*{Problem 4}
+\subsection*{(a.)}
 
-Write your solution here.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN19_Autocorrelation.png}
+    \caption{PRN 19 Auto Correlation}
+    \label{fig:PRN 19 Auto Correlation}
+\end{figure}
 
-% ============================================================
+\subsection*{(b.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN19_PRN19_delay_200_Crosscorrelation.png}
+    \caption{PRN 19 Delay Cross Correlation}
+    \label{fig:PRN 19 Delay Cross Correlation}
+\end{figure}
+
+\hspace*{2em}Based on the Figure \ref{fig:PRN 19 Delay Cross Correlation}, results, we 
+notice that there is a spike at 200 in the LAG axis. This is to be expected
+since this function takes the cross correlation between two codes, because 
+this is the same code only shifted, the spike occuring at the amount we shifted
+it by is reasonable since at that point we would essentially be auto correlating 
+the code resulting in similar behavior we observed in (a.). 
+
+\subsection*{(c.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN25_PRN19_Crosscorrelation.png}
+    \caption{PRN 25 Cross Correlation}
+    \label{fig:PRN 25 Cross Correlation}
+\end{figure}
+
+\hspace*{2em}When comparing Figure \ref{fig:PRN 25 Cross Correlation} and the Figure \ref{fig:PRN 19 Auto Correlation}
+from part (a.), we observe a different behavior. We see instead of a stable
+variations of similar magnitude with a large spike where you would expect auto correlating
+behavior, there is instead only a stable variation of similar magnitude with no spike.
+
+\subsection*{(d.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN5_PRN19_Crosscorrelation.png}
+    \caption{PRN 5 Cross Correlation}
+    \label{fig:PRN 5 Cross Correlation}
+\end{figure}
+
+\hspace*{2em}Similarly when comparing Figure \ref{fig:PRN 5 Cross Correlation} with Figure \ref{fig:PRN 19 Auto Correlation}
+from part (a)., we observe similar variations as we observed in part (c.). Where 
+it is missing a spike and only has variations of similar magnitude.
+
+\subsection*{(e.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN5xsum_PRN19_Crosscorrelation.png}
+    \caption{PRN Cross Correlation of sum of $x1,x2,x3$}
+    \label{fig:PRN xsum cross correlation}
+\end{figure}
+
+\hspace*{2em}The peak of the correlation within Figure \ref{fig:PRN xsum cross correlation} is 
+indeed where I would expect it to be. Essentially we are mixing together multiple competing
+PRN signals from a GPS satellite. Because of how these codes are constructued, these codes
+have high auto correlation and low cross correlation with each other. Therefore, when these
+signals are mixed together and cross correlate with PRN 19, PRN 19 will have a spike where 
+it would auto correlate to the respective chip shift on the lag axis, which in this 
+case is 350. 
+
+\subsection*{(f.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../subplot_x1x2x3_noise.png}
+    \caption{PRN Cross Correlation of sum of $x_1,x_2,x_3$}
+    \label{fig:x1x2x3_noise_plot}
+\end{figure}
+
+\subsection*{(g.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../PRN5xsum_noise_PRN19_Crosscorrelation.png}
+    \caption{PRN Cross Correlation of sum of $x_1,x_2,x_3$ with Noise}
+    \label{fig:PRN x1x2x3_noise_plot}
+\end{figure}
+
+\hspace*{2em}Taking a look at the results at Figure \ref{fig:PRN x1x2x3_noise_plot},
+we do indeed observe that there is a noticable peak at 350 in the lag axis. This is 
+where I would expect it to be located, the same logic applies from part (f.), where
+there would naturally be a spike at this lag of 350 because that would be auto correlating
+with the orinal code of PRN 19 we are examining. I am however rather surprised how based on
+Figure \ref{fig:x1x2x3_noise_plot}, noise is comparitively very large compared to the chip values,
+and yet the correlated peak is still very prominent despite this large noise being applied.
+
 
 \end{document}
