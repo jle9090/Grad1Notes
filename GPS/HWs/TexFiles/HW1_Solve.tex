@@ -31,10 +31,6 @@
 
 \vspace{1em}
 
-% ============================================================
-% Problem 1
-% ============================================================
-
 \section*{Problem 1}
 
 \subsection*{(a)} 
@@ -129,7 +125,7 @@ PL2:
 \end{aligned}
 \]
 
-And with eliminaton and eliminating $x$ this time, we obtain,
+And with elimination and eliminating $x$ this time, we obtain,
 \[
 \begin{aligned}
 800m = 2b \\
@@ -167,7 +163,7 @@ z(x_{a}, v_{0}, h_{0})
 \]
 
 When solving for range, one can simply use the pythagorean
-theorum given $h_{0}$ is constant.
+theorem given $h_{0}$ is constant.
 \[
 \boxed{ R = \sqrt{x_a^2 + h_0^2} }
 \]
@@ -219,7 +215,7 @@ See attached MATLAB script.
 \hspace*{2em}The three types of measurements for determining $x_a$ varies. 
 Taking a look at the sensitivity of each measurement compared to the
 aircraft position. We see that there is different slopes at these 
-different aircraft postitions, when farther away from the ground station,
+different aircraft positions, when farther away from the ground station,
 Range rate and Zenith angle's slopes are more gradual, leading to less sensitivity.
 However when closer to the ground station, the pattern changes where Range rate
 and Zenith angle would have more steep slopes and be more sensitive. This is 
@@ -252,7 +248,7 @@ to the ground station.
     \label{fig:CA code gen results}
 \end{figure}
 
-When examning the outputs for the first 16 chips expressed
+When examining the outputs for the first 16 chips expressed
 in hex, we do indeed obtain E6D6.
 
 \subsection*{(b.)}
@@ -293,7 +289,7 @@ to be 96C4.
 \hspace*{2em}Based on the Figure \ref{fig:PRN 19 Delay Cross Correlation}, results, we 
 notice that there is a spike at 200 in the LAG axis. This is to be expected
 since this function takes the cross correlation between two codes, because 
-this is the same code only shifted, the spike occuring at the amount we shifted
+this is the same code only shifted, the spike occurring at the amount we shifted
 it by is reasonable since at that point we would essentially be auto correlating 
 the code resulting in similar behavior we observed in (a.). 
 
@@ -335,7 +331,7 @@ it is missing a spike and only has variations of similar magnitude.
 
 \hspace*{2em}The peak of the correlation within Figure \ref{fig:PRN xsum cross correlation} is 
 indeed where I would expect it to be. Essentially we are mixing together multiple competing
-PRN signals from a GPS satellite. Because of how these codes are constructued, these codes
+PRN signals from a GPS satellite. Because of how these codes are constructed, these codes
 have high auto correlation and low cross correlation with each other. Therefore, when these
 signals are mixed together and cross correlate with PRN 19, PRN 19 will have a spike where 
 it would auto correlate to the respective chip shift on the lag axis, which in this 
@@ -359,11 +355,11 @@ case is 350.
 \end{figure}
 
 \hspace*{2em}Taking a look at the results at Figure \ref{fig:PRN x1x2x3_noise_plot},
-we do indeed observe that there is a noticable peak at 350 in the lag axis. This is 
+we do indeed observe that there is a noticeable peak at 350 in the lag axis. This is 
 where I would expect it to be located, the same logic applies from part (f.), where
 there would naturally be a spike at this lag of 350 because that would be auto correlating
-with the orinal code of PRN 19 we are examining. I am however rather surprised how based on
-Figure \ref{fig:x1x2x3_noise_plot}, noise is comparitively very large compared to the chip values,
+with the original code of PRN 19 we are examining. I am however rather surprised how based on
+Figure \ref{fig:x1x2x3_noise_plot}, noise is comparatively very large compared to the chip values,
 and yet the correlated peak is still very prominent despite this large noise being applied.
 
 
