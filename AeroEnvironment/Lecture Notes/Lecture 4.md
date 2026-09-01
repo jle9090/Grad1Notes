@@ -1,0 +1,100 @@
+# Solar Wind and Heliosphere
+- coronal hole corresponds to high solar wind
+- magnetic field lines, there are pars that are anti parallel
+	- anti parallel means a current sheet
+	- current sheet - right hand rule, current is going inside??
+- Heliospheric curent sheet
+	- boundary where magnetic field flips from north to south (ear ecliptec plane)
+	- conducts small current density $10^-{10}  \mathrm{A/m^2}$
+	- waviness of sheet is due to mag field dipole axis tilt angle to solar rotation axis
+	- IMF
+		- Interplanetary magnetic field
+	- ![[Pasted image 20260901083720.png]]![[Pasted image 20260901083725.png]]
+- Sound and Alfven speeds
+	- alfven waves are mag field oscillations
+	- travel along field lines
+	- ![[Pasted image 20260901083756.png]]
+- the Bowshock is FAKE
+
+# Solar activity and variability
+- **Solar Activity**
+	- Sunspots are dark regions in photosphere
+		- correspond with hot plasma in chromosphere and corona
+	- ![[Pasted image 20260901084444.png]]
+	- ![[Pasted image 20260901084450.png]]
+	- 11 year cycle of sunspot number
+		-  not constant
+		- variation in peak/trough of cycle
+	- ![[Pasted image 20260901084537.png]]
+	- ![[Pasted image 20260901084554.png]]
+	- $S = 1361 \mathrm{\frac{W}{m^2}}$ , most accurate solar constant currently
+	- TIM = total irradiance monitor
+- **Origin of solar cycle**
+	- differential rotation of sun causes dipolar mag field to get stretched
+	- there are different spin rates at poles and equators
+	- becomes toroidal (reversed)
+	- a -> d is roughly 22 years
+	- reconnection (c) leads to field to flip and go back to poloidal with opposite polarity
+	- ![[Pasted image 20260901085146.png]]
+- **What makes a sunspot **
+	- region of intense mag field
+	- 1000 Gauss (vs typical 1 G field at surface)
+	- means a depression in solar surface, surrounded by hot bright faculae
+	- created as a subsurface mag field push through photosphere and form loops
+	- lasts hours to a few weeks
+	- ![[Pasted image 20260901085439.png]]
+	- *red section* - declining phase
+		- sunspots are coming down, sunspots are moving towards solar equatorial region
+	- among broad range of RF freqs, emmited by sun, interested n waves at 2.8 GHz (affects GPS for example)
+	- transmits through Earth atmos independent of weather, easy measurement from ground
+	- emmited by plages in chromosphere
+	- ![[Pasted image 20260901085821.png]]
+- **Solar Disturbances**
+	- flare - sudden rapid intense increase in EM output
+		- correleates to sunspots with mag field under surface
+	- coronal mass ejection - ejection of magnetized plasma from sun into interplanetary space
+		- massive
+		- timespan of hours
+	- solar energetic particle (SEP) event - acceleration of coronal and interplanetary ions and electrons to relativistic energies
+		- 10s 100s of MeVs
+	- coronal holes - large regions of open mag field lines which allow escape of fast solar wind
+		- coronal holes and fast solar winds are always associated
+	- high speed streams (HSS) - fast solar wind streams emmanating from coronal holes
+	- co rotating interactions (CIRs) - interface between slow solar wind and fast solar wind regions
+- ![[Pasted image 20260901090353.png]]
+- ![[Pasted image 20260901090819.png]]
+- ![[Pasted image 20260901091241.png]]
+- **Flare Characteristcs**
+	- visible, EUV, xray, gamma ray photons, and radio emmisions
+	- different wavelengths display different temporal structure
+	- most powerful flares occur shortly after solar cycle maxmimum
+	- localized in space and time - only some of them hit Earth
+	- one active region may produce dozones of flares
+	- Categories
+		- X - eXtreme
+		- M - Moderate
+		- C - Common
+		- B - Background
+		- based on energy flux in $0.1-0.8 \mathrm{nm}$ Xray band
+	- ![[Pasted image 20260901091641.png]]
+	- ![[Pasted image 20260901091917.png]]
+	- Why do flares produce xrays
+		- ![[Pasted image 20260901092051.png]]
+		- electrons are heated to high temps and accelerated
+			- likely due to mag field reconnectoion (like what drives the aurora)
+		- fast electrons move towards bottom of corona, produce x rays by **bremsstrahlung** (i hate jerman, "braking radiation")
+- **Coronal Mass Ejections**
+	- eruption of plasma during large scale re-organization of mag fields (closed -> open field lines etc)
+	- 80% from active regions
+	- 20% from filaments when there are no sunspots
+	- $10^{12} - 10^{13} \mathrm{kg}$ of materials
+	- carries mag field with it
+	- occur 1-6 times per day travel at 300-3000 km/s
+		- solar wind speed and much greater
+		- ![[Pasted image 20260901092715.png]]
+		- plasma is always radially going outward
+		- bulk plasma continues to rotate and cause the spiral (see below)
+- ![[Pasted image 20260901092740.png]]
+- ![[Pasted image 20260901093929.png]]
+- ![[Pasted image 20260901093933.png]]
+

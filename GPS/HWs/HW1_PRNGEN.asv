@@ -1,0 +1,195 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% HW1 PRN GENERATOR
+
+clc; clear; close all
+
+% Load both G1 and G2 shift registers with all 1s
+G1 = ones(1,10);
+G2 = ones(1,10);
+
+% Calcualate first bit output, then perform corresponding bit shifts
+% for PRN19
+
+XGiCA_code_a = prn_code_gen(3,6);
+
+% Obtain first and last 16 bits
+first16 = XGiCA_code_a(1:16);
+last16 = XGiCA_code_a(end-15:end);
+
+%Convert to hex for checking
+firstHex_a = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex_a  = dec2hex(bin2dec(char(last16 + '0')), 4)
+
+% This verifies that with the first 16 chips of PRN 19
+% generated here is E6D6.
+
+% b. Create C/A code output of PRN 19 from epoch 1024 to 2046
+
+% simply take the existing generator and generate it to 2046.
+
+XGiCA_code_b = zeros(1,1023);
+
+for i = 1:2046
+    % Phase Selector
+    S1 = G2(3);
+    S2 = G2(6);
+    G2i = mod(S1+S2,2);
+    
+    %CA Code output
+    XGiCA_code_b(i) = mod(G1(10)+G2i,2);
+
+    % G1:
+    G1_newBit = mod(G1(3)+G1(10),2);
+    G1 = [G1_newBit G1(1:9)];
+    
+    % G2:
+    G2_newBit = mod(G2(2)+G2(3)+G2(6)+G2(8)+G2(9)+G2(10),2);
+    G2 = [G2_newBit G2(1:9)];
+end
+
+% Take the last part of the vector to obtain the XGiCA_code_b
+XGiCA_code_b = XGiCA_code_b(end - 1022:end);
+% Take difference and sum to check if both are identical
+XGiCA_code_diff = sum(XGiCA_code_a-XGiCA_code_b)
+
+% Find that XGiCA_code_diff = 0, therefore both are identical,
+% this is expected as the codes should repeat after some time
+
+% c. Repeat a for PRN 25.
+% We can simply repeat what was done for a. and change the scheme
+
+% Load both G1 and G2 shift registers with all 1s
+G1 = ones(1,10);
+G2 = ones(1,10);
+
+% Calcualate first bit output, then perform corresponding bit shifts
+% for PRN25
+
+XGiCA_code_c = prn_code_gen(5,7);
+
+% Obtain first and last 16 bits
+first16 = XGiCA_code_c(1:16);
+last16 = XGiCA_code_c(end-15:end);
+
+%Convert to hex for checking
+firstHex_c = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex_c  = dec2hex(bin2dec(char(last16 + '0')), 4)
+
+% d. Repeat a for PRN 5.
+
+% Load both G1 and G2 shift registers with all 1s
+G1 = ones(1,10);
+G2 = ones(1,10);
+
+% Calcualate first bit output, then perform corresponding bit shifts
+% for PRN25
+
+XGiCA_code_d = prn_code_gen(1,9);
+
+% Obtain first and last 16 bits
+first16 = XGiCA_code_d(1:16);
+last16 = XGiCA_code_d(end-15:end);
+
+%Convert to hex for checking
+firstHex_d = dec2hex(bin2dec(char(first16 + '0')), 4)
+lastHex_d  = dec2hex(bin2dec(char(last16 + '0')), 4)
+
+%% Part 4. Correlation
+% a. plot the auro correlation function of PRN 19
+
+% Calculate the auto correlation 
+
+n_shift = 0:1:1023;
+R_n_auto = zeros(1,1024);
+
+% Convert into -1 and 1s
+XGiCA_code = (XGiCA_code_a==0)*(1) + (XGiCA_code_a==1)*(-1);
+
+% On first iteration there should be no shift
+XGiCA_code_shift = XGiCA_code;
+for n = 1:1:length(n_shift)
+    % Cache code to be shifted during loop
+    XGiCA_code_cache = XGiCA_code_shift;
+    % Auto correlation function
+    R_n_auto(n) = (1/1023) * sum(XGiCA_code.*(XGiCA_code_cache));
+    % Shifting by 1
+    XGiCA_code_shift = XGiCA_code_shift([end (1:end-1)]);
+end
+
+figure()
+plot(n_shift, R_n_auto, LineWidth=1.5)
+xlabel('Number of Shifts (n)')
+ylabel('Correlation R')
+title('Autocorrelation of PRN 19')
+xlim([-10, 1035])
+grid on
+
+exportgraphics(gcf, 'PRN19_Autocorrelation.png', 'Resolution', 300);
+
+% b.
+% delay by 200 chips
+XGiCA_code_delay_200 = XGiCA_code([end-199:end 1:end-200]);
+XGiCA_code_PRN19 = XGiCA_code;
+figure()
+cyc_corr_basic(XGiCA_code_delay_200, XGiCA_code_PRN19)
+exportgraphics(gcf, 'PRN19_PRN19_delay_200_Crosscorrelation.png', 'Resolution', 300);
+
+% c.
+% PRN 19 vs PRN 25
+
+% Convert code to 1s and -1s for PRN 25
+XGiCA_code_PRN25 = (XGiCA_code_c==0)*(1) + (XGiCA_code_c==1)*(-1);
+figure()
+cyc_corr_basic(XGiCA_code_PRN25, XGiCA_code_PRN19)
+exportgraphics(gcf, 'PRN25_PRN19_Crosscorrelation.png', 'Resolution', 300);
+
+% d.
+% PRN 19 vs PRN 5
+
+% Convert code to 1s and -1s for PRN 5
+XGiCA_code_PRN5 = (XGiCA_code_d==0)*(1) + (XGiCA_code_d==1)*(-1);
+figure()
+cyc_corr_basic(XGiCA_code_PRN5, XGiCA_code_PRN19)
+exportgraphics(gcf, 'PRN5_PRN19_Crosscorrelation.png', 'Resolution', 300);
+
+% e.
+% Create three 1023 chip PRNs
+% x1 = PRN19 delayed by 350
+% x2 = PRN25 delayed by 905
+% x3 = PRN5  delayed by 75
+
+x1 = XGiCA_code_PRN19([end-349:end 1:end-350]);
+x2 = XGiCA_code_PRN25([end-904:end 1:end-905]);
+x3 = XGiCA_code_PRN5([end-74:end 1:end-75]);
+
+% Sum these PRNs
+x_sum = x1+x2+x3;
+
+% Correlate with PRN19
+figure()
+cyc_corr_basic(x_sum, XGiCA_code_PRN19)
+
+% f.
+% Creating noise
+noise = 4*randn(1,1023);
+
+% Plotting with subplots x1,x2,x3, and noise
+figure()
+subplot(4,1,1)
+plot(1:length(x1), x1)
+
+subplot(4,1,2)
+plot(1:length(x2), x2)
+
+subplot(4,1,3)
+plot(1:length(x3), x3)
+
+subplot(4,1,4)
+plot(1:length(noise), noise)
+
+% g.
+% Sum x1,x2,x3, and noise
+x_sum_noise = x1+x2+x3+noise;
+figure()
+cyc_corr_basic(x_sum_noise, XGiCA_code_PRN19)
