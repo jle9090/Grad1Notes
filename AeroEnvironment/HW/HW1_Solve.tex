@@ -331,7 +331,7 @@ over time as a result of an X-Flare, the cosmic rays measured would be negative
 of $(\mathrm{\% \, of\, Baseline})$, meanwhile near the start where it is at more of a 
 steady condition, there is a positive and more steady $(\mathrm{\% \, of \, Baseline})$
 
-\section*{(Problem 8: Parker Solar Probe)}
+\section*{Problem 8: Parker Solar Probe}
 \hspace*{2em}My favorite instrument aboard the Parker Solar Probe would be the
 FIELDS instrument. It's purpose is to measure magnetic fields of the
 solar corona during the PSP mission to study the Sun. FIELDS has two fluxgate magnetometers,
@@ -345,5 +345,57 @@ As a whole it would weigh roughly 23 kg, and roughly 22 watts. The instrument co
 to the PSP's parent investigation of characterizing the dynamic region close to the Sun by
 being the one to take the field measurements with its antennas and set of magnetometers.
 
+\newpage
+\section*{MATLAB Code}
+\begin{verbatim}
+%% ASEN 5335 Aerospace Environment
+%% Justin Le
+%% HW1 Problem 4
+
+clc;clear;close all
+
+% Defining constants
+c = 3E8; %[m/s]
+meV_2_KE = 1.602E-13; %[J]
+m_0 = 1.67E-27; %[kg]
+
+Au = 1.496E11; %[m]
+R_s = 6.957E8; %[m]
+
+d = Au-2*R_s;
+
+
+% Given conditions
+meV = [1, 10, 100, 500]; %[meV]
+
+% Convert to energy [J]
+
+KE = meV.*meV_2_KE;
+
+%Calculate velocity
+v_ms = c*sqrt(1 - 1./(KE./(m_0*c^2) + 1).^2); %[m/s] 
+
+% Finding time from v=d/t
+t_s = d./v_ms;
+t_h = t_s * (1/3600);
+
+%% Plot distance traveled vs. time
+
+t = linspace(0, max(t_s), 1000); % [s]
+
+distance = v_ms'.*t; % [m]
+distance_AU = distance./Au; % [AU]
+time_days = t./(24*3600); % [days]
+
+figure
+plot(time_days, distance_AU, 'LineWidth', 2)
+xlabel('Time [days]')
+ylabel('Distance Traveled [AU]')
+title('Distance Traveled vs. Time for Protons')
+legend('1 MeV', '10 MeV', '100 MeV', '500 MeV', 'Location', 'northwest')
+grid on
+
+exportgraphics(gcf, 'AeroEnvHW1P4_solarparticle.png', 'Resolution', 300);
+\end{verbatim}
 
 \end{document}

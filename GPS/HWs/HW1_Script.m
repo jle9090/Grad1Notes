@@ -1,6 +1,6 @@
 %% ASEN 5090 GPS/GNSS
 %% Justin Le
-%% HW1 Script
+%% HW1 Problem 2 Script
 
 clc; clear; close all
 
