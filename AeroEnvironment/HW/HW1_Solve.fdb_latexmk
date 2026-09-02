@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1788027913.29024 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW1_Solve.tex" "HW1_Solve.pdf" "HW1_Solve" 1788027913.6783 0
+["pdflatex"] 1788358408.77021 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW1_Solve.tex" "HW1_Solve.pdf" "HW1_Solve" 1788358409.1491 0
   "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW1_Solve.tex" 1788027913.1075 10800 9b6cf0ac5a4937b08021423df8ff32d2 ""
+  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW1_Solve.tex" 1788358408.5894 11028 520b987f5f5d849e453eb6d3dd90e550 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -64,8 +64,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
   "AeroEnvHW1P4_solarparticle.png" 1788015868.75655 135903 8c32f79181d8a6b9c7f1fb3a699839bd ""
-  "HW1_Solve.aux" 1788027913.62527 378 7f555aab7a85ca5f3c0a0bb9081d869c "pdflatex"
-  "HW1_Solve.tex" 1788027913.1075 10800 9b6cf0ac5a4937b08021423df8ff32d2 ""
+  "HW1_Solve.aux" 1788358409.10054 379 85c2d649d5bc860012cac80c42b03a8f "pdflatex"
+  "HW1_Solve.tex" 1788358408.5894 11028 520b987f5f5d849e453eb6d3dd90e550 ""
   (generated)
   "HW1_Solve.aux"
   "HW1_Solve.log"

@@ -49,20 +49,20 @@ Rearrange to solve for wavelength.
 
 The corona region's temperature can be substituted and solved.
 \[
-\boxed{\lambda_{max}  = 1.449*10^-9 \, \mathrm{m} = 14.49*10^-10 \, \mathrm{m}}
+\boxed{\lambda_{max}  = 1.449*10^{-9} \, \mathrm{m} = 14.49*10^{-10} \, \mathrm{m}}
 \]
 
-This would also be in the same range for X-rays, $\approx 10^-10 \, \mathrm{m}$.
+This would also be in the same range for X-rays, $\approx 10^{-10} \, \mathrm{m}$.
 
 \subsection*{(ii)}
 For the region photosphere region at a cooler $T=5,778 \, \mathrm{K}$,
 the process is the same.
 
 \[
-\boxed{\lambda_{max}  = 5.01*10^-7 \, \mathrm{m} = 50.15*10^-8 \, \mathrm{m}}
+\boxed{\lambda_{max}  = 5.01*10^-7 \, \mathrm{m} = 50.15*10^{-8} \, \mathrm{m}}
 \]
 
-This would be in the same range for UV $\approx 10^-8 \, \mathrm{m}$.
+This would be in the same range for UV $\approx 10^{-8} \, \mathrm{m}$.
 
 \section*{Problem 2: Thermal Escape}
 
@@ -89,7 +89,7 @@ r = 10*10^{6}*10^3 \, \mathrm{m}
 \end{aligned}
 \]
 
-Where $G$ is the unversial gravitational constant, $M$ is
+Where $G$ is the universal gravitational constant, $M$ is
 the mass of the sun, and $r$ is the radius of the of the outer
 corona. We then find,
 
@@ -116,7 +116,7 @@ and $V = 400 \, \mathrm{km/s}$ at Earth, we can use the mass flow equation
 \end{gathered}
 \]
 
-To find $A$, we calculat the surface area of a sphere given the radius of Earth,
+To find $A$, we calculate the surface area of a sphere given the radius of Earth,
 \[
 \begin{gathered}
     A = 4 \pi r^2 \\
@@ -161,12 +161,12 @@ With inverse square law if $r_{Earth} = 1 \mathrm{AU}$ and $r_{Jupiter} = 5.2 \m
 
 \section*{Problem 4: Relativistic Protons}
 
-Plotting distance travled in AU w.r.t for multiple protons of varying MeV.
+Plotting distance traveled in AU w.r.t for multiple protons of varying MeV.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{AeroEnvHW1P4_solarparticle.png}
-    \caption{AU travled vs time}
+    \caption{AU traveled vs time}
     \label{fig:AU_time}
 \end{figure}
 
@@ -218,8 +218,9 @@ Which time $t$ can be calculated with simply $t = d/v$.
 
 \section*{Problem 5: Heliopause}
 In order to calculate the heliopause we first seek the pressure as a result 
-of the velocity and ion density at Earth. The inverser square law can then be 
-applied to solve for the heliopause distance.
+of the velocity and ion density at Earth. The inverse square law can then be 
+applied to solve for the heliopause distance coupled with the given interstellar
+pressure of $P_{interstellar} = 1.3*10^{-10} \, \mathrm{Pa}$ 
 
 \[
 \begin{gathered}
@@ -227,17 +228,19 @@ P_{Earth} = n_{Earth}mv^2 \\
 n_{Earth} = 5 \, \mathrm{ions/cm^3} = 0.005 \, \mathrm{ions/m^3}\\
 m = 1.673*10^{-27} \, \mathrm{kg/ion}\\
 v = 400*10^3 \, \mathrm{m/s} \\
-\therefore P_{Earth} = 1.3384*10^{-21}
+\therefore P_{Earth} = 1.3384*10^{-21} \\
+R_{heliopause} = R_{Earth}*\sqrt{\frac{P_{Earth}}{P_{interstellar}}} \\
+\boxed{R_{heliopause} = 101.4 \, \mathrm{AU}}
 \end{gathered}
 \]
 
 
-\section*{(Problem 6: Spacecraft Temperature)}
+\section*{Problem 6: Spacecraft Temperature}
 
 \subsection*{(i.)}
 Given aluminum with $\alpha = 0.15$ and $\epsilon = 0.05$,
-to find equalibrium temperature at Earth, we use $r = 149.6*10^9 \mathrm{m}$
-and then use the equation for thermal equalibrium,
+to find equilibrium temperature at Earth, we use $r = 149.6*10^9 \mathrm{m}$
+and then use the equation for thermal equilibrium,
 
 \[
 \begin{gathered}
@@ -278,11 +281,11 @@ and $\epsilon = 0.92$, we get,
 \]
 
 \hspace*{2em}I think this paint was designed with the explicit purpose of being able to 
-have a lower equalibrium temperature as a result of radiation from the Sun 
+have a lower equilibrium temperature as a result of radiation from the Sun 
 for satellite missions. High temperatures can be detrimental to equipment
 onboard and the strategy to paint the spacecraft with paint that improves
-its emmissivity by a considerable amount would be very useful in the space 
-environment by lowering the equalibrium temperature. 
+its emissivity by a considerable amount would be very useful in the space 
+environment by lowering the equilibrium temperature. 
 
 \section*{Problem 7: Solar Outputs}
 
@@ -294,7 +297,7 @@ would be $10^{-5} \, \mathrm{W/m^2}$.
 
 \subsection*{{(b.)}}
 Assuming the peak energy of the flare being $\phi_{1AU}=5*10^{-4} \, \mathrm{W/m^2}$, 
-we can find the corresponding energy flux at the emmision source at $1.5 \, \mathrm{solar radii}$
+we can find the corresponding energy flux at the emission source at $1.5 \, \mathrm{solar radii}$
 to be a result from the inverse square law.
 
 \[
@@ -326,15 +329,15 @@ When comparing the relation between cosmic rays and proton flux and
 radiative energy flux, we can see that when the solar proton flux decreases
 over time as a result of an X-Flare, the cosmic rays measured would be negative
 of $(\mathrm{\% \, of\, Baseline})$, meanwhile near the start where it is at more of a 
-steady conditon, there is a positive and more steady $(\mathrm{\% \, of \, Baseline})$
+steady condition, there is a positive and more steady $(\mathrm{\% \, of \, Baseline})$
 
 \section*{(Problem 8: Parker Solar Probe)}
 \hspace*{2em}My favorite instrument aboard the Parker Solar Probe would be the
-FIELDS insturment. It's purpose is to measure magnetic fields of the
+FIELDS instrument. It's purpose is to measure magnetic fields of the
 solar corona during the PSP mission to study the Sun. FIELDS has two fluxgate magnetometers,
-one serach coil magnetometer, and five voltage sensors. It is accompanied
-by four whip antennas. This can then measure Electric Field, Magnetif Field,
-EM waves, and RF emmisions using this combination of antennas and magnetometers, being able to sample at 2 MHz.
+one search coil magnetometer, and five voltage sensors. It is accompanied
+by four whip antennas. This can then measure Electric Field, Magnetic Field,
+EM waves, and RF emissions using this combination of antennas and magnetometers, being able to sample at 2 MHz.
 It's SWAP would depend on how one classifies the size of the instrument. The 
 accompanying antennas are approximately 2 meters, and the magnetometer boom is ~3.5 meters,
 though the size of the magnetometers are about the size of a fist.
