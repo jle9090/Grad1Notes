@@ -4,6 +4,9 @@
 
 clc; clear; close all
 
+% Figures get saved into the figures/ folder next to this script
+outdir = fullfile(fileparts(mfilename('fullpath')), 'figures');
+
 % Load both G1 and G2 shift registers with all 1s
 G1 = ones(1,10);
 G2 = ones(1,10);
@@ -125,7 +128,7 @@ title('Autocorrelation of PRN 19')
 xlim([-10, 1035])
 grid on
 
-exportgraphics(gcf, 'PRN19_Autocorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN19_Autocorrelation.png'), 'Resolution', 300);
 
 % b.
 % delay by 200 chips
@@ -133,7 +136,7 @@ XGiCA_code_delay_200 = XGiCA_code([end-199:end 1:end-200]);
 XGiCA_code_PRN19 = XGiCA_code;
 figure()
 cyc_corr_basic(XGiCA_code_delay_200, XGiCA_code_PRN19)
-exportgraphics(gcf, 'PRN19_PRN19_delay_200_Crosscorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN19_PRN19_delay_200_Crosscorrelation.png'), 'Resolution', 300);
 
 % c.
 % PRN 25 vs PRN 19
@@ -142,7 +145,7 @@ exportgraphics(gcf, 'PRN19_PRN19_delay_200_Crosscorrelation.png', 'Resolution', 
 XGiCA_code_PRN25 = (XGiCA_code_c==0)*(1) + (XGiCA_code_c==1)*(-1);
 figure()
 cyc_corr_basic(XGiCA_code_PRN25, XGiCA_code_PRN19)
-exportgraphics(gcf, 'PRN25_PRN19_Crosscorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN25_PRN19_Crosscorrelation.png'), 'Resolution', 300);
 
 % d.
 % PRN 5 vs PRN 19
@@ -151,7 +154,7 @@ exportgraphics(gcf, 'PRN25_PRN19_Crosscorrelation.png', 'Resolution', 300);
 XGiCA_code_PRN5 = (XGiCA_code_d==0)*(1) + (XGiCA_code_d==1)*(-1);
 figure()
 cyc_corr_basic(XGiCA_code_PRN5, XGiCA_code_PRN19)
-exportgraphics(gcf, 'PRN5_PRN19_Crosscorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN5_PRN19_Crosscorrelation.png'), 'Resolution', 300);
 
 % e.
 % Create three 1023 chip PRNs
@@ -169,7 +172,7 @@ x_sum = x1+x2+x3;
 % Correlate with PRN19
 figure()
 cyc_corr_basic(x_sum, XGiCA_code_PRN19)
-exportgraphics(gcf, 'PRN5xsum_PRN19_Crosscorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN5xsum_PRN19_Crosscorrelation.png'), 'Resolution', 300);
 
 % f.
 % Creating noise
@@ -206,11 +209,11 @@ xlabel('Chip Number')
 ylabel('Amplitude')
 ylim([-20 20])
 grid on
-exportgraphics(gcf, 'subplot_x1x2x3_noise.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'subplot_x1x2x3_noise.png'), 'Resolution', 300);
 
 % g.
 % Sum x1,x2,x3, and noise
 x_sum_noise = x1+x2+x3+noise;
 figure()
 cyc_corr_basic(x_sum_noise, XGiCA_code_PRN19)
-exportgraphics(gcf, 'PRN5xsum_noise_PRN19_Crosscorrelation.png', 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'PRN5xsum_noise_PRN19_Crosscorrelation.png'), 'Resolution', 300);
