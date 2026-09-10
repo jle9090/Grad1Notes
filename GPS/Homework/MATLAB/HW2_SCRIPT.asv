@@ -1,0 +1,45 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% HW2 Main Script
+
+clc; clear; close all
+
+% Reading in the sp3 files
+sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
+
+week_number = sp3(:,1);
+TOW_s = sp3(:,2);
+PRN = sp3(:,3);
+X_m = sp3(:,4)*1000;
+Y_m = sp3(:,5)*1000;
+Z_m = sp3(:,6)*1000;
+clock_bias_us = sp3(:,7);
+constellation = sp3(:,8);
+
+time_epoch_s = (week_number*604800) + TOW_s;
+
+% Graphing PRN05, X,Y,Z [m] against time (0-24 hours)
+
+% Select data for PRN05
+PRN5_id = PRN == 5;
+time_epoch_s_PRN5 = time_epoch_s(PRN5_id);
+time_epoch_hr_PRN5 = time_epoch_s_PRN5/3600;
+X_m_PRN5 = X_m(PRN5_id);
+Y_m_PRN5 = Y_m(PRN5_id);
+Z_m_PRN5 = Z_m(PRN5_id);
+
+figure()
+plot(time_epoch_hr_PRN5,X_m_PRN5,'LineWidth',1)
+hold on
+plot(time_epoch_hr_PRN5,Y_m_PRN5,'LineWidth',1)
+hold on
+plot(time_epoch_hr_PRN5,Z_m_PRN5,'LineWidth',1)
+title('PRN05 X,Y,Z Over time')
+xlabel('Time [hrs]')
+ylabel('Distance [m]')
+legend('X','Y','Z')
+grid on
+
+[gps_ephem,gps_ephem_cell] = read_GPSyuma('YUMA231.alm.txt')
+
+% [health,satPos,satClkCorr] = alm2pos(almanac,t_input,prn)
