@@ -71,83 +71,32 @@ Brandon
 - get update tohim how x band modulates
 	- seems to depend on cones
 
-
-From Dhurva:
-
-Justin Le  [2:55 PM]  
-
-Also, what is the state of the swarm ex lithium radio where you left off?  
-We're seeking SCT and CET tests and it would need the lithium talking with hydra  
-  
-Any documentation left and contacts currently on MAXWELL/SWARM EX for the lithium would also be great
-
-  
-
-Dhruva Ananth  [3:58 PM]  
-
-Heyo! Yep that part was the easy or seemingly workable part with GNU in VM and Hydra doing its thing.
-
-  
-
-[3:59 PM]
-
-There was one major difference the way packets were made, the SwarmEx one did not need ax25 stripping as Hydra did it if I ain't wrong. Apart from that everything else makes sense from the gnu side.
-
-  
-
-[3:59 PM]
-
-I remember demonstrating that Hydra and gnu talk and transmitting a packet from another lithium using another laptop
-
-  
-
-[3:59 PM]
-
-Hydra decoded that specific packet
-
-  
-
-[3:59 PM]
-
-It might have changed now
-
-  
-
-Justin Le  [4:22 PM]  
-
-I assume whats been left in 07 Communications be the most up to date documentation on it?
-
-  
-
-Dhruva Ananth  [4:23 PM]  
-
-Documentation could be limited
-
-  
-
-[4:23 PM]
-
-But Hydra and gnu talking is one leap and figuring out the packet structure is another.
-
-  
-
-[4:24 PM]
-
-CDH needs to figure that out before they ask us to use it
-
-  
-
-[4:24 PM]
-
-There is a detailed packet breakdown
-
-  
-
-[4:24 PM]
-
-For debugging available in the drive
-
-
 All hands
 - couple more things for structures, may not need the antenna change
-- 
+
+
+rick talk
+- bad news on the pc end ig 
+- what needs to happen for antenna raise?
+	- everything we need to do to never take it down again
+	- weather proofing, locktite?
+	- think of everything that is pain in the ass in the future
+	- better zipties
+	- connecting coax, coax seal on everything
+	- install antennas
+		- reverify them
+	- rubber things around yaesu controllers are okay?
+	- lightning arrestors, mounting LNAs (bracket etc u bolts)
+- buying cables
+	- rs232a
+		- in 443 somewhere???
+	- usb ethernet convertor?
+	- ideally find on amazon or digikey or mcmastercarr, then rick buy
+
+break down tasks more
+- running practice mct
+- for these kinds of tests:
+	- break down further with day of laying everything on table and veryfying everything
+	- come back next day and execute test
+- update the gs pc debacle
+- incporate thinking and reflecting time?
