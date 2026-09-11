@@ -1,0 +1,401 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% ---------- Paragraph Formatting ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ASEN 5335 Aerospace Environment}
+\rhead{Justin Le}
+\cfoot{\thepage}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+    {\Large \textbf{Homework 1}}\\[0.5em]
+    {\large ASEN 5335 Aerospace Environment}\\[0.5em]
+    Justin Le\\ 
+    \today
+    \\[0.5em]
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem 1: Radiation from Corona}
+
+\subsection*{(i)}
+
+Given $T$ of the corona region to be $T=2MK$. We can use the equation,
+\[
+\lambda_{max}T = \alpha
+\]
+
+Where $\alpha = \text{constant}(2.98*10^-3 K)$.
+
+Rearrange to solve for wavelength.
+\[
+\lambda_{max} = \frac{T}{\alpha}
+\]
+
+The corona region's temperature can be substituted and solved.
+\[
+\boxed{\lambda_{max}  = 1.449*10^{-9} \, \mathrm{m} = 14.49*10^{-10} \, \mathrm{m}}
+\]
+
+This would also be in the same range for X-rays, $\approx 10^{-10} \, \mathrm{m}$.
+
+\subsection*{(ii)}
+For the region photosphere region at a cooler $T=5,778 \, \mathrm{K}$,
+the process is the same.
+
+\[
+\boxed{\lambda_{max}  = 5.01*10^-7 \, \mathrm{m} = 50.15*10^{-8} \, \mathrm{m}}
+\]
+
+This would be in the same range for UV $\approx 10^{-8} \, \mathrm{m}$.
+
+\section*{Problem 2: Thermal Escape}
+
+From Wikipedia we can obtain an equation for most probable thermal velocity
+of a particle.
+
+\[
+\begin{aligned}
+v_{\mathrm{th}} &= \sqrt{\frac{2k_B T}{m}} \\[4pt]
+k_B &= 1.38 \times 10^{-23}\,\mathrm{J/K} \\[4pt]
+m &= m_{\mathrm{proton}} = 1.673 \times 10^{-27}\,\mathrm{kg} \\[4pt]
+T &= 2\,\mathrm{MK} = 2 \times 10^6\,\mathrm{K} \\
+&\boxed{\therefore v_{th} = 181,644 \, \mathrm{m/s}}
+\end{aligned}
+\]
+
+We then calculate the escape velocity using the equation,
+\[
+\begin{aligned}
+v_{escape} = \sqrt{ \frac{2GM}{r} } \\
+G = 6.674*10^{-11} \, \mathrm{Nm^2/kg^2} \\
+M = 1.989*10^{30} \, \mathrm{kg} \\
+r = 10*10^{6}*10^3 \, \mathrm{m}
+\end{aligned}
+\]
+
+Where $G$ is the universal gravitational constant, $M$ is
+the mass of the sun, and $r$ is the radius of the of the outer
+corona. We then find,
+
+\[
+\boxed{v_{escape} = 163,000 \, \mathrm{m/s}}
+\]
+
+\[
+\begin{gathered}
+\because v_{th} < v_{escape} \\
+\boxed{\text{It is possible for the coronal protons to escape the sun's gravity}}
+\end{gathered}
+\]
+
+\section*{Problem 3: Solar Wind}
+
+\subsection*{(i.)}
+
+Given quiescent solar wind density $n = 5 \, \mathrm{ions/cm^3}$,
+and $V = 400 \, \mathrm{km/s}$ at Earth, we can use the mass flow equation
+\[
+\begin{gathered}
+    \dot{m} =\rho*V*A
+\end{gathered}
+\]
+
+To find $A$, we calculate the surface area of a sphere given the radius of Earth,
+\[
+\begin{gathered}
+    A = 4 \pi r^2 \\
+    r_{Earth} = 149.6*10^9\mathrm{m} \\
+    \therefore A = 1.87*10^{12} \mathrm{m}
+\end{gathered}
+\]
+
+Convert the ion density to density in terms of $\mathrm{kg/m^3}$, 
+given the mass of a proton being $m_{proton} = 1.67 *10^{-27} \, \mathrm{kg/ion}$,
+we calculate,
+
+\[
+\begin{gathered}
+    \dot{m} = {5 \, \mathrm{ions/cm^3}} * 1.67*10^{-27} \mathrm{kg/ion} * \frac{1 \mathrm{cm^3}}{1*10^{-6} \mathrm{m^3}}* 400*10^3 \mathrm{m} \\
+    \boxed{\dot{m} = 939,332,865.8 \, \mathrm{kg/s}}
+\end{gathered}
+\]
+
+
+\subsection*{(ii.)}
+
+Finding the flux at the orbit of Jupiter, we are able to use the inverse square
+relation. We find flux at Earth,
+\[
+\begin{aligned}
+    &\phi_{Earth} =rho * V \\
+    &\phi_{Earth} = \frac{5 \mathrm{ions}}{1*10^{-6} \mathrm{m^3}} * 400*10^3 \mathrm{m/s} \\
+    &\phi_{Earth} = 2*10^{12} \mathrm{ions/m^2/s}
+\end{aligned}
+\]
+
+With inverse square law if $r_{Earth} = 1 \mathrm{AU}$ and $r_{Jupiter} = 5.2 \mathrm{AU}$
+
+\[
+\begin{aligned}
+    &\phi_{Jupiter} = \phi_{Earth}*\frac{1}{5.2}^2 \\
+    &\phi_{Jupiter} = 7.396*10^{10} \, \mathrm{ions/m^2/s} \\
+    &\boxed{\phi_{Jupiter} = 7.396*10^{14} \, \mathrm{ions/cm^2/s}}
+\end{aligned}
+\]
+
+\section*{Problem 4: Relativistic Protons}
+
+Plotting distance traveled in AU w.r.t for multiple protons of varying MeV.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{AeroEnvHW1P4_solarparticle.png}
+    \caption{AU traveled vs time}
+    \label{fig:AU_time}
+\end{figure}
+
+To solve for how long it takes in hours to for each of these energies 
+to each Earth, we are able to use,
+
+\[
+\begin{gathered}
+    KE = \left(\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}-1\right)m_0c^2 \\
+    \text{where we can convert MeV to Joules with,} \\
+    MeV = 1.602*10^{-13} \, \mathrm{J} \\
+    \\
+    \text{This can be rearranged to,}\\
+    V = \sqrt{1 - \frac{1}{(\frac{KE}{m_0 c^2}+1)^2}}
+\end{gathered}
+\]
+
+We are able to use this equation to calculate all the velocities given the MeVs.
+Assuming this velocity is constant through the process, we can simply find some 
+distance $d$, which is the distance between the lower corona of the Sun and the Earth,
+\[
+\begin{gathered}
+d = 1 \mathrm{AU} - 2R_{S} \\
+1\, \mathrm{AU} = 1.496*10^{11} \mathrm{m} \\
+1\, R_{s} = 6.957*10^8  \mathrm{m} \\
+\therefore d = 1.4821*10^{11} \, \mathrm{m}
+\end{gathered}
+\]
+
+Which time $t$ can be calculated with simply $t = d/v$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{} & \textbf{1 MeV} & \textbf{10 MeV} & \textbf{100 MeV} & \textbf{500 MeV} \\
+\hline
+\textbf{Velocity [m/s]} & 1.384e+07 & 4.345e+07 & 1.285e+08 & 2.274e+08 \\
+\hline
+\textbf{Time [s]} & 1.071e+04 & 3.411e+03 & 1.154e+03 & 6.518e+02 \\
+\hline
+\textbf{Time [hr]} & 2.975 & 0.947 & 0.320 & 0.181 \\
+\hline
+\end{tabular}
+\caption{Properties of Lower Corona Proton at varying MeV}
+\label{tab:my_table}
+\end{table}
+
+
+\section*{Problem 5: Heliopause}
+In order to calculate the heliopause we first seek the pressure as a result 
+of the velocity and ion density at Earth. The inverse square law can then be 
+applied to solve for the heliopause distance coupled with the given interstellar
+pressure of $P_{interstellar} = 1.3*10^{-10} \, \mathrm{Pa}$ 
+
+\[
+\begin{gathered}
+P_{Earth} = n_{Earth}mv^2 \\
+n_{Earth} = 5 \, \mathrm{ions/cm^3} = 0.005 \, \mathrm{ions/m^3}\\
+m = 1.673*10^{-27} \, \mathrm{kg/ion}\\
+v = 400*10^3 \, \mathrm{m/s} \\
+\therefore P_{Earth} = 1.3384*10^{-21} \\
+R_{heliopause} = R_{Earth}*\sqrt{\frac{P_{Earth}}{P_{interstellar}}} \\
+\boxed{R_{heliopause} = 101.4 \, \mathrm{AU}}
+\end{gathered}
+\]
+
+
+\section*{Problem 6: Spacecraft Temperature}
+
+\subsection*{(i.)}
+Given aluminum with $\alpha = 0.15$ and $\epsilon = 0.05$,
+to find equilibrium temperature at Earth, we use $r = 149.6*10^9 \mathrm{m}$
+and then use the equation for thermal equilibrium,
+
+\[
+\begin{gathered}
+T = (\frac{\alpha}{\epsilon})^{\frac{1}{4}} (\frac{SA_n}{\sigma A_{tot}})^{\frac{1}{4}} \\
+S = 1361 \, \mathrm{W/m^2} \\
+\sigma = 5.67*10^{-8} \, \mathrm{W/m^2/K^4}\\
+A_n = \pi (149.6*10^9)^2 \, \mathrm{m^2} \\
+A_{tot} = 4\pi(149.6*10^9)^2 \, \mathrm{m^2} \\
+\boxed{\therefore T = 366.3 \, \mathrm{K}}
+\end{gathered}
+\]
+
+Where $S$ is solar flux, $\sigma$ is the Stefan-Boltzmann constant, $A_n$ is the 
+cross sectional area normal to the Sun, and $A_{tot}$ is the surface area 
+at Earth's orbit.
+
+\subsection*{(ii.)}
+For Jupiter, we modify the $r$ used to be the $r$ at Jupiter, however use the inverse square
+relation to find the new solar flux $S$. 
+\[
+\begin{gathered}
+S_{Jupiter} = S_{Earth}*(\frac{1 \, \mathrm{AU}}{5.2 \, \mathrm{AU}})^2 \\
+S_{Jupiter} = 50.3 \, \mathrm{W/m^2}
+\end{gathered}
+\]
+The process remains the same substituting $r = 778*10^9 \, \mathrm{m}$
+
+\[
+\boxed{\therefore T = 160.6 \, \mathrm{K}}
+\]
+
+\subsection*{(iii.)}
+When repeating the process for GSFC White Paint NS-74 with $\alpha = 0.17$
+and $\epsilon = 0.92$, we get,
+
+\[
+\boxed{T = 182.5 \, \mathrm{K}}
+\]
+
+\hspace*{2em}I think this paint was designed with the explicit purpose of being able to 
+have a lower equilibrium temperature as a result of radiation from the Sun 
+for satellite missions. High temperatures can be detrimental to equipment
+onboard and the strategy to paint the spacecraft with paint that improves
+its emissivity by a considerable amount would be very useful in the space 
+environment by lowering the equilibrium temperature. 
+
+\section*{Problem 7: Solar Outputs}
+
+
+\subsection*{{(a.)}}
+Based on the Figure provided, the minimum
+radiative energy flux of an M-Class flare
+would be $10^{-5} \, \mathrm{W/m^2}$.
+
+\subsection*{{(b.)}}
+Assuming the peak energy of the flare being $\phi_{1AU}=5*10^{-4} \, \mathrm{W/m^2}$, 
+we can find the corresponding energy flux at the emission source at $1.5 \, \mathrm{solar radii}$
+to be a result from the inverse square law.
+
+\[
+\begin{gathered}
+\frac{\phi_{1AU}}{\phi_{1.5 solar radii}} = (\frac{1. 5solar radii}{1AU})^2 \\
+1.5_{solarradii} = 1.04*10^9 \\
+1AU = 1.496*10^11 \\
+\text{We rearrange for } \phi_{1.5 solar radii} \\
+\phi_{1.5 solar radii} = \phi_{1AU}(\frac{1.496*10^11 \, \mathrm{m}}{1.04*10^9 \, \mathrm{m}})^2 \\
+\boxed{\therefore \phi_{1.5 solar radii} = 0.0719 \, \mathrm{W/m^2}}
+\end{gathered}
+\]
+
+\subsection*{{(c.)}}
+According to this chart, the pattern of a sharp rise and
+slow decay over time seems to occur only twice, once on the 7th
+and once again on the 13th. Meaning that there was likely 2 CMEs
+launched into the Heliosphere in this time period.
+
+
+
+\subsection*{{(d.)}}
+When comparing the relation between X-ray flares and the flux of
+solar protons, notice that when there is a X flare event, there is 
+an increase in solar proton flux. 
+
+\subsection*{{(e.)}}
+When comparing the relation between cosmic rays and proton flux and
+radiative energy flux, we can see that when the solar proton flux decreases
+over time as a result of an X-Flare, the cosmic rays measured would be negative
+of $(\mathrm{\% \, of\, Baseline})$, meanwhile near the start where it is at more of a 
+steady condition, there is a positive and more steady $(\mathrm{\% \, of \, Baseline})$
+
+\section*{Problem 8: Parker Solar Probe}
+\hspace*{2em}My favorite instrument aboard the Parker Solar Probe would be the
+FIELDS instrument. It's purpose is to measure magnetic fields of the
+solar corona during the PSP mission to study the Sun. FIELDS has two fluxgate magnetometers,
+one search coil magnetometer, and five voltage sensors. It is accompanied
+by four whip antennas. This can then measure Electric Field, Magnetic Field,
+EM waves, and RF emissions using this combination of antennas and magnetometers, being able to sample at 2 MHz.
+It's SWAP would depend on how one classifies the size of the instrument. The 
+accompanying antennas are approximately 2 meters, and the magnetometer boom is ~3.5 meters,
+though the size of the magnetometers are about the size of a fist.
+As a whole it would weigh roughly 23 kg, and roughly 22 watts. The instrument contributes
+to the PSP's parent investigation of characterizing the dynamic region close to the Sun by
+being the one to take the field measurements with its antennas and set of magnetometers.
+
+\newpage
+\section*{MATLAB Code}
+\begin{verbatim}
+%% ASEN 5335 Aerospace Environment
+%% Justin Le
+%% HW1 Problem 4
+
+clc;clear;close all
+
+% Defining constants
+c = 3E8; %[m/s]
+meV_2_KE = 1.602E-13; %[J]
+m_0 = 1.67E-27; %[kg]
+
+Au = 1.496E11; %[m]
+R_s = 6.957E8; %[m]
+
+d = Au-2*R_s;
+
+
+% Given conditions
+meV = [1, 10, 100, 500]; %[meV]
+
+% Convert to energy [J]
+
+KE = meV.*meV_2_KE;
+
+%Calculate velocity
+v_ms = c*sqrt(1 - 1./(KE./(m_0*c^2) + 1).^2); %[m/s] 
+
+% Finding time from v=d/t
+t_s = d./v_ms;
+t_h = t_s * (1/3600);
+
+%% Plot distance traveled vs. time
+
+t = linspace(0, max(t_s), 1000); % [s]
+
+distance = v_ms'.*t; % [m]
+distance_AU = distance./Au; % [AU]
+time_days = t./(24*3600); % [days]
+
+figure
+plot(time_days, distance_AU, 'LineWidth', 2)
+xlabel('Time [days]')
+ylabel('Distance Traveled [AU]')
+title('Distance Traveled vs. Time for Protons')
+legend('1 MeV', '10 MeV', '100 MeV', '500 MeV', 'Location', 'northwest')
+grid on
+
+exportgraphics(gcf, 'AeroEnvHW1P4_solarparticle.png', 'Resolution', 300);
+\end{verbatim}
+
+\end{document}

@@ -1,0 +1,26 @@
+%% ASEN 5335 Aerospace Environment
+%% Justin Le
+%% HW 2 Problem 1
+
+% using MSISatmosphere, function provides mass at some given alt
+% integrate over a range to find total mass
+
+alt_km = 0:1:1000; % altitude vector, km
+
+n = MSISatmosphere1000(alt_km); % pass km, matching the function's table
+
+rho_g_cm3 = n.mass; % Given density at some altitude
+rho_kg_m3 = rho_g_cm3*1000; % Conversion
+
+% calculate mass by integrating rho*dV over shells,
+% where dV/dr = 4*pi*r^2 (r = distance from Earth's center)
+
+R_E_m = 6371e3; % Radius of the Earth in meters
+r_m = R_E_m + alt_km*1000; % convert to m and account for Earth radius
+
+dV_dr = 4*pi*r_m.^2; % m^2, dV/dr at each altitude (vectorized)
+integrand = rho_kg_m3.*dV_dr; % kg/m
+
+total_atmos_mass = trapz(r_m, integrand) % kg, trapz supplies the dr weighting
+
+total_mass = 4*pi*trapz(rho_kg_m3,)
