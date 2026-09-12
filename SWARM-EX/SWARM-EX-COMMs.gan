@@ -62,24 +62,74 @@
             </task>
             <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-10-06" duration="7" complete="0" expand="true"/>
         </task>
-        <task id="10" uid="a724b713119a4113937f9748ad9fa35c" name="Set up ground station setup" meeting="false" start="2026-09-10" duration="19" complete="0" expand="true">
-            <task id="6" uid="10cab30ea91d400f8548e6dfc5930ea9" name="HFSS Transfer" meeting="false" start="2026-09-15" duration="3" complete="0" expand="true"/>
-            <task id="11" uid="af003f05501440568d78dbdbfe8cee34" name="Grab GNU and hydra from GS PC in STIG" meeting="false" start="2026-09-10" duration="4" complete="0" expand="true">
-                <depend id="12" type="2" difference="0" hardness="Strong"/>
+        <task id="100" uid="4cb9e5f70bc147b98eac7d69bbe34dd4" name="Hydra Lithium Communication" meeting="false" start="2026-09-16" duration="13" complete="0" expand="true">
+            <task id="101" uid="7010fdbba6dd40aabf91a16aca77ecea" name="MCT: Review test docs" meeting="false" start="2026-09-16" duration="1" complete="0" expand="true">
+                <depend id="102" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="12" uid="a18fb75f7dd54643bf50c7bb079f3917" name="Setup gnu and hydra on new setup" meeting="false" start="2026-09-16" duration="5" complete="0" expand="true">
-                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            <task id="102" uid="10b4c327c59543ef860b5f613832b533" name="MCT: Bench setup" meeting="false" start="2026-09-17" duration="2" complete="0" expand="true">
+                <depend id="103" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="13" uid="74d37549ca3940e988675879be0cc9cb" name="Get gnu and hydra talking" meeting="false" start="2026-09-23" duration="10" complete="0" expand="true"/>
+            <task id="103" uid="b840f70de21745b9b43186270500ad49" name="MCT: Practice run-through of test" meeting="false" start="2026-09-21" duration="1" complete="0" expand="true">
+                <depend id="104" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="104" uid="c7f7c9dfe12d4ef7b9d158fafb2f5cff" name="MCT: Full run through of test" meeting="false" start="2026-09-22" duration="2" complete="0" expand="true">
+                <depend id="105" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="105" uid="771e5ae5c0784fd68bb0a1673cf4546a" name="MCT: Troubleshooting" meeting="false" start="2026-09-24" duration="1" complete="0" expand="true">
+                <depend id="106" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="106" uid="c5f88ba7c1d64ff5940c84b438cd1b05" name="SCT-1: Review test docs" meeting="false" start="2026-09-25" duration="1" complete="0" expand="true">
+                <depend id="107" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="107" uid="0658b5c627ec43769a81980a11ef3001" name="SCT-1: Bench setup" meeting="false" start="2026-09-28" duration="1" complete="0" expand="true">
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="108" uid="c56a6c0fef2447d29da39def3d674e8a" name="SCT-1: Practice run-through of test" meeting="false" start="2026-09-29" duration="1" complete="0" expand="true">
+                <depend id="109" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="109" uid="edba77267d1f44f8b8ddacfe9add8d20" name="SCT-1: Full run through of test" meeting="false" start="2026-09-30" duration="2" complete="0" expand="true">
+                <depend id="110" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-02" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="5" uid="f308df3f5ec04f7e8ba0982b43c585b6" name="Li-2 Dev Work" meeting="false" start="2026-09-16" duration="18" complete="0" expand="true">
-            <task id="7" uid="1808bb50a02d422b8f92e2f99bd7a599" name="MCT" meeting="false" start="2026-09-16" duration="8" complete="0" expand="true">
-                <depend id="8" type="2" difference="0" hardness="Strong"/>
+        <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-10" duration="20" complete="0" expand="true">
+            <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-10" duration="4" complete="0" expand="true">
+                <depend id="122" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="8" uid="9191d99a89c546d383414c5892710583" name="SCT1" meeting="false" start="2026-09-28" duration="5" complete="0" expand="true">
-                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-09-16" duration="3" complete="0" expand="true">
+                <depend id="123" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="9" uid="360d35605a8c4b7b95d5422e668c652c" name="SCT2" meeting="false" start="2026-10-05" duration="5" complete="0" expand="true"/>
+            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-09-21" duration="3" complete="0" expand="true">
+                <depend id="124" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-09-24" duration="3" complete="0" expand="true">
+                <depend id="125" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-09-29" duration="7" complete="0" expand="true"/>
+        </task>
+        <task id="130" uid="4bef31340e6b41b69397699cd8de4fe9" name="Running SCT-2" meeting="false" start="2026-10-05" duration="21" complete="0" expand="true">
+            <task id="131" uid="6e1d5d0347ac4b06826f664c6873fec0" name="Review SCT2 procedure" meeting="false" start="2026-10-05" duration="2" complete="0" expand="true">
+                <depend id="132" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="132" uid="62160b5f0cf144df86ac43d4a3f878fb" name="Reverify Hydra-Li Comms" meeting="false" start="2026-10-07" duration="3" complete="0" expand="true">
+                <depend id="133" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="133" uid="13c9059b6068427d9b8c0864384e1854" name="Reverify GND station setup" meeting="false" start="2026-10-12" duration="3" complete="0" expand="true">
+                <depend id="134" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="134" uid="903a92797ee74b5eae36d3659ad103de" name="Bench setup" meeting="false" start="2026-10-15" duration="2" complete="0" expand="true">
+                <depend id="135" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="135" uid="f077e7d05885430aac82944a6f8505d8" name="Practice run-through of SCT-2" meeting="false" start="2026-10-19" duration="2" complete="0" expand="true">
+                <depend id="136" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="136" uid="bf86aac8da7744d6b501634f22ce7a0c" name="Full SCT2 runthrough" meeting="false" start="2026-10-21" duration="4" complete="0" expand="true">
+                <depend id="137" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="137" uid="e8d5fd07e8d24f51a308722af09209bc" name="Testing and troubleshooting" meeting="false" start="2026-10-27" duration="3" complete="0" expand="true">
+                <depend id="138" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="138" uid="a5c9ccbe4bf24f03a71015d579357b96" name="Post-test documentation review" meeting="false" start="2026-10-30" duration="2" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>
