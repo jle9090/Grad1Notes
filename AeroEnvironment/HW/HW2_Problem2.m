@@ -28,3 +28,16 @@ H_helium = (k*T)/(m_helium*g)
 amu_hydrogen = 2.01594;
 m_hydrogen= amu_hydrogen*gmol2kg;
 H_hydrogen = (k*T)/(m_hydrogen*g)
+
+% Convert to km
+H_air_km = H_air/1000
+H_oxygen_km = H_oxygen/1000
+H_helium_km = H_helium/1000
+H_hydrogen_km = H_hydrogen/1000
+
+% Recalculate scale height with MSIS profile
+MSIS = MSISatmosphere1000(1)
+m_air_MSIS_kg = ((MSIS.o2*0.209)+(MSIS.n2*0.781))/1000
+m_oxygen_MSIS_kg = (MSIS.o*MSIS.mass)/1000
+m_helium_MSIS_kg = (MSIS.he*MSIS.mass)/1000
+m_hydrogen_MSIS_kg = (MSIS.h*MSIS.mass)/1000
