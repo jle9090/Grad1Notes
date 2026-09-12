@@ -33,16 +33,46 @@
 \vspace{1em}
 
 \section*{Problem 1: Spaceballs}
+\subsection*{(i.)}
+\hspace*{2em}We are able to use the provided MSISatmosphere1000.m profile to calculate the
+an approximate total mass of the atmosphere. The MSISatmosphere1000 function 
+takes inputs of altitudes and outputs a structure, one of which is mass density which
+corresponds to that altitude. Using MATLAB we are able to have a vector of altitudes that
+range to 1000 km, the maximum model input of the MSISatmosphere1000 function. We can then 
+obtain a vector of mass densities $\rho$. We use the following,
+\[
+\begin{gathered}
+m = \rho V \\
+m = \int{\rho dV} \\
+\text{And for a sphere,} \\
+m = \int{\rho*4\pi r^2 dr} \\
+\therefore m = 4\pi\int{\rho r^2dr}
+\end{gathered}
+\]
+\hspace*{2em}With $\rho$ being a vector and $r$ also being a vector of radius of this atmospheric
+shell (altitude including radius of the Earth $R_E = 6371 \, \mathrm{km}$), we can integrate
+within MATLAB to obtain a $\boxed{m=5.297*10^{18}\,\mathrm{kg}}$.
+\subsection*{(ii.)}
+\hspace*{2em}Assuming a volume of $V = 10*10^3*10*10^3*100*10^3 = 1*10^{13} \, \mathrm{m^3}$, a constant temperature $T = 300 \, \mathrm{K}$, molar mass $M = 0.029 \, \mathrm{kg/mol}$,
+and universal gas constant $R = 8.314 \, \mathrm{J/(molK)}$. We can use the ideal gas law,
+\[
+\begin{gathered}
+PV = \frac{m}{M}\\
+\text{Rewrite to solve for pressure $P$,} \\
+P = \frac{m}{MV}RT \\
+\boxed{P = 4.556*10^{10} \, \mathrm{Pa}}
+\end{gathered}
+\]
 
 \section*{Problem 2: Atmospheric Scale Height}
-To calculate the scale height $H$ of air mixture assuming $N_2/O_2$ mixture
+\hspace*{2em}To calculate the scale height $H$ of air mixture assuming $N_2/O_2$ mixture
 at sea level, we use the equation.
 \[
 \begin{gathered}
 H = \frac{kT}{mg}
 \end{gathered}
 \]
-Where we assume a constant $T = 300 \, \mathrm{K}$ from the problem, and $k = 1.38*10^{-23} \, \mathrm{J/K}$,
+\hspace*{2em}Where we assume a constant $T = 300 \, \mathrm{K}$ from the problem, and $k = 1.38*10^{-23} \, \mathrm{J/K}$,
 the Boltzmann constant, $g = 9.81 \, \mathrm{m/s^2}$, the gravitational constant. We then 
 seek the molecular mass of $N_2/O_2$ mixture. This can be obtained from the table provided
 in the HW. We find the atomic mass of the air mixture provided with the \% by volume
@@ -54,7 +84,7 @@ m_{air} = 4.745*10^{-26} \, \mathrm{kg}
 \end{gathered}
 \]
 
-This process of finding molecular weight and converting it can be repeated for
+\hspace*{2em}This process of finding molecular weight and converting it can be repeated for
 atomic Oxygen, helium, and hydrogen. 
 \[
 \begin{gathered}
@@ -69,7 +99,7 @@ m_{hydrogen} = 3.3487*10^{-27} \, \mathrm{kg}
 \end{gathered}
 \]
 
-The scale height equation can be used with each respective molecular mass of
+\hspace*{2em}The scale height equation can be used with each respective molecular mass of
 the species in question.
 \[
 \begin{gathered}
