@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-08" view-index="0" gantt-divider-location="770" resource-divider-location="300" version="3.3.3322" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-06" view-index="0" gantt-divider-location="771" resource-divider-location="300" version="3.3.3316" locale="en_US">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Name" width="587" order="0"/>
-        <field id="tpd4" name="Begin date" width="21" order="1"/>
-        <field id="tpd5" name="End date" width="161" order="2"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="466" order="0"/>
+        <field id="tpd4" name="Begin date" width="131" order="1"/>
+        <field id="tpd5" name="End date" width="158" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -92,20 +92,20 @@
             </task>
             <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-02" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-10" duration="20" complete="0" expand="true">
-            <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-10" duration="4" complete="0" expand="true">
+        <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-10" duration="17" complete="0" expand="true">
+            <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-10" duration="2" complete="0" expand="true">
                 <depend id="122" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-09-16" duration="3" complete="0" expand="true">
+            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-09-14" duration="2" complete="0" expand="true">
                 <depend id="123" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-09-21" duration="3" complete="0" expand="true">
+            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-09-16" duration="3" complete="0" expand="true">
                 <depend id="124" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-09-24" duration="3" complete="0" expand="true">
+            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-09-21" duration="3" complete="0" expand="true">
                 <depend id="125" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-09-29" duration="7" complete="0" expand="true"/>
+            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-09-24" duration="7" complete="0" expand="true"/>
         </task>
         <task id="130" uid="4bef31340e6b41b69397699cd8de4fe9" name="Running SCT-2" meeting="false" start="2026-10-05" duration="21" complete="0" expand="true">
             <task id="131" uid="6e1d5d0347ac4b06826f664c6873fec0" name="Review SCT2 procedure" meeting="false" start="2026-10-05" duration="2" complete="0" expand="true">
