@@ -101,6 +101,11 @@ INPUT ./atmospheric_profile.png
 INPUT ./atmospheric_profile.png
 INPUT ./atmospheric_profile.png
 INPUT ./atmospheric_profile.png
+INPUT ./NRLMSIS_Species_Density_Profiles.png
+INPUT ./NRLMSIS_Species_Density_Profiles.png
+INPUT ./NRLMSIS_Species_Density_Profiles.png
+INPUT ./NRLMSIS_Species_Density_Profiles.png
+INPUT ./NRLMSIS_Species_Density_Profiles.png
 INPUT HW2_Solve.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
