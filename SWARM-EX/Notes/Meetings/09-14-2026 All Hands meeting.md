@@ -16,3 +16,11 @@
 - contact skai about setting up the gnd station laptop
 
 ![[Pasted image 20260914120001.png]]
+
+
+
+Nick Mcgray?
+- allegeldy to return next semester and work on the bluefin x band downlinking
+- is there an x band hat that needs to be manufactured?
+	- gabe??
+- luke mathews will eventually reach out to subsystems; check their requirements and verifications

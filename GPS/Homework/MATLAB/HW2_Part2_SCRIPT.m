@@ -55,8 +55,15 @@ end
 
 % Part 2
 
-% Finding reference position vector
 
-enu_NIST = ecef_NIST*ECEF2ENU(lat_NIST,lon_NIST)
-enu_SMEAD = ecef_SMEAD*ECEF2ENU(lat_SMEAD,lon_SMEAD)
-enu_EQUATOR = ecef_EQUATOR*ECEF2ENU(lat_EQUATOR,lon_EQUATOR)
+% Finding reference position vector
+% First get unit vectors of ECEF coords
+r_ecef_NIST = ecef_NIST./norm(ecef_NIST);
+r_ecef_EQUATOR = ecef_EQUATOR./norm(ecef_EQUATOR);
+% Convert to ENU
+r_enu_NIST = ECEF2ENU(lat_NIST,lon_NIST)*r_ecef_NIST'
+r_enu_EQUATOR = ECEF2ENU(lat_EQUATOR,lon_EQUATOR)*r_ecef_EQUATOR'
+
+% These make sense as the radial component of a position on the surface
+% of the sphere should always relatively point up in ENU frame. Deviation
+% is from variation between a sphere and wgs84 model.
