@@ -33,9 +33,9 @@ lla_EQUATOR = [lat_EQUATOR, lon_EQUATOR, height_m_EQUATOR];
 
 % 3 User Positions in ECEF
 % Convert to ECEF
-ecef_NIST = lla2ecef(lla_NIST);
-ecef_SMEAD = lla2ecef(lla_SMEAD);
-ecef_EQUATOR = lla2ecef(lla_EQUATOR);
+ecef_NIST = lla2ecef(lla_NIST, 'WGS84');
+ecef_SMEAD = lla2ecef(lla_SMEAD, 'WGS84');
+ecef_EQUATOR = lla2ecef(lla_EQUATOR, 'WGS84');
 
 % Put into table for LLA and ECEF
 Location = ["NIST"; "SMEAD"; "EQUATOR"];
@@ -47,8 +47,16 @@ Y_m = [ecef_NIST(2); ecef_SMEAD(2); ecef_EQUATOR(2)];
 Z_m = [ecef_NIST(3); ecef_SMEAD(3); ecef_EQUATOR(3)];
 
 
-%% im still pretty sure this is wrong...
+%% Print table for reference
 for i = 1:length(Location)
     fprintf('%-8s Lat: %.6f  Lon: %.6f  Height: %.0f  X: %.0f  Y: %.0f  Z: %.0f\n', Location(i), Latitude_deg(i), Longitude_deg(i), Height_m(i), X_m(i), Y_m(i), Z_m(i));
 end
 
+
+% Part 2
+
+% Finding reference position vector
+
+enu_NIST = ecef_NIST*ECEF2ENU(lat_NIST,lon_NIST)
+enu_SMEAD = ecef_SMEAD*ECEF2ENU(lat_SMEAD,lon_SMEAD)
+enu_EQUATOR = ecef_EQUATOR*ECEF2ENU(lat_EQUATOR,lon_EQUATOR)
