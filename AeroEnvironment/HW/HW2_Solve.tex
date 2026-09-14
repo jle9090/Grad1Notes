@@ -127,6 +127,7 @@ profiles there will be different temperatures instead of the fixed $T$ used earl
 Using altitudes of 150,180,450,500,600,1000km.
 
 \section*{Problem 3: Atmosphere Variation}
+\subsection*{(i.)}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{NRLMSIS_Species_Density_Profiles.png}
@@ -134,7 +135,65 @@ Using altitudes of 150,180,450,500,600,1000km.
     \label{fig:NRLMSIS_Species_Density_Profiles}
 \end{figure}
 
+\subsection*{(ii.)}
+\hspace*{2em}At 600 km, there is variation between the solar maximum and solar minimum with the
+density profiles of each species deviating. At solar maximums, the densities of each
+species tends to be larger by multiple orders of magnitude than they would be a solar minimums.
+This can even be soon overall with the Total Mass Density variation between solar maximums and
+minimums. The implication of this for spacecraft operations is that there will be different atmospheric conditions
+for spacecraft depending on if it is a solar maximum or minimum. For instance, drag will be
+dependent on the density of the atmosphere, during solar maximums where density can increase
+by multiple orders of magnitude, drag will also be considerably affected. This could especially
+impact LEO orbits with their orbits being considerably influenced by drag. Their satellite operations
+could therefore vary depending on if it is a solar maximum or minimum. 
+
+\subsection*{(iii.)}
+\hspace*{2em}The dominant atmospheric constituent would be O, atomic oxygen, for both solar
+maximum and solar minimum. (TODO: Double check this...)
 \section*{Problem 4: Oxygen Impact}
+\subsection*{(i.)}
+\hspace*{2em}To find the characteristic velocity of an oxygen atom O at $T = 1000 \, \mathrm{K}$ in the thermosphere,
+we are able to use the Maxwell Boltzmann Characteristic RMS Velocity equation.
+\[
+\begin{gathered}
+v_{rms} = \sqrt{ \frac{3k_B T}{m} }
+\end{gathered}
+\]
+\hspace*{2em}$k_B = 1.38*10^{-23} \, mathrm{m^2 kg / s^2 K}$ as the Boltzmann constant, and 
+we are able to find $m = 2.657*10^{-26} \, \mathrm{kg}$ for an oxygen atom. We can plug this
+into the equation to simply find,
+\[
+\begin{gathered}
+\boxed{v = 1248.26 \, \mathrm{m/s}}    
+\end{gathered}
+\]
+
+\subsection*{(ii.)}
+\hspace*{2em}We then calculate the velocity that a 
+spacecraft in LEO at 600 km would have,
+\[
+\begin{gathered}
+v_{orbit} = \sqrt{\frac{GM_{Earth}}{r}} \\
+G = 6.67*10^{-11} \, \mathrm{Nm^2/kg^2} \\
+M_{Earth} = 5.972*10^{24} \, \mathrm{kg} \\
+r = 600*10^3 \, \mathrm{m} + 6371*10^3 \, \mathrm{m} = 6671*10^3 \, \mathrm{m} \\
+\therefore v_{orbit} = 7559 \, \mathrm{m/s}
+\end{gathered}
+\]
+
+The energy imparted onto the spacecraft by an oxygen atom would be using the mass
+of the oxygen atom and the velocity of the spacecraft,
+\[
+\begin{gathered}
+KE = \frac{1}{2} m_{oxygen} v_{orbit}^2 \\
+KE = 7.591*10^{-19} J \\
+\text{Where $1\, \mathrm{J}$ = $6.242*10^{18} \, \mathrm{eV}$} \\
+\boxed{\therefore KE = 4.738 \, \mathrm{eV}}
+\end{gathered}
+\]
+
+\subsection*{(iii.)}
+
 
 \section*{Problem 5: Orbit Decay}
 

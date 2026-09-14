@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789260014.41177 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" "HW2_Solve.pdf" "HW2_Solve" 1789260014.86462 0
+["pdflatex"] 1789360096.68268 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" "HW2_Solve.pdf" "HW2_Solve" 1789360097.10984 0
   "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" 1789259792.90613 4863 a26e9cded3e27f3b211be77103e4e703 ""
+  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" 1789360096.48652 7387 7f263fc3815e30b2b8af1f84bbdbf2cf ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -63,9 +63,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
-  "HW2_Solve.aux" 1789260014.81674 423 845de6bce3813786f6d7c341f5006f6b "pdflatex"
-  "HW2_Solve.tex" 1789259792.90613 4863 a26e9cded3e27f3b211be77103e4e703 ""
-  "NRLMSIS_Species_Density_Profiles.png" 1789260013.5088 583169 03823bfd2c4b83656232197590926a7c ""
+  "HW2_Solve.aux" 1789360097.06122 423 a8f0a8245e1cec52da38c9ea1443332f "pdflatex"
+  "HW2_Solve.tex" 1789360096.48652 7387 7f263fc3815e30b2b8af1f84bbdbf2cf ""
+  "NRLMSIS_Species_Density_Profiles.png" 1789260167.03114 583169 99df5ddc5e555fb5d475d58afeb5df5a ""
   "atmospheric_profile.png" 1789252432.41963 72370 b431a221c97b1b86e9292b63c0fa8778 ""
   (generated)
   "HW2_Solve.aux"
