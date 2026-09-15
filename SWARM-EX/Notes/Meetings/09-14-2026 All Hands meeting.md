@@ -24,3 +24,4 @@ Nick Mcgray?
 - is there an x band hat that needs to be manufactured?
 	- gabe??
 - luke mathews will eventually reach out to subsystems; check their requirements and verifications
+- who to contact ISIS antenna about material properties and CAD stuff for Landon?
