@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789403876.74579 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" "build/HW2_Solve.pdf" "HW2_Solve" 1789403877.72802 0
+["pdflatex"] 1789507593.0488 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" "build/HW2_Solve.pdf" "HW2_Solve" 1789507593.74514 0
   "/etc/texmf/web2c/texmf.cnf" 1787852770.52377 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" 1789403874.60841 7387 7f263fc3815e30b2b8af1f84bbdbf2cf ""
+  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex" 1789507592.78333 8732 f076ccd0cbdcef7133130bd460dff3e0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -63,10 +63,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787852809.09609 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787852869 8212543 dc6047f59c0d9fd45bb1f2649f736bb2 ""
-  "HW2_Solve.tex" 1789403874.60841 7387 7f263fc3815e30b2b8af1f84bbdbf2cf ""
+  "HW2_Solve.tex" 1789507592.78333 8732 f076ccd0cbdcef7133130bd460dff3e0 ""
   "NRLMSIS_Species_Density_Profiles.png" 1789403874.61475 583169 99df5ddc5e555fb5d475d58afeb5df5a ""
   "atmospheric_profile.png" 1789233689.66254 72370 b431a221c97b1b86e9292b63c0fa8778 ""
-  "build/HW2_Solve.aux" 1789403877.61276 423 a8f0a8245e1cec52da38c9ea1443332f "pdflatex"
+  "build/HW2_Solve.aux" 1789507593.67317 423 ec8faf47940af42d34eafba6cdaf2b48 "pdflatex"
   (generated)
   "build/HW2_Solve.aux"
   "build/HW2_Solve.log"

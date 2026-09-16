@@ -67,3 +67,11 @@ r_enu_EQUATOR = ECEF2ENU(lat_EQUATOR,lon_EQUATOR)*r_ecef_EQUATOR'
 % These make sense as the radial component of a position on the surface
 % of the sphere should always relatively point up in ENU frame. Deviation
 % is from variation between a sphere and wgs84 model.
+
+
+% Export this for part 3.
+save('user_ECEF.mat', 'ecef_NIST')
+save('lat_NIST.mat', 'lat_NIST')
+save('lon_NIST.mat', 'lon_NIST')
+
+save('HW2Part2.mat','ecef_NIST','lat_NIST','lon_NIST')

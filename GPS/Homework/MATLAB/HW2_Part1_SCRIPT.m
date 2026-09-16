@@ -4,6 +4,8 @@
 
 clc; clear; close all
 
+% TODO: Generalize this into a function that can be 
+
 % Reading in the sp3 files
 sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
 
@@ -68,4 +70,6 @@ grid on
 % TODO: Describe: yeah its stll pretty bad to be off by an order of 1000
 % meters
 
-
+% Export this for part 3.
+X_PRN5 = [X_m_PRN5,Y_m_PRN5,Z_m_PRN5];
+save("HW2Part1.mat", 'X_PRN5','TOW_s_PRN5')

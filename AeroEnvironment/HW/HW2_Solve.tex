@@ -193,9 +193,48 @@ KE = 7.591*10^{-19} J \\
 \]
 
 \subsection*{(iii.)}
-
+TODO: TODO
 
 \section*{Problem 5: Orbit Decay}
+\subsection*{(i.)}
+\[
+\begin{gathered}
+\frac{dP}{dt} = -3 \pi a \rho \frac{C_D A}{m} \\
+\\
+\text{We want to use the following equations} \\
+F_{drag} = \frac{1}{2} \rho V^2 C_D A \\
+V = \sqrt{\frac{G M_E}{a}} \\
+P^2 G M_E = 4 \pi^2 a^3 
+\\
+\text{We can rewrite the drag equation as,} \\
+m \frac{dV}{dt} = \frac{1}{2} \rho V^2 C_D A \\
+\frac{dV}{dt} = \frac{1}{2m} \rho V^2 C_D A \\
+\text{With that, rewrite the velocity equation as, } \\
+V^2 a = G M_E \\
+\text{And then differentiate w.r.t to time,} \\
+2va \frac{dV}{dt} + V^2 \frac{da}{dt} = 0 \\
+\frac{da}{dt} = -\frac{2a}{v} \frac{dV}{dt}\\
+\text{Plug in $\frac{dV}{dt}$} \\
+\frac{da}{dt} = -\frac{1}{m} a \rho V C_D A \\
+\\
+\text{Examining Kepler's law equation, we also differentiate for time,} \\
+2PG M_E \frac{dP}{dt} = 12\pi^2 a^2 \frac{da}{dt} \\
+PGM_E \frac{dP}{dt} = 6 \pi^2 a^2 \frac{da}{dt} \\
+\frac{da}{dt} = \frac{PGM_E}{6 \pi^2 a^2} \frac{dP}{dt} \\
+\text{Substitute $\frac{da}{dt}$, } \\
+-\frac{1}{m} a \rho V C_D A = \frac{PGM_E}{6 \pi^2 a^2} \frac{dP}{dt} \\
+\frac{dP}{dt} = (\frac{6 \pi^2 a^2}{mPVa})(-\rho C_D A) \\
+\text{for a circular orbit, $PV = 2\pi a$} \\
+\frac{dP}{dt} = (\frac{6 \pi^2 a^2}{m 2 \pi a})(-\rho C_D A) \\ 
+\\
+\boxed{\frac{dP}{dt} = -3 \pi a \rho \frac{C_D A}{m}}
+\end{gathered}
+\]
+\subsection*{(ii.)}
+
+\subsection*{(iii.)}
+
+\subsection*{(iv.)}
 
 \section*{Problem 6: Atmosphere Uncertainty and Neutral Winds}
 

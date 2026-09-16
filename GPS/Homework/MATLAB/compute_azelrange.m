@@ -1,0 +1,21 @@
+function [AZ, EL, RANGE] = compute_azelrange(userECEF, satECEF, ref_lat, ref_lon)
+% satECEF is ECEF vector of sat
+% userECEF is ECEF vector of the user
+
+% Take difference of ECEF vectors, conver to ENU depending on ref angle
+r_ECEF = satECEF-userECEF;
+
+% Calculting range.
+RANGE = norm(r_ECEF);
+
+% Converting to ENU frame
+r_ENU = ECEF2ENU(ref_lat,ref_lon)*r_ECEF';
+x_E = r_ENU(1);
+x_N = r_ENU(2);
+x_U = r_ENU(3);
+
+% Calclating azimuth and elevation
+AZ = atan2d(x_E,x_N);
+EL = asind(x_U/norm(r_ENU));
+
+end
