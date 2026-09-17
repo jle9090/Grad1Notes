@@ -4,21 +4,22 @@
 
 clc; clear; close all
 
-% Reading in the sp3 files
+% Reading in the sp3 file
 sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
 
-% Extract every PRN up front and store in a struct array for ease of use.
-for prn_number = 1:32
-    [week_number, TOW_s, TOW_hr, time_epoch_s, time_epoch_hr, X_m, Y_m, Z_m, clock_bias_us, constellation, PRN] = extract_sp3_prn(sp3, prn_number);
-    satPRN(prn_number) = struct('week_number', week_number, 'TOW_s', TOW_s, 'TOW_hr', TOW_hr, ...
-        'time_epoch_s', time_epoch_s, 'time_epoch_hr', time_epoch_hr, 'X_m', X_m, 'Y_m', Y_m, 'Z_m', Z_m, ...
-        'clock_bias_us', clock_bias_us, 'constellation', constellation, 'PRN', PRN);
-end
+% Extract every PRN and store in a struct array for ease of use.
+% for prn_number = 1:32
+%     [week_number, TOW_s, TOW_hr, time_epoch_s, time_epoch_hr, X_m, Y_m, Z_m, clock_bias_us, constellation, PRN] = extract_sp3_prn(sp3, prn_number);
+%     satPRN(prn_number) = struct('week_number', week_number, 'TOW_s', TOW_s, 'TOW_hr', TOW_hr, ...
+%         'time_epoch_s', time_epoch_s, 'time_epoch_hr', time_epoch_hr, 'X_m', X_m, 'Y_m', Y_m, 'Z_m', Z_m, ...
+%         'clock_bias_us', clock_bias_us, 'constellation', constellation, 'PRN', PRN);
+% end
 
-% Graphing PRN X,Y,Z [m] against time (0-24 hours)
+satPRN = extract_sp3_prn(sp3);
+
+% Graphing PRN X,Y,Z [m] against time
 
 % a.
-% Select data for PRN5 directly from satPRN
 figure()
 plot(satPRN(5).time_epoch_hr,satPRN(5).X_m,'LineWidth',1.5)
 hold on
