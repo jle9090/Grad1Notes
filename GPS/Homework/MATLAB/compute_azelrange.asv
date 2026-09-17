@@ -1,12 +1,10 @@
-function [AZ, EL, RANGE] = compute_azelrange(userECEF, satECEF)
+function [AZ, EL, RANGE] = compute_azelrange(userECEF, satECEF, ref_lat, ref_lon)
 % satECEF is ECEF vector of sat
 % userECEF is ECEF vector of the user
 
 % Calculate LLA from userECEF
-lla = ecef2lla(userECEF,'WGS84');
-ref_lat = lla(1);
-ref_lon = lla(2);
-altitude = lla(3);
+[]
+
 % Take difference of ECEF vectors, conver to ENU depending on ref angle
 r_ECEF = satECEF-userECEF;
 
