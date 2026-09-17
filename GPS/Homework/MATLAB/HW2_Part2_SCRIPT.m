@@ -74,4 +74,4 @@ save('user_ECEF.mat', 'ecef_NIST')
 save('lat_NIST.mat', 'lat_NIST')
 save('lon_NIST.mat', 'lon_NIST')
 
-save('HW2Part2.mat','ecef_NIST','lat_NIST','lon_NIST')
+save('HW2Part2.mat','ecef_NIST','lat_NIST','lon_NIST','ecef_SMEAD','ecef_EQUATOR')
