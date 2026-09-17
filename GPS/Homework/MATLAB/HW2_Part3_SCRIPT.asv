@@ -9,7 +9,7 @@ load("HW2Part2.mat")
 
 % Part a, write a function compute_azelrange, check with a simple source
 % Force a satellite to be directly above NIST
-[az_test, el_test, range_test] = compute_azelrange(ecef_NIST, 5*ecef_NIST,lat_NIST, lon_NIST)
+[az_test, el_test, range_test] = compute_azelrange(ecef_NIST, 5*ecef_NIST)
 
 % TODO: Explain that this is reasonable because elevation is ~90 degrees,
 % directly over head which makes sense given the satellite being directly
@@ -18,29 +18,114 @@ load("HW2Part2.mat")
 
 % Part b, plot ECEF for user at NIST for PRN5
 for i = 1:length(TOW_s_PRN5)
-    [AZ(i),EL(i),RANGE(i)] = compute_azelrange(ecef_NIST, X_PRN5(i,:), lat_NIST, lon_NIST);
+    [AZ_PRN5(i),EL_PRN5(i),RANGE_PRN5(i)] = compute_azelrange(ecef_NIST, X_PRN5(i,:));
 end
 
 figure()
-plot(TOW_s_PRN5, AZ, 'LineWidth', 1.5)
+plot(TOW_s_PRN5, AZ_PRN5, 'LineWidth', 1.5)
 xlabel('TOW (S)')
 ylabel('Azimuth (deg)')
 title('Azimuth vs TOW')
 grid on
 
 figure()
-plot(TOW_s_PRN5, EL, 'LineWidth', 1.5)
+plot(TOW_s_PRN5, EL_PRN5, 'LineWidth', 1.5)
 xlabel('TOW (S)')
 ylabel('Elevation (deg)')
 title('Elevation vs TOW')
 grid on
 
 figure()
-plot(TOW_s_PRN5, RANGE, 'LineWidth', 1.5)
+plot(TOW_s_PRN5, RANGE_PRN5, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Range (m)')
+title('Range vs TOW (when Visible)')
+grid on
+
+% C. Only plot when NIST can view the satellite
+
+visibleIndices_PRN5 = EL_PRN5>0;
+TOW_s_PRN5_visible = TOW_s_PRN5;
+AZ_PRN5_visible = AZ_PRN5; AZ_PRN5_visible(~visibleIndices_PRN5) = NaN;
+EL_PRN5_visible = EL_PRN5; EL_PRN5_visible(~visibleIndices_PRN5) = NaN;
+RANGE_PRN5_visible = RANGE_PRN5; RANGE_PRN5_visible(~visibleIndices_PRN5) = NaN;
+
+figure()
+plot(TOW_s_PRN5_visible, AZ_PRN5_visible, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Azimuth (deg)')
+title('Azimuth vs TOW (when Visible)')
+grid on
+
+figure()
+plot(TOW_s_PRN5_visible, EL_PRN5_visible, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Elevation (deg)')
+title('Elevation vs TOW (when Visible)')
+grid on
+
+figure()
+plot(TOW_s_PRN5_visible, RANGE_PRN5_visible, 'LineWidth', 1.5)
 xlabel('TOW (S)')
 ylabel('Range (m)')
 title('Range vs TOW')
-grid on 
+grid on
 
-% C. 
+% d. Repeat for PRN 8
 
+for i = 1:length(TOW_s_PRN8)
+    [AZ_PRN8(i),EL_PRN8(i),RANGE_PRN8(i)] = compute_azelrange(ecef_NIST, X_PRN8(i,:));
+end
+
+figure()
+plot(TOW_s_PRN8, AZ_PRN8, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Azimuth (deg)')
+title('Azimuth vs TOW (PRN 8)')
+grid on
+
+figure()
+plot(TOW_s_PRN8, EL_PRN8, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Elevation (deg)')
+title('Elevation vs TOW (PRN 8)')
+grid on
+
+figure()
+plot(TOW_s_PRN8, RANGE_PRN8, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Range (m)')
+title('Range vs TOW (PRN 8, when Visible)')
+grid on
+
+% Only plot when NIST can view the satellite
+
+visibleIndices_PRN8 = EL_PRN8>0;
+TOW_s_PRN8_visible = TOW_s_PRN8;
+AZ_PRN8_visible = AZ_PRN8; AZ_PRN8_visible(~visibleIndices_PRN8) = NaN;
+EL_PRN8_visible = EL_PRN8; EL_PRN8_visible(~visibleIndices_PRN8) = NaN;
+RANGE_PRN8_visible = RANGE_PRN8; RANGE_PRN8_visible(~visibleIndices_PRN8) = NaN;
+
+figure()
+plot(TOW_s_PRN8_visible, AZ_PRN8_visible, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Azimuth (deg)')
+title('Azimuth vs TOW (PRN 8, when Visible)')
+grid on
+
+figure()
+plot(TOW_s_PRN8_visible, EL_PRN8_visible, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Elevation (deg)')
+title('Elevation vs TOW (PRN 8, when Visible)')
+grid on
+
+figure()
+plot(TOW_s_PRN8_visible, RANGE_PRN8_visible, 'LineWidth', 1.5)
+xlabel('TOW (S)')
+ylabel('Range (m)')
+title('Range vs TOW (PRN 8, when Visible)')
+grid on
+
+% Part 4:
+plotAzEl([AZ_PRN5, EL_PRN5, 
