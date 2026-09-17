@@ -4,8 +4,11 @@ Ground station
 	- Antenna raised by ~ Sept 29th? More time because Alex left?
 	- please take pictures and document work
 	- need cable for motor configuration
+		- cable is on the way
 Li2
 - edin elsa fill out when2meet,
+
+Shehan needs to talk to alex about crosslink
 
 
 New members
