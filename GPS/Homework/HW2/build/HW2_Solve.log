@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  17 SEP 2026 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  17 SEP 2026 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -226,6 +226,17 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
+<../MATLAB/figures/xyz_PRN5_sp3.png, id=1, 929.6331pt x 747.3521pt>
+File: ../MATLAB/figures/xyz_PRN5_sp3.png Graphic file (type png)
+<use ../MATLAB/figures/xyz_PRN5_sp3.png>
+Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3.png  used on input line 39.
+(pdftex.def)             Requested size: 375.80544pt x 302.11716pt.
+<../MATLAB/figures/xyz_PRN5_sp3_almanac.png, id=2, 929.6331pt x 633.9685pt>
+File: ../MATLAB/figures/xyz_PRN5_sp3_almanac.png Graphic file (type png)
+<use ../MATLAB/figures/xyz_PRN5_sp3_almanac.png>
+Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3_almanac.png  used on input line 47.
+(pdftex.def)             Requested size: 375.80544pt x 256.28183pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -235,25 +246,63 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (build/HW2_Solve.aux)
+ <../MATLAB/figures/xyz_PRN5_sp3.png (PNG copy)>]
+<../MATLAB/figures/prn5_residuals.png, id=11, 946.3355pt x 746.1476pt>
+File: ../MATLAB/figures/prn5_residuals.png Graphic file (type png)
+<use ../MATLAB/figures/prn5_residuals.png>
+Package pdftex.def Info: ../MATLAB/figures/prn5_residuals.png  used on input line 54.
+(pdftex.def)             Requested size: 375.80544pt x 296.31331pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[2 <../MATLAB/figures/xyz_PRN5_sp3_almanac.png (PNG copy)>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <../MATLAB/figures/prn5_residuals.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4] (build/HW2_Solve.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3283 strings out of 474222
- 47537 string characters out of 5748733
- 1924975 words of memory out of 5000000
- 25539 multiletter control sequences out of 15000+600000
- 559272 words of font info for 40 fonts, out of 8000000 for 9000
+ 3370 strings out of 474222
+ 49567 string characters out of 5748733
+ 1929975 words of memory out of 5000000
+ 25607 multiletter control sequences out of 15000+600000
+ 564095 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,294b,211s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on build/HW2_Solve.pdf (1 page, 38146 bytes).
+ 57i,11n,65p,294b,235s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on build/HW2_Solve.pdf (4 pages, 3266267 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

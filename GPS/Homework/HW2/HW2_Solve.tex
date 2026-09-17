@@ -32,5 +32,89 @@
 \vspace{1em}
 
 \section*{Problem 1}
+\subsection*{(a.)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../MATLAB/figures/xyz_PRN5_sp3.png}
+    \caption{XYZ vs Time of SP3 Output}
+    \label{fig:xyz_PRN5}
+\end{figure}
+
+\subsection*{(b)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../MATLAB/figures/xyz_PRN5_sp3_almanac.png}
+    \caption{XYZ vs Time of SP3 Output with Almanac}
+    \label{fig:xyz_PRN5_sp3_almanac}
+\end{figure}
+\subsection*{(c.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../MATLAB/figures/prn5_residuals.png}
+    \caption{Residuals Between Almanac and SP3}
+    \label{fig:residuals}
+\end{figure}
+\subsection*{(d.)}
+\hspace*{2em} When observing the differences between the results of SP3 and the yuma almanac,
+if we treat SP3 data as our truth data we would have differences of up to $1 \, \mathrm{km}$
+as observed in Figure \ref{fig:residuals}. Although large, if we consider the MEO orbit of the GPS
+constellations and the fact the observer will be on Earth, the differences in angles which we would
+use to determine if a satellite is visible would be less than a degree. This distance is not useful
+for tracking however very useful for checking if satellites are visible or not.
+
+\section*{Problem 2}
+\subsection*{(a.)}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lrrrrrr}
+        \hline
+        Station & Lat (deg) & Lon (deg) & Height (m) & X (m) & Y (m) & Z (m) \\
+        \hline
+        NIST    & 39.995067 & -105.262606 & 1648 & -1288398 & -4721697 & 4078625 \\
+        SMEAD   & 40.010389 & -105.244278 & 1588 & -1286588 & -4721009 & 4079890 \\
+        EQUATOR & 0  & -105.262606 & -18  & -1678998 & -6153159 & 0 \\
+        \hline
+    \end{tabular}
+    \caption{Station coords}
+    \label{tab:station_coords}
+\end{table}
+
+TODO: Explain how we got these LLAs.
+
+\subsection*{(b)}
+\hspace*{2em}Examine MATLAB function in MATLAB section below. We convert the ECEF vectors of
+
+
+\begin{verbatim}
+r_enu_NIST =
+
+         0
+   -0.0033
+    1.0000
+
+
+r_enu_EQUATOR =
+
+         0
+         0
+    1.0000
+\end{verbatim}
+\section*{Problem 3}
+\subsection*{(a.)}
+
+\subsection*{(b)}
+
+\subsection*{(c.)}
+
+\subsection*{(d.)}
+
+\section*{Problem 4}
+\subsection*{(a.)}
+
+\subsection*{(b)}
+
+\subsection*{(c.)}
+
 
 \end{document}
