@@ -7,14 +7,7 @@ clc; clear; close all
 % Reading in the sp3 file
 sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
 
-% Extract every PRN and store in a struct array for ease of use.
-% for prn_number = 1:32
-%     [week_number, TOW_s, TOW_hr, time_epoch_s, time_epoch_hr, X_m, Y_m, Z_m, clock_bias_us, constellation, PRN] = extract_sp3_prn(sp3, prn_number);
-%     satPRN(prn_number) = struct('week_number', week_number, 'TOW_s', TOW_s, 'TOW_hr', TOW_hr, ...
-%         'time_epoch_s', time_epoch_s, 'time_epoch_hr', time_epoch_hr, 'X_m', X_m, 'Y_m', Y_m, 'Z_m', Z_m, ...
-%         'clock_bias_us', clock_bias_us, 'constellation', constellation, 'PRN', PRN);
-% end
-
+% Read entire spr for all prns and put into a struct
 satPRN = extract_sp3_prn(sp3);
 
 % Graphing PRN X,Y,Z [m] against time
@@ -31,6 +24,8 @@ xlabel('Time [hrs]')
 ylabel('Distance [m]')
 grid on
 hold on
+legend('X SP3','Y SP3','Z SP3')
+exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3.png'), 'Resolution', 300);
 
 % b. Using the almanac
 [gps_ephem,gps_ephem_cell] = read_GPSyuma('YUMA231.alm.txt',2);
@@ -40,6 +35,7 @@ hold on
 
 plot(satPRN(5).TOW_s, satPos_m_PRN5, 'LineWidth',1.5)
 legend('X SP3','Y SP3','Z SP3', 'X YUMA','Y YUMA','Z YUMA')
+exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3_almanac.png'), 'Resolution', 300);
 
 % c. Plot residuals
 residuals_PRN5 = [satPos_m_PRN5(:,1)-satPRN(5).X_m,satPos_m_PRN5(:,2)-satPRN(5).Y_m,satPos_m_PRN5(:,3)-satPRN(5).Z_m];
@@ -50,6 +46,7 @@ xlabel('Time [hr]')
 ylabel('Difference [m]')
 legend('X','Y','Z')
 grid on
+exportgraphics(gcf, fullfile('figures', 'prn5_residuals.png'), 'Resolution', 300);
 
 % TODO: Describe: yeah its stll pretty bad to be off by an order of 1000
 % meters
