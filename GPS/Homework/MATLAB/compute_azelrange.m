@@ -11,16 +11,16 @@ altitude = lla(3);
 r_ECEF = satECEF-userECEF;
 
 % Calculting range.
-RANGE = norm(r_ECEF);
+RANGE = sqrt(sum(r_ECEF.^2,2));
 
 % Converting to ENU frame
-r_ENU = ECEF2ENU(ref_lat,ref_lon)*r_ECEF';
-x_E = r_ENU(1);
-x_N = r_ENU(2);
-x_U = r_ENU(3);
+r_ENU = (ECEF2ENU(ref_lat,ref_lon)*r_ECEF')';
+x_E = r_ENU(:,1);
+x_N = r_ENU(:,2);
+x_U = r_ENU(:,3);
 
 % Calclating azimuth and elevation
 AZ = atan2d(x_E,x_N);
-EL = asind(x_U/norm(r_ENU));
+EL = asind(x_U./sqrt(sum(r_ENU.^2,2)));
 
 end

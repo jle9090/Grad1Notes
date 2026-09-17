@@ -2,5 +2,6 @@
     "cSpell.words": [
         "fluxgate",
         "Heliopause"
-    ]
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/build"
 }

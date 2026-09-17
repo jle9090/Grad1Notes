@@ -25,8 +25,9 @@ ylabel('Distance [m]')
 grid on
 hold on
 legend('X SP3','Y SP3','Z SP3')
-set(gcf, 'Units', 'inches', 'Position', [0 0 16 12]) % smaller physical size for the doc
-exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3.png'), 'Resolution', 900);
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4.5]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3.png'), 'Resolution', 300);
 
 % b. Using the almanac
 [gps_ephem,gps_ephem_cell] = read_GPSyuma('YUMA231.alm.txt',2);
@@ -36,8 +37,9 @@ exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3.png'), 'Resolution', 900);
 
 plot(satPRN(5).TOW_s, satPos_m_PRN5, 'LineWidth',1.5)
 legend('X SP3','Y SP3','Z SP3', 'X YUMA','Y YUMA','Z YUMA')
-set(gcf, 'Units', 'inches', 'Position', [0 0 16 12])
-exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3_almanac.png'), 'Resolution', 900);
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4.5]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'xyz_PRN5_sp3_almanac.png'), 'Resolution', 300);
 
 % c. Plot residuals
 residuals_PRN5 = [satPos_m_PRN5(:,1)-satPRN(5).X_m,satPos_m_PRN5(:,2)-satPRN(5).Y_m,satPos_m_PRN5(:,3)-satPRN(5).Z_m];
@@ -48,11 +50,9 @@ xlabel('Time [hr]')
 ylabel('Difference [m]')
 legend('X','Y','Z')
 grid on
-set(gcf, 'Units', 'inches', 'Position', [0 0 16 12])
-exportgraphics(gcf, fullfile('figures', 'prn5_residuals.png'), 'Resolution', 900);
-
-% TODO: Describe: yeah its stll pretty bad to be off by an order of 1000
-% meters
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4.5]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'prn5_residuals.png'), 'Resolution', 300);
 
 % Export this for part 3.
 save("HW2Part1.mat", 'satPRN')

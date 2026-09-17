@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  17 SEP 2026 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.29)  17 SEP 2026 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/hastur/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW2/HW2_Solve.tex"
-(/home/hastur/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW2/HW2_Solve.tex
+**"/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW2/HW2_Solve.tex"
+(/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW2/HW2_Solve.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -151,27 +151,67 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box53
 \@float@everytoks=\toks25
 \@floatcapt=\box54
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count277
+\lst@gtempboxa=\box55
+\lst@token=\toks26
+\lst@length=\count278
+\lst@currlwidth=\dimen160
+\lst@column=\count279
+\lst@pos=\count280
+\lst@lostspace=\dimen161
+\lst@width=\dimen162
+\lst@newlines=\count281
+\lst@lineno=\count282
+\lst@maxwidth=\dimen163
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count283
+\lst@skipnumbers=\count284
+\lst@framebox=\box56
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count277
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count285
+\l__pdf_internal_box=\box57
 ) (build/HW2_Solve.aux)
 \openout1 = `HW2_Solve.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -209,33 +249,34 @@ LaTeX Font Info:    ... okay on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen160
-\scratchbox=\box56
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen161
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count286
+\scratchdimen=\dimen164
+\scratchbox=\box58
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen165
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-<../MATLAB/figures/xyz_PRN5_sp3.png, id=1, 929.6331pt x 747.3521pt>
+\c@lstlisting=\count292
+<../MATLAB/figures/xyz_PRN5_sp3.png, id=1, 374.5995pt x 312.6882pt>
 File: ../MATLAB/figures/xyz_PRN5_sp3.png Graphic file (type png)
 <use ../MATLAB/figures/xyz_PRN5_sp3.png>
-Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3.png  used on input line 39.
-(pdftex.def)             Requested size: 375.80544pt x 302.11716pt.
-<../MATLAB/figures/xyz_PRN5_sp3_almanac.png, id=2, 929.6331pt x 633.9685pt>
+Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3.png  used on input line 51.
+(pdftex.def)             Requested size: 281.85587pt x 235.27419pt.
+<../MATLAB/figures/xyz_PRN5_sp3_almanac.png, id=2, 374.5995pt x 312.6882pt>
 File: ../MATLAB/figures/xyz_PRN5_sp3_almanac.png Graphic file (type png)
 <use ../MATLAB/figures/xyz_PRN5_sp3_almanac.png>
-Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3_almanac.png  used on input line 47.
-(pdftex.def)             Requested size: 375.80544pt x 256.28183pt.
+Package pdftex.def Info: ../MATLAB/figures/xyz_PRN5_sp3_almanac.png  used on input line 59.
+(pdftex.def)             Requested size: 281.85587pt x 235.27419pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -247,25 +288,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <../MATLAB/figures/xyz_PRN5_sp3.png (PNG copy)>]
-<../MATLAB/figures/prn5_residuals.png, id=11, 946.3355pt x 746.1476pt>
+<../MATLAB/figures/prn5_residuals.png, id=11, 394.5942pt x 310.2792pt>
 File: ../MATLAB/figures/prn5_residuals.png Graphic file (type png)
 <use ../MATLAB/figures/prn5_residuals.png>
-Package pdftex.def Info: ../MATLAB/figures/prn5_residuals.png  used on input line 54.
-(pdftex.def)             Requested size: 375.80544pt x 296.31331pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[2 <../MATLAB/figures/xyz_PRN5_sp3_almanac.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
+Package pdftex.def Info: ../MATLAB/figures/prn5_residuals.png  used on input line 66.
+(pdftex.def)             Requested size: 281.85587pt x 221.64436pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -276,7 +308,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[3 <../MATLAB/figures/prn5_residuals.png (PNG copy)>]
+[2 <../MATLAB/figures/xyz_PRN5_sp3_almanac.png (PNG copy)> <../MATLAB/figures/prn5_residuals.png (PNG copy)>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -284,25 +316,221 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4] (build/HW2_Solve.aux)
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4]
+<../MATLAB/figures/ranging_PRN5.png, id=22, 388.0899pt x 511.6716pt>
+File: ../MATLAB/figures/ranging_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/ranging_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/ranging_PRN5.png  used on input line 185.
+(pdftex.def)             Requested size: 281.85587pt x 371.62775pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5]
+<../MATLAB/figures/ranging_PRN5_visibility.png, id=26, 391.4625pt x 511.6716pt>
+File: ../MATLAB/figures/ranging_PRN5_visibility.png Graphic file (type png)
+<use ../MATLAB/figures/ranging_PRN5_visibility.png>
+Package pdftex.def Info: ../MATLAB/figures/ranging_PRN5_visibility.png  used on input line 192.
+(pdftex.def)             Requested size: 281.85587pt x 368.4267pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6 <../MATLAB/figures/ranging_PRN5.png (PNG copy)>]
+<../MATLAB/figures/ranging_PRN5_PRN8.png, id=30, 388.0899pt x 511.6716pt>
+File: ../MATLAB/figures/ranging_PRN5_PRN8.png Graphic file (type png)
+<use ../MATLAB/figures/ranging_PRN5_PRN8.png>
+Package pdftex.def Info: ../MATLAB/figures/ranging_PRN5_PRN8.png  used on input line 202.
+(pdftex.def)             Requested size: 281.85587pt x 371.62775pt.
+<../MATLAB/figures/ranging_PRN5_PRN8_visible.png, id=31, 388.0899pt x 511.6716pt>
+File: ../MATLAB/figures/ranging_PRN5_PRN8_visible.png Graphic file (type png)
+<use ../MATLAB/figures/ranging_PRN5_PRN8_visible.png>
+Package pdftex.def Info: ../MATLAB/figures/ranging_PRN5_PRN8_visible.png  used on input line 208.
+(pdftex.def)             Requested size: 281.85587pt x 371.62775pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7 <../MATLAB/figures/ranging_PRN5_visibility.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8 <../MATLAB/figures/ranging_PRN5_PRN8.png (PNG copy)>]
+<../MATLAB/figures/NIST_skyplot.png, id=39, 530.7027pt x 532.1481pt>
+File: ../MATLAB/figures/NIST_skyplot.png Graphic file (type png)
+<use ../MATLAB/figures/NIST_skyplot.png>
+Package pdftex.def Info: ../MATLAB/figures/NIST_skyplot.png  used on input line 221.
+(pdftex.def)             Requested size: 281.85587pt x 282.6299pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9 <../MATLAB/figures/ranging_PRN5_PRN8_visible.png (PNG copy)>]
+<../MATLAB/figures/SMEAD_skyplot.png, id=43, 530.7027pt x 532.1481pt>
+File: ../MATLAB/figures/SMEAD_skyplot.png Graphic file (type png)
+<use ../MATLAB/figures/SMEAD_skyplot.png>
+Package pdftex.def Info: ../MATLAB/figures/SMEAD_skyplot.png  used on input line 229.
+(pdftex.def)             Requested size: 281.85587pt x 282.6299pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10 <../MATLAB/figures/NIST_skyplot.png (PNG copy)>]
+<../MATLAB/figures/EQUATOR_skyplot.png, id=47, 530.7027pt x 532.1481pt>
+File: ../MATLAB/figures/EQUATOR_skyplot.png Graphic file (type png)
+<use ../MATLAB/figures/EQUATOR_skyplot.png>
+Package pdftex.def Info: ../MATLAB/figures/EQUATOR_skyplot.png  used on input line 236.
+(pdftex.def)             Requested size: 281.85587pt x 282.6299pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11 <../MATLAB/figures/SMEAD_skyplot.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12 <../MATLAB/figures/EQUATOR_skyplot.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 261.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[22] (build/HW2_Solve.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3370 strings out of 474222
- 49567 string characters out of 5748733
- 1929975 words of memory out of 5000000
- 25607 multiletter control sequences out of 15000+600000
- 564095 words of font info for 59 fonts, out of 8000000 for 9000
+ 6237 strings out of 474222
+ 88807 string characters out of 5748733
+ 2234975 words of memory out of 5000000
+ 28452 multiletter control sequences out of 15000+600000
+ 564431 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,294b,235s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/HW2_Solve.pdf (4 pages, 3266267 bytes).
+ 57i,12n,65p,456b,2315s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on build/HW2_Solve.pdf (22 pages, 3734426 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
