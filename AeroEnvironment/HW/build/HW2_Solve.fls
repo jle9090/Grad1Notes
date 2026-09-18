@@ -1,9 +1,9 @@
-PWD /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW
+PWD /home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex
+INPUT /home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW2_Solve.tex
 OUTPUT build/HW2_Solve.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -106,7 +106,32 @@ INPUT ./NRLMSIS_Species_Density_Profiles.png
 INPUT ./NRLMSIS_Species_Density_Profiles.png
 INPUT ./NRLMSIS_Species_Density_Profiles.png
 INPUT ./NRLMSIS_Species_Density_Profiles.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT ./HW2Problem5_OrbitDecay_400km_x.png
+INPUT ./HW2Problem5_OrbitDecay_400km_x.png
+INPUT ./HW2Problem5_OrbitDecay_400km_x.png
+INPUT ./HW2Problem5_OrbitDecay_400km_x.png
+INPUT ./HW2Problem5_OrbitDecay_400km_x.png
+INPUT ./HW2Problem5_OrbitDecay_500km_x.png
+INPUT ./HW2Problem5_OrbitDecay_500km_x.png
+INPUT ./HW2Problem5_OrbitDecay_500km_x.png
+INPUT ./HW2Problem5_OrbitDecay_500km_x.png
+INPUT ./HW2Problem5_OrbitDecay_500km_x.png
+INPUT ./HW2Problem5_OrbitDecay_400km_z.png
+INPUT ./HW2Problem5_OrbitDecay_400km_z.png
+INPUT ./HW2Problem5_OrbitDecay_400km_z.png
+INPUT ./HW2Problem5_OrbitDecay_400km_z.png
+INPUT ./HW2Problem5_OrbitDecay_400km_z.png
+INPUT ./HW2Problem6_OrbitDecay_400km_x_uncertainty.png
+INPUT ./HW2Problem6_OrbitDecay_400km_x_uncertainty.png
+INPUT ./HW2Problem6_OrbitDecay_400km_x_uncertainty.png
+INPUT ./HW2Problem6_OrbitDecay_400km_x_uncertainty.png
+INPUT ./HW2Problem6_OrbitDecay_400km_x_uncertainty.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT build/HW2_Solve.aux
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -116,4 +141,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
