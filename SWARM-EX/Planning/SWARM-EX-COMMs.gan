@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-06" view-index="0" gantt-divider-location="741" resource-divider-location="300" version="3.3.3322" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-13" view-index="0" gantt-divider-location="726" resource-divider-location="300" version="3.3.3316" locale="en_US">
     <description/>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="448" order="0"/>
-        <field id="tpd4" name="Begin date" width="125" order="1"/>
-        <field id="tpd5" name="End date" width="152" order="2"/>
+        <field id="tpd3" name="Name" width="439" order="0"/>
+        <field id="tpd4" name="Begin date" width="122" order="1"/>
+        <field id="tpd5" name="End date" width="149" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -38,7 +38,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" uid="4b10220495b440d9a0a096ee5fdbe541" name="Gpredict" meeting="false" start="2026-09-09" duration="26" complete="0" expand="true">
+        <task id="0" uid="4b10220495b440d9a0a096ee5fdbe541" name="Gpredict" meeting="false" start="2026-09-09" duration="28" complete="0" expand="true">
             <task id="1" uid="c55893ed9ff34919b23325bd7f821aa4" name="Create motor test plan" meeting="false" start="2026-09-09" duration="4" complete="0" expand="true">
                 <depend id="2" type="2" difference="0" hardness="Strong"/>
             </task>
@@ -51,16 +51,16 @@
             <task id="4" uid="68ddd923a8484f739497fc05c77663c4" name="Raising antenna" meeting="false" start="2026-09-29" duration="4" complete="0" expand="true">
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="14" uid="ee82f0f3efac45d2b94a1b0699e97a63" name="finding exact location of ground station" meeting="false" start="2026-09-16" duration="4" complete="0" expand="true">
+            <task id="14" uid="ee82f0f3efac45d2b94a1b0699e97a63" name="finding exact location of ground station" meeting="false" start="2026-09-16" duration="6" complete="0" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-09-22" duration="5" complete="0" expand="true">
+            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-09-24" duration="5" complete="0" expand="true">
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="interface gnu with g predict" meeting="false" start="2026-09-29" duration="5" complete="0" expand="true">
+            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="interface gnu with g predict" meeting="false" start="2026-10-01" duration="5" complete="0" expand="true">
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-10-06" duration="7" complete="0" expand="true"/>
+            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-10-08" duration="7" complete="0" expand="true"/>
         </task>
         <task id="100" uid="4cb9e5f70bc147b98eac7d69bbe34dd4" name="Hydra Lithium Communication" meeting="false" start="2026-09-16" duration="13" complete="0" expand="true">
             <task id="101" uid="7010fdbba6dd40aabf91a16aca77ecea" name="MCT: Review test docs" meeting="false" start="2026-09-16" duration="1" complete="0" expand="true">
@@ -92,20 +92,21 @@
             </task>
             <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-02" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-10" duration="17" complete="0" expand="true">
+        <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-10" duration="20" complete="0" expand="true">
             <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-10" duration="2" complete="0" expand="true">
                 <depend id="122" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-09-14" duration="2" complete="0" expand="true">
+            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-09-14" duration="7" complete="0" expand="true">
                 <depend id="123" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-09-16" duration="3" complete="0" expand="true">
+            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-09-23" duration="4" complete="0" expand="true">
                 <depend id="124" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-09-21" duration="3" complete="0" expand="true">
+            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-09-29" duration="5" complete="0" expand="true">
+                <depend id="17" type="2" difference="0" hardness="Strong"/>
                 <depend id="125" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-09-24" duration="7" complete="0" expand="true"/>
+            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-10-06" duration="2" complete="0" expand="true"/>
         </task>
         <task id="130" uid="4bef31340e6b41b69397699cd8de4fe9" name="Running SCT-2" meeting="false" start="2026-10-05" duration="21" complete="0" expand="true">
             <task id="131" uid="6e1d5d0347ac4b06826f664c6873fec0" name="Review SCT2 procedure" meeting="false" start="2026-10-05" duration="2" complete="0" expand="true">
