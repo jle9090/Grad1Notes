@@ -1,7 +1,11 @@
-where 30db anttenuators
+intro to hydra and lithiums
+
+where 30db anttenuators - in palo office
 
 user manual of pins and breakout board are different
- why ![[Pasted image 20260915110300.png]]
+ why 
+ 
+ ![[Pasted image 20260915110300.png]] what is this?
 
 safe2mate setup, pin orders of Li vs Board, where is this documented
 
@@ -25,3 +29,15 @@ pin 1 is UART_TO_CDH
 - how is UART protocol being broken up?
 
 pin layout of the cdh board?
+
+**MCT Notes**
+
+ground are connected
+J3, J2 ground, J6 ground
+
+seven volts
+
+commands to send:
+`example_noop`
+`send_comm_cmd`
+`reset_counters`
