@@ -26,72 +26,33 @@ ephem_time_hr = ephem_time_s/3600;
 
 [AZ_NIST, EL_NIST, RANGE_NIST] = compute_azelrange(NIST_ECEF, satPos);
 
-% TODO: Check this nan gapping
 gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
 AZ_NIST(gap_idx) = NaN;
 EL_NIST(gap_idx) = NaN;
 RANGE_NIST(gap_idx) = NaN;
 
 figure()
-plot(ephem_time_hr, AZ_NIST, 'LineWidth', 1.5)
+plot(PRN05_GPS_rinexData.Time, AZ_NIST, 'LineWidth', 1.5)
 grid on
-xlabel('Time (hr)')
+xlabel('Time (UTC)')
 ylabel('Azimuth (deg)')
 title(sprintf('PRN %d Azimuth from NIST', PRN_number))
 
 figure()
-plot(ephem_time_hr, EL_NIST, 'LineWidth', 1.5)
+plot(PRN05_GPS_rinexData.Time, EL_NIST, 'LineWidth', 1.5)
 grid on
-xlabel('Time (hr)')
+xlabel('Time (UTC)')
 ylabel('Elevation (deg)')
 title(sprintf('PRN %d Elevation from NIST', PRN_number))
 
 figure()
-plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
+plot(PRN05_GPS_rinexData.Time, RANGE_NIST, 'LineWidth', 1.5)
 grid on
-xlabel('Time (hr)')
+xlabel('Time (UTC)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
 
-% Part B. Recompute expected range.
-% From sp3
-sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
-satPRN = extract_sp3_prn(sp3);
 
-[AZ_NIST_TRUTH, EL_NIST_TRUTH, RANGE_NIST_TRUTH] = compute_azelrange(NIST_ECEF, [satPRN(5).X_m satPRN(5).Y_m satPRN(5).Z_m]);
-
-sp3_time_s = satPRN(5).week_number.*604800 + satPRN(5).TOW_s;
-sp3_time_hr = sp3_time_s/3600;
-
-figure()
-plot(ephem_time_hr, AZ_NIST, 'LineWidth', 2.5)
-hold on
-plot(sp3_time_hr, AZ_NIST_TRUTH, '--', 'LineWidth', 1.5)
-grid on
-xlabel('Time (hr)')
-ylabel('Azimuth (deg)')
-title(sprintf('PRN %d Azimuth from NIST', PRN_number))
-legend('Ephemeris', 'SP3 Truth')
-
-figure()
-plot(ephem_time_hr, EL_NIST, 'LineWidth', 2.5)
-hold on
-plot(sp3_time_hr, EL_NIST_TRUTH, '--', 'LineWidth', 1.5)
-grid on
-xlabel('Time (hr)')
-ylabel('Elevation (deg)')
-title(sprintf('PRN %d Elevation from NIST', PRN_number))
-legend('Ephemeris', 'SP3 Truth')
-
-figure()
-plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 2.5)
-hold on
-plot(sp3_time_hr, RANGE_NIST_TRUTH, '--', 'LineWidth', 1.5)
-grid on
-xlabel('Time (hr)')
-ylabel('Range (m)')
-title(sprintf('PRN %d Range from NIST', PRN_number))
-legend('Ephemeris', 'SP3 Truth')
 
 function [week_number, tow] = utc2gpstime(utc_datetime, leap_seconds)
 % Converts utc format to gps accounting for leapseconds as well, currently

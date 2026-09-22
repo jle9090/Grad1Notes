@@ -10,7 +10,7 @@ rinexData = rinexread('NIST00USA_R_20262310000_01D_30S_MO.rnx');
 
 GPS_rinexData = rinexData.GPS;
 
-% TODOL Call this to include NaNs for discontinous graphing
+% TODO: Call this to include NaNs for discontinous graphing
 PRN_number = 5;
 PRN_index = GPS_rinexData.SatelliteID == PRN_number;
 PRN05_GPS_rinexData = GPS_rinexData(PRN_index,:);
