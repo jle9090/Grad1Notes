@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1790045007.92349 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790045008.30491 0
-  "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" 1790045007.74866 1168 2089831f065d99b054012f5f410fc269 ""
+["pdflatex"] 1790102046.59072 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790102047.45708 0
+  "/etc/texmf/web2c/texmf.cnf" 1787852770.52377 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" 1790102046.15531 1168 dbd9c1812c7460d54e8e33f714580bac ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
@@ -42,10 +42,10 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
-  "HW3_Solve.tex" 1790045007.74866 1168 2089831f065d99b054012f5f410fc269 ""
-  "build/HW3_Solve.aux" 1790045008.26771 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787852809.09609 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787852869 8212543 dc6047f59c0d9fd45bb1f2649f736bb2 ""
+  "HW3_Solve.tex" 1790102046.15531 1168 dbd9c1812c7460d54e8e33f714580bac ""
+  "build/HW3_Solve.aux" 1790102047.39331 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   (generated)
   "build/HW3_Solve.aux"
   "build/HW3_Solve.log"
