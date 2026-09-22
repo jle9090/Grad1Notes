@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-13" view-index="0" gantt-divider-location="726" resource-divider-location="300" version="3.3.3316" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="SWARM EX COMMs" company="" webLink="http://" view-date="2026-09-13" view-index="0" gantt-divider-location="711" resource-divider-location="300" version="3.3.3322" locale="en_US">
     <description/>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="439" order="0"/>
-        <field id="tpd4" name="Begin date" width="122" order="1"/>
-        <field id="tpd5" name="End date" width="149" order="2"/>
+        <field id="tpd3" name="Name" width="430" order="0"/>
+        <field id="tpd4" name="Begin date" width="119" order="1"/>
+        <field id="tpd5" name="End date" width="146" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>

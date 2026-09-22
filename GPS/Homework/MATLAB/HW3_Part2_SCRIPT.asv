@@ -1,0 +1,13 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% HW3 Part 2 Main Script
+clc;clear;close all
+
+% Use read clean to read in ephermides
+clean_GPSbroadcast = read_clean_GPSbroadcast('brdc2310.26n');
+
+% Read in sp3 ephem like HW2 
+sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
+satPRN = extract_sp3_prn(sp3, [satPRN,]);
+
+ephermides = eph2pvt2025(sp3);
