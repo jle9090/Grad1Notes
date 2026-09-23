@@ -116,7 +116,7 @@ amu_{oxygen} = (31.9988 \, \mathrm{g/mol}) / 2 = 15.9994 \, \mathrm{g/mol} \\
 amu_{helium} = 4.0026  \, \mathrm{g/mol} \\
 \cancel{amu_{hydrogen} = 2.01594  \, \mathrm{g/mol}}
 \\
-\textcolor{red}{\text{For hydrogen, we use atomic } H\text{, not molecular } H_2.} \\
+\textcolor{red}{\text{For hydrogen use atomic }} \\
 \textcolor{red}{amu_{hydrogen} \approx 1.008 \, \mathrm{g/mol} \text{ (atomic H)}}
 \\
 \\
@@ -163,11 +163,9 @@ observe that MSIS profile for altitude matches up with the figure provided in th
 also observe the relation between scale height and the altitudes of each species. Scale height increases
 as density and altitude increase.
 
-\textcolor{red}{We can also compare quantitatively by taking the slope of $\ln(n)$ vs. altitude on
-the MSIS plot: $H \approx 6.9\,\mathrm{km}$ below 100 km (close to air), $H \approx 41.1\,\mathrm{km}$
-between 200--500 km (between O and He), and $H \approx 217.7\,\mathrm{km}$ above 600 km (near H, but
-lower). The mismatch is mostly from assuming constant $T=300\,\mathrm{K}$ -- MSIS temperatures reach
-$\sim\!1000\,\mathrm{K}$ higher up, which raises the true scale height.}
+\textcolor{red}{We can also compare quantitatively by taking the derivative of log of density vs. altitude on
+the MSIS plot. This gives local scale height at every altitude. The mismatch is mostly from assuming constant $T=300\,\mathrm{K}$
+, which raises the actual scale height in the atmosphere.}
 
 \newpage
 \section*{Problem 3: Atmosphere Variation}
@@ -192,11 +190,11 @@ impact LEO orbits with their orbits being considerably influenced by drag. Their
 could therefore vary depending on if it is a solar maximum or minimum.
 
 \subsection*{(iii.)}
-\hspace*{2em}The dominant atmospheric constituent would be O, atomic oxygen, \sout{for both solar
+\hspace*{2em}The dominant atmospheric species would be O, atomic oxygen, \sout{for both solar
 maximum and solar minimum.}
 
 \textcolor{red}{This is the case for solar maximum. At solar minimum, we instead find Helium (He)
-to be the dominant constituent.}
+to be the dominant species.}
 
 \newpage
 \section*{Problem 4: Oxygen Impact}
@@ -257,10 +255,11 @@ for atomic oxygen that would have velocities higher than this. \sout{We use the 
 the slides to approximate that it would be ~$0.01\%$ of the atomic oxygen would have sufficient energy
 to cause sputtering.}
 
-\textcolor{red}{We must first subtract the spacecraft's own orbital velocity from the threshold:
-$v_{th} - v_{orbit} \approx 16.654 - 7.559 \approx 9 \, \mathrm{km/s}$. Integrating the
-Maxwell-Boltzmann distribution above that (halved for direction) gives a fraction of about
-$2.23\times10^{-34}$ -- essentially zero. Sputtering is negligible.}
+\textcolor{red}{By subtracting the spacecraft's own orbital velocity from the velocity threshold calculated earlier,
+$v_{th} - v_{orbit} \approx 16.654 - 7.559 \approx 9 \, \mathrm{km/s}$. We could then integrate the
+Maxwell-Boltzmann distribution above that with a factor of $\frac{1}{2}$ assuming only one side is impacted,
+this will give a fraction of about
+$2.23\times10^{-34}$, therefore there is minimal sputtering impact on the spacecraft.}
 
 \newpage
 \section*{Problem 5: Orbit Decay}
