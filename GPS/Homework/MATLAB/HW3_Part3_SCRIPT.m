@@ -1,6 +1,6 @@
 %% ASEN 5090 GPS/GNSS
 %% Justin Le
-%% HW3 Part 2 Main Script
+%% HW3 Part 3 Main Script
 clc;clear;close all
 
 % Reading in rinex
@@ -14,7 +14,7 @@ PRN_number = 5;
 PRN_index = rinexDataGPS.SatelliteID == PRN_number;
 PRN05_GPS_rinexData = rinexDataGPS(PRN_index,:);
 
-[NIST_GPS_week, NIST_GPS_TOW] = utc2gpstime(PRN05_GPS_rinexData.Time,18);
+[NIST_GPS_week, NIST_GPS_TOW] = utc2gpstime(PRN05_GPS_rinexData.Time);
 
 [health,satPos,satVel,satClkCorr] = eph2pvt2025(clean_GPSbroadcast, [NIST_GPS_week NIST_GPS_TOW], 5);
 
@@ -46,7 +46,7 @@ xlabel('Time (hr)')
 ylabel('Elevation (deg)')
 title(sprintf('PRN %d Elevation from NIST', PRN_number))
 
-range_fig = figure();
+figure()
 plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
 grid on
 xlabel('Time (hr)')
@@ -144,7 +144,12 @@ end
 R_expected(gap_idx) = NaN;
 
 % Add the expected (corrected) range to the previous range plot
-figure(range_fig);
+figure()
+plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
+grid on
+xlabel('Time (hr)')
+ylabel('Range (m)')
+title(sprintf('PRN %d Range from NIST', PRN_number))
 hold on
 plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
 legend('Naive (Reception Time)', 'Expected (Light-Time + Earth Rotation Corrected)')
@@ -161,12 +166,11 @@ xlabel('Time (hr)')
 ylabel('Range Difference (m)')
 title(sprintf('PRN %d Expected, Range Difference', PRN_number))
 
-function [week_number, tow] = utc2gpstime(utc_datetime, leap_seconds)
-% Converts utc format to gps accounting for leapseconds as well, currently
-% there are 18 leap seconds for GPS vs UTC.
+function [week_number, tow] = utc2gpstime(utc_datetime)
+% Converts utc format to gps accounting for leapseconds as well
 
-    gps_epoch = datetime(1980,1,6,0,0,0);
-    gps_datetime = utc_datetime + seconds(leap_seconds);
+    gps_epoch = datetime(1980,1,6,0,0,0,'TimeZone','UTCLeapSeconds');
+    gps_datetime = datetime(utc_datetime,'TimeZone','UTCLeapSeconds');
 
     seconds_since_gps_epoch = seconds(gps_datetime - gps_epoch);
 
