@@ -34,65 +34,24 @@ RANGE_NIST(gap_idx) = NaN;
 
 figure()
 plot(ephem_time_hr, AZ_NIST, 'LineWidth', 1.5)
-grid on
+grid minor
 xlabel('Time (hr)')
 ylabel('Azimuth (deg)')
 title(sprintf('PRN %d Azimuth from NIST', PRN_number))
 
 figure()
 plot(ephem_time_hr, EL_NIST, 'LineWidth', 1.5)
-grid on
+grid minor
 xlabel('Time (hr)')
 ylabel('Elevation (deg)')
 title(sprintf('PRN %d Elevation from NIST', PRN_number))
 
 figure()
 plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
-grid on
+grid minor
 xlabel('Time (hr)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
-
-% Part B. Recompute expected range.
-% From sp3
-% sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
-% satPRN = extract_sp3_prn(sp3);
-% 
-% [AZ_NIST_TRUTH, EL_NIST_TRUTH, RANGE_NIST_TRUTH] = compute_azelrange(NIST_ECEF, [satPRN(5).X_m satPRN(5).Y_m satPRN(5).Z_m]);
-% 
-% sp3_time_s = satPRN(5).week_number.*604800 + satPRN(5).TOW_s;
-% sp3_time_hr = sp3_time_s/3600;
-% 
-% figure()
-% plot(ephem_time_hr, AZ_NIST, 'LineWidth', 2.5)
-% hold on
-% plot(sp3_time_hr, AZ_NIST_TRUTH, '--', 'LineWidth', 1.5)
-% grid on
-% xlabel('Time (hr)')
-% ylabel('Azimuth (deg)')
-% title(sprintf('PRN %d Azimuth from NIST', PRN_number))
-% legend('Ephemeris', 'SP3 Truth')
-% 
-% figure()
-% plot(ephem_time_hr, EL_NIST, 'LineWidth', 2.5)
-% hold on
-% plot(sp3_time_hr, EL_NIST_TRUTH, '--', 'LineWidth', 1.5)
-% grid on
-% xlabel('Time (hr)')
-% ylabel('Elevation (deg)')
-% title(sprintf('PRN %d Elevation from NIST', PRN_number))
-% legend('Ephemeris', 'SP3 Truth')
-% 
-% figure()
-% plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 2.5)
-% hold on
-% plot(sp3_time_hr, RANGE_NIST_TRUTH, '--', 'LineWidth', 1.5)
-% grid on
-% xlabel('Time (hr)')
-% ylabel('Range (m)')
-% title(sprintf('PRN %d Range from NIST', PRN_number))
-% legend('Ephemeris', 'SP3 Truth')
-
 
 % TODO: Fix alg formatting (it suck right now)
 % Constants for the alg
@@ -143,10 +102,10 @@ end
 
 R_expected(gap_idx) = NaN;
 
-% Add the expected (corrected) range to the previous range plot
+% Add the expected range to the previous range plot from ephem
 figure()
 plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
-grid on
+grid minor
 xlabel('Time (hr)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
@@ -156,15 +115,38 @@ legend('Naive (Reception Time)', 'Expected (Light-Time + Earth Rotation Correcte
 
 % Plot the difference between the expected and naive range
 range_diff = R_expected - RANGE_NIST;
-max_range_diff = max(abs(range_diff), [], 'omitnan');
-fprintf('Largest naive-vs-expected range difference: %.4f m\n', max_range_diff);
+max_range_diff = max(abs(range_diff))
 
 figure()
 plot(ephem_time_hr, range_diff, 'LineWidth', 1.5)
-grid on
+grid minor
 xlabel('Time (hr)')
 ylabel('Range Difference (m)')
 title(sprintf('PRN %d Expected, Range Difference', PRN_number))
+
+% Part 4
+
+PRN_number = 5;
+PRN_index = rinexDataGPS.SatelliteID == PRN_number;
+PRN05_GPS_rinexData = rinexDataGPS(PRN_index,:);
+
+% a. Plot psuedorange and expected ranges, and then residuals
+figure()
+plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
+hold on
+plot(ephem_time_hr, PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
+xlabel('Time (hrs)')
+ylabel('Range (m)')
+grid minor
+legend('Expected Range', 'Pseudorange', 'Location', 'best')
+title(sprintf('PRN %d Pseudorange and Expected Range', PRN_number))
+
+figure()
+plot(ephem_time_hr, R_expected-PRN05_GPS_rinexData.C1C)
+xlabel('Time (hrs)')
+ylabel('Range (m)')
+grid minor
+title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
 
 function [week_number, tow] = utc2gpstime(utc_datetime)
 % Converts utc format to gps accounting for leapseconds as well

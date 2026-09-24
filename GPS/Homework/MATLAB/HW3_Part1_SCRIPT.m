@@ -22,25 +22,25 @@ plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1C)
 xlabel('Time')
 ylabel('C1C Pseudorange (m)')
 title(sprintf('GPS PRN %d C1C Pseudorange', PRN_number))
-grid on
+grid minor
 
 figure()
 plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.S1C)
 xlabel('Time')
 ylabel('SNR S1C')
 title(sprintf('GPS PRN %d S1C Signal Strength', PRN_number))
-grid on
+grid minor
 
 figure()
 plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W)
 xlabel('Time')
 title(sprintf('GPS PRN %d C1W Pseudorange', PRN_number))
 ylabel('C1W')
-grid on
+grid minor
 
 figure()
 plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.D1C)
 xlabel('Time')
 title(sprintf('GPS PRN %d D1C Pseudorange', PRN_number))
 ylabel('D1C')
-grid on
+grid minor

@@ -18,7 +18,7 @@ plot(satPRN(5).TOW_hr, satPos, 'LineWidth', 1.5)
 xlabel('Time (hrs)')
 ylabel('X,Y,Z (m)')
 title('Ephemerides')
-grid on
+grid minor
 legend('X','Y','Z')
 
 % Plotting precise position 
@@ -27,7 +27,7 @@ plot(satPRN(5).TOW_hr, [satPRN(5).X_m,satPRN(5).Y_m,satPRN(5).Z_m], 'LineWidth',
 xlabel('Time (hrs)')
 ylabel('X,Y,Z (m)')
 title('Precise Position')
-grid on
+grid minor
 legend('X','Y','Z')
 
 % Plotting residual
@@ -36,7 +36,7 @@ plot(satPRN(5).TOW_hr, [satPRN(5).X_m-satPos(:,1), satPRN(5).Y_m-satPos(:,2), sa
 xlabel('Time (hrs)')
 ylabel('X,Y,Z (m)')
 title('Precise Position')
-grid on
+grid minor
 legend('X','Y','Z')
 
 % c. Get satellite clock bias
@@ -47,5 +47,5 @@ figure()
 plot(satPRN(5).TOW_hr, satClkCorr)
 xlabel('Time (hrs)')
 ylabel('Clock Bias (m)')
-grid on
+grid minor
 title('Clock Bias Over Time')
