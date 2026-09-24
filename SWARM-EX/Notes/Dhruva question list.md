@@ -41,3 +41,24 @@ commands to send:
 `example_noop`
 `send_comm_cmd`
 `reset_counters`
+
+
+
+options:
+hydra direclty output commands
+
+to including cdh needs to include cdssds to hardline to cdh
+
+need to sit down with saanika and learn hydra and how to develop it
+
+get a version with and without a csds header
+
+need to reconfigure ports on on cdh board with hydra
+
+verify with a logic analyzer
+
+hydra, cdh side, testing it, build from bottom up
+test coming out of computer, does it go into lithium, does it go into cdh etc
+
+look into logic with logic analyzers
+
