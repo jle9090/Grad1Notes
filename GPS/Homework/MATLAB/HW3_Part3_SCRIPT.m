@@ -53,52 +53,8 @@ xlabel('Time (hr)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
 
-% TODO: Fix alg formatting (it suck right now)
-% Constants for the alg
-c  = 2.99792458e8; % speed of light, m/s
-wE = 7.2921151467e-5; % Earth rotation rate, rad/s
-
-% Step 1: Satellite ECEF position at Tr (satPos, computed in Part A above)
-Tr = NIST_GPS_TOW + NIST_GPS_week*604800;
-
-% Step 2: Geometric range using NIST_ECEF (a priori RX coords) and satPos at Tr
-[~, ~, R] = compute_azelrange(NIST_ECEF, satPos);
-
-% Iterate until range converges
-% Step 3: initial time of transmission
-Tt = Tr - (R/c); 
-R_expected = R;
-
-for iter = 1:5
-    % Step 3: time of transmission for eph2pvt2025
-    Tt_week = floor(Tt/604800);
-    Tt_tow  = Tt - Tt_week*604800;
-
-    % Step 4: satellite ECEF position at Tt
-    [~, satPos_Tt, ~, ~] = eph2pvt2025(clean_GPSbroadcast, [Tt_week Tt_tow], PRN_number);
-
-    % Step 5: rotate sat position into the ECEF frame
-    % Sat position from receiver
-    x = satPos_Tt(:,1); 
-    y = satPos_Tt(:,2); 
-    z = satPos_Tt(:,3);
-
-    phi = wE .* (Tr - Tt);
-    x_ECEF =  x.*cos(phi) + y.*sin(phi);
-    y_ECEF = -x.*sin(phi) + y.*cos(phi);
-
-    satPos_Tt_ECEF = [x_ECEF, y_ECEF, z];
-
-    % Step 6: recompute geometric range with the rotated sat position
-    [~, ~, R_new] = compute_azelrange(NIST_ECEF, satPos_Tt_ECEF);
-
-    if max(abs(R_new - R_expected)) < 1e-4
-        R_expected = R_new;
-        break
-    end
-    R_expected = R_new;
-    Tt = Tr - R_expected/c; % Step 3 repeat
-end
+% Expected range corrected for light-time and Earth rotation
+R_expected = compute_expected_range(clean_GPSbroadcast, NIST_GPS_week, NIST_GPS_TOW, PRN_number, NIST_ECEF);
 
 R_expected(gap_idx) = NaN;
 
@@ -123,39 +79,3 @@ grid minor
 xlabel('Time (hr)')
 ylabel('Range Difference (m)')
 title(sprintf('PRN %d Expected, Range Difference', PRN_number))
-
-% Part 4
-
-PRN_number = 5;
-PRN_index = rinexDataGPS.SatelliteID == PRN_number;
-PRN05_GPS_rinexData = rinexDataGPS(PRN_index,:);
-
-% a. Plot psuedorange and expected ranges, and then residuals
-figure()
-plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
-hold on
-plot(ephem_time_hr, PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
-ylabel('Range (m)')
-grid minor
-legend('Expected Range', 'Pseudorange', 'Location', 'best')
-title(sprintf('PRN %d Pseudorange and Expected Range', PRN_number))
-
-figure()
-plot(ephem_time_hr, R_expected-PRN05_GPS_rinexData.C1C)
-xlabel('Time (hrs)')
-ylabel('Range (m)')
-grid minor
-title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
-
-function [week_number, tow] = utc2gpstime(utc_datetime)
-% Converts utc format to gps accounting for leapseconds as well
-
-    gps_epoch = datetime(1980,1,6,0,0,0,'TimeZone','UTCLeapSeconds');
-    gps_datetime = datetime(utc_datetime,'TimeZone','UTCLeapSeconds');
-
-    seconds_since_gps_epoch = seconds(gps_datetime - gps_epoch);
-
-    week_number = floor(seconds_since_gps_epoch/604800);
-    tow = seconds_since_gps_epoch - week_number*604800;
-end

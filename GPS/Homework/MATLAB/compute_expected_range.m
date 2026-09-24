@@ -1,0 +1,52 @@
+function R_expected = compute_expected_range(eph, week, tow, PRN_number, receiver_ECEF)
+% Computes expected range by iteration
+
+% TODO: Fix alg formatting (it suck right now)
+% Constants for the alg
+c  = 2.99792458e8; % speed of light, m/s
+wE = 7.2921151467e-5; % Earth rotation rate, rad/s
+
+% Step 1: Satellite ECEF position at Tr (satPos, computed in Part A above)
+Tr = tow + week*604800;
+[~, satPos, ~, ~] = eph2pvt2025(eph, [week tow], PRN_number);
+
+% Step 2: Geometric range using NIST_ECEF (a priori RX coords) and satPos at Tr
+[~, ~, R] = compute_azelrange(receiver_ECEF, satPos);
+
+% Iterate until range converges
+% Step 3: initial time of transmission
+Tt = Tr - (R/c);
+R_expected = R;
+
+for iter = 1:5
+    % Step 3: time of transmission for eph2pvt2025
+    Tt_week = floor(Tt/604800);
+    Tt_tow  = Tt - Tt_week*604800;
+
+    % Step 4: satellite ECEF position at Tt
+    [~, satPos_Tt, ~, ~] = eph2pvt2025(eph, [Tt_week Tt_tow], PRN_number);
+
+    % Step 5: rotate sat position into the ECEF frame
+    % Sat position from receiver
+    x = satPos_Tt(:,1);
+    y = satPos_Tt(:,2);
+    z = satPos_Tt(:,3);
+
+    phi = wE .* (Tr - Tt);
+    x_ECEF =  x.*cos(phi) + y.*sin(phi);
+    y_ECEF = -x.*sin(phi) + y.*cos(phi);
+
+    satPos_Tt_ECEF = [x_ECEF, y_ECEF, z];
+
+    % Step 6: recompute geometric range with the rotated sat position
+    [~, ~, R_new] = compute_azelrange(receiver_ECEF, satPos_Tt_ECEF);
+
+    if max(abs(R_new - R_expected)) < 1e-4
+        R_expected = R_new;
+        break
+    end
+    R_expected = R_new;
+    Tt = Tr - R_expected/c; % Step 3 repeat
+end
+
+end
