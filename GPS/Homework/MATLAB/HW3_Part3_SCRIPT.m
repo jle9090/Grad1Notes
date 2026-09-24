@@ -60,7 +60,7 @@ ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_naive_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_PRN5.png'), 'Resolution', 300);
 
 % Expected range corrected for light-time and Earth rotation
 R_expected = compute_expected_range(clean_GPSbroadcast, NIST_GPS_week, NIST_GPS_TOW, PRN_number, NIST_ECEF);
@@ -79,7 +79,7 @@ plot(ephem_time_hr, R_expected, '--', 'LineWidth', 2.5)
 legend('Initial Range', 'Expected Range', 'Location', 'southwest')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_naive_vs_expected_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_initial_range_vs_expected_PRN5.png'), 'Resolution', 300);
 
 % Plot the difference between the expected initial ranging
 range_diff = R_expected - RANGE_NIST;

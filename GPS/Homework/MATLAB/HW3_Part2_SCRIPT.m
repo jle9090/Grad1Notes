@@ -22,7 +22,6 @@ grid minor
 legend('X','Y','Z')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P2_broadcast_xyz_PRN5.png'), 'Resolution', 300);
 
 % Plotting precise position 
 figure()
@@ -34,7 +33,20 @@ grid minor
 legend('X','Y','Z')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P2_sp3_xyz_PRN5.png'), 'Resolution', 300);
+
+% Plotting Precise on top of Ephemeris
+figure()
+plot(satPRN(5).TOW_hr, satPos, 'LineWidth', 1.5)
+hold on
+plot(satPRN(5).TOW_hr, [satPRN(5).X_m,satPRN(5).Y_m,satPRN(5).Z_m], '--', 'LineWidth', 2.5)
+xlabel('Time (hrs)')
+ylabel('X,Y,Z (m)')
+title('Ephemerides')
+grid minor
+legend('X Ephem','Y Ephem','Z Ephem','X Precise','Y Precise','Z Precise')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P2_ephem_precise_PRN5.png'), 'Resolution', 300);
 
 % Plotting residual
 figure()

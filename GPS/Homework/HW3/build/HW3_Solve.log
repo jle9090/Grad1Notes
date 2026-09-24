@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  24 SEP 2026 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  24 SEP 2026 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,7 +195,11 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box57
-) (build/HW3_Solve.aux)
+) (build/HW3_Solve.aux
+
+LaTeX Warning: Label `fig:PRN5 Azimuth' multiply defined.
+
+)
 \openout1 = `HW3_Solve.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -304,6 +308,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [2 <../MATLAB/figures/HW3_P1_C1C_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P1_S1C_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P2_ephem_precise_PRN5.png, id=17, 376.2858pt x 282.8166pt>
+File: ../MATLAB/figures/HW3_P2_ephem_precise_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P2_ephem_precise_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P2_ephem_precise_PRN5.png  used on input line 112.
+(pdftex.def)             Requested size: 281.85587pt x 211.84436pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -312,6 +322,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3 <../MATLAB/figures/HW3_P1_C1C_C1W_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P2_xyz_residual_PRN5.png, id=21, 386.4036pt x 280.1667pt>
+File: ../MATLAB/figures/HW3_P2_xyz_residual_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P2_xyz_residual_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P2_xyz_residual_PRN5.png  used on input line 119.
+(pdftex.def)             Requested size: 281.85587pt x 204.37463pt.
+<../MATLAB/figures/HW3_P2_clock_bias_PRN5.png, id=22, 400.8576pt x 282.8166pt>
+File: ../MATLAB/figures/HW3_P2_clock_bias_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P2_clock_bias_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P2_clock_bias_PRN5.png  used on input line 128.
+(pdftex.def)             Requested size: 281.85587pt x 198.86356pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -319,25 +340,131 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4] (build/HW3_Solve.aux)
+[4 <../MATLAB/figures/HW3_P2_ephem_precise_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P2_xyz_residual_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P3_azimuth_PRN5.png, id=26, 386.4036pt x 280.1667pt>
+File: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_azimuth_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png  used on input line 137.
+(pdftex.def)             Requested size: 281.85587pt x 204.37463pt.
+<../MATLAB/figures/HW3_P3_elevation_PRN5.png, id=27, 379.6584pt x 280.4076pt>
+File: ../MATLAB/figures/HW3_P3_elevation_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_elevation_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_elevation_PRN5.png  used on input line 144.
+(pdftex.def)             Requested size: 281.85587pt x 208.17012pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5 <../MATLAB/figures/HW3_P2_clock_bias_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P3_azimuth_PRN5.png (PNG copy)>]
+File: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_azimuth_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png  used on input line 151.
+(pdftex.def)             Requested size: 281.85587pt x 204.37463pt.
+<../MATLAB/figures/HW3_P3_range_PRN5.png, id=31, 378.9357pt x 282.5757pt>
+File: ../MATLAB/figures/HW3_P3_range_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_range_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_range_PRN5.png  used on input line 158.
+(pdftex.def)             Requested size: 281.85587pt x 210.19792pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6 <../MATLAB/figures/HW3_P3_elevation_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P3_initial_range_vs_expected_PRN5.png, id=35, 378.9357pt x 282.5757pt>
+File: ../MATLAB/figures/HW3_P3_initial_range_vs_expected_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_initial_range_vs_expected_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_initial_range_vs_expected_PRN5.png  used on input line 166.
+(pdftex.def)             Requested size: 281.85587pt x 210.19792pt.
+<../MATLAB/figures/HW3_P3_range_difference_PRN5.png, id=36, 379.6584pt x 280.1667pt>
+File: ../MATLAB/figures/HW3_P3_range_difference_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P3_range_difference_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P3_range_difference_PRN5.png  used on input line 173.
+(pdftex.def)             Requested size: 281.85587pt x 207.99129pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7 <../MATLAB/figures/HW3_P3_range_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P3_initial_range_vs_expected_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P4_pseudorange_vs_expected_PRN5.png, id=41, 378.9357pt x 282.5757pt>
+File: ../MATLAB/figures/HW3_P4_pseudorange_vs_expected_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P4_pseudorange_vs_expected_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P4_pseudorange_vs_expected_PRN5.png  used on input line 182.
+(pdftex.def)             Requested size: 281.85587pt x 210.19792pt.
+<../MATLAB/figures/HW3_P4_residuals_PRN5.png, id=42, 397.485pt x 280.4076pt>
+File: ../MATLAB/figures/HW3_P4_residuals_PRN5.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P4_residuals_PRN5.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P4_residuals_PRN5.png  used on input line 189.
+(pdftex.def)             Requested size: 281.85587pt x 198.84262pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8 <../MATLAB/figures/HW3_P3_range_difference_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P4_pseudorange_vs_expected_PRN5.png (PNG copy)>]
+<../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png, id=46, 393.8715pt x 279.444pt>
+File: ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png  used on input line 199.
+(pdftex.def)             Requested size: 281.85587pt x 199.98428pt.
+<../MATLAB/figures/HW3_P5_residuals_PRN11.png, id=47, 397.9668pt x 279.444pt>
+File: ../MATLAB/figures/HW3_P5_residuals_PRN11.png Graphic file (type png)
+<use ../MATLAB/figures/HW3_P5_residuals_PRN11.png>
+Package pdftex.def Info: ../MATLAB/figures/HW3_P5_residuals_PRN11.png  used on input line 206.
+(pdftex.def)             Requested size: 281.85587pt x 197.92479pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9 <../MATLAB/figures/HW3_P4_residuals_PRN5.png (PNG copy)> <../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10 <../MATLAB/figures/HW3_P5_residuals_PRN11.png (PNG copy)>] (build/HW3_Solve.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 6043 strings out of 474222
- 84384 string characters out of 5748733
+ 6139 strings out of 474222
+ 89368 string characters out of 5748733
  2000975 words of memory out of 5000000
- 28276 multiletter control sequences out of 15000+600000
+ 28372 multiletter control sequences out of 15000+600000
  560083 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,453b,1715s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,453b,1715s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/HW3_Solve.pdf (4 pages, 456057 bytes).
+Output written on build/HW3_Solve.pdf (10 pages, 1940927 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
