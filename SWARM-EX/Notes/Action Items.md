@@ -15,11 +15,15 @@ Last updated: 2026-09-23
 
 - [ ] Decide GS PC architecture (Rick's 2-PC proposal — static GNU Radio box for MAXWELL+SWARM-EX, dedicated Hydra box — vs. current setup)
 - [ ] Get prior GS PC issue list from Adhi and Dhruva, propose to Steven Harrison #blocked Steven Harrison reportedly unwilling to help
-- [ ] Migrate/port HFSS from small 443 machine to big 443 tower
-- [ ] Stand up interim dev machine from 443 while GS PC situation is sorted
-- [ ] Any issues with the GS pc and related to are blocked, Professor Palo wants to assess the state of the machines in the lab
-- [ ] Raise the antenna (Edin) — target ~Sept 29
-	- [ ] we are delayed
+- [ ] Migrate/port HFSS from small 443 machine to big 443 tower #blocked Palo machine review — resume 9/30 (Gantt: 9/30–10/1)
+- [ ] Stand up interim dev machine from 443 while GS PC situation is sorted #blocked Palo machine review — resume 9/30
+- [ ] Any issues with the GS pc and related to are blocked, Professor Palo wants to assess the state of the machines in the lab #blocked on hold 9/23–9/29, GS PC work resumes 9/30
+	- [ ] Sit down with Palo (and Rick) on the machine situation
+- [ ] Raise the antenna (Edin) — target ~Oct 13 (was ~Sept 29)
+	- [x] Check remaining things needed to raise antenna
+	- [ ] we are delayed — rooftop work (LNA, lightning arrestors, antenna installs) starting much later than expected; may slip further
+	- [ ] Rooftop prereqs: LNA install, lightning arrestors, antenna installs (Gantt: 9/23–10/1)
+	- [ ] Execute motor tests (Gantt: 10/2–10/12)
   - [x] Motor test procedure (Edin)
   - [ ] Safety precautions (Rick)
 	  - [ ] should we get a list of these
@@ -28,7 +32,7 @@ Last updated: 2026-09-23
   - [ ] Get motor configuration cable (in transit)
 - [ ] Calibrate rotors
 - [ ] Get az/el tracking working correctly
-- [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa)
+- [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa) — may need GS PC, not pushed back for now (Gantt: 9/24–10/7)
   - [x] Confirm with Elsa whether Doppler correction should live in GPredict instead of GNU Radio
 - [ ] Demonstrate GS can track another LASP satellite (proof-of-concept before MAXWELL)
 - [ ] Demonstrate full uplink/downlink end-to-end
@@ -41,6 +45,11 @@ Last updated: 2026-09-23
 - [ ] Get Lithium radio talking to Hydra (Justin) — blocks both SCT and CET tests
 - [ ] Contact Brian Hilten, clarify process
 - [ ] Continue Hydra command dictionary implementation
+- [ ] Develop Hydra for MCT (Gantt: 9/23–9/29) — MCT delayed, needs more Hydra work before bench setup #in-progress
+	- [x] Review MCT test docs
+	- [ ] MCT bench setup, practice run, full run (Gantt: 9/30–10/7)
+- [ ] Develop Hydra for SCT-1 (Gantt: 10/9–10/15; SCT-1 full run 10/20–10/21)
+- [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)
 - [ ] Re-verify Hydra ↔ GNU Radio link Dhruva previously demoed (flagged as possibly stale)
 - [ ] Document SWARM-EX-specific AX.25 handling (Hydra strips it, unlike MAXWELL)
 - [ ] Pull/organize "07 Communications" docs from the drive
