@@ -11,10 +11,18 @@ rinexData = rinexread('NIST00USA_R_20262310000_01D_30S_MO.rnx');
 GPS_rinexData = rinexData.GPS;
 
 PRN_number = 5;
-
 PRN_index = GPS_rinexData.SatelliteID == PRN_number;
-
 PRN05_GPS_rinexData = GPS_rinexData(PRN_index,:);
+
+[NIST_GPS_week, NIST_GPS_TOW] = utc2gpstime(PRN05_GPS_rinexData.Time);
+ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
+
+% Nan gap the discontinuous 
+gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
+PRN05_GPS_rinexData.C1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.S1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.C1W(gap_idx) = NaN;
+PRN05_GPS_rinexData.D1C(gap_idx) = NaN;
 
 % hihihihihihihihihihihihihihihihihihi
 
@@ -23,5 +31,25 @@ plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1C)
 xlabel('Time')
 ylabel('C1C Pseudorange (m)')
 title(sprintf('GPS PRN %d C1C Pseudorange', PRN_number))
-grid on
+grid minor
 
+figure()
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.S1C)
+xlabel('Time')
+ylabel('SNR S1C')
+title(sprintf('GPS PRN %d S1C Signal Strength', PRN_number))
+grid minor
+
+figure()
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W)
+xlabel('Time')
+title(sprintf('GPS PRN %d C1W Pseudorange', PRN_number))
+ylabel('C1W')
+grid minor
+
+figure()
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.D1C)
+xlabel('Time')
+title(sprintf('GPS PRN %d D1C Pseudorange', PRN_number))
+ylabel('D1C')
+grid minor

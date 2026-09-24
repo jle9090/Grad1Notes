@@ -20,7 +20,7 @@
 }
 
 % ---------- Paragraph Formatting ----------
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{2pt}
 \setlength{\parskip}{0.5em}
 
 % ---------- Header ----------
@@ -44,8 +44,71 @@
 \vspace{1em}
 
 \section*{Problem 1: GPS Observations}
+\subsection*{(a.)}
+\begin{lstlisting}[language=Matlab]
+% Read rinex file
+
+rinexData = rinexread('NIST00USA_R_20262310000_01D_30S_MO.rnx');
+
+GPS_rinexData = rinexData.GPS;
+
+PRN_number = 5;
+PRN_index = GPS_rinexData.SatelliteID == PRN_number;
+PRN05_GPS_rinexData = GPS_rinexData(PRN_index,:);
+
+[NIST_GPS_week, NIST_GPS_TOW] = utc2gpstime(PRN05_GPS_rinexData.Time);
+ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
+
+% Nan gap the discontinuous 
+gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
+PRN05_GPS_rinexData.C1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.S1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.C1W(gap_idx) = NaN;
+PRN05_GPS_rinexData.D1C(gap_idx) = NaN;
+\end{lstlisting}
+\subsection*{(b.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P1_C1C_PRN5.png}
+    \caption{C1C Pseudorange for PRN5}
+    \label{fig:C1C Pseudorange for PRN5}
+\end{figure}
+
+\subsection*{(c.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P1_S1C_PRN5.png}
+    \caption{S1C SNR for PRN5}
+    \label{fig:S1C SNR for PRN5}
+\end{figure}
+
+\subsection*{(d.)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P1_C1C_C1W_PRN5.png}
+    \caption{C1C and C1W Pseudorange for PRN5}
+    \label{fig:C1C and C1W Pseudorange for PRN5PRN5}
+\end{figure}
+
+TODO: describe the differences yada yada
+
 
 \section*{Problem 2: GPS Positions Based on Ephemeris Data}
+\subsection*{(a.)}
+\begin{lstlisting}[language=Matlab]
+% Use read clean to read in ephermides
+clean_GPSbroadcast = read_clean_GPSbroadcast('brdc2310.26n', true);
+
+% Read in sp3 ephem like HW2 
+sp3 = read_sp3('IGS0OPSFIN_20262310000_01D_15M_ORB.SP3');
+satPRN = extract_sp3_prn(sp3);
+
+[health,satPos,satVel,satClkCorr] = eph2pvt2025(clean_GPSbroadcast, [satPRN(5).week_number satPRN(5).TOW_s], 5);
+
+\end{lstlisting}
+\subsection*{(b.)}
+
+\subsection*{(c.)}
 
 \section*{Problem 3: GPS Expected Range}
 

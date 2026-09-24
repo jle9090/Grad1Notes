@@ -22,7 +22,7 @@ PRN05_GPS_rinexData = rinexDataGPS(PRN_index,:);
 NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
 
 ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
-ephem_time_hr = ephem_time_s/3600;
+ephem_time_hr = NIST_GPS_TOW/3600;
 
 [AZ_NIST, EL_NIST, RANGE_NIST] = compute_azelrange(NIST_ECEF, satPos);
 
@@ -38,6 +38,9 @@ grid minor
 xlabel('Time (hr)')
 ylabel('Azimuth (deg)')
 title(sprintf('PRN %d Azimuth from NIST', PRN_number))
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_azimuth_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(ephem_time_hr, EL_NIST, 'LineWidth', 1.5)
@@ -45,6 +48,9 @@ grid minor
 xlabel('Time (hr)')
 ylabel('Elevation (deg)')
 title(sprintf('PRN %d Elevation from NIST', PRN_number))
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_elevation_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(ephem_time_hr, RANGE_NIST, 'LineWidth', 1.5)
@@ -52,6 +58,9 @@ grid minor
 xlabel('Time (hr)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_naive_PRN5.png'), 'Resolution', 300);
 
 % Expected range corrected for light-time and Earth rotation
 R_expected = compute_expected_range(clean_GPSbroadcast, NIST_GPS_week, NIST_GPS_TOW, PRN_number, NIST_ECEF);
@@ -66,10 +75,13 @@ xlabel('Time (hr)')
 ylabel('Range (m)')
 title(sprintf('PRN %d Range from NIST', PRN_number))
 hold on
-plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
-legend('Naive (Reception Time)', 'Expected (Light-Time + Earth Rotation Corrected)')
+plot(ephem_time_hr, R_expected, '--', 'LineWidth', 2.5)
+legend('Initial Range', 'Expected Range', 'Location', 'southwest')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_naive_vs_expected_PRN5.png'), 'Resolution', 300);
 
-% Plot the difference between the expected and naive range
+% Plot the difference between the expected initial ranging
 range_diff = R_expected - RANGE_NIST;
 max_range_diff = max(abs(range_diff))
 
@@ -79,3 +91,7 @@ grid minor
 xlabel('Time (hr)')
 ylabel('Range Difference (m)')
 title(sprintf('PRN %d Expected, Range Difference', PRN_number))
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P3_range_difference_PRN5.png'), 'Resolution', 300);
+ 

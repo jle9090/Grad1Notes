@@ -19,15 +19,16 @@ PRN05_GPS_rinexData = rinexDataGPS(PRN_index,:);
 NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
 
 ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
-ephem_time_hr = ephem_time_s/3600;
+ephem_time_hr = NIST_GPS_TOW/3600;
 
 gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
 
 % Expected range corrected for light-time and Earth rotation
 R_expected = compute_expected_range(clean_GPSbroadcast, NIST_GPS_week, NIST_GPS_TOW, PRN_number, NIST_ECEF);
 R_expected(gap_idx) = NaN;
+PRN05_GPS_rinexData.C1C(gap_idx) = NaN;
 
-% a. Plot psuedorange and expected ranges, and then residuals
+% a. Plot psuedorange and expected ranges and then residuals
 figure()
 plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
 hold on
@@ -37,6 +38,9 @@ ylabel('Range (m)')
 grid minor
 legend('Expected Range', 'Pseudorange', 'Location', 'best')
 title(sprintf('PRN %d Pseudorange and Expected Range', PRN_number))
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P4_pseudorange_vs_expected_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(ephem_time_hr, R_expected-PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
@@ -44,3 +48,7 @@ xlabel('Time (hrs)')
 ylabel('Range (m)')
 grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
+ax = gca; ax.YAxis.Exponent = 0;
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P4_residuals_PRN5.png'), 'Resolution', 300);

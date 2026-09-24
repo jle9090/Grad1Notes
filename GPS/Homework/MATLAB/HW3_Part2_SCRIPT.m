@@ -20,6 +20,9 @@ ylabel('X,Y,Z (m)')
 title('Ephemerides')
 grid minor
 legend('X','Y','Z')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P2_broadcast_xyz_PRN5.png'), 'Resolution', 300);
 
 % Plotting precise position 
 figure()
@@ -29,6 +32,9 @@ ylabel('X,Y,Z (m)')
 title('Precise Position')
 grid minor
 legend('X','Y','Z')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P2_sp3_xyz_PRN5.png'), 'Resolution', 300);
 
 % Plotting residual
 figure()
@@ -38,14 +44,20 @@ ylabel('X,Y,Z (m)')
 title('Precise Position')
 grid minor
 legend('X','Y','Z')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P2_xyz_residual_PRN5.png'), 'Resolution', 300);
 
 % c. Get satellite clock bias
 
 % Get bias from ephem data
 
 figure()
-plot(satPRN(5).TOW_hr, satClkCorr)
+plot(satPRN(5).TOW_hr, satClkCorr, 'LineWidth', 1.5)
 xlabel('Time (hrs)')
 ylabel('Clock Bias (m)')
 grid minor
 title('Clock Bias Over Time')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P2_clock_bias_PRN5.png'), 'Resolution', 300);

@@ -10,37 +10,62 @@ rinexData = rinexread('NIST00USA_R_20262310000_01D_30S_MO.rnx');
 
 GPS_rinexData = rinexData.GPS;
 
-% TODO: Call this to include NaNs for discontinous graphing
 PRN_number = 5;
 PRN_index = GPS_rinexData.SatelliteID == PRN_number;
 PRN05_GPS_rinexData = GPS_rinexData(PRN_index,:);
 
+[NIST_GPS_week, NIST_GPS_TOW] = utc2gpstime(PRN05_GPS_rinexData.Time);
+ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
+
+% Nan gap the discontinuous 
+gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
+PRN05_GPS_rinexData.C1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.S1C(gap_idx) = NaN;
+PRN05_GPS_rinexData.C1W(gap_idx) = NaN;
+PRN05_GPS_rinexData.D1C(gap_idx) = NaN;
+
 % hihihihihihihihihihihihihihihihihihi
 
 figure()
-plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1C)
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
 xlabel('Time')
 ylabel('C1C Pseudorange (m)')
 title(sprintf('GPS PRN %d C1C Pseudorange', PRN_number))
 grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1C_PRN5.png'), 'Resolution', 300);
 
 figure()
-plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.S1C)
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.S1C, 'LineWidth', 1.5)
 xlabel('Time')
 ylabel('SNR S1C')
 title(sprintf('GPS PRN %d S1C Signal Strength', PRN_number))
 grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P1_S1C_PRN5.png'), 'Resolution', 300);
 
 figure()
-plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W)
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W, 'LineWidth', 1.5)
 xlabel('Time')
 title(sprintf('GPS PRN %d C1W Pseudorange', PRN_number))
 ylabel('C1W')
 grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1W_PRN5.png'), 'Resolution', 300);
 
+% Plotting C1W and C1C
 figure()
-plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.D1C)
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
+hold on
+plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W,'--', 'LineWidth', 2.5)
 xlabel('Time')
-title(sprintf('GPS PRN %d D1C Pseudorange', PRN_number))
-ylabel('D1C')
+ylabel('C1C vs C1W Pseudorange (m)')
+title(sprintf('GPS PRN %d C1C vs C1W Pseudorange', PRN_number))
 grid minor
+legend('C1C','C1W')
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1C_C1W_PRN5.png'), 'Resolution', 300);
