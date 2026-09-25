@@ -20,7 +20,7 @@
 }
 
 % ---------- Paragraph Formatting ----------
-\setlength{\parindent}{2pt}
+\setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5em}
 
 % ---------- Header ----------
@@ -90,7 +90,19 @@ PRN05_GPS_rinexData.D1C(gap_idx) = NaN;
     \label{fig:C1C and C1W Pseudorange for PRN5PRN5}
 \end{figure}
 
-TODO: describe the differences yada yada
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P1_C1C_C1W_PRN5_residuals.png}
+    \caption{C1C and C1W Residuals for PRN5}
+    \label{fig:C1C and C1W Residuals for PRN5}
+\end{figure}
+
+\hspace*{2em}When examining the plots for C1C and C1W, we notice that they follow each other trends
+very well. Their reported psuedoranges deviate very minorly, when examining their residuals 
+there are only differences of up to $0.7 \, \mathrm{m}$ between the two pseudoranges. This is 
+reasonable as C1C and C1W are the C/A code and P code respectively. It is natural that they would be 
+reporting similar numbers. The variations between them  are a result from noise and multipathing, which would 
+lead to the very minor variations that can be seen from Figure \ref{fig:C1C and C1W Residuals for PRN5}.
 
 
 \section*{Problem 2: GPS Positions Based on Ephemeris Data}
@@ -121,7 +133,15 @@ satPRN = extract_sp3_prn(sp3);
     \label{fig:Ephemeris vs Precise Residuals}
 \end{figure}
 
-TODO: Comment on differences
+\hspace*{2em}Taking a look at these results, the precise positioning found from SP3 and 
+the ephemeris broadcast in Figure \ref{fig:Ephemeris vs Precise}, we see that they line up very well,
+by further using the data obtained by SP3 as truth,
+we find residuals of the ephemeris broadcast to be up to $\approx1.5 \, \mathrm{m}$ from Figure
+\ref{fig:Ephemeris vs Precise Residuals}. Compared to the results from HW2 on the almanac's residuals,
+which were up to $1\,\mathrm{km}$, this is far more accurate. It shows that the almanac would be useful
+for checking visibility of satellites in the sky, however poor for positioning. The resulting residuals we 
+observe here can begin to be used for positioning. 
+
 \subsection*{(c.)}
 \begin{figure}[H]
     \centering
@@ -174,7 +194,11 @@ TODO: Comment on differences
     \caption{PRN5 Range Initial vs Expected Residual}
     \label{fig:PRN5 Range Initial vs Expected Residual}
 \end{figure}
-TODO: report largest difference found.
+
+\hspace*{2em}From here, we can find the largest difference from the expected range and the initial
+range we obtain from ephemeris to be about $78.9 \, \mathrm{m}$. This is a rather large deviation between
+the ranges, showing how there is still correction needed from the broadcasted ephemeris received from a
+ground station/gps receiver.
 
 \section*{Problem 4: Observed Minus Computed (Expected) Range}
 \begin{figure}[H]
@@ -191,6 +215,16 @@ TODO: report largest difference found.
     \label{fig:PRN5 C1C Pseudorange vs Expected Range Residuals}
 \end{figure}
 
+\hspace*{2em}We are able to observe the differences between the reported pseudoranges and
+the expected range calculated previously in Figure \ref{fig:PRN5 C1C Pseudorange vs Expected Range}
+and  Figure \ref{fig:PRN5 C1C Pseudorange vs Expected Range Residuals}. They generally match up, however there 
+are residuals of up to $85\,\mathrm{km}$. The biggest differences between them are likely a result of the correction being 
+done to find the expected range. The ephemeris broadcast, conversion to position, and subsequent correction we performed would
+be much more accurate than the pseudorange that is being reported. The pseudorange afterall is affected by propogation effects in the
+atmosphere (tropospheric effects, ionospheric effects) which cause these errors observed between the two ranging measurements 
+being reported.
+
+TODO: provide justificaiton. 
 
 \section*{Problem 5: Repeat for another PRN}
 
@@ -208,4 +242,6 @@ TODO: report largest difference found.
     \label{fig:PRN11 C1C Pseudorange vs Expected Range Residuals}
 \end{figure}
 
+\hspace*{2em}Here PRN 11 is chosen, this is in a different GPS block than PRN 5 with notable 
+different visibility patterns in the same time frame for NIST. 
 \end{document}
