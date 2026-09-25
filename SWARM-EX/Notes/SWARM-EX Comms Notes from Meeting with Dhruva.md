@@ -26,12 +26,12 @@ Don't cross 7 V on Li-1, always keep an antenna connected, and be careful with p
 
 Packets follow CCSDS. Hydra sends the whole packet to CDH, and the Lithium adds AX.25 framing around the CDH packet. Reference doc: "packet structure – SWARM\_EX\_Dhruva".
 
-| Field | Contents |
-| --- | --- |
-| AX.25 header | Destination, source |
-| CDH packet | All of the above |
+| Field                | Contents                |
+| -------------------- | ----------------------- |
+| AX.25 header         | Destination, source     |
+| CDH packet           | All of the above        |
 | AX.25 payload length | Covers the whole packet |
-| AX.25 checksum | 16-bit |
+| AX.25 checksum       | 16-bit                  |
 
 - CDH loads the Lithium code
 - The CDH packet is wrapped inside the outer packet (notes read "CDI wrapping around CDI packet", probably CDH)
