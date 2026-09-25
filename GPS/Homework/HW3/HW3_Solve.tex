@@ -168,13 +168,6 @@ observe here can begin to be used for positioning.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P3_azimuth_PRN5.png}
-    \caption{PRN5 Azimuth}
-    \label{fig:PRN5 Azimuth}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW3_P3_range_PRN5.png}
     \caption{PRN5 Range}
     \label{fig:PRN5 Range}
@@ -197,7 +190,8 @@ observe here can begin to be used for positioning.
 
 \hspace*{2em}From here, we can find the largest difference from the expected range and the initial
 range we obtain from ephemeris to be about $78.9 \, \mathrm{m}$. This is a rather large deviation between
-the ranges, showing how there is still correction needed from the broadcasted ephemeris received from a
+the ranges, showing how there is still correction needed due to the movement of the satellite during the signal travel time causing
+discrepancies in the initial ranging calculations from the broadcasted ephemeris received from a
 ground station/gps receiver.
 
 \section*{Problem 4: Observed Minus Computed (Expected) Range}
@@ -224,7 +218,15 @@ be much more accurate than the pseudorange that is being reported. The pseudoran
 atmosphere (tropospheric effects, ionospheric effects) which cause these errors observed between the two ranging measurements 
 being reported.
 
-TODO: provide justificaiton. 
+\hspace*{2em}Proof can be shown when examining these results for PRN 11 which is done for problem 5
+as well. Examining Figures \ref{fig:PRN11 C1C Pseudorange vs Expected Range} and \ref{fig:PRN11 C1C Pseudorange vs Expected Range Residuals},
+we see residuals in the same magnitude as seen in Figures \ref{fig:PRN5 C1C Pseudorange vs Expected Range} and \ref{fig:PRN5 C1C Pseudorange vs Expected Range Residuals}.
+This means that throughout this process, the difference is not a result from using a different GPS satellite, PRN 11 and PRN 5
+are in different satellite blocks and would be in view of NIST at different times through their orbits. The factors that would affect 
+pseudoranging in this case that would not be due to the GPS satellites would be atmospheric effects and the clock errors in the GPS
+receiver at the ground station. Additional evidence at this being a clock error issue is examining the clock
+errors plotted from Problem 2, Figure \ref{fig:Clock Bias}. Here we can see an clock bias error of about $70\,\mathrm{km}$.
+The same magnitude of error that we observe in the psuedorange and expected range residuals.
 
 \section*{Problem 5: Repeat for another PRN}
 

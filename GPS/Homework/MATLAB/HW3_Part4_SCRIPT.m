@@ -43,9 +43,9 @@ set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
 exportgraphics(gcf, fullfile('figures', 'HW3_P4_pseudorange_vs_expected_PRN5.png'), 'Resolution', 300);
 
 figure()
-plot(ephem_time_hr, R_expected-PRN05_GPS_rinexData.C1C, 'LineWidth', 1.5)
+plot(ephem_time_hr, PRN05_GPS_rinexData.C1C-R_expected, 'LineWidth', 1.5)
 xlabel('Time (hrs)')
-ylabel('Range (m)')
+ylabel('O-C (m)')
 grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
 ax = gca; ax.YAxis.Exponent = 0;

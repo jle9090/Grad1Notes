@@ -1,16 +1,16 @@
 function R_expected = compute_expected_range(ephemeris, week, tow, PRN_number, receiver_ECEF)
 % Computes expected range by iteration
 
-% TODO: Fix alg formatting (it suck right now)
 % Constants for the alg
 c  = 2.99792458e8; % speed of light, m/s
 wE = 7.2921151467e-5; % Earth rotation rate, rad/s
 
-% Step 1: Satellite ECEF position at Tr (satPos, computed in Part A above)
+% Step 1: Satellite ECEF position at Tr initially.
 Tr = tow + week*604800;
 [~, satPos, ~, ~] = eph2pvt2025(ephemeris, [week tow], PRN_number);
 
-% Step 2: Geometric range using NIST_ECEF (a priori RX coords) and satPos at Tr
+% Step 2: Geometric range using NIST_ECEF and satPos at Tr
+% Reuse azel range for convinience
 [~, ~, R] = compute_azelrange(receiver_ECEF, satPos);
 
 % Iterate until range converges
@@ -19,7 +19,7 @@ Tt = Tr - (R/c);
 R_expected = R;
 
 for iter = 1:5
-    % Step 3: time of transmission for eph2pvt2025
+    % Step 3: time of transmission in gps week number and TOW
     Tt_week = floor(Tt/604800);
     Tt_tow  = Tt - Tt_week*604800;
 
@@ -41,6 +41,7 @@ for iter = 1:5
     % Step 6: recompute geometric range with the rotated sat position
     [~, ~, R_new] = compute_azelrange(receiver_ECEF, satPos_Tt_ECEF);
 
+    % Convergeance condition
     if max(abs(R_new - R_expected)) < 1e-4
         R_expected = R_new;
         break

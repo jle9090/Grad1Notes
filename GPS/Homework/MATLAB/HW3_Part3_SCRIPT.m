@@ -26,7 +26,7 @@ ephem_time_hr = NIST_GPS_TOW/3600;
 
 [AZ_NIST, EL_NIST, RANGE_NIST] = compute_azelrange(NIST_ECEF, satPos);
 
-% TODO: Check this nan gapping
+% Nan gap data due to discontinuity. 
 gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
 AZ_NIST(gap_idx) = NaN;
 EL_NIST(gap_idx) = NaN;
