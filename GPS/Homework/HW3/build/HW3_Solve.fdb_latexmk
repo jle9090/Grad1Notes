@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790376606.7603 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790376607.23359 0
+["pdflatex"] 1790384106.43441 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790384107.04128 0
   "../MATLAB/figures/HW3_P1_C1C_C1W_PRN5.png" 1790376605.43158 146328 5180a6663cf0be4fdf52db79458b8c28 ""
   "../MATLAB/figures/HW3_P1_C1C_C1W_PRN5_residuals.png" 1790376606.26971 150523 131440f5dc2b9cb9321114b06af29471 ""
   "../MATLAB/figures/HW3_P1_C1C_PRN5.png" 1790376600.9982 131135 716502f56b004717b495c35db919a01e ""
@@ -17,7 +17,7 @@
   "../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png" 1790375651.86322 153044 95bd80348f519c88433f4186947b13a4 ""
   "../MATLAB/figures/HW3_P5_residuals_PRN11.png" 1790375653.19838 126473 9c3c83e55676c6e034bf55e735b814ea ""
   "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" 1790375384.27162 9889 a7376fdbb3177d37799212b036b17da7 ""
+  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/GPS/Homework/HW3/HW3_Solve.tex" 1790384040.08739 26989 cddea50188433f05ebc9264293448203 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -83,8 +83,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
-  "HW3_Solve.tex" 1790375384.27162 9889 a7376fdbb3177d37799212b036b17da7 ""
-  "build/HW3_Solve.aux" 1790376607.17775 3055 076e0810983177d5181424a013312353 "pdflatex"
+  "HW3_Solve.tex" 1790384040.08739 26989 cddea50188433f05ebc9264293448203 ""
+  "build/HW3_Solve.aux" 1790384106.9789 3055 ec777ba5e1ef27af3220305e7bafcf72 "pdflatex"
   (generated)
   "build/HW3_Solve.aux"
   "build/HW3_Solve.log"
