@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{listings}
+
+% ---------- MATLAB Code Listing Style ----------
+\lstdefinestyle{matlab}{
+    language=Matlab,
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    breakatwhitespace=false,
+    postbreak=\mbox{$\hookrightarrow$\space},
+    columns=fullflexible,
+    keepspaces=true,
+    frame=none,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false
+}
+\lstset{style=matlab}
+
+% ---------- Paragraph Formatting ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ASEN 5335 Aerospace Environment}
+\rhead{Justin Le}
+\cfoot{\thepage}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+    {\Large \textbf{Homework 2}}\\[0.5em]
+    {\large ASEN 5335 Aerospace Environment}\\[0.5em]
+    Justin Le\\ 
+    \today
+    \\[0.5em]
+\end{center}
+
+\vspace{1em}
+\section*{Problem 1: Plotting the Ionosphere}
+
+\newpage
+\section*{Problem 2: Peak Ionization}
+
+\newpage
+\section*{Problem 3: Spacecraft Charging in LEO}
+
+\newpage
+\section*{Problem 4: Spacecraft Charging in GEO}
+
+\newpage
+\section*{Problem 5: Radio Wave Propagation}
+
+\newpage
+\section*{Problem 6: Radio Blackout}
+
+\newpage
+\section*{Problem 7: GPS Delays}
+
+\newpage
+\section*{Problem 8: D Region Signal Attenuation}
+
+\newpage
+\section*{Problem 9: ICON Mission}
+
+\end{document}

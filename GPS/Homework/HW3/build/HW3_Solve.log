@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.29)  25 SEP 2026 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.29)  25 SEP 2026 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -363,11 +363,11 @@ File: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png Graphic file (type png)
 <use ../MATLAB/figures/HW3_P3_azimuth_PRN5.png>
 Package pdftex.def Info: ../MATLAB/figures/HW3_P3_azimuth_PRN5.png  used on input line 159.
 (pdftex.def)             Requested size: 281.85587pt x 204.37463pt.
-<../MATLAB/figures/HW3_P3_elevation_PRN5.png, id=33, 379.6584pt x 280.4076pt>
+<../MATLAB/figures/HW3_P3_elevation_PRN5.png, id=33, 375.5631pt x 280.1667pt>
 File: ../MATLAB/figures/HW3_P3_elevation_PRN5.png Graphic file (type png)
 <use ../MATLAB/figures/HW3_P3_elevation_PRN5.png>
 Package pdftex.def Info: ../MATLAB/figures/HW3_P3_elevation_PRN5.png  used on input line 166.
-(pdftex.def)             Requested size: 281.85587pt x 208.17012pt.
+(pdftex.def)             Requested size: 281.85587pt x 210.2784pt.
 <../MATLAB/figures/HW3_P3_range_PRN5.png, id=34, 378.9357pt x 282.5757pt>
 File: ../MATLAB/figures/HW3_P3_range_PRN5.png Graphic file (type png)
 <use ../MATLAB/figures/HW3_P3_range_PRN5.png>
@@ -439,12 +439,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png, id=55, 393.8715pt x 279.444pt>
 File: ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png Graphic file (type png)
 <use ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png>
-Package pdftex.def Info: ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png  used on input line 239.
+Package pdftex.def Info: ../MATLAB/figures/HW3_P5_pseudorange_vs_expected_PRN11.png  used on input line 243.
 (pdftex.def)             Requested size: 281.85587pt x 199.98428pt.
 <../MATLAB/figures/HW3_P5_residuals_PRN11.png, id=56, 407.3619pt x 279.444pt>
 File: ../MATLAB/figures/HW3_P5_residuals_PRN11.png Graphic file (type png)
 <use ../MATLAB/figures/HW3_P5_residuals_PRN11.png>
-Package pdftex.def Info: ../MATLAB/figures/HW3_P5_residuals_PRN11.png  used on input line 246.
+Package pdftex.def Info: ../MATLAB/figures/HW3_P5_residuals_PRN11.png  used on input line 250.
 (pdftex.def)             Requested size: 281.85587pt x 193.35382pt.
 
 
@@ -581,7 +581,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,456b,1754s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/HW3_Solve.pdf (25 pages, 2243896 bytes).
+Output written on build/HW3_Solve.pdf (25 pages, 2221280 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
