@@ -77,6 +77,35 @@ the topside and bottomside seperately to find they are 3.55 TECU and 8.92 TECU r
 
 \newpage
 \section*{Problem 2: Peak Ionization}
+\subsection*{(i.)}
+\subsubsection*{E Region}
+We are able to use the Chapman relation equation,
+\begin{gather*}
+n_e(z,\theta) = \left(\frac{q_{max}}{\alpha_{eff}}\right)^{1/2} \exp\!\left[\frac{1}{2}\left(1 - z_1 - e^{-z_1}\right)\right] \\
+\text{Solving for $q_{max}$,} \\
+q_{max} = \alpha_{eff}\, n_e^2 \exp\!\left[-\left(1 - z_1 - e^{-z_1}\right)\right] \\
+\text{At the peak altitude $z = z_{max}$, $z_1 = 0$, so the exponential term is 1 and $n_e = n_{e,max}$:} \\
+q_{max} = \alpha_{eff}\, n_{e,max}^2 \\
+q_{max_E} = (10^{-8})(1.5\times10^{5})^2 \\
+\boxed{q_{max_E}= 225~\mathrm{cm^{2}/s}}
+\end{gather*}
+\subsubsection*{F1 Region}
+Repeat the calculation above for the F1 Region,
+\begin{gather*}
+q_{max_F1} = (7*10^{-9})(2.5\times10^{5})^2 \\
+\boxed{q_{max_E}= 437.5~\mathrm{cm^{2}/s}}
+\end{gather*}
+\subsubsection*{F2 Region}
+Repeat the calculation above for the F2 Region,
+\begin{gather*}
+q_{max_F2} = (5*10^{-9})(5.0\times10^{5})^2 \\
+\boxed{q_{max_F2}= 1250~\mathrm{cm^{2}/s}}
+\end{gather*}
+
+\subsection*{(ii.)}
+The reason why the ionization peak altitude $z_{max}$ moves upwards with increasing solar zenith angle
+$\chi$ when all other factors are kept constant is because when examining the equation,
+
 
 \newpage
 \section*{Problem 3: Spacecraft Charging in LEO}
