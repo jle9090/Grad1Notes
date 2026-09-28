@@ -11,6 +11,9 @@ Last updated: 2026-09-23
 
 ---
 
+## Management
+- [ ] Fixing waterfall chart to incorporate the target dates
+
 ## Ground Station
 
 - [ ] Decide GS PC architecture (Rick's 2-PC proposal — static GNU Radio box for MAXWELL+SWARM-EX, dedicated Hydra box — vs. current setup)
