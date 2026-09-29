@@ -24,6 +24,11 @@
             <overriden-day-types/>
             <days/>
         </day-types>
+        <date year="2026" month="11" date="23" type="HOLIDAY"/>
+        <date year="2026" month="11" date="24" type="HOLIDAY"/>
+        <date year="2026" month="11" date="25" type="HOLIDAY"/>
+        <date year="2026" month="11" date="26" type="HOLIDAY"/>
+        <date year="2026" month="11" date="27" type="HOLIDAY"/>
     </calendars>
     <tasks empty-milestones="true">
         <taskproperties>
@@ -142,10 +147,10 @@
             <task id="136" uid="bf86aac8da7744d6b501634f22ce7a0c" name="Full SCT2 runthrough" meeting="false" start="2026-11-17" duration="4" complete="0" expand="true">
                 <depend id="137" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="137" uid="e8d5fd07e8d24f51a308722af09209bc" name="Testing and troubleshooting" meeting="false" start="2026-11-23" duration="3" complete="0" expand="true">
+            <task id="137" uid="e8d5fd07e8d24f51a308722af09209bc" name="Testing and troubleshooting" meeting="false" start="2026-11-30" duration="3" complete="0" expand="true">
                 <depend id="138" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="138" uid="a5c9ccbe4bf24f03a71015d579357b96" name="Post-test documentation review" meeting="false" start="2026-11-26" duration="2" complete="0" expand="true"/>
+            <task id="138" uid="a5c9ccbe4bf24f03a71015d579357b96" name="Post-test documentation review" meeting="false" start="2026-12-03" duration="2" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>
