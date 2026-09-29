@@ -39,7 +39,7 @@ legend('Expected Range', 'Pseudorange', 'Location', 'best')
 title(sprintf('PRN %d Pseudorange and Expected Range', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P1_pseudorange_vs_expected_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P1_pseudorange_vs_expected_PRN14.png'), 'Resolution', 300);
 
 figure()
 plot(ephem_time_hr, PRN14_GPS_rinexData.C1C-R_expected, 'LineWidth', 1.5)
@@ -49,7 +49,7 @@ grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P1_residuals_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P1_residuals_PRN14.png'), 'Resolution', 300);
 
 % Difference vector between C1C and expected range
 dPR0 = PRN14_GPS_rinexData.C1C-R_expected;

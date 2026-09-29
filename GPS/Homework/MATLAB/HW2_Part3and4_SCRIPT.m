@@ -40,7 +40,7 @@ title('Range vs TOW (PRN 5)')
 grid on
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'ranging_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P3_ranging_PRN5.png'), 'Resolution', 300);
 
 % C. Only plot when NIST can view the satellite
 % Filter when elevation > 10
@@ -73,7 +73,7 @@ title('Range vs TOW (PRN 5, when Visible)')
 grid on
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'ranging_PRN5_visibility.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P3_ranging_PRN5_visibility.png'), 'Resolution', 300);
 
 % d. Repeat for PRN 8
 
@@ -109,7 +109,7 @@ legend('PRN 5', 'PRN 8')
 grid on
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'ranging_PRN5_PRN8.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P3_ranging_PRN5_PRN8.png'), 'Resolution', 300);
 
 % Only plot when NIST can view the satellite
 
@@ -149,7 +149,7 @@ legend('PRN 5', 'PRN 8')
 grid on
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'ranging_PRN5_PRN8_visible.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P3_ranging_PRN5_PRN8_visible.png'), 'Resolution', 300);
 
 % Part 4: skyplots
 % Calculate visibility for all PRNs at NIST
@@ -166,7 +166,7 @@ for prn = 1:32
     hold on
 end
 title('Skyplot at NIST')
-exportgraphics(gcf, fullfile('figures', 'NIST_skyplot.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P4_NIST_skyplot.png'), 'Resolution', 300);
 % Recalculate and plot for the two other sites
 
 % SMEAD
@@ -183,7 +183,7 @@ for prn = 1:32
     hold on
 end
 title('Skyplot at SMEAD')
-exportgraphics(gcf, fullfile('figures', 'SMEAD_skyplot.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P4_SMEAD_skyplot.png'), 'Resolution', 300);
 
 % EQUATOR
 for prn = 1:32
@@ -199,4 +199,4 @@ for prn = 1:32
     hold on
 end
 title('Skyplot at EQUATOR')
-exportgraphics(gcf, fullfile('figures', 'EQUATOR_skyplot.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW2', 'HW2_P4_EQUATOR_skyplot.png'), 'Resolution', 300);

@@ -46,7 +46,7 @@ grid minor
 legend('X Ephem','Y Ephem','Z Ephem','X Precise','Y Precise','Z Precise')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P2_ephem_precise_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P2_ephem_precise_PRN5.png'), 'Resolution', 300);
 
 % Plotting residual
 figure()
@@ -58,7 +58,7 @@ grid minor
 legend('X','Y','Z')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P2_xyz_residual_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P2_xyz_residual_PRN5.png'), 'Resolution', 300);
 
 % c. Get satellite clock bias
 
@@ -72,4 +72,4 @@ grid minor
 title('Clock Bias Over Time')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P2_clock_bias_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P2_clock_bias_PRN5.png'), 'Resolution', 300);

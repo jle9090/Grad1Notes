@@ -34,7 +34,7 @@ title(sprintf('GPS PRN %d C1C Pseudorange', PRN_number))
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1C_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P1_C1C_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.S1C, 'LineWidth', 1.5)
@@ -44,7 +44,7 @@ title(sprintf('GPS PRN %d S1C Signal Strength', PRN_number))
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P1_S1C_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P1_S1C_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(PRN05_GPS_rinexData.Time, PRN05_GPS_rinexData.C1W, 'LineWidth', 1.5)
@@ -54,7 +54,7 @@ ylabel('C1W')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1W_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P1_C1W_PRN5.png'), 'Resolution', 300);
 
 % Plotting C1W and C1C
 figure()
@@ -68,7 +68,7 @@ grid minor
 legend('C1C','C1W')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1C_C1W_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P1_C1C_C1W_PRN5.png'), 'Resolution', 300);
 
 % Plotting C1W and C1C residuals
 figure()
@@ -79,4 +79,4 @@ title(sprintf('GPS PRN %d C1C vs C1W Residuals', PRN_number))
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P1_C1C_C1W_PRN5_residuals.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P1_C1C_C1W_PRN5_residuals.png'), 'Resolution', 300);

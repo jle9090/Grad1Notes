@@ -63,7 +63,7 @@ grid minor
 title(sprintf('PRN %d Tropospheric Error', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
 
 % Plotting dPR3 = C1C – (R – bsv - relsv + tropo)
 
@@ -79,7 +79,7 @@ grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
 
 dPR3(1)
 dPR3(end)

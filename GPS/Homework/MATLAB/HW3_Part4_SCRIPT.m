@@ -40,7 +40,7 @@ legend('Expected Range', 'Pseudorange', 'Location', 'best')
 title(sprintf('PRN %d Pseudorange and Expected Range', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P4_pseudorange_vs_expected_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P4_pseudorange_vs_expected_PRN5.png'), 'Resolution', 300);
 
 figure()
 plot(ephem_time_hr, PRN05_GPS_rinexData.C1C-R_expected, 'LineWidth', 1.5)
@@ -51,4 +51,4 @@ title(sprintf('PRN %d Expected Range C1C Pseudorange Residuals', PRN_number))
 ax = gca; ax.YAxis.Exponent = 0;
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P4_residuals_PRN5.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW3', 'HW3_P4_residuals_PRN5.png'), 'Resolution', 300);

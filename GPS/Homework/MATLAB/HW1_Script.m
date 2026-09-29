@@ -5,7 +5,7 @@
 clc; clear; close all
 
 % Figures get saved into the figures/ folder next to this script
-outdir = fullfile(fileparts(mfilename('fullpath')), 'figures');
+outdir = fullfile(fileparts(mfilename('fullpath')), 'figures', 'HW1');
 
 % Defining constants
 v0 = 50; % [m/s]
@@ -50,4 +50,4 @@ ylabel('z (deg)')
 title('Zenith Angle')
 
 % Save figure as PNG
-exportgraphics(gcf, fullfile(outdir, 'HW1_sensitivity.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile(outdir, 'HW1_P2_sensitivity.png'), 'Resolution', 300);

@@ -63,7 +63,7 @@ tropo_correction  = tropomodel(zd, EL_expected);
 % title(sprintf('PRN %d Tropospheric Error', PRN_number))
 % set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 % set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-% exportgraphics(gcf, fullfile('figures', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
+% exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
 
 % Plotting dPR3 = C1C – (R – bsv - relsv + tropo)
 
@@ -79,7 +79,7 @@ dPR3 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr + tropo_corr
 % title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
 % set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 % set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-% exportgraphics(gcf, fullfile('figures', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
+% exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
 % 
 % dPR3(1)
 % dPR3(end)
@@ -99,7 +99,7 @@ grid minor
 title(sprintf('PRN %d Ionospheric Correction', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P5_iono_corrections_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P5_iono_corrections_PRN14.png'), 'Resolution', 300);
 
 % calculate dPR4
 dPR4 = PRIF12 - (R_expected - satClkCorr - relCorr + tropo_correction);
@@ -113,4 +113,4 @@ grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P5_residuals_with_bsv_relativistic_tropo_iono_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P5_residuals_with_bsv_relativistic_tropo_iono_PRN14.png'), 'Resolution', 300);

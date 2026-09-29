@@ -51,7 +51,7 @@ dPR0 = PRN14_GPS_rinexData.C1C-R_expected;
 % title('Clock Bias Over Time')
 % set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 % set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-% exportgraphics(gcf, fullfile('figures', 'HW4_P3_clock_bias_PRN14.png'), 'Resolution', 300);
+% exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_clock_bias_PRN14.png'), 'Resolution', 300);
 
 % Where bsv is SatClkCorr
 dPR2 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr);
@@ -64,7 +64,7 @@ grid minor
 title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P3_residuals_with_bsv_relativistic_PRN14.png'), 'Resolution', 300);
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_residuals_with_bsv_relativistic_PRN14.png'), 'Resolution', 300);
 
 % TODO make part 2 and part 3 self consistent, where it is a switch case
 % within eph2pvt
