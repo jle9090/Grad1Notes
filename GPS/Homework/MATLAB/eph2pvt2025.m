@@ -207,7 +207,7 @@ for tt = 1:sz % loop through all input times
 
     GM=3.986004418*10^(14); %{m}^3{s}^2)
     % Calculate relativistic correction (p. 93 of IS-GPS-200G)
-    relCorr(tt,1) = -(2/c^2)*sqrt(a*GM)*ecc*sinE; % Adding back in correction
+    relCorr(tt,1) = (-(2/c^2)*sqrt(a*GM)*ecc*sinE)*c; % Adding back in correction
     % relCorr(tt,1) = 0; % No correction case
     junk = 0;
 

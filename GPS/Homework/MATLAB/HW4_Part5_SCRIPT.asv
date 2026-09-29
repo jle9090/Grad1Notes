@@ -55,15 +55,15 @@ zd = 2;
 tropo_correction  = tropomodel(zd, EL_expected);
 
 % Plotting the tropospheric model
-figure()
-plot(ephem_time_hr, tropo_correction, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
-ylabel('Tropospheric Error (m)')
-grid minor
-title(sprintf('PRN %d Tropospheric Error', PRN_number))
-set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
-set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
+% figure()
+% plot(ephem_time_hr, tropo_correction, 'LineWidth', 1.5)
+% xlabel('Time (hrs)')
+% ylabel('Tropospheric Error (m)')
+% grid minor
+% title(sprintf('PRN %d Tropospheric Error', PRN_number))
+% set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+% set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+% exportgraphics(gcf, fullfile('figures', 'HW4_P3_tropo_corrections.png'), 'Resolution', 300);
 
 % Plotting dPR3 = C1C – (R – bsv - relsv + tropo)
 
@@ -71,15 +71,23 @@ exportgraphics(gcf, fullfile('figures', 'HW4_P3_tropo_corrections.png'), 'Resolu
 dPR3 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr + tropo_correction);
 
 % Plotting
-figure()
-plot(ephem_time_hr, dPR3, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
-ylabel('O-C-bsv w/ relativistic error and tropo correction (m)')
-grid minor
-title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
-set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
-set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
+% figure()
+% plot(ephem_time_hr, dPR3, 'LineWidth', 1.5)
+% xlabel('Time (hrs)')
+% ylabel('O-C-bsv w/ relativistic error and tropo correction (m)')
+% grid minor
+% title(sprintf('PRN %d Expected Range C1C Pseudorange Clock Residuals', PRN_number))
+% set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+% set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+% exportgraphics(gcf, fullfile('figures', 'HW4_P4_residuals_with_bsv_relativistic_tropo_PRN14.png'), 'Resolution', 300);
+% 
+% dPR3(1)
+% dPR3(end)
 
-dPR3(1)
-dPR3(end)
+f1 = 1575.42e6; % C1C frequency
+f2 = 1227.6e6; % C2L frequency
+
+% Calling ionospheric model
+[PRIF12, iono] = ionocorr (PRN14_GPS_rinexData.C1C, f1, PRN14_GPS_rinexData.C2L, f2);
+
+% Plot ionospheric corrections
