@@ -212,7 +212,7 @@ $$
 
 $$
 \begin{gathered}
-V = \frac{kT_{e}}{q_{e}}\ln{(\frac{4V_{sc}}{V_{eth}} frac{A_{n}}{A_{s}})} \\
+V = \frac{kT_{e}}{q_{e}}\ln{(\frac{4V_{sc}}{V_{eth}} \frac{A_{n}}{A_{s}})} \\
 A_{n} = \pi r^2\\
 A_{s} = 4\pi r^2 \\
 \end{gathered}
@@ -220,3 +220,59 @@ $$
 
 size dependent? NO
 shape dependent? YES
+
+![[Pasted image 20260929083359.png]]
+$I_e$ for $e^-$
+$I_i$ for $p^+$
+
+
+$$
+\begin{gathered}
+I_{ph}=? \\
+\text{if potential is zero:} \\
+I_{e} + I_{i} + I_{ph} = 0 \\
+
+\end{gathered}
+$$
+
+**photocurrent**
+- photocurrent is electrons leaving s/c surface due to photoelectric effect form solar UV
+- electrons going **away from** spacecraft = current **towards** spacecraft
+
+$$
+\begin{gathered}
+I_{ph} = J_{0}A_{n} \cos(\theta)e^{\frac{-qV}{kT_{ph}}} \\
+kT_{ph}\approx 2\,\mathrm{eV} \\
+I_{e} + I_{i} + I_{ph} \to V_{H}
+\end{gathered}
+$$
+
+**differential charging**
+"making it worse"
+- material dependent
+- suppose one side charges more than the other...
+
+**effects of s/c charging**
+- dont care about absolute potential, simply relative to space
+- effects occur when there is significant potential difference between two regions of spacecraft
+
+**electrostatic discharge**
+- transfer of charge thorugh s/c material due to E field
+	- starts at -150 to -500 V
+	- produces EM pulse/ interference
+**dielectric breakdown**
+- materials break down at some E field
+	- air: 3 MV/m at sea level
+
+![[Pasted image 20260929084319.png]]
+geostationary
+- more energectic electrons at GEO vs LEO
+
+![[Pasted image 20260929084526.png]]
+- south atlantic anamoly
+- south america: mag field is lower, protons and electrons easier to access at that location
+- latitude: because of the aurora
+
+![[Pasted image 20260929084852.png]]
+- post midnight and early morning?
+	- electrons when coming from tail (drift motion), protons are drifting the other away
