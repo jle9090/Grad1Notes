@@ -1,4 +1,4 @@
-function R_expected = compute_expected_range(ephemeris, week, tow, PRN_number, receiver_ECEF)
+function [R_expected, AZ_expected, EL_expected] = compute_expected_range(ephemeris, week, tow, PRN_number, receiver_ECEF)
 % Computes expected range by iteration
 
 % Constants for the alg
@@ -11,7 +11,7 @@ Tr = tow + week*604800;
 
 % Step 2: Geometric range using NIST_ECEF and satPos at Tr
 % Reuse azel range for convinience
-[~, ~, R] = compute_azelrange(receiver_ECEF, satPos);
+[AZ, EL, R] = compute_azelrange(receiver_ECEF, satPos);
 
 % Iterate until range converges
 % Step 3: initial time of transmission
@@ -39,14 +39,19 @@ for iter = 1:5
     satPos_Tt_ECEF = [x_ECEF, y_ECEF, z];
 
     % Step 6: recompute geometric range with the rotated sat position
-    [~, ~, R_new] = compute_azelrange(receiver_ECEF, satPos_Tt_ECEF);
+    [AZ_new, EL_new, R_new] = compute_azelrange(receiver_ECEF, satPos_Tt_ECEF);
 
     % Convergeance condition
     if max(abs(R_new - R_expected)) < 1e-4
         R_expected = R_new;
+        AZ_expected = AZ_new;
+        EL_expected = EL_new;
         break
     end
     R_expected = R_new;
+    AZ_expected = AZ_new;
+    EL_expected = EL_new;
+
     Tt = Tr - R_expected/c; % Step 3 repeat
 end
 

@@ -1,4 +1,4 @@
-function [health,satPos,satVel,satClkCorr,junk,tgd,relCorr] = eph2pvt(ephemeris,t_input,prn)
+function [health,satPos,satVel,satClkCorr,junk,tgd] = eph2pvt(ephemeris,t_input,prn)
 
 %==========================================================================
 %==========================================================================
