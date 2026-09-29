@@ -53,6 +53,7 @@ legend('Expected Range R', 'Pseudorange C1C', 'Location', 'best')
 title(sprintf('PRN %d C1C Pseudorange and Expected Range', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P1_C1C_vs_R_PRN14.png'), 'Resolution', 300);
 
 figure()
@@ -63,12 +64,13 @@ grid minor
 title(sprintf('PRN %d dPR0 = C1C - R', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P1_dPR0_PRN14.png'), 'Resolution', 300);
 
 % Difference vector between C1C and expected range
 dPR0 = PRN14_GPS_rinexData.C1C-R_expected;
-dPR0(1)
-dPR0(end)
+fprintf('dPR0 first value: %.4f m\n', dPR0(1));
+fprintf('dPR0 last value:  %.4f m\n', dPR0(end));
 
 %% Problem 2
 figure()
@@ -79,6 +81,7 @@ grid minor
 title(sprintf('PRN %d Satellite Clock Correction b_{sv}', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P2_bsv_PRN14.png'), 'Resolution', 300);
 
 % Where bsv is SatClkCorr
@@ -92,10 +95,11 @@ grid minor
 title(sprintf('PRN %d dPR1 = C1C - (R - b_{sv})', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P2_dPR1_PRN14.png'), 'Resolution', 300);
 
-dPR1(1)
-dPR1(end)
+fprintf('dPR1 first value: %.4f m\n', dPR1(1));
+fprintf('dPR1 last value:  %.4f m\n', dPR1(end));
 
 %% Problem 3
 figure()
@@ -106,6 +110,7 @@ grid minor
 title(sprintf('PRN %d Relativistic Correction rel_{sv}', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_relsv_PRN14.png'), 'Resolution', 300);
 
 % Where bsv is SatClkCorr
@@ -119,13 +124,14 @@ grid minor
 title(sprintf('PRN %d dPR2 = C1C - (R - b_{sv} - rel_{sv})', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_dPR2_PRN14.png'), 'Resolution', 300);
 
 % TODO make part 2 and part 3 self consistent, where it is a switch case
 % within eph2pvt
 
-dPR2(1)
-dPR2(end)
+fprintf('dPR2 first value: %.4f m\n', dPR2(1));
+fprintf('dPR2 last value:  %.4f m\n', dPR2(end));
 
 %% Problem 4
 % Using the troposphere model we calculated
@@ -142,6 +148,7 @@ grid minor
 title(sprintf('PRN %d Tropospheric Correction (z_d = %g m)', PRN_number, zd))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P4_tropo_PRN14.png'), 'Resolution', 300);
 
 % Plotting dPR3 = C1C – (R – bsv - relsv + tropo)
@@ -158,10 +165,11 @@ grid minor
 title(sprintf('PRN %d dPR3 = C1C - (R - b_{sv} - rel_{sv} + tropo)', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P4_dPR3_PRN14.png'), 'Resolution', 300);
 
-dPR3(1)
-dPR3(end)
+fprintf('dPR3 first value: %.4f m\n', dPR3(1));
+fprintf('dPR3 last value:  %.4f m\n', dPR3(end));
 
 %% Problem 5
 f1 = 1575.42e6; % C1C frequency
@@ -179,6 +187,7 @@ grid minor
 title(sprintf('PRN %d Ionospheric Correction (C1C, C2L)', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P5_iono_PRN14.png'), 'Resolution', 300);
 
 % calculate dPR4
@@ -193,10 +202,11 @@ grid minor
 title(sprintf('PRN %d dPR4 = PRIF12 - (R - b_{sv} - rel_{sv} + tropo)', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P5_dPR4_PRN14.png'), 'Resolution', 300);
 
-dPR4(1)
-dPR4(end)
+fprintf('dPR4 first value: %.4f m\n', dPR4(1));
+fprintf('dPR4 last value:  %.4f m\n', dPR4(end));
 
 %% Problem 6
 % Plot all on one graph
@@ -213,4 +223,127 @@ legend('dPR1: b_{sv}', 'dPR2: b_{sv} + rel_{sv}', 'dPR3: b_{sv} + rel_{sv} + tro
 title(sprintf('PRN %d Pseudorange Residuals dPR1-dPR4', PRN_number))
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P6_all_dPRs.png'), 'Resolution', 300);
+
+%% Problem 7
+
+% Each corresponding frequency
+f1 = 1575.42e6; % L1 frequency (C1C, L1C)
+f2 = 1227.60e6; % L2 frequency (C2W, L2W, C2L, L2L)
+f5 = 1176.45e6; % L5 frequency (C5Q, L5Q)
+
+[MP1,CMC1] = mpath(PRN14_GPS_rinexData.C1C, PRN14_GPS_rinexData.L1C, f1, PRN14_GPS_rinexData.L2W, f2);
+
+figure()
+subplot(3,1,1)
+plot(ephem_time_hr, CMC1, 'LineWidth', 1.5)
+ylabel('CMC1')
+grid minor
+title(sprintf('PRN %d CMC1', PRN_number))
+subplot(3,1,2)
+plot(ephem_time_hr, MP1, 'LineWidth', 1.5)
+ylabel('MP1')
+grid minor
+subplot(3,1,3)
+plot(ephem_time_hr, PRN14_GPS_rinexData.S1C, 'LineWidth', 1.5)
+xlabel('Time (hrs)')
+ylabel('S1C (dB-Hz)')
+grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC1.png'), 'Resolution', 300);
+
+% Repeat for 
+
+% C1C
+% Done above
+
+% C2W
+[MP_C2W,CMC_C2W] = mpath(PRN14_GPS_rinexData.C2W, PRN14_GPS_rinexData.L2W, f2, PRN14_GPS_rinexData.L1C, f1);
+
+figure()
+subplot(3,1,1)
+plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
+ylabel('CMC C2W')
+grid minor
+title(sprintf('PRN %d CMC C2W', PRN_number))
+subplot(3,1,2)
+plot(ephem_time_hr, MP_C2W, 'LineWidth', 1.5)
+ylabel('MP C2W')
+grid minor
+subplot(3,1,3)
+plot(ephem_time_hr, PRN14_GPS_rinexData.S2W, 'LineWidth', 1.5)
+xlabel('Time (hrs)')
+ylabel('S2W (dB-Hz)')
+grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC_C2W.png'), 'Resolution', 300);
+
+% C2L
+[MP_C2L,CMC_C2L] = mpath(PRN14_GPS_rinexData.C2L, PRN14_GPS_rinexData.L2L, f2, PRN14_GPS_rinexData.L1C, f1);
+
+figure()
+subplot(3,1,1)
+plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
+ylabel('CMC C2L')
+grid minor
+title(sprintf('PRN %d CMC C2L', PRN_number))
+subplot(3,1,2)
+plot(ephem_time_hr, MP_C2L, 'LineWidth', 1.5)
+ylabel('MP C2L')
+grid minor
+subplot(3,1,3)
+plot(ephem_time_hr, PRN14_GPS_rinexData.S2L, 'LineWidth', 1.5)
+xlabel('Time (hrs)')
+ylabel('S2L (dB-Hz)')
+grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC_C2L.png'), 'Resolution', 300);
+
+% C5Q
+[MP_C5Q,CMC_C5Q] = mpath(PRN14_GPS_rinexData.C5Q, PRN14_GPS_rinexData.L5Q, f5, PRN14_GPS_rinexData.L2W, f2);
+
+figure()
+subplot(3,1,1)
+plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
+ylabel('CMC C5Q')
+grid minor
+title(sprintf('PRN %d CMC C5Q', PRN_number))
+subplot(3,1,2)
+plot(ephem_time_hr, MP_C5Q, 'LineWidth', 1.5)
+ylabel('MP C5Q')
+grid minor
+subplot(3,1,3)
+plot(ephem_time_hr, PRN14_GPS_rinexData.S5Q, 'LineWidth', 1.5)
+xlabel('Time (hrs)')
+ylabel('S5Q (dB-Hz)')
+grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC_C5Q.png'), 'Resolution', 300);
+
+% Plot multipath combinations together
+figure()
+plot(ephem_time_hr, CMC1, 'LineWidth', 1.5)
+hold on
+plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
+hold on
+plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
+hold on
+plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
+hold on
+xlabel('Time (hrs)')
+ylabel('Pseudoranges (m)')
+legend('CMC1', 'CMC C2W', 'CMC C2L', 'CMC C5Q', 'Location', 'best')
+grid minor
+set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
+set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
+set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
+exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_all_pseudorange.png'), 'Resolution', 300);
