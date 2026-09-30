@@ -77,6 +77,7 @@ Last updated: 2026-09-23
 - [ ] Find MAXWELL pictures (not in SharePoint)
 - [ ] Check what package Hydra receives
 - [ ] Clarify "once you define H2S, Lithium no more" note with Dhruva
+- [ ] 30dB attneuator borrowed from ground station for MCT, return when done
 
 ## Antenna
 
@@ -110,3 +111,6 @@ x [ ] Get CDH pin diagram from Alex, or ask Saanika
 - MAXWELL's February delivery could pull shared resources (GS, radios, personnel) from SWARM-EX
 - SCT and CET are both blocked on the same Lithium ↔ Hydra link — critical path
 - Grafana dashboard exists — check if it's already tracking comms status/telemetry before building new monitoring
+
+Ian Li - Doing systems
+- Looking into writing SCT and CET procedures
