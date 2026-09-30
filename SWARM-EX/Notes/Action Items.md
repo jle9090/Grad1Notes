@@ -12,7 +12,7 @@ Last updated: 2026-09-23
 ---
 
 ## Management
-- [ ] Fixing waterfall chart to incorporate the target dates
+- [x] Fixing waterfall chart to incorporate the target dates
 
 ## Ground Station
 
@@ -32,7 +32,8 @@ Last updated: 2026-09-23
 	  - [ ] should we get a list of these
   - [ ] Weatherproofing: better zipties, coax seal, Loctite
   - [ ] Verify lightning arrestor install with building manager
-  - [ ] Get motor configuration cable (in transit)
+    - [ ]this was never installed 
+  - x ] Get motor configuration cable (in transit)
 - [ ] Calibrate rotors
 - [ ] Get az/el tracking working correctly
 - [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa) — may need GS PC, not pushed back for now (Gantt: 9/24–10/7)
@@ -46,10 +47,12 @@ Last updated: 2026-09-23
 ## Radio / Comms Chain (Lithium ↔ Hydra) — critical path for SCT & CET
 
 - [ ] Get Lithium radio talking to Hydra (Justin) — blocks both SCT and CET tests
-- [ ] Contact Brian Hilten, clarify process
+- [x] Contact Brian Hilten, clarify process
 - [ ] Continue Hydra command dictionary implementation
 - [ ] Develop Hydra for MCT (Gantt: 9/23–9/29) — MCT delayed, needs more Hydra work before bench setup #in-progress
 	- [x] Review MCT test docs
+	- x ]hydra development 
+	- [ ] saanika review
 	- [ ] MCT bench setup, practice run, full run (Gantt: 9/30–10/7)
 - [ ] Develop Hydra for SCT-1 (Gantt: 10/9–10/15; SCT-1 full run 10/20–10/21)
 - [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)
@@ -62,7 +65,8 @@ Last updated: 2026-09-23
 - [ ] Confirm Li-1 supply voltage (marked "?" at 7V) and Li-2 (10V) against absolute max ratings in Li-1 User Manual
 - [x] Resolve Safe2Mate pinout mismatch (10 vs 14 vs 6 pin) — ask Alex or Saanika
 	- [ ] This will require documentation updates
-- [ ] Find CDH UART connector location / pin layout of CDH board
+- [x] Find CDH UART connector location / pin layout of CDH board  
+- x ]altium, see adhi's message 
 - [ ] Locate 30dB attenuator and an antenna
 	- [ ] in palo's office
 - [ ] Follow up with Dhruva if documentation proves insufficient
@@ -82,16 +86,16 @@ Last updated: 2026-09-23
 
 ## Systems / Cross-team
 
-- [ ] Check in on Shehan tying requirements to tests
-- [ ] Confirm Shehan's status/availability for crosslink work #blocked only 1 Lithium radio available for crosslink testing
-- [ ] Contact ISIS about antenna material properties/CAD for Landon
+- [ ] Check in on Shehcross linkts
+- [checkin on luke mathews requirements review
+- [ ]  ] Confirm Shehan's status/availability for crosslink work #blocked only 1 Lithium radio available for crosslink testingx- [ ] Contact ISIS about antenna material properties/CAD for Landon
 - [ ] Get Steve Taylor's contact re: permissions
-- [ ] Get CDH pin diagram from Alex, or ask Saanika
+x [ ] Get CDH pin diagram from Alex, or ask Saanika
 
 ## Team / Process
 
 - [x] Onboard Edin Choi onto antenna analysis work
-	- [ ] he is no longer doing that
+	x [ ] he is no longer doing that
 - [ ] Organize COMMs documentation (flagged as top risk — undocumented institutional knowledge)
 - [x] Fix Slack channel/workspace organization for comms team
 - [ ] Set up recurring architecture discussion to settle GS PC decision
