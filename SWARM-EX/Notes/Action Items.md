@@ -43,6 +43,8 @@ Last updated: 2026-09-23
 - [x] Buy cables: RS232A, USB-ethernet converter (Rick to purchase)
 - [x] Contact Alex Byrnes re: rotors/ground pass support
 - [x] Reach out to Skye Glasner to coordinate GS work, avoid duplicate effort
+- [ ] contact skai if she got chance to work on it friday oct 2nd
+- [ ] palo wants doc on ground station
 
 ## Radio / Comms Chain (Lithium ↔ Hydra) — critical path for SCT & CET
 
