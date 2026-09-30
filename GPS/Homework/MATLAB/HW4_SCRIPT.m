@@ -127,9 +127,6 @@ set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
 set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P3_dPR2_PRN14.png'), 'Resolution', 300);
 
-% TODO make part 2 and part 3 self consistent, where it is a switch case
-% within eph2pvt
-
 fprintf('dPR2 first value: %.4f m\n', dPR2(1));
 fprintf('dPR2 last value:  %.4f m\n', dPR2(end));
 
@@ -238,12 +235,12 @@ f5 = 1176.45e6; % L5 frequency (C5Q, L5Q)
 figure()
 subplot(3,1,1)
 plot(ephem_time_hr, CMC1, 'LineWidth', 1.5)
-ylabel('CMC1')
+ylabel('CMC C1C (m)')
 grid minor
-title(sprintf('PRN %d CMC1 (MP w/ L2W)', PRN_number))
+title(sprintf('PRN %d CMC C1C (MP w/ L2W)', PRN_number))
 subplot(3,1,2)
 plot(ephem_time_hr, MP1, 'LineWidth', 1.5)
-ylabel('MP1')
+ylabel('MP C1C (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S1C, 'LineWidth', 1.5)
@@ -266,12 +263,12 @@ exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC1.png'), 'Resolution',
 figure()
 subplot(3,1,1)
 plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
-ylabel('CMC C2W')
+ylabel('CMC C2W (m)')
 grid minor
 title(sprintf('PRN %d CMC C2W (MP w/ L1C)', PRN_number))
 subplot(3,1,2)
 plot(ephem_time_hr, MP_C2W, 'LineWidth', 1.5)
-ylabel('MP C2W')
+ylabel('MP C2W (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S2W, 'LineWidth', 1.5)
@@ -289,12 +286,12 @@ exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC_C2W.png'), 'Resolutio
 figure()
 subplot(3,1,1)
 plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
-ylabel('CMC C2L')
+ylabel('CMC C2L (m)')
 grid minor
 title(sprintf('PRN %d CMC C2L (MP w/ L1C)', PRN_number))
 subplot(3,1,2)
 plot(ephem_time_hr, MP_C2L, 'LineWidth', 1.5)
-ylabel('MP C2L')
+ylabel('MP C2L (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S2L, 'LineWidth', 1.5)
@@ -312,12 +309,12 @@ exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_CMC_C2L.png'), 'Resolutio
 figure()
 subplot(3,1,1)
 plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
-ylabel('CMC C5Q')
+ylabel('CMC C5Q (m)')
 grid minor
 title(sprintf('PRN %d CMC C5Q (MP w/ L2W)', PRN_number))
 subplot(3,1,2)
 plot(ephem_time_hr, MP_C5Q, 'LineWidth', 1.5)
-ylabel('MP C5Q')
+ylabel('MP C5Q (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S5Q, 'LineWidth', 1.5)
@@ -341,16 +338,9 @@ plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
 hold on
 xlabel('Time (hrs)')
 ylabel('Pseudoranges (m)')
-legend('CMC1', 'CMC C2W', 'CMC C2L', 'CMC C5Q', 'Location', 'best')
+legend('CMC C1C', 'CMC C2W', 'CMC C2L', 'CMC C5Q', 'Location', 'best')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
 set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_all_pseudorange.png'), 'Resolution', 300);
-
-
-% figure()
-% plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
-% plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
-% plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
-% plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
