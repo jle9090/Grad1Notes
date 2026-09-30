@@ -347,3 +347,10 @@ set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
 set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P7_all_pseudorange.png'), 'Resolution', 300);
+
+
+% figure()
+% plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
+% plot(ephem_time_hr, CMC_C2W, 'LineWidth', 1.5)
+% plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
+% plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
