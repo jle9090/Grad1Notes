@@ -1,7 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1790876871.20773 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790876871.93945 0
-  "/etc/texmf/web2c/texmf.cnf" 1787852770.52377 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" 1790876870.98976 8464 7d5dbf26ba09cf5f5db4dca284e2c573 ""
+["pdflatex"] 1790894065.09529 "HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790894065.51496 0
+  "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -68,13 +67,14 @@
   "/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty" 1677530001 77021 d05e9115c67855816136d82929db8892 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787852809.09609 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787852869 8212543 dc6047f59c0d9fd45bb1f2649f736bb2 ""
-  "HW3_Solve.tex" 1790876870.98976 8464 7d5dbf26ba09cf5f5db4dca284e2c573 ""
-  "build/HW3_Solve.aux" 1790876871.8585 534 649450283c3a68851b3db16e1ab770d8 "pdflatex"
-  "figures/HW3_P1_ion_composition.png" 1790537965.13366 346701 cc1fd74399d9226c16755e3985a0a5a2 ""
-  "figures/HW3_P1_iri_output.png" 1790537965.13422 436010 763782da6e2efbc1ae016d196d5249eb ""
-  "figures/HW3_P5_plasma_freq.png" 1790870187.20447 131861 3d72d9e4207be60d214afe5126d398a6 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
+  "HW3_Solve.tex" 1790894064.58782 9700 95bdb6c732d7d96d13c15616dfa21883 ""
+  "build/HW3_Solve.aux" 1790894065.4479 667 9615f4d9248d74acce595e4b2c0a29cb "pdflatex"
+  "figures/HW3_P1_ion_composition.png" 1790893819.17974 346701 cc1fd74399d9226c16755e3985a0a5a2 ""
+  "figures/HW3_P1_iri_output.png" 1790893819.18324 436010 763782da6e2efbc1ae016d196d5249eb ""
+  "figures/HW3_P5_plasma_freq.png" 1790893819.18435 131861 3d72d9e4207be60d214afe5126d398a6 ""
+  "figures/HW3_P8_absorption.png" 1790893870.75853 102298 19d76de3c1dc3d3a2b030216709e4c29 ""
   (generated)
   "build/HW3_Solve.aux"
   "build/HW3_Solve.log"

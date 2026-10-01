@@ -1,9 +1,9 @@
-PWD /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3
+PWD /home/justin-le/Documents/Obsidian Vault/Grad1Notes/.claude/worktrees/hw3-p8-plusminus/AeroEnvironment/HW/HW3
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex
+INPUT HW3_Solve.tex
 OUTPUT build/HW3_Solve.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -123,6 +123,11 @@ INPUT ./figures/HW3_P5_plasma_freq.png
 INPUT ./figures/HW3_P5_plasma_freq.png
 INPUT ./figures/HW3_P5_plasma_freq.png
 INPUT ./figures/HW3_P5_plasma_freq.png
+INPUT ./figures/HW3_P8_absorption.png
+INPUT ./figures/HW3_P8_absorption.png
+INPUT ./figures/HW3_P8_absorption.png
+INPUT ./figures/HW3_P8_absorption.png
+INPUT ./figures/HW3_P8_absorption.png
 INPUT build/HW3_Solve.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

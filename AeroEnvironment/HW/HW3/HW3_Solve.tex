@@ -233,18 +233,18 @@ ionosphere, we can improve our pseudoranging and have a better position estimate
 \end{gather*}
 \hspace*{2em}The electron gyrofrequency for $|B_0| = 50{,}000$ nT is,
 \begin{gather*}
-\omega_H = \frac{q_e B_0}{m_e} = 8.79\times10^{6}~\mathrm{rad/s} \quad (f_H = 1.40~\mathrm{MHz})
+\omega_c = \frac{q_e B_0}{m_e} = 8.79\times10^{6}~\mathrm{rad/s} \quad (f_c = 1.40~\mathrm{MHz})
 \end{gather*}
 \hspace*{2em}The differential absorption (with $n_e$ in m$^{-3}$) for both the $+$ and $-$ solutions is,
 \begin{gather*}
-\frac{dA}{dl} = 4.6\times10^{-5}\,\frac{n_e \nu}{\nu^2 + (\omega \pm \omega_H)^2}~\mathrm{dB/m}
+\frac{dA}{dl} = 4.6\times10^{-5}\,\frac{n_e \nu}{\nu^2 + (\omega \pm \omega_c)^2}~\mathrm{dB/m}
 \end{gather*}
 \hspace*{2em}Integrating vertically through the IRI profile with $f = 10$ MHz,
 \begin{gather*}
 \boxed{A_{+} \approx 1.2~\mathrm{dB}} \qquad \boxed{A_{-} \approx 2.1~\mathrm{dB}}
 \end{gather*}
 \hspace*{2em}Most of the absorption occurs between 65 and 120 km, peaking near 95 km where $n_e$
-increases rapidly while $\nu$ is still large. Neglecting $B_0$ gives 1.6 dB.
+increases rapidly while $\nu$ is still large. Neglecting $B_0$ ($\omega_c = 0$) gives 1.6 dB.
 
 \begin{figure}[H]
     \centering
