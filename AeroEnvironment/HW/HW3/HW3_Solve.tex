@@ -109,12 +109,87 @@ $\chi$ when all other factors are kept constant is because when examining the eq
 
 \newpage
 \section*{Problem 3: Spacecraft Charging in LEO}
+\hspace*{2em}We are able to use the charging equation,
+
+\begin{gather*}
+\frac{dQ}{dt} = I_e + I_i + I_{SEE,i} + I_b + I_{ph}
+\end{gather*}
+
+\hspace*{2em}By assuming $\frac{dQ}{dt} = 0$, the eclipse term, $I_{ph}=0$, 
+and no secondary electron emission or backscattered electron current, $I_{SEE,i} = I_b = 0$, the equation simplifies to,
+
+\begin{gather*}
+0 = I_e + I_i
+\end{gather*}
+
+\hspace*{2em}Using equations for $I_i$, and $I_e$,
+\begin{gather*}
+I_i = q n_i v_{0} A_i \\
+I_e = -\frac{1}{4} q n_e v_{e,th} A_e e^{qV/kT_e}
+\end{gather*}
+
+\hspace*{2em}and calculating 
+\begin{gather*}
+V_{fl} = \frac{k_B T_e}{q}\ln\left(\frac{4 v_0 A_i}{v_{e,th} A_e}\right)
+\end{gather*}
+
+\hspace*{2em}The thermal voltage at a constant $T_e = 1000\,\mathrm{K}$ is,
+\begin{gather*}
+\frac{k_B T_e}{q} = \frac{(1.381\times10^{-23}\,\mathrm{J/K})(1000\,\mathrm{K})}{1.602\times10^{-19}\,\mathrm{K}} = 0.0862\,\mathrm{V}
+\end{gather*}
+
+\hspace*{2em}The orbital velocity at $400\,\mathrm{km}$ altitude is,
+\begin{gather*}
+v_0 = \sqrt{\frac{\mu}{R_E + h}} = \sqrt{\frac{3.986\times10^{14}\,\mathrm{m^3/s^2}}{6.378\times10^{6}\,\mathrm{m} + 4.0\times10^{5}\,\mathrm{m}}} = 7.67\,\mathrm{km/s}
+\end{gather*}
+
+\hspace*{2em}The electron thermal velocity is,
+\begin{gather*}
+v_{e,th} = \sqrt{\frac{3 k_B T_e}{m_e}} = \sqrt{\frac{3(1.381\times10^{-23}\,\mathrm{J/K})(1000\,\mathrm{K})}{9.109\times10^{-31}\,\mathrm{kg}}} = 213\,\mathrm{km/s}
+\end{gather*}
+
+\hspace*{2em}If this is a 6U Cubesat, ions are collected
+only on the $20 \times 30\,\mathrm{cm}$ ram face, electrons collect over entire surface,
+\begin{gather*}
+A_i = (0.2\,\mathrm{m})(0.3\,\mathrm{m}) = 0.06\,\mathrm{m^2} \\
+A_e = 2(0.02\,\mathrm{m^2} + 0.03\,\mathrm{m^2} + 0.06\,\mathrm{m^2}) = 0.22\,\mathrm{m^2}
+\end{gather*}
+
+\hspace*{2em}Plug into the floating potential equation,
+\begin{gather*}
+\frac{4 v_0 A_i}{v_{e,th} A_e} = \frac{4(7.67\,\mathrm{km/s})(0.06\,\mathrm{m^2})}{(213\,\mathrm{km/s})(0.22\,\mathrm{m^2})} = 0.0392 \\
+V_{fl} = (0.0862\,\mathrm{V})\ln(0.0392) = (0.0862\,\mathrm{V})(-3.24) \\
+\boxed{V_{fl} \approx -0.28\,\mathrm{V}}
+\end{gather*}
+
 
 \newpage
 \section*{Problem 4: Spacecraft Charging in GEO}
 
 \newpage
 \section*{Problem 5: Radio Wave Propagation}
+\subsection*{(i.)}
+\hspace*{2em}To find the minimum radio frequency to communicate from ground
+to space, we would need the frequency that exceeds the largest plasma frequency $\omega_p$ in 
+the atmosphere. From the IRI output, we find that to be,
+\begin{gather*}
+\boxed{\omega_p = 6.51~\mathrm{MHz}}
+\end{gather*}
+\subsection*{(ii.)}
+\hspace*{2em}To find the region where this frequency reflect, we need to find the region where 
+radio waves are below this frequency. This would be $\boxed{\text{below }225~\mathrm{km}}$. Which would be the
+F2 region.
+\subsection*{(iii.)}
+\hspace*{2em}To find the region where at $2~\mathrm{MHz}$ signal would reflect, we would treat that
+frequency as the plasma frequency to find in the IRI output. This would occur at about $\boxed{97~\mathrm{km}}$,
+which would be the D region. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/HW3_P5_plasma_freq.png}
+    \caption{IRI Plasma Frequency}
+    \label{fig:IRI Plasma Frequency}
+\end{figure}
 
 \newpage
 \section*{Problem 6: Radio Blackout}

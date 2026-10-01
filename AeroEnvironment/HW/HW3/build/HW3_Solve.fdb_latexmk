@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1790610348.27112 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790610348.67319 0
+["pdflatex"] 1790826983.56897 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1790826983.98641 0
   "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" 1790610348.09374 3806 251df4a74db629e621180c11fe3dad88 ""
+  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" 1790826982.95557 6917 3f7f9f1ee8cec2375a41143de040e4ee ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -70,10 +70,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788015624.59721 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788015651 8212554 8ba48e09999b84200c1763afeea134ea ""
-  "HW3_Solve.tex" 1790610348.09374 3806 251df4a74db629e621180c11fe3dad88 ""
-  "build/HW3_Solve.aux" 1790610348.6229 361 1a491959d53f147b059574e4004686ed "pdflatex"
+  "HW3_Solve.tex" 1790826982.95557 6917 3f7f9f1ee8cec2375a41143de040e4ee ""
+  "build/HW3_Solve.aux" 1790826983.93297 534 649450283c3a68851b3db16e1ab770d8 "pdflatex"
   "figures/HW3_P1_ion_composition.png" 1790528831.86636 346701 cc1fd74399d9226c16755e3985a0a5a2 ""
   "figures/HW3_P1_iri_output.png" 1790528829.33744 436010 763782da6e2efbc1ae016d196d5249eb ""
+  "figures/HW3_P5_plasma_freq.png" 1790826091.66964 111547 eeb8b427bb837639c933045312f42b80 ""
   (generated)
   "build/HW3_Solve.aux"
   "build/HW3_Solve.log"
