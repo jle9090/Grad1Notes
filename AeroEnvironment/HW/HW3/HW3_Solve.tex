@@ -40,7 +40,7 @@
 
 % ---------- Title ----------
 \begin{center}
-    {\Large \textbf{Homework 2}}\\[0.5em]
+    {\Large \textbf{Homework 3}}\\[0.5em]
     {\large ASEN 5335 Aerospace Environment}\\[0.5em]
     Justin Le\\ 
     \today
@@ -226,7 +226,31 @@ ionosphere, we can improve our pseudoranging and have a better position estimate
 
 \newpage
 \section*{Problem 8: D Region Signal Attenuation}
+\hspace*{2em}The electron-neutral collision frequency is found from the MSIS neutral density
+($n_n = n_{N_2}+n_{O_2}+n_{O}$, cm$^{-3}$) and the IRI electron temperature,
+\begin{gather*}
+\nu_{en} = 5.4\times10^{-10}\, n_n T_e^{1/2}~\mathrm{s^{-1}}
+\end{gather*}
+\hspace*{2em}The electron gyrofrequency for $|B_0| = 50{,}000$ nT is,
+\begin{gather*}
+\omega_H = \frac{q_e B_0}{m_e} = 8.79\times10^{6}~\mathrm{rad/s} \quad (f_H = 1.40~\mathrm{MHz})
+\end{gather*}
+\hspace*{2em}The differential absorption (with $n_e$ in m$^{-3}$) for both the $+$ and $-$ solutions is,
+\begin{gather*}
+\frac{dA}{dl} = 4.6\times10^{-5}\,\frac{n_e \nu}{\nu^2 + (\omega \pm \omega_H)^2}~\mathrm{dB/m}
+\end{gather*}
+\hspace*{2em}Integrating vertically through the IRI profile with $f = 10$ MHz,
+\begin{gather*}
+\boxed{A_{+} \approx 1.2~\mathrm{dB}} \qquad \boxed{A_{-} \approx 2.1~\mathrm{dB}}
+\end{gather*}
+\hspace*{2em}Most of the absorption occurs between 65 and 120 km, peaking near 95 km where $n_e$
+increases rapidly while $\nu$ is still large. Neglecting $B_0$ gives 1.6 dB.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/HW3_P8_absorption.png}
+    \caption{10 MHz Differential Absorption}
+\end{figure}
 
 \newpage
 \section*{Problem 9: ICON Mission}
