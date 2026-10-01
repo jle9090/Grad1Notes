@@ -193,12 +193,40 @@ which would be the D region.
 
 \newpage
 \section*{Problem 6: Radio Blackout}
+\subsection*{(i).}
+\hspace*{2em}The reason that the spacecraft temporarily loses the ability to communicate
+with the ground is because during re-entry, there is an envelope of ionized atmosphere around
+the spacecraft, due to the re-entry processes' heat generated. This envelope of ionized atmosphere would
+have some plasm frequency that would cause radio signals to reflect, causing this radio blackout.
+\subsection*{(ii).}
+\hspace*{2em}If the module module communicates with the ground at $2282.5~\mathrm{MHz}$, to find
+the electron density in the plasma sheath region, we use the equation,
+\begin{gather*}
+f_c = 9\times10^{-3}\sqrt{n_{ec}} \\
+\text{rewrite for } n_{ec} \text{,}\\
+n_{ec} = (\frac{f_c}{9\times10^{-3}})^2 \\
+\boxed{n_{ec} = 6.432\times10^{22}~\mathrm{m^3}}
+\end{gather*}
 
 \newpage
 \section*{Problem 7: GPS Delays}
+\subsection*{(i).}
+\hspace*{2em}We seek the path length delay through the ionosphere for 10 TECU using,
+$L1 = 1575.42~\mathrm{MHz}$ and $L2 = 2282.5~\mathrm{MHz}$, we can use the equation,
+\begin{gather*}
+\Delta l_{iono} = -\frac{40.3}{f^2}TEC \\
+\boxed{\Delta l_{iono L1} = -1.62\times10^{-16}~\mathrm{m} }\\
+\boxed{\Delta l_{iono L2} = -7.74\times10^{-17}~\mathrm{m}}
+\end{gather*}
+\subsection*{(ii).}
+\hspace*{2em}We are able to use multiple frequencies because of the fact that ionospheric
+delay depends on frequencies. By modeling two frequencies provided by GPS satellites, we can
+then account for these ionospheric errors. By reducing this increased path due to the 
+ionosphere, we can improve our pseudoranging and have a better position estimate.
 
 \newpage
 \section*{Problem 8: D Region Signal Attenuation}
+
 
 \newpage
 \section*{Problem 9: ICON Mission}
