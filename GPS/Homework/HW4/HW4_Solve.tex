@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    columns=fullflexible,
+    showstringspaces=false,
+    tabsize=4
+}
+
+% ---------- Paragraph Formatting ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ASEN 5090 Introduction to GNSS}
+\rhead{Justin Le, Elsa Carreras}
+\cfoot{\thepage}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+    {\Large \textbf{Homework 4}}\\[0.5em]
+    {\large ASEN 5090 Introduction to GNSS}\\[0.5em]
+    Justin Le, Elsa Carreras\\
+    \today
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem 1: Starting Point}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P1_C1C_vs_R_PRN14.png}
+    \caption{Expected Range and C1C Pseudorange}
+    \label{fig:Expected Range and C1C Pseudorange}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P1_dPR0_PRN14.png}
+    \caption{dPR0 Results}
+    \label{fig:dPR0 Results}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab]
+dPR0 first value: -224829.2307 m
+dPR0 last value:  -224777.3128 m
+\end{lstlisting}
+
+\hspace*{2em}The results should look very similar to what was plotted for Homework 3 which is noticable in Figure \ref{fig:dPR0 Results}. We assume we would get difference around 10 km since expected range is calculated with orbital parameters and C1C is a signal sent that needs corrections in processing, a large part of this error is from the raw pseudoranges not accounting for clock bias.
+\newpage
+\section*{Problem 2: Clock Error}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P2_bsv_PRN14.png}
+    \caption{Satellite Clock Correction}
+    \label{fig:Satellite Clock Correction}
+\end{figure}
+
+\hspace*{2em}Taking a look at Figure \ref{fig:Satellite Clock Correction}, we expect to notice a few things. The satellite clock corrections are representing clock offsets that should decrease over time, we can also notice the clock corrections occurring that is correcting GPS time to UTC(USNO) approximately every 2 hours when new broadcast ephemeris is being sent.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P2_dPR1_PRN14.png}
+    \caption{dPR1 Results}
+    \label{fig:dPR1 Results}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab]
+dPR1 first value: 77.9106 m
+dPR1 last value:  129.3488 m
+\end{lstlisting}
+
+
+\newpage
+\section*{Problem 3: Relativity}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P3_relsv_PRN14.png}
+    \caption{Relativistic Error}
+    \label{fig:Relativistic Error}
+\end{figure}
+
+\hspace*{2em}In our equation for the relativistic correction it is dependent on $sin(E)$ where E is the eccentric anomaly that tells us where we are in our elliptical orbit. Since we have a $sin(E)$ in our equation and that's the parameter that is not a constant means the graph with time should look like a sine graph.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P3_dPR2_PRN14.png}
+    \caption{dPR2 Results}
+    \label{fig:dPR2 Results}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab]
+dPR2 first value: 74.5726 m
+dPR2 last value:  129.3236 m
+\end{lstlisting}
+
+\newpage
+\section*{Problem 4: Troposphere}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P4_tropo_PRN14.png}
+    \caption{Tropospheric Corrections}
+    \label{fig:Tropospheric Corrections}
+\end{figure}
+\hspace*{2em}When plotting Tropospheric Corrections, we would expect Figure \ref{fig:Tropospheric Corrections} to exhibit characteristics that we would see from tropospheric effects. We would typically see large errors near the start and end of a satellite pass due to the tropospheric delay being proportional to the propagation distance which has a dependence on the incidence angle. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P4_dPR3_PRN14.png}
+    \caption{dPR3 Results}
+    \label{fig:dPR3 Results}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab]
+dPR3 first value: 62.9696 m
+dPR3 last value:  84.5804 m
+\end{lstlisting}
+
+
+\newpage
+\section*{Problem 5: Ionosphere}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P5_iono_PRN14.png}
+    \caption{Ionospheric Correction (C1C, C2L)}
+    \label{fig:Ionospheric Free Pseudoranging}
+\end{figure}
+
+\hspace*{2em} We would expect a varying curve since ionosphere is different in regions. We would expect it to look noisy in the signal since we are mixing frequencies and ranges. There should be some positive delay of a handful of meters, where it is larger at the start and end of a pass at lower elevation angles. From dual frequencies being used we would naturally also see a relatively noisy result. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P5_dPR4_PRN14.png}
+    \caption{dPR4 Results}
+    \label{fig:dPR4 Results}
+\end{figure}
+
+\begin{lstlisting}[language=Matlab]
+dPR4 first value: 57.7976 m
+dPR4 last value:  87.0845 m
+\end{lstlisting}
+
+\newpage
+\section*{Problem 6: Discussion}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P6_all_dPRs.png}
+    \caption{All dPR Results}
+    \label{fig:All dPR Results}
+\end{figure}
+
+\hspace*{2em}Examining the results in Figure \ref{fig:All dPR Results}, we notice the cumulative effect of the corrections on the residuals. Our first correction, dPR1, immediately reduces the residuals by several orders of magnitude, to only tens of meters by accounting for clock bias effects. Accounting for the relativistic error improves the residuals in the middle of the satellite pass and slightly improves the start of the pass by 10s of meters. Incorporating the tropospheric correction significantly improves the start and end of the pass by 10s of meters as well. Finally, accounting for ionospheric effects makes the residuals much less time dependent, so they remain nearly constant over the pass by a couple meters; it should be noted that since this correction combines measurements on dual frequencies for an ionospheric free model of pseudorange, it also amplifies the measurement noise.
+
+\newpage
+\section*{Problem 7: Multipath}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P7_CMC1.png}
+    \caption{CMC1 Multipathing}
+    \label{fig:CMC1 Multipathing}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P7_CMC_C2W.png}
+    \caption{C2W Multipathing}
+    \label{fig:C2W Multipathing}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P7_CMC_C2L.png}
+    \caption{C2L Multipathing}
+    \label{fig:C2L Multipathing}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P7_CMC_C5Q.png}
+    \caption{C5Q Multipathing}
+    \label{fig:C5Q Multipathing}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../MATLAB/figures/HW4/HW4_P7_all_pseudorange.png}
+    \caption{All Multipath Pseudoranges}
+    \label{fig:All Multipath Pseudoranges}
+\end{figure}
+
+\hspace*{2em}Looking at results starting with Figure \ref{fig:CMC1 Multipathing} we can see a lot of noise in C1C once we add multipathing which makes it not a good signal for very crowded cities. The noise ratio graph for S1C vs time also tells us we should not use this CA code for positioning in big cities because it's very noisy.
+
+
+Then from Figure \ref{fig:C2W Multipathing} in the MP C2W graph we see a lot of noise at the edges of the dataset and smaller amount in the center so it wouldn't be the best positioning item but better then C1C. S2W is much less noisy then S1C with time so it's better for positioning but still not the best.
+
+\hspace*{2em}From Figure \ref{fig:C2L Multipathing} for C2L we see a similar trend to Figure \ref{fig:C2W Multipathing} but we see even more noise reduction when looking at the average signal and not the edges. S2L also is almost smooth so it would be good at positioning.
+
+\hspace*{2em}From Figure \ref{fig:C5Q Multipathing} we can see the edges are a bit noisy but the average signal is almost smooth so this means that C5Q is the best on for multi path defense when positioning. S5Q is the most smooth graph for the SNR vs time so this is another reason why it would be the best one for positioning.
+
+\hspace*{2em}Looking at Figure 16 where all the pseudoranges are on one plot we see CMC C5Q and CMC C2L almost overlapping and C1C the futherest from the others which is evidence that C1C is the worse for positioning when multipath is happening and C5Q is the best. This makes since because C1C is using CA code and L1 thus it's the oldest one out of the group we are analyzing and it has a broading peak when comparing to other like C5Q. C1C is also the the first civilian gps signal thus it must be more crowded so noisier. 
+
+
+\end{document}
+
