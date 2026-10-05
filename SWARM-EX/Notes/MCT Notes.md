@@ -62,3 +62,23 @@ test coming out of computer, does it go into lithium, does it go into cdh etc
 
 look into logic with logic analyzers
 
+logic analyzer confirms hardlined Li2 MCT commands coming out, CDH in the loop is different, check with saanika
+
+had to change encryption wait time in order to send CDH commands, why is that?
+
+always need to manually set the port for Hydra
+
+
+
+hydra dev
+- just want payload cdi header, figure that out
+
+cdh dev
+- seems that correct command is being sent, going to lithium
+- cdh seems to be interpreting the command wrong...
+- seems to be direcly pulling directly for data, not calculating but then why is it 72? 
+  - cdh is somehow pulling the wrong byte
+  - its reading the first bit 0x48 instead of 0x01
+- basically, what is the cdh code expecting
+- misunderstanding on the order (maybe other) on the bits
+- check if command length is correct?
