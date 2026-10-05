@@ -47,11 +47,14 @@ Last updated: 2026-10-01
 - [x] Buy cables: RS232A, USB-ethernet converter (Rick to purchase)
 - [x] Contact Alex Byrnes re: rotors/ground pass support
 
+- [ ] reach out to systems if we just need hands for ground station PC bring up
 ### Tracking / end-to-end
 - [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa) — may need GS PC, not pushed back for now (Gantt: 9/24–10/7)
 	- [x] Confirm with Elsa whether Doppler correction should live in GPredict instead of GNU Radio
 - [ ] Demonstrate GS can track another LASP satellite (proof-of-concept before MAXWELL)
 - [ ] Demonstrate full uplink/downlink end-to-end
+- [ ] talk to palo about the motor interfacing issues 
+
 
 ### Coordination
 - [x] Reach out to Skye Glasner to coordinate GS work, avoid duplicate effort
@@ -85,6 +88,7 @@ Last updated: 2026-10-01
 - [x] Find CDH UART connector location / pin layout of CDH board
 	- [x] Altium — see Adhi's message
 - [x] Get CDH pin diagram from Alex, or ask Saanika
+- [ ] Seek to pull maxwell's hydra and gnu for SCT testing 
 
 ### Packet structure / docs
 - [ ] Sync with CDH on Lithium/Hydra packet structure
