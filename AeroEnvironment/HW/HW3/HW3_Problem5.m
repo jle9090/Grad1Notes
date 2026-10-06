@@ -26,15 +26,21 @@ k = find(fc >= f, 1, 'first');
 z_reflect = interp1(fc(k-1:k), alt(k-1:k), f);
 fprintf('2 MHz reflects at %.1f km\n', z_reflect);
 
+% Topside reflection altitude: last altitude where fc = f (space-to-ground)
+k2 = find(fc >= f, 1, 'last');
+z_reflect_top = interp1(fc(k2:k2+1), alt(k2:k2+1), f);
+fprintf('2 MHz reflects on the topside at %.1f km\n', z_reflect_top);
+
 % Plot critical frequency profile
 figure;
 plot(fc, alt, 'k-', 'LineWidth', 2); hold on
 xline(f, 'r--', '2 MHz', 'LineWidth', 1.5);
 yline(z_reflect, 'b--', sprintf('%.0f km', z_reflect), 'LineWidth', 1.5);
+yline(z_reflect_top, 'b--', sprintf('%.0f km', z_reflect_top), 'LineWidth', 1.5);
 grid minor
 xlabel('Critical Frequency [MHz]')
 ylabel('Altitude [km]')
 title('IRI Critical Frequency Profile')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P5_plasma_freq.png'), 'Resolution', 300)
+exportgraphics(gcf, fullfile('figures', 'HW3_P5_plasma_freq_rev.png'), 'Resolution', 300)

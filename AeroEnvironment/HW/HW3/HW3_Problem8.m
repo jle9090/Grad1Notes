@@ -11,16 +11,18 @@ data(data == -1) = NaN; % IRI uses -1 for missing values
 
 alt = data(:,1); % km
 Ne  = data(:,2) * 1e6; % Convert cm^-3 to m^-3
-Te  = data(:,6); % K
 Ne(isnan(Ne)) = 0; % no electrons where IRI has no data
 
 % Neutral densities from MSIS [cm^-3]
 msis = MSISatmosphere1000(alt);
 n_n  = msis.n2 + msis.o2 + msis.o;
 
-% Electron-neutral collision frequency [s^-1]
-nu = 5.4e-10 * n_n .* sqrt(Te);
-nu(isnan(nu)) = 0;
+% Neutral density at the surface [cm^-3]
+msis0 = MSISatmosphere1000(0);
+n_n0  = msis0.n2 + msis0.o2 + msis0.o;
+
+% Electron-neutral collision frequency [s^-1], nu_en = 1.2e11 N/N0
+nu = 1.2e11 * n_n ./ n_n0;
 
 % Constants
 qe = 1.602176634e-19; % C
@@ -56,4 +58,4 @@ title('10 MHz D-region Absorption')
 legend('+ solution', '- solution', 'Location', 'best')
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
 set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
-exportgraphics(gcf, fullfile('figures', 'HW3_P8_absorption.png'), 'Resolution', 300)
+exportgraphics(gcf, fullfile('figures', 'HW3_P8_absorption_rev.png'), 'Resolution', 300)

@@ -3,8 +3,8 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex
-OUTPUT build/HW3_Solve.log
+INPUT /home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve copy.tex
+OUTPUT build/HW3_Solve copy.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -63,10 +63,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT build/HW3_Solve.aux
-INPUT build/HW3_Solve.aux
-INPUT build/HW3_Solve.aux
-OUTPUT build/HW3_Solve.aux
+INPUT build/HW3_Solve copy.aux
+INPUT build/HW3_Solve copy.aux
+INPUT build/HW3_Solve copy.aux
+OUTPUT build/HW3_Solve copy.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -83,7 +83,7 @@ INPUT ./figures/HW3_P1_iri_output.png
 INPUT ./figures/HW3_P1_iri_output.png
 INPUT ./figures/HW3_P1_iri_output.png
 INPUT ./figures/HW3_P1_iri_output.png
-OUTPUT build/HW3_Solve.pdf
+OUTPUT build/HW3_Solve copy.pdf
 INPUT ./figures/HW3_P1_iri_output.png
 INPUT ./figures/HW3_P1_ion_composition.png
 INPUT ./figures/HW3_P1_ion_composition.png
@@ -137,7 +137,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT build/HW3_Solve.aux
+INPUT build/HW3_Solve copy.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

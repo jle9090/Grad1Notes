@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1791304920.24197 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" "build/HW3_Solve.pdf" "HW3_Solve" 1791304921.16784 0
+["pdflatex"] 1791308773.06467 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve copy.tex" "build/HW3_Solve copy.pdf" "HW3_Solve copy" 1791308773.90986 0
   "/etc/texmf/web2c/texmf.cnf" 1787852770.52377 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve.tex" 1791304919.93213 21138 9bce68a08a23e006691e28d0a591d847 ""
+  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve copy.tex" 1791308771.38202 21138 9bce68a08a23e006691e28d0a591d847 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -79,14 +79,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787852809.09609 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787852869 8212543 dc6047f59c0d9fd45bb1f2649f736bb2 ""
-  "HW3_Solve.tex" 1791304919.93213 21138 9bce68a08a23e006691e28d0a591d847 ""
-  "build/HW3_Solve.aux" 1791304921.04755 670 cff3da7fb3555ba7e4c920914a00a5af "pdflatex"
+  "HW3_Solve copy.tex" 1791308771.38202 21138 9bce68a08a23e006691e28d0a591d847 ""
+  "build/HW3_Solve copy.aux" 1791308773.8165 670 cff3da7fb3555ba7e4c920914a00a5af "pdflatex"
   "figures/HW3_P1_ion_composition.png" 1791226874.40458 346701 b98b2f92df00a0c6c744ef5f339bb157 ""
   "figures/HW3_P1_iri_output.png" 1791226874.40658 436010 68a8b442d7804a2ce80fa7f82d368515 ""
   "figures/HW3_P5_plasma_freq.png" 1791226874.40758 110472 4a1f2a2390d9dd3153b820be269e5dd1 ""
   "figures/HW3_P8_absorption.png" 1791226874.40858 103360 2fa0cb1d64526e90a819fd936cf5a1ad ""
   (generated)
-  "build/HW3_Solve.aux"
-  "build/HW3_Solve.log"
-  "build/HW3_Solve.pdf"
+  "build/HW3_Solve copy.aux"
+  "build/HW3_Solve copy.log"
+  "build/HW3_Solve copy.pdf"
   (rewritten before read)
