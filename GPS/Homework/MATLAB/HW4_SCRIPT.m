@@ -26,7 +26,7 @@ satPRN = extract_sp3_prn(sp3);
 NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
 
 ephem_time_s = NIST_GPS_week.*604800 + NIST_GPS_TOW;
-ephem_time_hr = ephem_time_s/3600;
+ephem_time_hr = mod(NIST_GPS_TOW, 86400)/3600;
 
 gap_idx = [false; diff(ephem_time_s) > 1.5*median(diff(ephem_time_s))];
 
@@ -46,7 +46,7 @@ figure()
 plot(ephem_time_hr, R_expected, 'LineWidth', 1.5)
 hold on
 plot(ephem_time_hr, PRN14_GPS_rinexData.C1C, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('Range (m)')
 grid minor
 legend('Expected Range R', 'Pseudorange C1C', 'Location', 'best')
@@ -58,7 +58,7 @@ exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P1_C1C_vs_R_PRN14.png'), 'Re
 
 figure()
 plot(ephem_time_hr, PRN14_GPS_rinexData.C1C-R_expected, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('dPR0 (m)')
 grid minor
 title(sprintf('PRN %d dPR0 = C1C - R', PRN_number))
@@ -75,7 +75,7 @@ fprintf('dPR0 last value:  %.4f m\n', dPR0(end));
 %% Problem 2
 figure()
 plot(ephem_time_hr, satClkCorr, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('b_{sv} (m)')
 grid minor
 title(sprintf('PRN %d Satellite Clock Correction b_{sv}', PRN_number))
@@ -89,7 +89,7 @@ dPR1 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr);
 
 figure()
 plot(ephem_time_hr, dPR1, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('dPR1 (m)')
 grid minor
 title(sprintf('PRN %d dPR1 = C1C - (R - b_{sv})', PRN_number))
@@ -104,7 +104,7 @@ fprintf('dPR1 last value:  %.4f m\n', dPR1(end));
 %% Problem 3
 figure()
 plot(ephem_time_hr, relCorr, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('rel_{sv} (m)')
 grid minor
 title(sprintf('PRN %d Relativistic Correction rel_{sv}', PRN_number))
@@ -118,7 +118,7 @@ dPR2 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr);
 
 figure()
 plot(ephem_time_hr, dPR2, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('dPR2 (m)')
 grid minor
 title(sprintf('PRN %d dPR2 = C1C - (R - b_{sv} - rel_{sv})', PRN_number))
@@ -139,7 +139,7 @@ tropo_correction  = tropomodel(zd, EL_expected);
 % Plotting the tropospheric model
 figure()
 plot(ephem_time_hr, tropo_correction, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('Tropo (m)')
 grid minor
 title(sprintf('PRN %d Tropospheric Correction (z_d = %g m)', PRN_number, zd))
@@ -148,7 +148,7 @@ set(findall(gcf, '-property', 'FontSize'), 'FontSize', 12);
 set(findall(gcf, 'Type', 'axes'), 'XTick', floor(min(ephem_time_hr)):2:ceil(max(ephem_time_hr)));
 exportgraphics(gcf, fullfile('figures', 'HW4', 'HW4_P4_tropo_PRN14.png'), 'Resolution', 300);
 
-% Plotting dPR3 = C1C – (R – bsv - relsv + tropo)
+% Plotting dPR3 = C1C - (R - bsv - relsv + tropo)
 
 % Where bsv is SatClkCorr
 dPR3 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr + tropo_correction);
@@ -156,7 +156,7 @@ dPR3 = PRN14_GPS_rinexData.C1C - (R_expected - satClkCorr - relCorr + tropo_corr
 % Plotting
 figure()
 plot(ephem_time_hr, dPR3, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('dPR3 (m)')
 grid minor
 title(sprintf('PRN %d dPR3 = C1C - (R - b_{sv} - rel_{sv} + tropo)', PRN_number))
@@ -178,7 +178,7 @@ f2 = 1227.6e6; % C2L frequency
 % Plot ionospheric corrections
 figure()
 plot(ephem_time_hr, iono, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('Iono (m)')
 grid minor
 title(sprintf('PRN %d Ionospheric Correction (C1C, C2L)', PRN_number))
@@ -193,7 +193,7 @@ dPR4 = PRIF12 - (R_expected - satClkCorr - relCorr + tropo_correction);
 % Plot dPR4
 figure()
 plot(ephem_time_hr, dPR4, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('dPR4 (m)')
 grid minor
 title(sprintf('PRN %d dPR4 = PRIF12 - (R - b_{sv} - rel_{sv} + tropo)', PRN_number))
@@ -213,7 +213,7 @@ hold on
 plot(ephem_time_hr, dPR2, 'LineWidth', 1.5)
 plot(ephem_time_hr, dPR3, 'LineWidth', 1.5)
 plot(ephem_time_hr, dPR4, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('Residual (m)')
 grid minor
 legend('dPR1: b_{sv}', 'dPR2: b_{sv} + rel_{sv}', 'dPR3: b_{sv} + rel_{sv} + tropo', 'dPR4: b_{sv} + rel_{sv} + tropo + iono-free', 'Location', 'best')
@@ -244,7 +244,7 @@ ylabel('MP C1C (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S1C, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('S1C (dB-Hz)')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
@@ -272,7 +272,7 @@ ylabel('MP C2W (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S2W, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('S2W (dB-Hz)')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
@@ -295,7 +295,7 @@ ylabel('MP C2L (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S2L, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('S2L (dB-Hz)')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
@@ -318,7 +318,7 @@ ylabel('MP C5Q (m)')
 grid minor
 subplot(3,1,3)
 plot(ephem_time_hr, PRN14_GPS_rinexData.S5Q, 'LineWidth', 1.5)
-xlabel('Time (hrs)')
+xlabel('GPS Time of Day (hrs)')
 ylabel('S5Q (dB-Hz)')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 8]);
@@ -336,8 +336,8 @@ plot(ephem_time_hr, CMC_C2L, 'LineWidth', 1.5)
 hold on
 plot(ephem_time_hr, CMC_C5Q, 'LineWidth', 1.5)
 hold on
-xlabel('Time (hrs)')
-ylabel('Pseudoranges (m)')
+xlabel('GPS Time of Day (hrs)')
+ylabel('CMC (m)')
 legend('CMC C1C', 'CMC C2W', 'CMC C2L', 'CMC C5Q', 'Location', 'best')
 grid minor
 set(gcf, 'Units', 'inches', 'Position', [0 0 6 4]);
