@@ -116,6 +116,7 @@ Last updated: 2026-10-05
 	- [x] Altium — see Adhi's message
 - [x] Get CDH pin diagram from Alex, or ask Saanika
 - [ ] Obtain MAXWELL's Hydra and GNU Radio setup for SCT testing
+- [ ] Start assembling a list of cables needed for the Lithium for Isaac (structures)
 
 ### Packet structure / docs
 - [ ] Sync with CDH on Lithium/Hydra packet structure
