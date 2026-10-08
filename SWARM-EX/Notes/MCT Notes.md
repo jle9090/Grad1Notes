@@ -82,3 +82,5 @@ cdh dev
 - basically, what is the cdh code expecting
 - misunderstanding on the order (maybe other) on the bits
 - check if command length is correct?
+
+- CDH board has tx and rx swapped on ftdi
