@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1791314833.71308 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve_Revisions.tex" "build/HW3_Solve_Revisions.pdf" "HW3_Solve_Revisions" 1791314834.70199 0
+["pdflatex"] 1791397161.93227 "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve_Revisions.tex" "build/HW3_Solve_Revisions.pdf" "HW3_Solve_Revisions" 1791397162.90616 0
   "/etc/texmf/web2c/texmf.cnf" 1787852770.52377 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve_Revisions.tex" 1791314833.48247 24565 0e33c90a0b8dcfc659b4e42d5f848626 ""
+  "/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW3/HW3_Solve_Revisions.tex" 1791397161.67466 24393 b3664c39b7060525e2817757c6dabb9d ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -94,8 +94,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787852809.09609 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787852869 8212543 dc6047f59c0d9fd45bb1f2649f736bb2 ""
-  "HW3_Solve_Revisions.tex" 1791314833.48247 24565 0e33c90a0b8dcfc659b4e42d5f848626 ""
-  "build/HW3_Solve_Revisions.aux" 1791314834.60555 670 362d6979ec3cf47fc5b7d8851fe95e33 "pdflatex"
+  "HW3_Solve_Revisions.tex" 1791397161.67466 24393 b3664c39b7060525e2817757c6dabb9d ""
+  "build/HW3_Solve_Revisions.aux" 1791397162.79331 670 362d6979ec3cf47fc5b7d8851fe95e33 "pdflatex"
   "figures/HW3_P1_ion_composition.png" 1791226874.40458 346701 b98b2f92df00a0c6c744ef5f339bb157 ""
   "figures/HW3_P1_iri_output.png" 1791226874.40658 436010 68a8b442d7804a2ce80fa7f82d368515 ""
   "figures/HW3_P5_plasma_freq_rev.png" 1791311796.5048 136013 e63f7ea760e03dd37cbb99be46921e54 ""

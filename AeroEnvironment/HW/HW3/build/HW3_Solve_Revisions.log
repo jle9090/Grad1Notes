@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  6 OCT 2026 13:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  7 OCT 2026 12:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -380,7 +380,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figures/HW3_P5_plasma_freq_rev.png, id=39, 385.6809pt x 280.6485pt>
 File: figures/HW3_P5_plasma_freq_rev.png Graphic file (type png)
 <use figures/HW3_P5_plasma_freq_rev.png>
-Package pdftex.def Info: figures/HW3_P5_plasma_freq_rev.png  used on input line 275.
+Package pdftex.def Info: figures/HW3_P5_plasma_freq_rev.png  used on input line 274.
 (pdftex.def)             Requested size: 281.85587pt x 205.10722pt.
 
 
@@ -407,10 +407,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-<figures/HW3_P8_absorption_rev.png, id=51, 378.9357pt x 277.035pt>
+<figures/HW3_P8_absorption_rev.png, id=50, 378.9357pt x 277.035pt>
 File: figures/HW3_P8_absorption_rev.png Graphic file (type png)
 <use figures/HW3_P8_absorption_rev.png>
-Package pdftex.def Info: figures/HW3_P8_absorption_rev.png  used on input line 355.
+Package pdftex.def Info: figures/HW3_P8_absorption_rev.png  used on input line 354.
 (pdftex.def)             Requested size: 281.85587pt x 206.07639pt.
 
 
@@ -430,7 +430,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 382.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 381.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -494,7 +494,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  61i,20n,69p,489b,2278s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on build/HW3_Solve_Revisions.pdf (18 pages, 1241177 bytes).
+Output written on build/HW3_Solve_Revisions.pdf (18 pages, 1240847 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream
