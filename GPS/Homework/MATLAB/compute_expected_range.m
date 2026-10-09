@@ -1,4 +1,4 @@
-function [R_expected, AZ_expected, EL_expected] = compute_expected_range(ephemeris, week, tow, PRN_number, receiver_ECEF)
+function [R_expected, AZ_expected, EL_expected,satPos_ECEF_expected] = compute_expected_range(ephemeris, week, tow, PRN_number, receiver_ECEF)
 % Computes expected range by iteration
 
 % Constants for the alg
@@ -51,8 +51,9 @@ for iter = 1:5
     R_expected = R_new;
     AZ_expected = AZ_new;
     EL_expected = EL_new;
-
+    satPos_ECEF_expected=satPos_Tt_ECEF;
     Tt = Tr - R_expected/c; % Step 3 repeat
+   
 end
 
 end
