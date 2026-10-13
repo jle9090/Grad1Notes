@@ -46,6 +46,7 @@ for iter = 1:5
         R_expected = R_new;
         AZ_expected = AZ_new;
         EL_expected = EL_new;
+        satPos_ECEF_expected=satPos_Tt_ECEF;
         break
     end
     R_expected = R_new;
