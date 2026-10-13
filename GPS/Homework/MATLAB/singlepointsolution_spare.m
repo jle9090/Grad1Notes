@@ -7,8 +7,8 @@ PRN_number = PRN;
 PRN_index = rinexDataGPS.SatelliteID == PRN_number;
 PRN_GPS_rinexData = rinexDataGPS(PRN_index,:);
 
-rho1 = rinexDataGPS.C1C;
-rho2 = rinexDataGPS.C2W;
+rho1 = PRN_GPS_rinexData.C1C;
+rho2 = PRN_GPS_rinexData.C2W;
 % f1 corresponds to rho1
 % f2 corresponds to rho2
 f1 = 1575.42e6; % C1 frequency
@@ -18,9 +18,8 @@ f2 = 1227.6e6; % C2 frequency
 [PIF, ~] = ionocorr (rho1, f1, rho2, f2);
 
 % Finding expected range, azimuth, elevation
-[GPS_week, GPS_TOW] = utc2gpstime(rinexDataGPS.Time);
+[GPS_week, GPS_TOW] = utc2gpstime(PRN_GPS_rinexData.Time);
 [R1, AZ, EL] = compute_expected_range(ephemeris, GPS_week, GPS_TOW, PRN_number, user_ECEF);
-R1(gap_idx) = NaN;
 
 % Finding relative clock corrections
 % Compute satellite clock bias and relativistic correction

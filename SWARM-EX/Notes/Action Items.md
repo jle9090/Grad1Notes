@@ -21,13 +21,14 @@ Last updated: 2026-10-05
 	- [x] Professor Palo assessing the state of the lab machines — all GS PC work was on hold 9/23–9/29, resumed 9/30
 	- [x] Sit down with Palo (and Rick) on the machine situation
 	- [ ] Palo and Nicholas Rainville are bringing up the STIG GS PC #in-progress — route all GS PC needs through them
+	- [ ] 
 	- [x] Still want a usable machine on the side — use the spare laptop?
 - [x] Write ground station doc for Palo
 	- [x] Include the ground station PC in STIG
 - [x] Get prior GS PC issue list from Adhi and Dhruva, propose to Steven Harrison #blocked Steven Harrison reportedly unwilling to help
 - [x] Migrate/port HFSS from small 443 machine to big 443 tower — Palo hold lifted 9/30 (Gantt: 9/30–10/1)
 	- [ ] see palo and rainville note
-- [ ] Stand up interim dev machine from 443 while GS PC situation is sorted — Palo hold lifted 9/30
+- [x] Stand up interim dev machine from 443 while GS PC situation is sorted — Palo hold lifted 9/30
 - [ ] Ground Station PC test — revised 10/23 (planned 9/23), ~22 hrs remaining
 	- [ ] Set up laptop for GND station (Gantt: 10/2–10/12) #in-progress
 	- [ ] Connect laptop and 443 machine (Gantt: 10/13–10/16)
@@ -58,6 +59,7 @@ Last updated: 2026-10-05
 - [x] Contact Alex Byrnes re: rotors/ground pass support
 
 - [ ] reach out to systems if we just need hands for ground station PC bring up
+- [ ] email Scott Gennari at LASP for ground station expertise
 ### Tracking / end-to-end
 - [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa) — may need GS PC, not pushed back for now (Gantt: 9/24–10/7)
 	- [x] Confirm with Elsa whether Doppler correction should live in GPredict instead of GNU Radio

@@ -1,0 +1,48 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% HW5 Main Script
+clc;clear;close all
+
+%% Reading in data
+% Reading in rinex
+rinexData = rinexread('NIST00USA_R_20262310000_01D_30S_MO.rnx');
+rinexDataGPS = rinexData.GPS;
+
+% Read in ephemeris
+ephemeris = read_clean_GPSbroadcast('brdc2310.26n', true);
+
+%% Part 1 Filling out table
+NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
+% PRN = 3;
+% [PIF, R1, EL, AZ, BSV, RELAT, TROP] = singlepointsolution_spare(PRN,rinexDataGPS, ephemeris, NIST_ECEF);
+
+PRN_list = [3,4,7,8,9,16,26,27,31];
+for PRN = PRN_list
+    name = sprintf('PRN%d', PRN);
+    [PIF.(name), R1.(name), EL.(name), AZ.(name), BSV.(name), RELAT.(name), TROP.(name)] = singlepointsolution_spare(PRN,rinexDataGPS, ephemeris, NIST_ECEF);
+end
+
+% Obtain only the very first values and put in a struct
+first_vals = zeros(length(PRN_list), 7);
+for i = 1:length(PRN_list)
+    name = sprintf('PRN%d', PRN_list(i));
+    first_vals(i,:) = [PIF.(name)(1), R1.(name)(1), EL.(name)(1), AZ.(name)(1), BSV.(name)(1), RELAT.(name)(1), TROP.(name)(1)];
+
+    % Same values as a struct, e.g. first.PIF.PRN3, first.EL.PRN16
+    first.PIF.(name)   = PIF.(name)(1);
+    first.R1.(name)    = R1.(name)(1);
+    first.EL.(name)    = EL.(name)(1);
+    first.AZ.(name)    = AZ.(name)(1);
+    first.BSV.(name)   = BSV.(name)(1);
+    first.RELAT.(name) = RELAT.(name)(1);
+    first.TROP.(name)  = TROP.(name)(1);
+end
+first_val_table = array2table(first_vals, 'VariableNames', {'PIF','R1','EL','AZ','BSV','RELAT','TROP'}, ...
+    'RowNames', compose('PRN%d', PRN_list'));
+disp(first_val_table)
+
+%% Part 2 Calculate least square point solution
+% Computing prefit residuals
+dPR4 = PRIF12 - (R_expected - satClkCorr - relCorr + tropo_correction);
+
+delta_rho = first.PIF.PRN3 - (first.R1.PRN3 - )
