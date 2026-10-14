@@ -160,5 +160,5 @@ while delta_threshold > 1E-2
     b_est = b_est + dx_hat(4);
     delta_threshold = norm(dx_hat);
 
-    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m\n', iter, delta_threshold, r_est);
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iter, delta_threshold, r_est,b_est);
 end
