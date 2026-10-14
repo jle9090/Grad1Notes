@@ -52,44 +52,51 @@
             <task id="18" uid="6eae97ab265c4727a4fcdce46203b492" name="Rooftop prereqs: LNA, lightning arrestors, antenna installs (delayed)" meeting="false" start="2026-09-23" duration="7" complete="0" expand="true">
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" uid="a22e75052a60434c98f03871183cbe84" name="Executin motor tests" meeting="false" start="2026-10-02" duration="7" complete="0" expand="true">
+            <task id="3" uid="a22e75052a60434c98f03871183cbe84" name="Executing motor tests (motor interface fix)" meeting="false" start="2026-10-02" duration="14" complete="0" expand="true">
+                <notes><![CDATA[10/14: motors power on but the interface still is not working. Expect about one more week (~10/21). Blocks all sat tracking attempts. Asked Scott Gennari (LASP) for help.]]></notes>
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" uid="68ddd923a8484f739497fc05c77663c4" name="Raising antenna" meeting="false" start="2026-10-13" duration="4" complete="0" expand="true">
+            <task id="4" uid="68ddd923a8484f739497fc05c77663c4" name="Raising antenna" meeting="false" start="2026-11-02" duration="4" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed to early November (was 10/13). Contacted Scott Gennari (LASP) about antenna raising.]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="14" uid="ee82f0f3efac45d2b94a1b0699e97a63" name="finding exact location of ground station" meeting="false" start="2026-09-16" duration="6" complete="0" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-09-24" duration="5" complete="0" expand="true">
-                <notes><![CDATA[Not fully dependent on the GS PC, but may need it (GS PC work on hold 9/23-9/29 while Palo reviews lab machines). Not pushed back for now.]]></notes>
+            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-10-22" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind the motor interface fix (was 9/24-9/30).]]></notes>
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="interface gnu with g predict" meeting="false" start="2026-10-01" duration="5" complete="0" expand="true">
-                <notes><![CDATA[Not fully dependent on the GS PC, but may need it (GS PC work on hold 9/23-9/29 while Palo reviews lab machines). Not pushed back for now.]]></notes>
+            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="interface gnu with g predict" meeting="false" start="2026-10-29" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind the motor interface fix and Gpredict TLE tracking (was 10/1-10/7). GS PC side goes through Palo/Rainville.]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-10-26" duration="7" complete="0" expand="true"/>
+            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-11-06" duration="7" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind antenna raising and the Gpredict work (was 10/26-11/3).]]></notes>
+            </task>
         </task>
         <task id="100" uid="4cb9e5f70bc147b98eac7d69bbe34dd4" name="Hydra Lithium Communication" meeting="false" start="2026-09-16" duration="27" complete="0" expand="true">
             <task id="101" uid="7010fdbba6dd40aabf91a16aca77ecea" name="MCT: Review test docs" meeting="false" start="2026-09-16" duration="1" complete="100" expand="true">
             </task>
-            <task id="111" uid="feae65279a5c4ba5b9ac1a242b0a6438" name="MCT: Develop Hydra for MCT" meeting="false" start="2026-09-23" duration="5" complete="0" expand="true">
+            <task id="111" uid="feae65279a5c4ba5b9ac1a242b0a6438" name="MCT: Develop Hydra for MCT" meeting="false" start="2026-09-23" duration="5" complete="100" expand="true">
                 <depend id="102" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="102" uid="10b4c327c59543ef860b5f613832b533" name="MCT: Bench setup" meeting="false" start="2026-09-30" duration="2" complete="0" expand="true">
+            <task id="102" uid="10b4c327c59543ef860b5f613832b533" name="MCT: Bench setup" meeting="false" start="2026-09-30" duration="2" complete="100" expand="true">
                 <depend id="103" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="103" uid="b840f70de21745b9b43186270500ad49" name="MCT: Practice run-through of test" meeting="false" start="2026-10-02" duration="1" complete="0" expand="true">
+            <task id="103" uid="b840f70de21745b9b43186270500ad49" name="MCT: Practice run-through of test" meeting="false" start="2026-10-02" duration="1" complete="100" expand="true">
                 <depend id="104" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="104" uid="c7f7c9dfe12d4ef7b9d158fafb2f5cff" name="MCT: Full run through of test" meeting="false" start="2026-10-05" duration="2" complete="0" expand="true">
+            <task id="104" uid="c7f7c9dfe12d4ef7b9d158fafb2f5cff" name="MCT: Full run through of test" meeting="false" start="2026-10-05" duration="2" complete="100" expand="true">
+                <notes><![CDATA[Ran Thu 10/8 with Saanika. Commands acknowledged through Hydra -> CDH -> Li-2. Root cause of the earlier CDH issue was TX/RX swapped on the CDH board FTDI.]]></notes>
                 <depend id="105" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="105" uid="771e5ae5c0784fd68bb0a1673cf4546a" name="MCT: Troubleshooting" meeting="false" start="2026-10-07" duration="1" complete="0" expand="true">
+            <task id="105" uid="771e5ae5c0784fd68bb0a1673cf4546a" name="MCT: Troubleshooting" meeting="false" start="2026-10-07" duration="1" complete="100" expand="true">
                 <depend id="106" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="106" uid="c5f88ba7c1d64ff5940c84b438cd1b05" name="SCT-1: Review test docs" meeting="false" start="2026-10-08" duration="1" complete="0" expand="true">
+            <task id="106" uid="c5f88ba7c1d64ff5940c84b438cd1b05" name="SCT-1: Review test docs" meeting="false" start="2026-10-08" duration="1" complete="50" expand="true">
+                <notes><![CDATA[Started week of 10/5 (2 hrs), finishing week of 10/12.]]></notes>
                 <depend id="112" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="112" uid="e32ab05a53064e808ff8db19f878a6ab" name="SCT-1: Develop Hydra for SCT-1" meeting="false" start="2026-10-09" duration="5" complete="0" expand="true">
@@ -107,23 +114,15 @@
             <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-22" duration="1" complete="0" expand="true"/>
         </task>
         <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-23" duration="25" complete="0" expand="true">
-            <task id="126" uid="21d99a869936439f91d99b34fe60fe47" name="ON HOLD: Palo reviewing lab machines" meeting="false" start="2026-09-23" duration="5" complete="0" expand="true">
+            <task id="126" uid="21d99a869936439f91d99b34fe60fe47" name="ON HOLD: Palo reviewing lab machines" meeting="false" start="2026-09-23" duration="5" complete="100" expand="true">
                 <depend id="121" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-30" duration="2" complete="0" expand="true">
-                <depend id="122" type="2" difference="0" hardness="Strong"/>
+            <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-30" duration="2" complete="100" expand="true">
             </task>
-            <task id="122" uid="907664ea7af64956a8c64185417ffbaa" name="Setting up laptop for GND station" meeting="false" start="2026-10-02" duration="7" complete="0" expand="true">
-                <depend id="123" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="123" uid="04daec2860a64c4eb7ada64472e22e9b" name="Connecting laptop and 443 machine" meeting="false" start="2026-10-13" duration="4" complete="0" expand="true">
-                <depend id="124" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify ground station arch with current setup" meeting="false" start="2026-10-19" duration="5" complete="0" expand="true">
+            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify GS PC in comms chain" meeting="false" start="2026-10-19" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: Palo and Nicholas Rainville own GS PC bring-up. My task is verifying it in the comms chain at the ground station once they have it working. Laptop setup, connecting the laptop and 443 machine, and planning the final architecture were removed. Start date depends on when the GS PC is working.]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
-                <depend id="125" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="125" uid="188b04e345654b778001cc290a69ac21" name="Planning final GND station architecture" meeting="false" start="2026-10-26" duration="2" complete="0" expand="true"/>
         </task>
         <task id="130" uid="4bef31340e6b41b69397699cd8de4fe9" name="Running SCT-2" meeting="false" start="2026-10-23" duration="26" complete="0" expand="true">
             <task id="131" uid="6e1d5d0347ac4b06826f664c6873fec0" name="Review SCT2 procedure" meeting="false" start="2026-10-23" duration="2" complete="0" expand="true">
