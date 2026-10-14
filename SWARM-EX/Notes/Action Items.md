@@ -29,7 +29,7 @@ Last updated: 2026-10-14
 - [ ] SCT-1: finish doc review, Hydra development for SCT-1 (Gantt: 10/9–10/15), bench setup (Gantt: 10/16)
 - [ ] SCT-1 practice run-through with CDH to find what's missing
 - [ ] Update GNU Radio to latest version, first pass at what state it's in for SCT-2
-- [ ] Mid-semester review prep — review re-baselined to week of 10/26 (waterfall: 5 hrs prep + 2 hrs review, not started)
+- [ ] Mid-semester review: PPT + 10 min recording due 10/14 (Gradescope + OneDrive), peer evaluations due 10/21 — talking points in [[MidSemester Review Notes]]
 
 ### Schedule changes
 - GS PC: Palo and Rainville own bringing it up. My task is verifying it in the comms chain at the ground station once they have it working, so the laptop/443 setup rows are dropped.
@@ -42,7 +42,8 @@ Last updated: 2026-10-14
 ## Management
 - [x] Fixing waterfall chart to incorporate the target dates
 - [x] Quad chart + waterfall update (10/9)
-- [ ] Mid-semester review prep — review re-baselined to week of 10/26
+- [ ] Mid-semester review: PPT + 10 min recording due 10/14, peer evaluations due 10/21
+	- [ ] Waterfall marks the review as re-baselined to the week of 10/26 but it is due 10/14 — fix the marker
 - [ ] Re-baseline the Ground Station PC Architecture waterfall rows (laptop setup, connecting laptop + 443, planning final architecture) — Palo and Rainville now own GS PC bring-up, my role is verifying it in the comms chain (re-baselining needs Palo's approval)
 
 ## Ground Station
