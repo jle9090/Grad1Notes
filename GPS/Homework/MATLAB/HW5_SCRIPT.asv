@@ -165,7 +165,7 @@ end
 
 % Find the delta r error from NIST
 delta_r_f_ECEF = NIST_ECEF - r_est;
-disp('<strong>delta_r_f</strong>')
+disp('<strong>delta_r_f ECEF</strong>')
 disp(delta_r_f_ECEF)
 
 % Display the postfit residuals as well
@@ -181,3 +181,19 @@ phi = NIST_LLA(1);
 R_L = [-sind(lambda), cosd(lambda), 0;
     -sind(phi)*cosd(lambda), -sind(phi)*sind(lambda), cosd(phi);
     cosd(phi)*cosd(lambda), cosd(phi)*sind(lambda), sind(phi)];
+
+delta_r_f_ENU = R_L*delta_r_f_ECEF';
+
+disp('<strong>delta_r_f ENU</strong>')
+disp(delta_r_f_ENU)
+
+% Compute HDOP and VDOP
+% Since find H matrix, need G in ENU
+
+H = inv(G'*G);
+HDOP = sqrt(H(1,1)+H(2,2));
+VDOP = sqrt(H(3,3));
+
+disp('<strong>HDOP and VDOP</strong>')
+fprintf('HDOP: %.4f\n', HDOP);
+fprintf('VDOP: %.4f\n', VDOP);

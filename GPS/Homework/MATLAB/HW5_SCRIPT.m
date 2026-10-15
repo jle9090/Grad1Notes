@@ -80,6 +80,7 @@ disp(first_val_table)
 
 [G, dx_hat, delta_rho_post] = compute_least_point_solution(post_PRN_list, first, satPos_first, NIST_ECEF);
 
+% Find and print error
 
 %% Part 3
 disp('<strong>Part 3</strong>')
@@ -97,7 +98,7 @@ disp(norm(delta_r0))
 PRN_list = [3,4,7,8,9,16,26,27,31];
 for PRN = PRN_list
     PRNid = sprintf('PRN%d', PRN);
-    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, NIST_ECEF);
+    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r0_ECEF);
 end
 
 % Obtain only the very first values and put in a struct, also the first sat
@@ -131,40 +132,14 @@ disp(norm(delta_r1))
 
 % d. Iterate
 % Initial delta, start from the a priori guess with no clock bias estimate
-r_est = r0_ECEF;
-b_est = 0;
-delta_threshold = Inf;
-iter = 0;
-while delta_threshold > 1E-2
-    iter = iter + 1;
+[r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = ...
+    least_squares_correction(PRN_list, r0_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
 
-    % a priori position recompute table values at current estimate
-    for PRN = PRN_list
-        PRNid = sprintf('PRN%d', PRN);
-        [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_est);
-    end
-    for i = 1:length(PRN_list)
-        PRNid = sprintf('PRN%d', PRN_list(i));
-        satPos_first(i,:) = SATPOS.(PRNid)(1,:);
-        first.PIF.(PRNid) = PIF.(PRNid)(1) - b_est; % Remove clock bias
-        first.R1.(PRNid) = R1.(PRNid)(1);
-        first.BSV.(PRNid) = BSV.(PRNid)(1);
-        first.RELAT.(PRNid) = RELAT.(PRNid)(1);
-        first.TROP.(PRNid) = TROP.(PRNid)(1);
-    end
-
-    [G, dx_hat, delta_rho_post] = compute_least_point_solution(PRN_list, first, satPos_first, r_est);
-
-    % Update position and clock bias estimates
-    r_est = r_est + dx_hat(1:3)';
-    b_est = b_est + dx_hat(4);
-    delta_threshold = norm(dx_hat);
-
-    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iter, delta_threshold, r_est,b_est);
+for k = 1:size(iteration_count,1)
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iteration_count(k,:));
 end
 
 % Find the delta r error from NIST
-delta_r_f_ECEF = NIST_ECEF - r_est;
 disp('<strong>delta_r_f ECEF</strong>')
 disp(delta_r_f_ECEF)
 
@@ -173,16 +148,37 @@ disp('<strong>Postfit Residuals</strong>')
 disp(delta_rho_post) %they do not seem to change much?
 
 % Report delta_r_f_ENU
-% Convert from ECEF to ENU
-% Get ECEF to LLA
-NIST_LLA = ecef2lla(NIST_ECEF);
-lambda = NIST_LLA(2);
-phi = NIST_LLA(1);
-R_L = [-sind(lambda), cosd(lambda), 0;
-    -sind(phi)*cosd(lambda), -sind(phi)*sind(lambda), cosd(phi);
-    cosd(phi)*cosd(lambda), cosd(phi)*sind(lambda), sind(phi)];
-
-delta_r_f_ENU = R_L*delta_r_f_ECEF';
-
 disp('<strong>delta_r_f ENU</strong>')
 disp(delta_r_f_ENU)
+
+% Compute HDOP and VDOP
+disp('<strong>HDOP and VDOP</strong>')
+fprintf('HDOP: %.4f\n', HDOP);
+fprintf('VDOP: %.4f\n', VDOP);
+
+
+%% Part 4: 
+r_far_ECEF = lla2ecef([16.776, -3.009, 261]);
+[r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = ...
+    least_squares_correction(PRN_list, r_far_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
+
+for k = 1:size(iteration_count,1)
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iteration_count(k,:));
+end
+
+% Find the delta r error from NIST
+disp('<strong>delta_r_f ECEF</strong>')
+disp(delta_r_f_ECEF)
+
+% Display the postfit residuals as well
+disp('<strong>Postfit Residuals</strong>')
+disp(delta_rho_post) %they do not seem to change much?
+
+% Report delta_r_f_ENU
+disp('<strong>delta_r_f ENU</strong>')
+disp(delta_r_f_ENU)
+
+% Compute HDOP and VDOP
+disp('<strong>HDOP and VDOP</strong>')
+fprintf('HDOP: %.4f\n', HDOP);
+fprintf('VDOP: %.4f\n', VDOP);

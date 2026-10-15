@@ -1,0 +1,70 @@
+function x = least_squares_correction(PRN_list, r_apriori_ECEF, rinexDataGPS, ephemeris)
+
+% Inits
+b_est = 0;
+delta_threshold = Inf;
+iter = 0;
+while delta_threshold > 1E-2
+    iter = iter + 1;
+
+    % a priori position recompute table values at current estimate
+    for PRN = PRN_list
+        PRNid = sprintf('PRN%d', PRN);
+        [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_apriori_ECEF);
+    end
+    for i = 1:length(PRN_list)
+        PRNid = sprintf('PRN%d', PRN_list(i));
+        satPos_first(i,:) = SATPOS.(PRNid)(1,:);
+        first.PIF.(PRNid) = PIF.(PRNid)(1) - b_est; % Remove clock bias
+        first.R1.(PRNid) = R1.(PRNid)(1);
+        first.BSV.(PRNid) = BSV.(PRNid)(1);
+        first.RELAT.(PRNid) = RELAT.(PRNid)(1);
+        first.TROP.(PRNid) = TROP.(PRNid)(1);
+    end
+
+    [G, dx_hat, delta_rho_post] = compute_least_point_solution(PRN_list, first, satPos_first, r_apriori_ECEF);
+
+    % Update position and clock bias estimates
+    r_apriori_ECEF = r_apriori_ECEF + dx_hat(1:3)';
+    b_est = b_est + dx_hat(4);
+    delta_threshold = norm(dx_hat);
+
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iter, delta_threshold, r_apriori_ECEF,b_est);
+end
+
+% Find the delta r error from NIST
+delta_r_f_ECEF = NIST_ECEF - r_apriori_ECEF;
+disp('<strong>delta_r_f ECEF</strong>')
+disp(delta_r_f_ECEF)
+
+% Display the postfit residuals as well
+disp('<strong>Postfit Residuals</strong>')
+disp(delta_rho_post) %they do not seem to change much?
+
+% Report delta_r_f_ENU
+% Convert from ECEF to ENU
+% Get ECEF to LLA
+NIST_LLA = ecef2lla(NIST_ECEF);
+lambda = NIST_LLA(2);
+phi = NIST_LLA(1);
+R_L = ECEF2ENU(phi,lambda);
+
+delta_r_f_ENU = R_L*delta_r_f_ECEF';
+
+disp('<strong>delta_r_f ENU</strong>')
+disp(delta_r_f_ENU)
+
+% Compute HDOP and VDOP
+% Since find H matrix, need G in ENU
+R_tilde = blkdiag(R_L, 1); % accounting for clock bias part
+G_ENU = G*R_tilde';
+
+H_ENU = inv(G_ENU'*G_ENU);
+HDOP = sqrt(H_ENU(1,1)+H_ENU(2,2));
+VDOP = sqrt(H_ENU(3,3));
+disp('<strong>HDOP and VDOP</strong>')
+fprintf('HDOP: %.4f\n', HDOP);
+fprintf('VDOP: %.4f\n', VDOP);
+
+
+end
