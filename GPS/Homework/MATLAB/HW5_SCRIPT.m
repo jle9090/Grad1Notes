@@ -162,3 +162,27 @@ while delta_threshold > 1E-2
 
     fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iter, delta_threshold, r_est,b_est);
 end
+
+% Find the delta r error from NIST
+delta_r_f_ECEF = NIST_ECEF - r_est;
+disp('<strong>delta_r_f ECEF</strong>')
+disp(delta_r_f_ECEF)
+
+% Display the postfit residuals as well
+disp('<strong>Postfit Residuals</strong>')
+disp(delta_rho_post) %they do not seem to change much?
+
+% Report delta_r_f_ENU
+% Convert from ECEF to ENU
+% Get ECEF to LLA
+NIST_LLA = ecef2lla(NIST_ECEF);
+lambda = NIST_LLA(2);
+phi = NIST_LLA(1);
+R_L = [-sind(lambda), cosd(lambda), 0;
+    -sind(phi)*cosd(lambda), -sind(phi)*sind(lambda), cosd(phi);
+    cosd(phi)*cosd(lambda), cosd(phi)*sind(lambda), sind(phi)];
+
+delta_r_f_ENU = R_L*delta_r_f_ECEF';
+
+disp('<strong>delta_r_f ENU</strong>')
+disp(delta_r_f_ENU)

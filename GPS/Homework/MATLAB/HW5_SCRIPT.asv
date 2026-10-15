@@ -135,20 +135,22 @@ r_est = r0_ECEF;
 b_est = 0;
 delta_threshold = Inf;
 iter = 0;
-
-% First epoch receive time, same for all PRNs and doesn't change between iterations
-[GPS_week, GPS_TOW] = utc2gpstime(rinexDataGPS.Time(1));
-
 while delta_threshold > 1E-2
     iter = iter + 1;
 
-    % a priori position, recompute only the position dependent table values
+    % a priori position recompute table values at current estimate
+    for PRN = PRN_list
+        PRNid = sprintf('PRN%d', PRN);
+        [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_est);
+    end
     for i = 1:length(PRN_list)
         PRNid = sprintf('PRN%d', PRN_list(i));
-        [R1_i, ~, EL_i, satPos_first(i,:)] = compute_expected_range(ephemeris, GPS_week, GPS_TOW, PRN_list(i), r_est);
-        first.PIF.(PRNid) = PIF.(PRNid)(1) - b_est;
-        first.R1.(PRNid) = R1_i;
-        first.TROP.(PRNid) = tropomodel(2, EL_i);
+        satPos_first(i,:) = SATPOS.(PRNid)(1,:);
+        first.PIF.(PRNid) = PIF.(PRNid)(1) - b_est; % Remove clock bias
+        first.R1.(PRNid) = R1.(PRNid)(1);
+        first.BSV.(PRNid) = BSV.(PRNid)(1);
+        first.RELAT.(PRNid) = RELAT.(PRNid)(1);
+        first.TROP.(PRNid) = TROP.(PRNid)(1);
     end
 
     [G, dx_hat, delta_rho_post] = compute_least_point_solution(PRN_list, first, satPos_first, r_est);
@@ -158,5 +160,24 @@ while delta_threshold > 1E-2
     b_est = b_est + dx_hat(4);
     delta_threshold = norm(dx_hat);
 
-    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m\n', iter, delta_threshold, r_est);
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iter, delta_threshold, r_est,b_est);
 end
+
+% Find the delta r error from NIST
+delta_r_f_ECEF = NIST_ECEF - r_est;
+disp('<strong>delta_r_f</strong>')
+disp(delta_r_f_ECEF)
+
+% Display the postfit residuals as well
+disp('<strong>Postfit Residuals</strong>')
+disp(delta_rho_post) %they do not seem to change much?
+
+% Report delta_r_f_ENU
+% Convert from ECEF to ENU
+% Get ECEF to LLA
+NIST_LLA = ecef2lla(NIST_ECEF);
+lambda = NIST_LLA(2);
+phi = NIST_LLA(1);
+R_L = [-sind(lambda), cosd(lambda), 0;
+    -sind(phi)*cosd(lambda), -sind(phi)*sind(lambda), cosd(phi);
+    cosd(phi)*cosd(lambda), cosd(phi)*sind(lambda), sind(phi)];
