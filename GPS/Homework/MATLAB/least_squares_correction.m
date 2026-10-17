@@ -1,18 +1,15 @@
-function [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = least_squares_correction(PRN_list, r_apriori_ECEF, NIST_ECEF, rinexDataGPS, ephemeris)
+function [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count, dx_hat] = least_squares_correction(PRN_list, r_apriori_ECEF, NIST_ECEF, rinexDataGPS, ephemeris)
 % Iterates the least squares point solution from an a priori position
-% iter_log rows: [iter, |dx|, x, y, z, b]
 
 % Inits
-% Start from the a priori guess with no clock bias estimate
 r_est = r_apriori_ECEF;
 b_est = 0;
 delta_threshold = Inf;
 iter = 0;
-iteration_count = 0;
+iteration_count = zeros(0,10);
 while delta_threshold > 1E-2 % Solution converges under 1 cm
     iter = iter + 1;
 
-    % a priori position recompute table values at current estimate
     for PRN = PRN_list
         PRNid = sprintf('PRN%d', PRN);
         [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_est);
@@ -34,7 +31,7 @@ while delta_threshold > 1E-2 % Solution converges under 1 cm
     b_est = b_est + dx_hat(4);
     delta_threshold = norm(dx_hat);
 
-    iteration_count(iter,:) = [iter, delta_threshold, r_est, b_est];
+    iteration_count(iter,:) = [iter, delta_threshold, r_est, b_est, dx_hat'];
 end
 
 % Find the delta r error from NIST

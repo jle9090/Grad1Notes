@@ -120,7 +120,7 @@ for i = 1:length(PRN_list)
 end
 first_val_table = array2table(first_vals, 'VariableNames', {'PIF','R1','EL','AZ','BSV','RELAT','TROP'}, ...
     'RowNames', compose('PRN%d', PRN_list'));
-
+disp(first_val_table)
 [G, dx_hat, delta_rho_post] = compute_least_point_solution(PRN_list, first, satPos_first, r0_ECEF);
 
 % c. Update estimate from state estimate corrections
@@ -136,7 +136,7 @@ disp(norm(delta_r1))
     least_squares_correction(PRN_list, r0_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
 
 for k = 1:size(iteration_count,1)
-    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iteration_count(k,:));
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f, dx = [%.2f, %.2f, %.2f, %.2f]\n', iteration_count(k,:));
 end
 
 % Find the delta r error from NIST
@@ -158,12 +158,12 @@ fprintf('VDOP: %.4f\n', VDOP);
 
 
 %% Part 4: 
-r_far_ECEF = lla2ecef([16.776, -3.009, 261]);
+r_far_ECEF = lla2ecef([16.776, -3.009, 261]); % I am going to Timbuktu
 [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = ...
     least_squares_correction(PRN_list, r_far_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
 
 for k = 1:size(iteration_count,1)
-    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f\n', iteration_count(k,:));
+    fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f, dx = [%.2f, %.2f, %.2f, %.2f]\n', iteration_count(k,:));
 end
 
 % Find the delta r error from NIST
