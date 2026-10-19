@@ -50,8 +50,8 @@ dPR3(1)
 dPR3(end)
 
 % Using the troposphere model we calculated
-% Assuming zd = 2 at NIST
-zd = 2;
+% Assuming zd = 2.1 at NIST
+zd = 2.1;
 tropo_correction  = tropomodel(zd, EL_expected);
 
 % Plotting the tropospheric model
