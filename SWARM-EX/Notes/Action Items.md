@@ -112,9 +112,12 @@ t   y
 - [ ] Demonstrate GS can track another LASP satellite (proof-of-concept before MAXWELL)
 - [ ] Demonstrate full uplink/downlink end-to-end
 - [x] talk to palo about the motor interfacing issues 
-- [x] Rick has lasp contact for GS setup, be sure to look into this for Edin and Elsa  - [ ] waiting on rresponse, i have followed up once
-  
-  
+	- [ ] palo looking into debugging
+	- [ ] i want motor decision end of the week of oct 19th
+	- [ ] looking into previous proven interfaces
+- [x] Rick has lasp contact for GS setup, be sure to look into this for Edin and Elsa
+	- [ ] waiting on rresponse, i have followed up once
+		- [ ] poke rick to poke him
 
 ### Coordination
 - [x] Reach out to Skye Glasner to coordinate GS work, avoid duplicate effort
@@ -142,10 +145,13 @@ t   y
 	- [ ] Practice run-through with CDH to find what's missing
 	- [ ] Develop Hydra for SCT-1 (Gantt: 10/9–10/15)
 	- [ ] Bench setup (Gantt: 10/16), practice run (10/19), full run (10/20–10/21), troubleshooting (10/22)
-- [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)  
+	- [ ] 3 commands are missing, see SCT1 notes
+	- [ ] re implemented and run the test
+- [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)
 - [ ] Look into the new GNU from MAXWELL side, there is a recording from Rainville apparently?
-    - [ ] possibility of this running locally? - [ ] SCT2 proceudre drafting, setups, adding lithium and b200 setups  
-- [ ]are we re running commnands from SCT1   
+	- [ ] possibility of this running locally?
+- [ ] SCT2 proceudre drafting, setups, adding lithium and b200 setups
+- [ ] are we re running commnands from SCT1
 - [ ] Continue Hydra command dictionary implementation
 	- [ ] for what?
 - [ ] Re-verify Hydra ↔ GNU Radio link Dhruva previously demoed (flagged as possibly stale)
@@ -155,9 +161,9 @@ t   y
 - [ ] palo and rick over at space grant ground station at some point to check things out?
 	- [ ] pointing things out
 ### Lithium / hardware
-- x ] Confirm Li-1 supply voltage (marked "?" at 7V) and Li-2 (10V) against absolute max ratings in Li-1 User Manual
-- x ] Locate 30dB attenuator and an antenna
-	- x ] In Palo's office
+- [x] Confirm Li-1 supply voltage (marked "?" at 7V) and Li-2 (10V) against absolute max ratings in Li-1 User Manual
+- [x] Locate 30dB attenuator and an antenna
+	- [x] In Palo's office
 - [x] Go through Lithium breakout manual, especially absolute max ratings
 - [x] Resolve Safe2Mate pinout mismatch (10 vs 14 vs 6 pin) — ask Alex or Saanika
 	-   ] This will require documentation updates
@@ -195,7 +201,8 @@ t   y
 - [ ] Check in on Shehan's crosslinks
 - [ ] Confirm Shehan's status/availability for crosslink work #blocked only 1 Lithium radio available for crosslink testing
 - [ ] Check in on Luke Mathews' requirements review
-- [ ] Get Steve Taylor's contact re: permissions
+- [ ] sanskar milestone tracker, SCT needs to get split into their respective stages
+- [x] Get Steve Taylor's contact re: permissions
 - [x] Contact ISIS about antenna material properties/CAD for Landon
 
 ## Team / Process
@@ -214,6 +221,7 @@ t   y
 - Ian Li — systems
 	- Looking into writing SCT and CET procedures
 - Atharv — potentially doing on-sat work?
+- Muthur - on sat work?
 
 ## Dependencies / Risks to Watch
 
