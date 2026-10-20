@@ -73,7 +73,8 @@ Last updated: 2026-10-14
 	- Delayed — rooftop work (LNA, lightning arrestors, antenna installs) starting much later than expected; may slip further
 	- [ ] Rooftop prereqs: LNA install, lightning arrestors, antenna installs (Gantt: 9/23–10/1)
 		- [ ] Verify lightning arrestor install with building manager
-			- [ ] Never installed — Edin needs to locate them, work with COSGC building manager #blocked arrestors not found yet
+			- [x] Never installed — Edin needs to locate them, work with COSGC building manager #blocked arrestors not found yet
+			- [ ]arrestors being installed 
 		- [ ] Weatherproofing: better zipties, coax seal, Loctite
 	- [ ] Execute motor tests (Gantt: 10/2–10/12)
 		- [ ] Fix motor interface — motors power on, but the interface is broken #in-progress — expect ~1 more week (~10/21); blocks all sat tracking attempts
@@ -85,9 +86,17 @@ Last updated: 2026-10-14
 		- [x] Get motor configuration cable
 	- [x] Check remaining things needed to raise antenna
 	- [ ] Reach out to LASP contacts about antenna raising — Landon first, then Spencer (structures), Dr. Palo
-	- [ ] Reach out to Fedor about RS232 cables for testing
+	- [x] Reach out to Fedor about RS232 cables for testing
 - [ ] Calibrate rotors
-- [ ] Get az/el tracking working correctly
+- [ ] Get az/el tracking working correctl
+- [ ]testing the final ground station setup  
+- [ ]antenna tests
+  - [ ]SCT3 tests functionality
+    - [ ]what other things to look into testing?
+  - [ ]  gs pc tes
+    - [ ]when will maxwell be free with the GS PC?       - [ ] vibe in november    [ ] meeting wednesday
+
+t   y
 - [x] Buy cables: RS232A, USB-ethernet converter (Rick to purchase)
 - [x] Contact Alex Byrnes re: rotors/ground pass support
 
@@ -102,9 +111,10 @@ Last updated: 2026-10-14
 - [ ] Test satellite tracking (Gantt: 10/26–11/3) #blocked motor interface not functioning
 - [ ] Demonstrate GS can track another LASP satellite (proof-of-concept before MAXWELL)
 - [ ] Demonstrate full uplink/downlink end-to-end
-- [ ] talk to palo about the motor interfacing issues 
-- [ ] Rick has lasp contact for GS setup, be sure to look into this for Edin and Elsa
-
+- [x] talk to palo about the motor interfacing issues 
+- [x] Rick has lasp contact for GS setup, be sure to look into this for Edin and Elsa  - [ ] waiting on rresponse, i have followed up once
+  
+  
 
 ### Coordination
 - [x] Reach out to Skye Glasner to coordinate GS work, avoid duplicate effort
@@ -132,23 +142,25 @@ Last updated: 2026-10-14
 	- [ ] Practice run-through with CDH to find what's missing
 	- [ ] Develop Hydra for SCT-1 (Gantt: 10/9–10/15)
 	- [ ] Bench setup (Gantt: 10/16), practice run (10/19), full run (10/20–10/21), troubleshooting (10/22)
-- [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)
+- [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)  
+- [ ] Look into the new GNU from MAXWELL side, there is a recording from Rainville apparently?
+    - [ ] possibility of this running locally? - [ ] SCT2 proceudre drafting, setups, adding lithium and b200 setups  
+- [ ]are we re running commnands from SCT1   
 - [ ] Continue Hydra command dictionary implementation
 	- [ ] for what?
 - [ ] Re-verify Hydra ↔ GNU Radio link Dhruva previously demoed (flagged as possibly stale)
 - [ ] Check what package Hydra receives
 - [ ] Clarify "once you define H2S, Lithium no more" note with Dhruva
 - [x] Contact Brian Hilten, clarify process
-- [ ] palo over at space grant next week?
-	- [ ] pointing things out, i really want to start a list of things to do
-
+- [ ] palo and rick over at space grant ground station at some point to check things out?
+	- [ ] pointing things out
 ### Lithium / hardware
-- [ ] Confirm Li-1 supply voltage (marked "?" at 7V) and Li-2 (10V) against absolute max ratings in Li-1 User Manual
-- [ ] Locate 30dB attenuator and an antenna
-	- [ ] In Palo's office
+- x ] Confirm Li-1 supply voltage (marked "?" at 7V) and Li-2 (10V) against absolute max ratings in Li-1 User Manual
+- x ] Locate 30dB attenuator and an antenna
+	- x ] In Palo's office
 - [x] Go through Lithium breakout manual, especially absolute max ratings
 - [x] Resolve Safe2Mate pinout mismatch (10 vs 14 vs 6 pin) — ask Alex or Saanika
-	- [ ] This will require documentation updates
+	-   ] This will require documentation updates
 - [x] Find CDH UART connector location / pin layout of CDH board
 	- [x] Altium — see Adhi's message
 - [x] Get CDH pin diagram from Alex, or ask Saanika
