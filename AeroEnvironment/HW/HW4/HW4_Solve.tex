@@ -146,11 +146,36 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 \hspace*{2em}Finding how long it takes for an $85~\mathrm{keV}$ electron to drift all the around Earth at $L=4$, we can use the equations, 
 \begin{gather*}
 \bold{v}_{d\nabla} = \frac{mv_{\perp}^2}{2q} \frac{\bold{B}\times \nabla B}{B^3} \\
-E = \frac{1}{2}m v_{\perp}^2 \\
-\bold{v}_{dg} = \frac{m\bold{g}\times \bold{B}}{B^3} \\
-\\
-\text{If we assume the particle remains in the equator and all it's energy is perpendicular.}
-v_d = \frac{E}{qB}\frac{|\nabla B|}{B} = \frac{3E}{qBr}, \qquad B=\frac{B_0}{L^3},; r = LR_E
+E = \frac{1}{2}m v_{\perp}^2
+\end{gather*}
+
+\hspace*{2em}If we assume the particle remains in the equator and all its energy is perpendicular ($v_{\parallel} = 0$). At the equator $|\bold{B}\times\nabla B| = B|\nabla B|$. The drift speed is then,
+\begin{gather*}
+v_d = \frac{2E}{2q}\frac{B|\nabla B|}{B^3} = \frac{E}{qB}\frac{|\nabla B|}{B}
+\end{gather*}
+
+\hspace*{2em}To find the gradient we use the dipole field at the equator ($\lambda = 0^\circ$) from Problem 2 and take the derivative with respect to $r$,
+\begin{gather*}
+B = B_0\left(\frac{R_E}{r}\right)^3 \\
+\frac{dB}{dr} = -3B_0\frac{R_E^3}{r^4} = -\frac{3B}{r} \\
+\therefore |\nabla B| = \frac{3B}{r}
+\end{gather*}
+
+\hspace*{2em}Substituting the gradient back into the drift speed,
+\begin{gather*}
+v_d = \frac{E}{qB}\frac{3B}{rB} = \frac{3E}{qBr}, \qquad B=\frac{B_0}{L^3}, \quad r = LR_E
+\end{gather*}
+
+\hspace*{2em}The time to drift all the way around the Earth is the circumference of the drift path divided by the drift speed,
+\begin{gather*}
+T = \frac{2\pi r}{v_d} = \frac{2\pi qBr^2}{3E} = \frac{2\pi q B_0 R_E^2}{3EL}
+\end{gather*}
+
+\hspace*{2em}Given $L=4$, $B_0 = 31,000~\mathrm{nT}$, $R_E = 6371~\mathrm{km}$, and $E = 85~\mathrm{keV}$, we have $B = 484.4~\mathrm{nT}$ (from Problem 2) and $r = 25,484,000~\mathrm{m}$.
+\begin{gather*}
+v_d = \frac{3(85,000)}{(484.4\times10^{-9})(25,484,000)} = 20,660~\mathrm{m/s} \\
+T = \frac{2\pi(25,484,000)}{20,660} = 7,750~\mathrm{s} \\
+\boxed{\therefore T \approx 2.15~\mathrm{hours}}
 \end{gather*}
 
 \newpage
