@@ -71,7 +71,7 @@ field in Boulder, CO to be,
 \end{figure}
 
 TODO:
-\hspace*{2em}Based on the inclination observed at McMurdo, this tells us that... 
+\hspace*{2em}Based on the inclination observed at McMurdo, this tells us that the magnetic fields will pass through the station based on the inclination and the latitude of the station. 
 
 \newpage
 \section*{Problem 2: Dipole Field}
@@ -140,12 +140,18 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 % - L16 slide 10: ring current, 3-6 RE, protons west / electrons east
 % - Note: dipole at equator gives |gradB| = 3B/r (not stated explicitly, follows from B = B0/L^3)
 \subsection*{(i).}
-
+\hspace*{2em}The reason why there is a current in the first place is because of protons drifting west, while electrons drift east. This causes a net westward current which is the ring current. Additionally, there is a gradient force present...TODO FINISH
 
 \subsection*{(ii).}
-
-\subsection*{(iii).}
-
+\hspace*{2em}Finding how long it takes for an $85~\mathrm{keV}$ electron to drift all the around Earth at $L=4$, we can use the equations, 
+\begin{gather*}
+\bold{v}_{d\nabla} = \frac{mv_{\perp}^2}{2q} \frac{\bold{B}\times \nabla B}{B^3} \\
+E = \frac{1}{2}m v_{\perp}^2 \\
+\bold{v}_{dg} = \frac{m\bold{g}\times \bold{B}}{B^3} \\
+\\
+\text{If we assume the particle remains in the equator and all it's energy is perpendicular.}
+v_d = \frac{E}{qB}\frac{|\nabla B|}{B} = \frac{3E}{qBr}, \qquad B=\frac{B_0}{L^3},; r = LR_E
+\end{gather*}
 
 \newpage
 \section*{Problem 5: Drift due to Gravity}
@@ -155,7 +161,14 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 % - Module4 PDF p13-14, eqs (28)-(29): general drift from any force, v_d = F x B / (q B^2)
 % - L15 slide 16: "Third Motion: Particle Drifts"
 
-
+\subsection*{(i.)}
+\hspace*{2em}Under the influence of gravity, protons will drift west and electrons will drift east.
+\subsection*{(ii.)}
+\hspace*{2em}We find the magnitude of the drift velocity due to gravity is with the equation,
+\begin{gather*}
+\bold{v}_{dg} = \frac{m\bold{g}\times \bold{B}}{B^3}
+\end{gather*}
+\subsection*{(iii.)}
 
 \newpage
 \section*{Problem 6: Geomagnetic Indices}
@@ -163,8 +176,29 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 % - Module4 PDF p21-22, Sec 4.1: Kp / K / ap definitions; Kp ranges 0-9, each step
 %   ~2x increase in magnetic activity
 % - Rest is done on OMNIWeb (not covered in the notes)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Dist_function.png}
+    \caption{Distribution Function}
+    \label{fig:Dist_function}
+\end{figure}
 
-
+\subsection*{(i.)}
+\hspace*{2em}Using Figure \ref{fig:Dist_function}, we can identify the most common Kp in this distribution as $Kp = 1$, as the most frequent occurrence in this distribution is at 10. 
+\subsection*{(ii.)}
+\hspace*{2em}Examining what values will be at level 9, we find the ratio of the Kp = 90 out of the total measurements. 
+\begin{gather*}
+\boxed{\frac{39}{464{,}616} = 0.0084\%}
+\end{gather*}
+\subsection*{(iii.)}
+\hspace*{2em}When repeating the above for July 2004, we find,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Dist_function_iii.png}
+    \caption{Distribution Function for July 2004}
+    \label{fig:Dist_function_iii}
+\end{figure}
+Here we find that the most common Kp is 11, so most common Kp is $Kp = 1.1$, and of there are no occurrences of Kp level 9, 
 
 \newpage
 \section*{Problem 7: Geomagnetic Storm}
@@ -174,8 +208,17 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 % - Module4 PDF p21: why Dst is negative / measures the ring current; storm-level Dst thresholds
 % - Module4 PDF p22: Halloween 2003 double storm
 % - L16 slides 19-20: Dst station network and October 2003 Dst plot
-
-
+\subsection*{(i.)}
+\hspace*{2em}We can recreate the Halloween Storm and obtain the following,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dst200310.png}
+    \caption{DST Index for the Halloween Storm}
+    \label{fig:dst200310}
+\end{figure}
+\subsection*{(ii.)}
+\hspace*{2em}Using this information, we can calculate the ring current magnitude with,
+TODO: insert equations
 
 \newpage
 \section*{Problem 8: Key Parameters in the Solar Wind Driving a Magnetic Storm}
@@ -196,7 +239,11 @@ and $\rho_{sw} = nm_p = 5~\mathrm{proton/cm^3}*1.672\times10^{-27}~\mathrm{kg} =
 % - L14 slides 10-11: core facts (inner core solid, Curie temperature, etc.)
 % - Atmosphere module: why the atmosphere wouldn't "come apart"
 
+\subsection*{(i.)}
+\hspace*{2em}Aaron Eckharts description of the Earth's core, electronics can be impacted by geomagnetic events, EM field does shield us from cosmic radiation. 
 
+\subsection*{(i.)}
+\hspace*{2em}Microwave radiation will literally cook our planet, everybody on Earth is dead in a year, static discharge will not lead to superstorms. 
 
 \newpage
 \section*{Problem 10: Magnetospheric Multiscale}
