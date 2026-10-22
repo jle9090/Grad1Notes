@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1792613131.93987 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex" "build/HW4_Solve.pdf" "HW4_Solve" 1792613132.48644 0
+["pdflatex"] 1792675615.46752 "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex" "build/HW4_Solve.pdf" "HW4_Solve" 1792675616.05148 0
   "/etc/texmf/web2c/texmf.cnf" 1788015608.56432 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex" 1792613131.74187 11394 5714d2f6ec0d97be8f0bdbe6f864df89 ""
+  "/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex" 1792675615.25764 13577 31ad521c1e5b3f298f8ef1c245396ada ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -72,9 +72,9 @@
   "Boulder_Magnetic_Field.png" 1792361591.96787 39777 b964d8bca91a62ba71cc793dbb620e07 ""
   "Dist_function.png" 1792612639.27518 10149 7ccc649c274fe362b3df3be2dae71a7a ""
   "Dist_function_iii.png" 1792612639.27533 9223 b61002d8d189225c82440765fadb7223 ""
-  "HW4_Solve.tex" 1792613131.74187 11394 5714d2f6ec0d97be8f0bdbe6f864df89 ""
+  "HW4_Solve.tex" 1792675615.25764 13577 31ad521c1e5b3f298f8ef1c245396ada ""
   "McMurdo_Magnetic_Field.png" 1792361793.86657 40307 c156789a633ac0fddb60ce81f01889c7 ""
-  "build/HW4_Solve.aux" 1792613132.43479 914 a22a232d35c26809f65b290699bdae5f "pdflatex"
+  "build/HW4_Solve.aux" 1792675615.99713 914 a22a232d35c26809f65b290699bdae5f "pdflatex"
   "dst200310.png" 1792612639.27785 15733 bd930f284fbde3195ce30fb14f2fbf7a ""
   (generated)
   "build/HW4_Solve.aux"

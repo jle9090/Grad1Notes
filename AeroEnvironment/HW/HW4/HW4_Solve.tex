@@ -187,13 +187,25 @@ T = \frac{2\pi(25,484,000)}{20,660} = 7,750~\mathrm{s} \\
 % - L15 slide 16: "Third Motion: Particle Drifts"
 
 \subsection*{(i.)}
-\hspace*{2em}Under the influence of gravity, protons will drift west and electrons will drift east.
+\hspace*{2em}Under the influence of gravity, protons will drift east and electrons will drift west.
 \subsection*{(ii.)}
 \hspace*{2em}We find the magnitude of the drift velocity due to gravity is with the equation,
 \begin{gather*}
-\bold{v}_{dg} = \frac{m\bold{g}\times \bold{B}}{B^3}
+\bold{v}_{dg} = \frac{m\bold{g}\times \bold{B}}{qB^2}
 \end{gather*}
 \subsection*{(iii.)}
+\hspace*{2em}To find how long it will take to drift around the Earth under gravity, we can use the drift to to gravity equation and assuming a particle drifting around the equator,
+
+\begin{gather*}
+\bold{v}_{dg} = \frac{m\bold{g}\times\bold{B}}{qB^2} \quad,~\quad v_{dg} = \frac{mg}{qB} \\
+g = \frac{g_{Earth}}{L^2} = \frac{9.81}{4^2} = 0.613~\mathrm{m/s^2} \\
+T = \frac{2\pi r}{v_{dg}} = \frac{2\pi qBr}{mg} \\
+v_{dg} = \frac{(1.673\times10^{-27})(0.613)}{(1.602\times10^{-19})(484.4\times10^{-9})} = 1.32\times10^{-2}~\mathrm{m/s} \\
+T = \frac{2\pi(25,484,000)}{1.32\times10^{-2}} = 1.21\times10^{10}~\mathrm{s} \\
+\boxed{\therefore T \approx 384~\mathrm{years}} \\
+\end{gather*}
+
+\hspace*{2em}Here we find that the drift to to gravity is far slower than the gradient drift from Problem 4, and that when calculating ring current this can be assumed to be a negligible effect. 
 
 \newpage
 \section*{Problem 6: Geomagnetic Indices}
@@ -244,6 +256,13 @@ Here we find that the most common Kp is 11, so most common Kp is $Kp = 1.1$, and
 \subsection*{(ii.)}
 \hspace*{2em}Using this information, we can calculate the ring current magnitude with,
 TODO: insert equations
+\begin{gather*}
+B = \frac{\mu_0 I}{2R},~I = \frac{2RB}{\mu_0} \\
+\mu_0 = 4\pi\times10^{-7}~\mathrm{Tm/A} \\
+B = 400\times10^{-9}~\mathrm{T}\\
+R = 5R_E = 5(6371)\times10^3~\mathrm{m}\\
+\boxed{\therefore I = 20\times10^6~\mathrm{A}}
+\end{gather*}
 
 \newpage
 \section*{Problem 8: Key Parameters in the Solar Wind Driving a Magnetic Storm}
@@ -253,8 +272,10 @@ TODO: insert equations
 % - Module4 PDF p16 and L16 slide 5: magnetopause (Chapman-Ferraro) current, cause of the positive surge
 % - Module4 PDF p20, Sec 3.7.6 Other Magnetospheric Currents
 % - L16 slides 18, 24-25: storm progression, IMF polarity, reconnection
-
-
+\subsection*{(i.)}
+\hspace*{2em}The most critical parameter for describing solar wind is the interplanetary magnetic field. This is because for a geomagnetic storm to occur, the magnetic field field must point southward and also be sustained for an amount of time while also being stronger than usual, typically a result from coronal mass ejections. The interplanetary magnetic field essentially determines the conditions needed for a magnetic storm. 
+\subsection*{(ii.)}
+\hspace*{2em}The positive surge that results from the magnetopause current of the Chapman Ferraro current. This is because when a CME hits Earth, the higher solar wind pressure compresses the magnetosphere inward, which is the magnetic storm's initial phase. The current forms because the solar wind gyrating around the magnetopause field lines. This cancels out the Earth's filed outside of the magnetosphere and increases the field inside of it, which leads to a eastward current as opposed to the usual westward current, causing a northward field and shows the surge in positive DST. 
 
 \newpage
 \section*{Problem 9: The Core}
