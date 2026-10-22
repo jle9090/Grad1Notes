@@ -19,4 +19,8 @@ Flush Command Queue
 
 - how will hardwiring SCT2 look like
   - sma straight?
+    - yes, 40dB attenuator
 
+
+
+tagup with Jordan for a lot of questions and follow ups for how CDH and hydra was updated.
