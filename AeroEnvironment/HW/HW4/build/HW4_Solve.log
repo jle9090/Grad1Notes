@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.29)  18 OCT 2026 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.8.27)  22 OCT 2026 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex"
-(/home/justin-le/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex
+**"/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex"
+(/home/hastur/Documents/Obsidian Vault/Grad1Notes/AeroEnvironment/HW/HW4/HW4_Solve.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -254,12 +254,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <Boulder_Magnetic_Field.png, id=1, 946.53625pt x 204.765pt>
 File: Boulder_Magnetic_Field.png Graphic file (type png)
 <use Boulder_Magnetic_Field.png>
-Package pdftex.def Info: Boulder_Magnetic_Field.png  used on input line 56.
+Package pdftex.def Info: Boulder_Magnetic_Field.png  used on input line 60.
 (pdftex.def)             Requested size: 469.75502pt x 101.61986pt.
 <McMurdo_Magnetic_Field.png, id=3, 946.53625pt x 204.765pt>
 File: McMurdo_Magnetic_Field.png Graphic file (type png)
 <use McMurdo_Magnetic_Field.png>
-Package pdftex.def Info: McMurdo_Magnetic_Field.png  used on input line 64.
+Package pdftex.def Info: McMurdo_Magnetic_Field.png  used on input line 68.
 (pdftex.def)             Requested size: 469.75502pt x 101.61986pt.
 
 
@@ -272,11 +272,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./Boulder_Magnetic_Field.png> <./McMurdo_Magnetic_Field.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -296,6 +296,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 149.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -320,6 +323,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [6]
+<Dist_function.png, id=37, 994.71625pt x 734.745pt>
+File: Dist_function.png Graphic file (type png)
+<use Dist_function.png>
+Package pdftex.def Info: Dist_function.png  used on input line 217.
+(pdftex.def)             Requested size: 375.80544pt x 277.59157pt.
+<Dist_function_iii.png, id=38, 994.71625pt x 734.745pt>
+File: Dist_function_iii.png Graphic file (type png)
+<use Dist_function_iii.png>
+Package pdftex.def Info: Dist_function_iii.png  used on input line 233.
+(pdftex.def)             Requested size: 375.80544pt x 277.59157pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -327,7 +341,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7]
+[7 <./Dist_function.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -335,7 +349,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8]
+[8 <./Dist_function_iii.png>]
+<dst200310.png, id=48, 742.775pt x 225.84375pt>
+File: dst200310.png Graphic file (type png)
+<use dst200310.png>
+Package pdftex.def Info: dst200310.png  used on input line 251.
+(pdftex.def)             Requested size: 375.80544pt x 114.26556pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -343,7 +363,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
+[9 <./dst200310.png (PNG copy)>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -351,25 +371,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10] (build/HW4_Solve.aux)
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12] (build/HW4_Solve.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4733 strings out of 474222
- 68976 string characters out of 5748733
- 1930975 words of memory out of 5000000
- 26959 multiletter control sequences out of 15000+600000
- 563927 words of font info for 58 fonts, out of 8000000 for 9000
+ 4763 strings out of 474222
+ 69587 string characters out of 5748733
+ 1937975 words of memory out of 5000000
+ 26986 multiletter control sequences out of 15000+600000
+ 564856 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,482b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on build/HW4_Solve.pdf (10 pages, 183513 bytes).
+ 57i,12n,65p,695b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on build/HW4_Solve.pdf (12 pages, 246869 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
