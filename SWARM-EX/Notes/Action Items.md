@@ -1,4 +1,4 @@
-Last updated: 2026-10-14
+Last updated: 2026-10-23
 
 ## How to use this file
 
@@ -11,38 +11,40 @@ Last updated: 2026-10-14
 
 ---
 
-## This week (10/12–10/18)
+## This week (10/19–10/25)
 
-### Done since last update (10/5)
-- MCT re-run complete — ran Thu 10/8 with Saanika, commands acknowledged through Hydra → CDH → Li-2
-	- Root cause of the CDH command-byte issue: UART port on the CDH board had TX/RX swapped on the FTDI
-	- MCT test documentation recorded and updated
-- Li-2 flight cabling summary compiled (10/7) — [[Li-2_Flight_Cabling_Summary]]
-- Quad chart + waterfall updated (10/9)
-- Started SCT-1 test doc review (2 hrs logged)
-
-- Saanika review of MCT done
-- Contacted Skye Glasner
-- Contacted Scott Gennari (LASP ground station expert) about antenna raising and the motor interface issues
+### Done since last update (10/14)
+- SCT-1 full run done Thu 10/22 with Saanika — commands acknowledged
+	- Bench setup, practice run-through, and troubleshooting done
+	- 3 commands missing from Hydra (0x51 schedule, 0x54 read command queue, 0x57 flush command queue) — Saanika says they weren't implemented yet, probably lost with the Hydra git issues — see [[SCT1 Notes]]
+	- CDH has since made and implemented the 3 commands, and they've been run — SCT-1 complete
+- Met with Rainville about his new program replacing GNU Radio — [[Rainville Notes]]
+	- Clean-sheet reimplementation using the GNU libraries, installed through radioconda, opens network ports to connect to
+	- Hydra is still the same; we were added to his repo
+- SCT-2 hardwiring will be SMA straight with a 40 dB attenuator
+- GS PC is working (Palo/Rainville)
+- Mid-semester review and peer evaluations submitted
+- LNA mounted on the roof; lightning arrestors being installed
+- Found the exact location of the ground station
+- Heard back from Scott Gennari (Elsa is talking with him) and Rick's LASP contact; contacted Landon/Spencer about antenna raising; Rick sent the safety list
 
 ### Focus this week
-- [ ] SCT-1: finish doc review, Hydra development for SCT-1 (Gantt: 10/9–10/15), bench setup (Gantt: 10/16)
-- [ ] SCT-1 practice run-through with CDH to find what's missing
-- [ ] Update GNU Radio to latest version, first pass at what state it's in for SCT-2
-- [ ] Mid-semester review: PPT + 10 min recording due 10/14 (Gradescope + OneDrive), peer evaluations due 10/21 — talking points in [[MidSemester Review Notes]]
+- [ ] Review SCT-2 procedure (Gantt: 10/23–10/26)
+- [x] Implement the 3 missing SCT-1 commands in Hydra — CDH made and implemented them, already run
+- [ ] Tag up with Jordan on how CDH and Hydra were updated
+- [ ] Poke around Rainville's repo ahead of SCT-2
 
 ### Schedule changes
-- GS PC: Palo and Rainville own bringing it up. My task is verifying it in the comms chain at the ground station once they have it working, so the laptop/443 setup rows are dropped.
-- Motor interface still not working — probably ~1 more week (~10/21). Blocks all sat tracking attempts.
-- Gpredict TLE tracking pushed back to follow the motor interface fix.
-- Antenna raising pushed to early November.
+- SCT-2 "Reverify GND station setup" replaced with reverifying Hydra's connection with both GNU Radio (11/6) and Rainville's new program (11/9–11/10) — waterfall and Gantt updated, end date unchanged
+- Motor interface still broken, blocked on Palo troubleshooting — motor tests, Gpredict TLE tracking (11/5), Gpredict interface (11/12), sat tracking (11/20), and antenna raising (11/16) pushed 2 weeks
+- Verify GS PC in comms chain moved to the week of 11/2 — GS PC works, now waiting on the ground station being up while MAXWELL does vibe testing
 
 ---
 
 ## Management
 - [x] Fixing waterfall chart to incorporate the target dates
 - [x] Quad chart + waterfall update (10/9)
-- [ ] Mid-semester review: PPT + 10 min recording due 10/14, peer evaluations due 10/21
+- [x] Mid-semester review: PPT + 10 min recording due 10/14, peer evaluations due 10/21 — both submitted
 	- [ ] Waterfall marks the review as re-baselined to the week of 10/26 but it is due 10/14 — fix the marker
 - [ ] Re-baseline the Ground Station PC Architecture waterfall rows (laptop setup, connecting laptop + 443, planning final architecture) — Palo and Rainville now own GS PC bring-up, my role is verifying it in the comms chain (re-baselining needs Palo's approval)
 
@@ -52,7 +54,7 @@ Last updated: 2026-10-14
 - [x] Decide GS PC architecture (Rick's 2-PC proposal — static GNU Radio box for MAXWELL+SWARM-EX, dedicated Hydra box — vs. current setup)
 	- [x] Professor Palo assessing the state of the lab machines — all GS PC work was on hold 9/23–9/29, resumed 9/30
 	- [x] Sit down with Palo (and Rick) on the machine situation
-	- [ ] Palo and Nicholas Rainville are bringing up the STIG GS PC #in-progress — route all GS PC needs through them
+	- [x] Palo and Nicholas Rainville are bringing up the STIG GS PC — route all GS PC needs through them — working as of 10/23
 	- [x] Still want a usable machine on the side — use the spare laptop?
 - [x] Write ground station doc for Palo
 	- [x] Include the ground station PC in STIG
@@ -60,64 +62,67 @@ Last updated: 2026-10-14
 - [x] Migrate/port HFSS from small 443 machine to big 443 tower — Palo hold lifted 9/30 (Gantt: 9/30–10/1)
 	- [ ] see palo and rainville note
 - [x] Stand up interim dev machine from 443 while GS PC situation is sorted — Palo hold lifted 9/30
-- [ ] Ground Station PC test — revised 10/23 (planned 9/23) — date depends on when Palo/Rainville have the GS PC working
-	- [ ] Verify the GS PC in the comms chain at the ground station once Palo/Rainville have it working (Justin) #blocked waiting on Palo/Rainville GS PC bring-up
+- [ ] Ground Station PC test — revised 11/2 (planned 9/23) — GS PC is working, date depends on when the ground station is up and running
+	- [ ] Verify the GS PC in the comms chain at the ground station once Palo/Rainville have it working (Justin) #blocked waiting on the ground station being up and running — end of October or early November while MAXWELL does vibe testing (Gantt: 11/2–11/6)
 	- [ ] ~~Set up laptop for GND station (Gantt: 10/2–10/12)~~ — dropped, GS PC bring-up is Palo/Rainville's
 	- [ ] ~~Connect laptop and 443 machine (Gantt: 10/13–10/16)~~ — dropped
 	- [ ] ~~Plan final GND station architecture (Gantt: 10/26–10/27)~~ — dropped, Palo leads
 	- [ ] Finish STIG ground station PC doc #in-progress
-- [ ] Update GNU Radio to latest version, first pass at what state it's in for SCT-2
+- [ ] ~~Update GNU Radio to latest version, first pass at what state it's in for SCT-2~~ — dropped, Rainville's program replaces GNU Radio
 
 ### Antenna raising / rotors
-- [ ] Raise the antenna (Edin) — target early November (was ~Oct 13, originally ~Sept 29)
+- [ ] Raise the antenna (Edin) — target mid November, Gantt 11/16 (was early November, ~Oct 13, originally ~Sept 29)
 	- Delayed — rooftop work (LNA, lightning arrestors, antenna installs) starting much later than expected; may slip further
-	- [ ] Rooftop prereqs: LNA install, lightning arrestors, antenna installs (Gantt: 9/23–10/1)
+	- [ ] Rooftop prereqs: LNA install, lightning arrestors, antenna installs (Gantt: 9/23–10/1) #in-progress — LNA mounted, arrestors being installed, antennas not installed yet (10/23)
 		- [ ] Verify lightning arrestor install with building manager
 			- [x] Never installed — Edin needs to locate them, work with COSGC building manager #blocked arrestors not found yet
-			- [ ]arrestors being installed 
+			- [ ] arrestors being installed #in-progress
 		- [ ] Weatherproofing: better zipties, coax seal, Loctite
 	- [ ] Execute motor tests (Gantt: 10/2–10/12)
-		- [ ] Fix motor interface — motors power on, but the interface is broken #in-progress — expect ~1 more week (~10/21); blocks all sat tracking attempts
+		- [ ] Fix motor interface — motors power on, but the interface is broken #blocked on Palo troubleshooting — Gantt pushed 2 weeks (~11/4); blocks all sat tracking attempts
 			- Edin has made progress on figuring out bring-up needs
 			- Asked Scott Gennari (LASP) for help
+			- Elsa is talking with Scott Gennari
 		- [ ] Safety precautions (Rick)
-			- [ ] Should we get a list of these?
+			- [x] Should we get a list of these? — Rick sent the list
 		- [x] Motor test procedure (Edin)
 		- [x] Get motor configuration cable
 	- [x] Check remaining things needed to raise antenna
-	- [ ] Reach out to LASP contacts about antenna raising — Landon first, then Spencer (structures), Dr. Palo
+	- [x] Reach out to LASP contacts about antenna raising — Landon first, then Spencer (structures), Dr. Palo
 	- [x] Reach out to Fedor about RS232 cables for testing
 - [ ] Calibrate rotors
 - [ ] Get az/el tracking working correctl
-- [ ]testing the final ground station setup  
-- [ ]antenna tests
-  - [ ]SCT3 tests functionality
-    - [ ]what other things to look into testing?
-  - [ ]  gs pc tes
-    - [ ]when will maxwell be free with the GS PC?       - [ ] vibe in november    [ ] meeting wednesday
+- [ ] testing the final ground station setup
+- [ ] antenna tests
+	- [ ] SCT3 tests functionality
+		- [ ] what other things to look into testing?
+	- [ ] gs pc test
+		- [ ] when will maxwell be free with the GS PC?
+			- [ ] vibe in november
+			- [ ] meeting wednesday
 
-t   y
 - [x] Buy cables: RS232A, USB-ethernet converter (Rick to purchase)
 - [x] Contact Alex Byrnes re: rotors/ground pass support
 
-- [ ] reach out to systems if we just need hands for ground station PC bring up
+- [ ] ~~reach out to systems if we just need hands for ground station PC bring up~~ — dropped, GS PC is working
 - [x] email Scott Gennari at LASP for ground station expertise — contacted about antenna raising and motor interfacing
-	- [ ] Follow up on Scott's response
+	- [x] Follow up on Scott's response — Elsa is talking with him
 ### Tracking / end-to-end
 - [ ] Set up Doppler correction + TLE tracking (Gpredict, Celestrak) (Elsa) — pushed back behind the motor interface fix (Gantt was 9/24–10/7)
 	- [x] Confirm with Elsa whether Doppler correction should live in GPredict instead of GNU Radio
-	- [ ] Gpredict tracking with TLEs (Gantt: 9/24–9/30) #blocked motor interface not functioning
-	- [ ] Interface GNU Radio with Gpredict (Gantt: 10/1–10/7) — GS PC side goes through Palo/Rainville
-- [ ] Test satellite tracking (Gantt: 10/26–11/3) #blocked motor interface not functioning
+	- [ ] Gpredict tracking with TLEs (Gantt: 11/5–11/11) #blocked motor interface not functioning
+	- [ ] Interface Rainville's program (was GNU Radio) with Gpredict (Gantt: 11/12–11/18) — GS PC side goes through Palo/Rainville
+		- [ ] With Rainville's program: find how Gpredict exports Doppler (GNU block or another network port) to feed it in — see [[Rainville Notes]]
+- [ ] Test satellite tracking (Gantt: 11/20–12/7) #blocked motor interface not functioning
 - [ ] Demonstrate GS can track another LASP satellite (proof-of-concept before MAXWELL)
 - [ ] Demonstrate full uplink/downlink end-to-end
 - [x] talk to palo about the motor interfacing issues 
-	- [ ] palo looking into debugging
-	- [ ] i want motor decision end of the week of oct 19th
+	- [ ] palo looking into debugging #in-progress
+	- [ ] i want motor decision end of the week of oct 19th — no decision as of 10/23, still blocked on Palo
 	- [ ] looking into previous proven interfaces
 - [x] Rick has lasp contact for GS setup, be sure to look into this for Edin and Elsa
-	- [ ] waiting on rresponse, i have followed up once
-		- [ ] poke rick to poke him
+	- [x] waiting on rresponse, i have followed up once — responded
+		- [x] poke rick to poke him
 
 ### Coordination
 - [x] Reach out to Skye Glasner to coordinate GS work, avoid duplicate effort
@@ -139,22 +144,25 @@ t   y
 	- [x] Full run-through
 	- [x] Troubleshooting (Gantt: 10/7)
 	- [x] Update MCT documentation
-	- [ ] Return 30dB attenuator (borrowed from ground station for MCT) when done — currently in the comms box at 443
-- [ ] Re-run SCT-1 — revised 10/20 (planned 9/30), ~24 hrs remaining
-	- [ ] Review SCT-1 test docs (Gantt: 10/8) #in-progress
-	- [ ] Practice run-through with CDH to find what's missing
-	- [ ] Develop Hydra for SCT-1 (Gantt: 10/9–10/15)
-	- [ ] Bench setup (Gantt: 10/16), practice run (10/19), full run (10/20–10/21), troubleshooting (10/22)
-	- [ ] 3 commands are missing, see SCT1 notes
-	- [ ] re implemented and run the test
+	- [ ] Return 30dB attenuator (borrowed from ground station for MCT) when done — currently in the comms box at 443 — keeping it for SCT-2
+- [x] Re-run SCT-1 — revised 10/20 (planned 9/30) — full run 10/22, missing commands implemented by CDH and run
+	- [x] Review SCT-1 test docs (Gantt: 10/8)
+	- [x] Practice run-through with CDH to find what's missing
+	- [x] Develop Hydra for SCT-1 (Gantt: 10/9–10/15)
+	- [x] Bench setup (Gantt: 10/16), practice run (10/19), full run (10/20–10/21), troubleshooting (10/22) — full run 10/22 with Saanika, commands acknowledged
+	- [x] 3 commands are missing, see SCT1 notes — CDH made and implemented them
+	- [x] re implemented and run the test
+	- [ ] Tag up with Jordan on how CDH and Hydra were updated
 - [ ] Develop Hydra for SCT-2 (Gantt: 10/27–11/2; SCT-2 full run 11/17–11/20)
+- [ ] Reverify Hydra connection with both GNU Radio and Rainville's new program for SCT-2 (Gantt: 11/6, 11/9–11/10) — includes the Hydra ↔ GNU Radio link Dhruva previously demoed
 - [ ] Look into the new GNU from MAXWELL side, there is a recording from Rainville apparently?
+	- [x] Met with Rainville — [[Rainville Notes]]
 	- [ ] possibility of this running locally?
+		- Uses radioconda, installs in 1 or 2 commands
 - [ ] SCT2 proceudre drafting, setups, adding lithium and b200 setups
-- [ ] are we re running commnands from SCT1
-- [ ] Continue Hydra command dictionary implementation
-	- [ ] for what?
-- [ ] Re-verify Hydra ↔ GNU Radio link Dhruva previously demoed (flagged as possibly stale)
+	- Hardwired SCT-2 is SMA straight with a 40 dB attenuator
+- [x] are we re running commnands from SCT1 — yes, SCT-2 runs them, and so do all later SCT tests
+- [ ] ~~Continue Hydra command dictionary implementation~~ — dropped, no longer needed
 - [ ] Check what package Hydra receives
 - [ ] Clarify "once you define H2S, Lithium no more" note with Dhruva
 - [x] Contact Brian Hilten, clarify process
@@ -170,7 +178,7 @@ t   y
 - [x] Find CDH UART connector location / pin layout of CDH board
 	- [x] Altium — see Adhi's message
 - [x] Get CDH pin diagram from Alex, or ask Saanika
-- [ ] Obtain MAXWELL's Hydra and GNU Radio setup for SCT testing
+- [ ] ~~Obtain MAXWELL's Hydra and GNU Radio setup for SCT testing~~ — dropped, Rainville's program replaces GNU Radio
 - [ ] Start assembling a list of cables needed for the Lithium for Isaac (structures) #in-progress
 	- [x] Compile flight cabling from the project dump — [[Li-2_Flight_Cabling_Summary]]
 	- [ ] Resolve the open conflicts in the summary (MCX vs MMCX, BP1/H1 vs BP4/H4, 7-pin vs 15-pin, RF cable length)
@@ -185,7 +193,7 @@ t   y
 - [ ] Follow up with Dhruva if documentation proves insufficient
 
 ### MAXWELL reference
-- [ ] Play with MAXWELL GNU Radio setup for reference
+- [ ] ~~Play with MAXWELL GNU Radio setup for reference~~ — dropped, Rainville's program replaces GNU Radio
 - [ ] Find MAXWELL pictures (not in SharePoint)
 
 ## Antenna
@@ -208,7 +216,7 @@ t   y
 ## Team / Process
 
 - [ ] Organize COMMs documentation (flagged as top risk — undocumented institutional knowledge)
-- [ ] Set up recurring architecture discussion to settle GS PC decision
+- [ ] ~~Set up recurring architecture discussion to settle GS PC decision~~ — dropped, GS PC is working
 - [ ] Write end-of-semester transition document (docs index, explanations, member list)
 - [ ] Decide whether Atharv takes on on-sat work
 - [x] Onboard Edin Choi onto antenna analysis work
