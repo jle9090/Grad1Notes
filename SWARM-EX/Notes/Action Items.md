@@ -212,6 +212,8 @@ Last updated: 2026-10-23
 - [ ] sanskar milestone tracker, SCT needs to get split into their respective stages
 - [x] Get Steve Taylor's contact re: permissions
 - [x] Contact ISIS about antenna material properties/CAD for Landon
+- [ ] Cross link is very attached to GNC...alex to check with Boaz on maxwell's status
+	- [ ] crosslink is basically like beaconing which is what maxwell does????
 
 ## Team / Process
 
@@ -224,6 +226,13 @@ Last updated: 2026-10-23
 - [x] Fix Slack channel/workspace organization for comms team
 - [x] Give Atharv the SWARM-EX and ground station block diagrams
 - [x] Edin and Elsa fill out when2meet
+- [ ] Need to fillout SWARM EX monthly contributions
+- [ ] Looking into systems support?
+- [ ] get a sense of recruiting that comms needs...
+	- [ ] ground station goes up ops goes to maxwell
+	- [ ] on sat stuff
+		- [ ] looking into crosslink
+		- [ ] probably need to know embedded C
 
 ### New members
 - Ian Li — systems
