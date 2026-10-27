@@ -1,0 +1,149 @@
+%% ASEN 5090 GPS/GNSS
+%% Justin Le
+%% FALL 2026 MIDTERM SCRIPT PART 2
+
+clc;clear;close all
+
+% constants
+c = 3E8;% m/s
+mu_E = 398600.5; %km^3/s^2
+
+%% Problem 2: Pseudoranging
+% Givens
+tx.A.positions = [0,-900,150];
+tx.B.positions = [-200,200,150];
+tx.C.positions = [350,0,300];
+tx.D.positions = [-300,-200,600];
+tx.E.positions = [0,0,600];
+
+tx.A.rho = 863.8;
+tx.B.rho = 453.6;
+tx.C.rho = 360.6;
+tx.D.rho = 751.2;
+tx.E.rho = 609.5;
+
+R_obs = [0,0,0];
+
+%compute_least_point_solution
+
+% Find Geometry matrix
+
+tx_names = fieldnames(tx);
+
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    R0 = sqrt((tx.(tx_name).positions(1) - R_obs(1)).^2 + (tx.(tx_name).positions(2) - R_obs(2)).^2 + (tx.(tx_name).positions(3) - R_obs(3)).^2);
+    G(i,:) = [(tx.(tx_name).positions(1) - R_obs(1))./R0, (tx.(tx_name).positions(2) - R_obs(2))./R0, (tx.(tx_name).positions(3) - R_obs(3))./R0]
+end
+
+G = [G, ones(length(fieldnames(tx)),1)]
+
+[G,dx_hat] = least_squares(tx, R_obs)
+
+% Calculate expected range
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    tx.(tx_name).expected_range = norm(tx.(tx_name).positions - R_obs);
+end
+disp("Expected Ranges")
+disp(tx.A.expected_range)
+disp(tx.B.expected_range)
+disp(tx.C.expected_range)
+disp(tx.D.expected_range)
+disp(tx.E.expected_range)
+
+% Calculate prefit residuals
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    tx.(tx_name).delta_rho_pre = tx.(tx_name).expected_range - tx.(tx_name).rho;
+end
+
+disp("Prefit Residuals")
+disp(tx.A.delta_rho_pre)
+disp(tx.B.delta_rho_pre)
+disp(tx.C.delta_rho_pre)
+disp(tx.D.delta_rho_pre)
+disp(tx.E.delta_rho_pre)
+
+% b. Solve for updated estimate of receiver position and clock bias
+% Get prefit residuals into a column vector
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    delta_rho_pre(i,1) = tx.(tx_name).delta_rho_pre;
+end
+
+% Finding corrections
+dx_hat = (G'*G)\(G'*delta_rho_pre);
+
+% Applying corrections
+R_obs_prime = R_obs' + dx_hat(1:3)
+
+%% Iterate solution 3 more times. (4 times total)
+clc;clear
+
+% Givens
+tx.A.positions = [0,-900,150];
+tx.B.positions = [-200,200,150];
+tx.C.positions = [350,0,300];
+tx.D.positions = [-300,-200,600];
+tx.E.positions = [0,0,600];
+
+tx.A.rho = 863.8;
+tx.B.rho = 453.6;
+tx.C.rho = 360.6;
+tx.D.rho = 751.2;
+tx.E.rho = 609.5;
+
+R_est = [0,0,0];
+
+for i = 1:4
+
+    [G,dx_hat] = least_squares(tx,R_est)
+    
+    R_est = R_est + dx_hat(1:3)';
+
+
+    disp("R_est:")
+    disp(R_est)
+end
+
+function [G,dx_hat] = least_squares(tx, R_obs)
+tx_names = fieldnames(tx);
+    for i = 1:numel(tx_names)
+        tx_name = tx_names{i};
+        R0 = sqrt((tx.(tx_name).positions(1) - R_obs(1)).^2 + (tx.(tx_name).positions(2) - R_obs(2)).^2 + (tx.(tx_name).positions(3) - R_obs(3)).^2);
+        G(i,:) = [(tx.(tx_name).positions(1) - R_obs(1))./R0, (tx.(tx_name).positions(2) - R_obs(2))./R0, (tx.(tx_name).positions(3) - R_obs(3))./R0];
+    end
+G = [G, ones(length(fieldnames(tx)),1)];
+
+% Calculate expected range
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    tx.(tx_name).expected_range = norm(tx.(tx_name).positions - R_obs);
+end
+
+disp("Expected Ranges")
+disp(tx.A.expected_range)
+disp(tx.B.expected_range)
+disp(tx.C.expected_range)
+disp(tx.D.expected_range)
+disp(tx.E.expected_range)
+
+% Calculate prefit residuals
+for i = 1:numel(tx_names)
+    tx_name = tx_names{i};
+    tx.(tx_name).delta_rho_pre = tx.(tx_name).expected_range - tx.(tx_name).rho;
+
+    delta_rho_pre(i,1) = tx.(tx_name).delta_rho_pre;
+end
+disp("Prefit Residuals")
+disp(tx.A.delta_rho_pre)
+disp(tx.B.delta_rho_pre)
+disp(tx.C.delta_rho_pre)
+disp(tx.D.delta_rho_pre)
+disp(tx.E.delta_rho_pre)
+
+% Finding corrections
+dx_hat = (G'*G)\(G'*delta_rho_pre);
+
+end

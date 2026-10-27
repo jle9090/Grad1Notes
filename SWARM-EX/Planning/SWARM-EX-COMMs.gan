@@ -50,30 +50,36 @@
             <task id="2" uid="0f1adcd60c2a4ef58fc6ec9121f92aaa" name="Checking remaining things to raise antenna" meeting="false" start="2026-09-15" duration="3" complete="100" expand="true">
             </task>
             <task id="18" uid="6eae97ab265c4727a4fcdce46203b492" name="Rooftop prereqs: LNA, lightning arrestors, antenna installs (delayed)" meeting="false" start="2026-09-23" duration="7" complete="0" expand="true">
+                <notes><![CDATA[10/23: LNA mounted, lightning arrestors being installed, antennas not installed yet.]]></notes>
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" uid="a22e75052a60434c98f03871183cbe84" name="Executing motor tests (motor interface fix)" meeting="false" start="2026-10-02" duration="14" complete="0" expand="true">
-                <notes><![CDATA[10/14: motors power on but the interface still is not working. Expect about one more week (~10/21). Blocks all sat tracking attempts. Asked Scott Gennari (LASP) for help.]]></notes>
+            <task id="3" uid="a22e75052a60434c98f03871183cbe84" name="Executing motor tests (motor interface fix)" meeting="false" start="2026-10-02" duration="24" complete="0" expand="true">
+                <notes><![CDATA[10/14: motors power on but the interface still is not working. Expect about one more week (~10/21). Blocks all sat tracking attempts. Asked Scott Gennari (LASP) for help.
+10/23: still broken, blocked on Palo troubleshooting. Elsa is talking with Scott Gennari. Pushed 2 weeks.]]></notes>
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" uid="68ddd923a8484f739497fc05c77663c4" name="Raising antenna" meeting="false" start="2026-11-02" duration="4" complete="0" expand="true">
-                <notes><![CDATA[10/14: pushed to early November (was 10/13). Contacted Scott Gennari (LASP) about antenna raising.]]></notes>
+            <task id="4" uid="68ddd923a8484f739497fc05c77663c4" name="Raising antenna" meeting="false" start="2026-11-16" duration="4" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed to early November (was 10/13). Contacted Scott Gennari (LASP) about antenna raising.
+10/23: pushed 2 weeks behind the motor interface fix (was 11/2).]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="14" uid="ee82f0f3efac45d2b94a1b0699e97a63" name="finding exact location of ground station" meeting="false" start="2026-09-16" duration="6" complete="0" expand="true">
+            <task id="14" uid="ee82f0f3efac45d2b94a1b0699e97a63" name="finding exact location of ground station" meeting="false" start="2026-09-16" duration="6" complete="100" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-10-22" duration="5" complete="0" expand="true">
-                <notes><![CDATA[10/14: pushed back behind the motor interface fix (was 9/24-9/30).]]></notes>
+            <task id="15" uid="cfa8316411c246e9b848f59ce3679595" name="g predict tracking with TLEs" meeting="false" start="2026-11-05" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind the motor interface fix (was 9/24-9/30).
+10/23: pushed 2 weeks (was 10/22).]]></notes>
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="interface gnu with g predict" meeting="false" start="2026-10-29" duration="5" complete="0" expand="true">
-                <notes><![CDATA[10/14: pushed back behind the motor interface fix and Gpredict TLE tracking (was 10/1-10/7). GS PC side goes through Palo/Rainville.]]></notes>
+            <task id="16" uid="e7d44358430f4483ab22e0b6d21a3ac1" name="Interface Gpredict Doppler with Rainville's program" meeting="false" start="2026-11-12" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind the motor interface fix and Gpredict TLE tracking (was 10/1-10/7). GS PC side goes through Palo/Rainville.
+10/23: renamed from "interface gnu with g predict" since Rainville's program replaces GNU Radio. Need to find how Gpredict exports Doppler (GNU block or another network port). Pushed 2 weeks (was 10/29).]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-11-06" duration="7" complete="0" expand="true">
-                <notes><![CDATA[10/14: pushed back behind antenna raising and the Gpredict work (was 10/26-11/3).]]></notes>
+            <task id="17" uid="28ae1ef7ad804945bdb59011f2ef8aa7" name="testing sat tracking" meeting="false" start="2026-11-20" duration="7" complete="0" expand="true">
+                <notes><![CDATA[10/14: pushed back behind antenna raising and the Gpredict work (was 10/26-11/3).
+10/23: pushed 2 weeks (was 11/6).]]></notes>
             </task>
         </task>
         <task id="100" uid="4cb9e5f70bc147b98eac7d69bbe34dd4" name="Hydra Lithium Communication" meeting="false" start="2026-09-16" duration="27" complete="0" expand="true">
@@ -95,23 +101,25 @@
             <task id="105" uid="771e5ae5c0784fd68bb0a1673cf4546a" name="MCT: Troubleshooting" meeting="false" start="2026-10-07" duration="1" complete="100" expand="true">
                 <depend id="106" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="106" uid="c5f88ba7c1d64ff5940c84b438cd1b05" name="SCT-1: Review test docs" meeting="false" start="2026-10-08" duration="1" complete="50" expand="true">
+            <task id="106" uid="c5f88ba7c1d64ff5940c84b438cd1b05" name="SCT-1: Review test docs" meeting="false" start="2026-10-08" duration="1" complete="100" expand="true">
                 <notes><![CDATA[Started week of 10/5 (2 hrs), finishing week of 10/12.]]></notes>
                 <depend id="112" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="112" uid="e32ab05a53064e808ff8db19f878a6ab" name="SCT-1: Develop Hydra for SCT-1" meeting="false" start="2026-10-09" duration="5" complete="0" expand="true">
+            <task id="112" uid="e32ab05a53064e808ff8db19f878a6ab" name="SCT-1: Develop Hydra for SCT-1" meeting="false" start="2026-10-09" duration="5" complete="100" expand="true">
+                <notes><![CDATA[10/23: 3 commands (0x51 schedule, 0x54 read command queue, 0x57 flush command queue) were never implemented, probably lost with the Hydra git issues. CDH has since made and implemented them, and they've been run.]]></notes>
                 <depend id="107" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="107" uid="0658b5c627ec43769a81980a11ef3001" name="SCT-1: Bench setup" meeting="false" start="2026-10-16" duration="1" complete="0" expand="true">
+            <task id="107" uid="0658b5c627ec43769a81980a11ef3001" name="SCT-1: Bench setup" meeting="false" start="2026-10-16" duration="1" complete="100" expand="true">
                 <depend id="108" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="108" uid="c56a6c0fef2447d29da39def3d674e8a" name="SCT-1: Practice run-through of test" meeting="false" start="2026-10-19" duration="1" complete="0" expand="true">
+            <task id="108" uid="c56a6c0fef2447d29da39def3d674e8a" name="SCT-1: Practice run-through of test" meeting="false" start="2026-10-19" duration="1" complete="100" expand="true">
                 <depend id="109" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="109" uid="edba77267d1f44f8b8ddacfe9add8d20" name="SCT-1: Full run through of test" meeting="false" start="2026-10-20" duration="2" complete="0" expand="true">
+            <task id="109" uid="edba77267d1f44f8b8ddacfe9add8d20" name="SCT-1: Full run through of test" meeting="false" start="2026-10-20" duration="2" complete="100" expand="true">
+                <notes><![CDATA[Ran 10/22 with Saanika, commands are acknowledged.]]></notes>
                 <depend id="110" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-22" duration="1" complete="0" expand="true"/>
+            <task id="110" uid="762aacb724054f42b753b6bc39747822" name="SCT-1: Troubleshooting" meeting="false" start="2026-10-22" duration="1" complete="100" expand="true"/>
         </task>
         <task id="120" uid="c0cec88a1933410caed07e85036d5c17" name="Ground Station PC Architecture" meeting="false" start="2026-09-23" duration="25" complete="0" expand="true">
             <task id="126" uid="21d99a869936439f91d99b34fe60fe47" name="ON HOLD: Palo reviewing lab machines" meeting="false" start="2026-09-23" duration="5" complete="100" expand="true">
@@ -119,8 +127,9 @@
             </task>
             <task id="121" uid="7d0fb0a357194c14a8aa55b956c97799" name="Transferring HFSS to new 443 machine" meeting="false" start="2026-09-30" duration="2" complete="100" expand="true">
             </task>
-            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify GS PC in comms chain" meeting="false" start="2026-10-19" duration="5" complete="0" expand="true">
-                <notes><![CDATA[10/14: Palo and Nicholas Rainville own GS PC bring-up. My task is verifying it in the comms chain at the ground station once they have it working. Laptop setup, connecting the laptop and 443 machine, and planning the final architecture were removed. Start date depends on when the GS PC is working.]]></notes>
+            <task id="124" uid="7f2c414122d541078409989b181cf920" name="Verify GS PC in comms chain" meeting="false" start="2026-11-02" duration="5" complete="0" expand="true">
+                <notes><![CDATA[10/14: Palo and Nicholas Rainville own GS PC bring-up. My task is verifying it in the comms chain at the ground station once they have it working. Laptop setup, connecting the laptop and 443 machine, and planning the final architecture were removed. Start date depends on when the GS PC is working.
+10/23: GS PC is working. Now waiting on the ground station being up and running, end of October or early November while MAXWELL does vibe testing. Moved to the week of 11/2.]]></notes>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
@@ -134,7 +143,12 @@
             <task id="132" uid="62160b5f0cf144df86ac43d4a3f878fb" name="Reverify Hydra-Li Comms" meeting="false" start="2026-11-03" duration="3" complete="0" expand="true">
                 <depend id="133" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="133" uid="13c9059b6068427d9b8c0864384e1854" name="Reverify GND station setup" meeting="false" start="2026-11-06" duration="3" complete="0" expand="true">
+            <task id="133" uid="13c9059b6068427d9b8c0864384e1854" name="Reverify Hydra-GNU Radio connection" meeting="false" start="2026-11-06" duration="1" complete="0" expand="true">
+                <notes><![CDATA[10/23: was "Reverify GND station setup". Rainville's new program is replacing GNU Radio, so Hydra gets verified with both GNU Radio and his program.]]></notes>
+                <depend id="140" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="140" uid="2b7f0c1e9d4a4c6f8e3b5a7d9c1e0f42" name="Reverify Hydra-Rainville program connection" meeting="false" start="2026-11-09" duration="2" complete="0" expand="true">
+                <notes><![CDATA[10/23: Rainville's new program (clean-sheet reimplementation using the GNU Radio libraries, installed through radioconda) is replacing GNU Radio. Hydra is still the same and connects to it over network ports.]]></notes>
                 <depend id="134" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="134" uid="903a92797ee74b5eae36d3659ad103de" name="Bench setup" meeting="false" start="2026-11-11" duration="2" complete="0" expand="true">
