@@ -1,4 +1,4 @@
-function [PIF, R1, EL, AZ, BSV, RELAT, TROP, SATPOS] = singlepointsolution_spare(PRN,rinexDataGPS, ephemeris, user_ECEF)
+function [PIF, R1, EL, AZ, BSV, RELAT, TROP, SATPOS] = singlepointsolution(PRN,rinexDataGPS, ephemeris, user_ECEF, zd)
 % Using clock corrections, relativistic corrections, tropospheric
 % corrections, ionospheriec corrections, output a pseudorange
 
@@ -28,7 +28,5 @@ BSV = satClkCorr;
 RELAT = relCorr;
 
 % Apply tropospheric correction using elevation and receiver position
-% Assuming zd = 2 fixed for this assignment
-zd = 2;
 TROP  = tropomodel(zd, EL);
 end

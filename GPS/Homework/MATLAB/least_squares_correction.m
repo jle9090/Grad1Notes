@@ -1,4 +1,4 @@
-function [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count, dx_hat] = least_squares_correction(PRN_list, r_apriori_ECEF, NIST_ECEF, rinexDataGPS, ephemeris)
+function [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count, dx_hat] = least_squares_correction(PRN_list, r_apriori_ECEF, NIST_ECEF, rinexDataGPS, ephemeris, zd)
 % Iterates the least squares point solution from an a priori position
 
 % Inits
@@ -12,7 +12,7 @@ while delta_threshold > 1E-2 % Solution converges under 1 cm
 
     for PRN = PRN_list
         PRNid = sprintf('PRN%d', PRN);
-        [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_est);
+        [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r_est, zd);
     end
     for i = 1:length(PRN_list)
         PRNid = sprintf('PRN%d', PRN_list(i));

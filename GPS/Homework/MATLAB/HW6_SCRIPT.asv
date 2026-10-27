@@ -33,7 +33,9 @@ end
 r_a_priori_NIST_ECEF = [-1288399.0601 -4721697.8747  4078626.5526];
 r_a_priori_NYA2_ECEF  = [1202379.3100   252474.6543  6237786.5417];
 
-NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
+% Zenith delay approximations at each site.
+zenith_delay_NIST = 2;
+zenith_delay_NYA2 = 2.36;
 
 % get into LLA
 lla_NIST = ecef2lla(r_a_priori_NIST_ECEF);
@@ -42,6 +44,25 @@ lla_NYA2 = ecef2lla(r_a_priori_NYA2_ECEF);
 %% Compute transformation matrices
 C_ECEF2ENU_NIST = ECEF2ENU(lla_NIST(1), lla_NIST(2));
 C_ECEF2ENU_NYA2 = ECEF2ENU(lla_NYA2(1), lla_NYA2(2));
+
+%% Remove observations before each satellite's first broadcast ephemeris
+% eph2pvt2025 can't compute these (NYA2 sees PRN 29 before its first
+% ephemeris at 02:00), so drop them
+first_eph_time = zeros(32,1);
+for PRN = 1:32
+    eph_index = ephemeris(:,1) == PRN;
+    first_eph_time(PRN) = min(ephemeris(eph_index,19)*604800 + ephemeris(eph_index,17));
+end
+
+% NIST
+[week_NIST, tow_NIST] = utc2gpstime(NISTrinexDataGPS.Time);
+has_eph_NIST = week_NIST*604800 + tow_NIST >= first_eph_time(NISTrinexDataGPS.SatelliteID);
+NISTrinexDataGPS = NISTrinexDataGPS(has_eph_NIST,:);
+
+% NYA2
+[week_NYA2, tow_NYA2] = utc2gpstime(NYA2rinexDataGPS.Time);
+has_eph_NYA2 = week_NYA2*604800 + tow_NYA2 >= first_eph_time(NYA2rinexDataGPS.SatelliteID);
+NYA2rinexDataGPS = NYA2rinexDataGPS(has_eph_NYA2,:);
 
 %% Looping through all satellites
 % Compute, sat position, expected range, sat clock correction, relativity
@@ -53,54 +74,105 @@ C_ECEF2ENU_NYA2 = ECEF2ENU(lla_NYA2(1), lla_NYA2(2));
 %     [satEph(PRN).health, satEph(PRN).satPos, satEph(PRN).satVel, satEph(PRN).satClkCorr] = eph2pvt2025(ephemeris, [satPRN(PRN).week_number satPRN(PRN).TOW_s], PRN);
 % end
 
-% Find single point solution just for NIST right now that NIST can see
-PRN_list = unique(NISTrinexDataGPS.SatelliteID)';
+% Find single point solution for each satellite NIST can see
+PRN_list_NIST = unique(NISTrinexDataGPS.SatelliteID)';
 
-for PRN = PRN_list
-    PRNid = sprintf('PRN%d', PRN);
-    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,NISTrinexDataGPS, ephemeris, r_a_priori_NIST_ECEF);
-    time.(PRNid) = NISTrinexDataGPS.Time(NISTrinexDataGPS.SatelliteID == PRN); % time of each row
+for PRN_NIST = PRN_list_NIST
+    PRNid_NIST = sprintf('PRN%d', PRN_NIST);
+    [PIF_NIST.(PRNid_NIST), R1_NIST.(PRNid_NIST), EL_NIST.(PRNid_NIST), AZ_NIST.(PRNid_NIST), BSV_NIST.(PRNid_NIST), RELAT_NIST.(PRNid_NIST), TROP_NIST.(PRNid_NIST), SATPOS_NIST.(PRNid_NIST)] = singlepointsolution(PRN_NIST,NISTrinexDataGPS, ephemeris, r_a_priori_NIST_ECEF, zenith_delay_NIST);
+    time_NIST.(PRNid_NIST) = NISTrinexDataGPS.Time(NISTrinexDataGPS.SatelliteID == PRN_NIST); % time of each row
 end
 % TODO check for the correct iono corrections, zenith delay is hardcoded
 % for NIST currently
 
+% Find single point solution for each satellite NYA2 can see
+PRN_list_NYA2 = unique(NYA2rinexDataGPS.SatelliteID)';
+
+for PRN_NYA2 = PRN_list_NYA2
+    PRNid_NYA2 = sprintf('PRN%d', PRN_NYA2);
+    [PIF_NYA2.(PRNid_NYA2), R1_NYA2.(PRNid_NYA2), EL_NYA2.(PRNid_NYA2), AZ_NYA2.(PRNid_NYA2), BSV_NYA2.(PRNid_NYA2), RELAT_NYA2.(PRNid_NYA2), TROP_NYA2.(PRNid_NYA2), SATPOS_NYA2.(PRNid_NYA2)] = singlepointsolution(PRN_NYA2,NYA2rinexDataGPS, ephemeris, r_a_priori_NYA2_ECEF, zenith_delay_NYA2);
+    time_NYA2.(PRNid_NYA2) = NYA2rinexDataGPS.Time(NYA2rinexDataGPS.SatelliteID == PRN_NYA2); % time of each row
+end
 
 %% Calculate and store prefit residuals
 % Remove all satellites below 10 degrees elevation
-for PRN = PRN_list
-    PRNid = sprintf('PRN%d', PRN);
-    el_mask = EL.(PRNid) < 10;
-    PIF.(PRNid)(el_mask) = NaN;
-    prefit.(PRNid) = PIF.(PRNid) - (R1.(PRNid) - BSV.(PRNid) - RELAT.(PRNid) + TROP.(PRNid));
+% NIST
+for PRN_NIST = PRN_list_NIST
+    PRNid_NIST = sprintf('PRN%d', PRN_NIST);
+    el_mask_NIST = EL_NIST.(PRNid_NIST) < 10;
+    PIF_NIST.(PRNid_NIST)(el_mask_NIST) = NaN;
+    prefit_NIST.(PRNid_NIST) = PIF_NIST.(PRNid_NIST) - (R1_NIST.(PRNid_NIST) - BSV_NIST.(PRNid_NIST) - RELAT_NIST.(PRNid_NIST) + TROP_NIST.(PRNid_NIST));
+end
+
+% NYA2
+for PRN_NYA2 = PRN_list_NYA2
+    PRNid_NYA2 = sprintf('PRN%d', PRN_NYA2);
+    el_mask_NYA2 = EL_NYA2.(PRNid_NYA2) < 10;
+    PIF_NYA2.(PRNid_NYA2)(el_mask_NYA2) = NaN;
+    prefit_NYA2.(PRNid_NYA2) = PIF_NYA2.(PRNid_NYA2) - (R1_NYA2.(PRNid_NYA2) - BSV_NYA2.(PRNid_NYA2) - RELAT_NYA2.(PRNid_NYA2) + TROP_NYA2.(PRNid_NYA2));
 end
 
 %% Find all relevant parameters and correlate them to an epoch
-gps_epochs = unique(NISTrinexDataGPS.Time);
-for PRN = PRN_list
-    PRNid = sprintf('PRN%d', PRN);
-    for i = 1:length(time.(PRNid))
-        if ~isnan(PIF.(PRNid)(i)) % Skip measurements below 10 deg and therefore skip nans
-            epoch_id = sprintf('epoch%d', find(gps_epochs == time.(PRNid)(i)));
-            epoch.(epoch_id).PRN.(PRNid) = PRN;
-            epoch.(epoch_id).PIF.(PRNid) = PIF.(PRNid)(i);
-            epoch.(epoch_id).R1.(PRNid) = R1.(PRNid)(i);
-            epoch.(epoch_id).BSV.(PRNid) = BSV.(PRNid)(i);
-            epoch.(epoch_id).RELAT.(PRNid) = RELAT.(PRNid)(i);
-            epoch.(epoch_id).TROP.(PRNid) = TROP.(PRNid)(i);
-            epoch.(epoch_id).SATPOS.(PRNid) = SATPOS.(PRNid)(i,:);
+% NIST
+gps_epochs_NIST = unique(NISTrinexDataGPS.Time);
+for PRN_NIST = PRN_list_NIST
+    PRNid_NIST = sprintf('PRN%d', PRN_NIST);
+    for i = 1:length(time_NIST.(PRNid_NIST))
+        if ~isnan(PIF_NIST.(PRNid_NIST)(i)) % Skip measurements below 10 deg and therefore skip nans
+            epoch_id_NIST = sprintf('epoch%d', find(gps_epochs_NIST == time_NIST.(PRNid_NIST)(i)));
+            epoch_NIST.(epoch_id_NIST).PRN.(PRNid_NIST) = PRN_NIST;
+            epoch_NIST.(epoch_id_NIST).PIF.(PRNid_NIST) = PIF_NIST.(PRNid_NIST)(i);
+            epoch_NIST.(epoch_id_NIST).R1.(PRNid_NIST) = R1_NIST.(PRNid_NIST)(i);
+            epoch_NIST.(epoch_id_NIST).BSV.(PRNid_NIST) = BSV_NIST.(PRNid_NIST)(i);
+            epoch_NIST.(epoch_id_NIST).RELAT.(PRNid_NIST) = RELAT_NIST.(PRNid_NIST)(i);
+            epoch_NIST.(epoch_id_NIST).TROP.(PRNid_NIST) = TROP_NIST.(PRNid_NIST)(i);
+            epoch_NIST.(epoch_id_NIST).SATPOS.(PRNid_NIST) = SATPOS_NIST.(PRNid_NIST)(i,:);
+        end
+    end
+end
+
+% NYA2
+gps_epochs_NYA2 = unique(NYA2rinexDataGPS.Time);
+for PRN_NYA2 = PRN_list_NYA2
+    PRNid_NYA2 = sprintf('PRN%d', PRN_NYA2);
+    for i = 1:length(time_NYA2.(PRNid_NYA2))
+        if ~isnan(PIF_NYA2.(PRNid_NYA2)(i)) % Skip measurements below 10 deg and therefore skip nans
+            epoch_id_NYA2 = sprintf('epoch%d', find(gps_epochs_NYA2 == time_NYA2.(PRNid_NYA2)(i)));
+            epoch_NYA2.(epoch_id_NYA2).PRN.(PRNid_NYA2) = PRN_NYA2;
+            epoch_NYA2.(epoch_id_NYA2).PIF.(PRNid_NYA2) = PIF_NYA2.(PRNid_NYA2)(i);
+            epoch_NYA2.(epoch_id_NYA2).R1.(PRNid_NYA2) = R1_NYA2.(PRNid_NYA2)(i);
+            epoch_NYA2.(epoch_id_NYA2).BSV.(PRNid_NYA2) = BSV_NYA2.(PRNid_NYA2)(i);
+            epoch_NYA2.(epoch_id_NYA2).RELAT.(PRNid_NYA2) = RELAT_NYA2.(PRNid_NYA2)(i);
+            epoch_NYA2.(epoch_id_NYA2).TROP.(PRNid_NYA2) = TROP_NYA2.(PRNid_NYA2)(i);
+            epoch_NYA2.(epoch_id_NYA2).SATPOS.(PRNid_NYA2) = SATPOS_NYA2.(PRNid_NYA2)(i,:);
         end
     end
 end
 
 %% Least squares solution at each epoch
-for k = 1:length(gps_epochs)
-    epoch_id = sprintf('epoch%d', k);
+% NIST
+for i = 1:length(gps_epochs_NIST)
+    epoch_id_NIST = sprintf('epoch%d', i);
 
-    % PRNs in view and their satellite positions at this epoch
-    epoch_PRN_list = cell2mat(struct2cell(epoch.(epoch_id).PRN))';
-    satPos_epoch = cell2mat(struct2cell(epoch.(epoch_id).SATPOS));
+    % Need to convert to vectors
+    epoch_PRN_list_NIST = cell2mat(struct2cell(epoch_NIST.(epoch_id_NIST).PRN))';
+    satPos_epoch_NIST = cell2mat(struct2cell(epoch_NIST.(epoch_id_NIST).SATPOS));
 
-    [sol.(epoch_id).G, sol.(epoch_id).dx_hat, sol.(epoch_id).delta_rho_post] = compute_least_point_solution(epoch_PRN_list, epoch.(epoch_id), satPos_epoch, r_a_priori_NIST_ECEF);
-    sol.(epoch_id).dENU = C_ECEF2ENU_NIST*sol.(epoch_id).dx_hat(1:3);
+    % Find G matrix, correction vector, post fit residuals
+    [sol_NIST.(epoch_id_NIST).G, sol_NIST.(epoch_id_NIST).dx_hat, sol_NIST.(epoch_id_NIST).delta_rho_post] = compute_least_point_solution(epoch_PRN_list_NIST, epoch_NIST.(epoch_id_NIST), satPos_epoch_NIST, r_a_priori_NIST_ECEF);
+
+    % Calculate relative 
+end
+
+% NYA2
+for i = 1:length(gps_epochs_NYA2)
+    epoch_id_NYA2 = sprintf('epoch%d', i);
+
+    % Need to convert to vectors
+    epoch_PRN_list_NYA2 = cell2mat(struct2cell(epoch_NYA2.(epoch_id_NYA2).PRN))';
+    satPos_epoch_NYA2 = cell2mat(struct2cell(epoch_NYA2.(epoch_id_NYA2).SATPOS));
+
+    % Find G matrix, correction vector, post fit residuals
+    [sol_NYA2.(epoch_id_NYA2).G, sol_NYA2.(epoch_id_NYA2).dx_hat, sol_NYA2.(epoch_id_NYA2).delta_rho_post] = compute_least_point_solution(epoch_PRN_list_NYA2, epoch_NYA2.(epoch_id_NYA2), satPos_epoch_NYA2, r_a_priori_NYA2_ECEF);
 end
 

@@ -14,11 +14,12 @@ ephemeris = read_clean_GPSbroadcast('brdc2310.26n', true);
 %% Part 1 Filling out table
 disp('<strong>Part 1</strong>')
 NIST_ECEF = [-1288398.567 -4721696.932 4078625.350];
+zenith_delay_NIST = 2; % NIST zenith delay (m)
 
 PRN_list = [3,4,7,8,9,16,26,27,31];
 for PRN = PRN_list
     PRNid = sprintf('PRN%d', PRN);
-    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, NIST_ECEF);
+    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, NIST_ECEF, zenith_delay_NIST);
 end
 
 % Obtain only the very first values and put in a struct, also the first sat
@@ -53,7 +54,7 @@ disp('<strong>Part 2</strong>')
 post_PRN_list = [4,7,9,16,26,31];
 for PRN = post_PRN_list
     PRNid = sprintf('PRN%d', PRN);
-    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, NIST_ECEF);
+    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, NIST_ECEF, zenith_delay_NIST);
 end
 
 disp('<strong>Part 2 adjusting PRNs</strong>')
@@ -98,7 +99,7 @@ disp(norm(delta_r0))
 PRN_list = [3,4,7,8,9,16,26,27,31];
 for PRN = PRN_list
     PRNid = sprintf('PRN%d', PRN);
-    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r0_ECEF);
+    [PIF.(PRNid), R1.(PRNid), EL.(PRNid), AZ.(PRNid), BSV.(PRNid), RELAT.(PRNid), TROP.(PRNid), SATPOS.(PRNid)] = singlepointsolution(PRN,rinexDataGPS, ephemeris, r0_ECEF, zenith_delay_NIST);
 end
 
 % Obtain only the very first values and put in a struct, also the first sat
@@ -133,7 +134,7 @@ disp(norm(delta_r1))
 % d. Iterate
 % Initial delta, start from the a priori guess with no clock bias estimate
 [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = ...
-    least_squares_correction(PRN_list, r0_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
+    least_squares_correction(PRN_list, r0_ECEF, NIST_ECEF, rinexDataGPS, ephemeris, zenith_delay_NIST);
 
 for k = 1:size(iteration_count,1)
     fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f, dx = [%.2f, %.2f, %.2f, %.2f]\n', iteration_count(k,:));
@@ -160,7 +161,7 @@ fprintf('VDOP: %.4f\n', VDOP);
 %% Part 4: 
 r_far_ECEF = lla2ecef([16.776, -3.009, 261]); % I am going to Timbuktu
 [r_est, b_est, G, delta_rho_post, delta_r_f_ECEF, delta_r_f_ENU, HDOP, VDOP, iteration_count] = ...
-    least_squares_correction(PRN_list, r_far_ECEF, NIST_ECEF, rinexDataGPS, ephemeris);
+    least_squares_correction(PRN_list, r_far_ECEF, NIST_ECEF, rinexDataGPS, ephemeris, zenith_delay_NIST);
 
 for k = 1:size(iteration_count,1)
     fprintf('Iter %d: |dx| = %.2f m, r = [%.2f, %.2f, %.2f] m, bsv = %.2f, dx = [%.2f, %.2f, %.2f, %.2f]\n', iteration_count(k,:));
