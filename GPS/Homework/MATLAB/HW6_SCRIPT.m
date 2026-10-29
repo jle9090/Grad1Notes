@@ -41,6 +41,10 @@ zenith_delay_NYA2 = 2.36;
 lla_NIST = ecef2lla(r_a_priori_NIST_ECEF);
 lla_NYA2 = ecef2lla(r_a_priori_NYA2_ECEF);
 
+% Convert a priori to ENU
+r_a_priori_NIST_ENU = ECEF2ENU(lla_NIST(1),lla_NIST(2))*r_a_priori_NIST_ECEF';
+r_a_priori_NYA2_ENU = ECEF2ENU(lla_NYA2(1),lla_NYA2(2))*r_a_priori_NYA2_ECEF';
+
 %% Compute transformation matrices
 C_ECEF2ENU_NIST = ECEF2ENU(lla_NIST(1), lla_NIST(2));
 C_ECEF2ENU_NYA2 = ECEF2ENU(lla_NYA2(1), lla_NYA2(2));
@@ -162,6 +166,17 @@ for i = 1:length(gps_epochs_NIST)
     [sol_NIST.(epoch_id_NIST).G, sol_NIST.(epoch_id_NIST).dx_hat, sol_NIST.(epoch_id_NIST).delta_rho_post] = compute_least_point_solution(epoch_PRN_list_NIST, epoch_NIST.(epoch_id_NIST), satPos_epoch_NIST, r_a_priori_NIST_ECEF);
 
     % Calculate relative solutions in ENU frame
+    sol_NIST.(epoch_id_NIST).dx_hat_ENU = ECEF2ENU(lla_NIST(1), lla_NIST(2))*sol_NIST.(epoch_id_NIST).dx_hat(1:3);
+    sol_NIST.(epoch_id_NIST).relative_position = r_a_priori_NIST_ENU - sol_NIST.(epoch_id_NIST).dx_hat_ENU;
+
+    % Solving for ENU Dops
+    R_tilde = blkdiag(ECEF2ENU(lla_NIST(1), lla_NIST(2)), 1); % accounting for clock bias part
+    sol_NIST.(epoch_id_NIST).G_ENU = sol_NIST.(epoch_id_NIST).G*R_tilde';
+    sol_NIST.(epoch_id_NIST).H_ENU = inv(sol_NIST.(epoch_id_NIST).G_ENU'*sol_NIST.(epoch_id_NIST).G_ENU);
+    sol_NIST.(epoch_id_NIST).EDOP = sqrt(sol_NIST.(epoch_id_NIST).H_ENU(1,1));
+    sol_NIST.(epoch_id_NIST).NDOP = sqrt(sol_NIST.(epoch_id_NIST).H_ENU(2,2));
+    sol_NIST.(epoch_id_NIST).VDOP = sqrt(sol_NIST.(epoch_id_NIST).H_ENU(3,3));
+
 end
 
 % NYA2
@@ -174,5 +189,45 @@ for i = 1:length(gps_epochs_NYA2)
 
     % Find G matrix, correction vector, post fit residuals
     [sol_NYA2.(epoch_id_NYA2).G, sol_NYA2.(epoch_id_NYA2).dx_hat, sol_NYA2.(epoch_id_NYA2).delta_rho_post] = compute_least_point_solution(epoch_PRN_list_NYA2, epoch_NYA2.(epoch_id_NYA2), satPos_epoch_NYA2, r_a_priori_NYA2_ECEF);
+    
+    % Calculate relative solutions in ENU frame
+    sol_NYA2.(epoch_id_NYA2).dx_hat_ENU = ECEF2ENU(lla_NYA2(1), lla_NYA2(2))*sol_NYA2.(epoch_id_NYA2).dx_hat(1:3);
+    sol_NYA2.(epoch_id_NYA2).relative_position = r_a_priori_NYA2_ENU - sol_NYA2.(epoch_id_NYA2).dx_hat_ENU;
+    
+    R_tilde = blkdiag(ECEF2ENU(lla_NYA2(1), lla_NYA2(2)), 1); % accounting for clock bias part
+    sol_NYA2.(epoch_id_NYA2).G_ENU = sol_NYA2.(epoch_id_NYA2).G*R_tilde';
+
+    % Solving for ENU Dops
+    R_tilde = blkdiag(ECEF2ENU(lla_NYA2(1), lla_NYA2(2)), 1); % accounting for clock bias part
+    sol_NIST.(epoch_id_NYA2).G_ENU = sol_NIST.(epoch_id_NYA2).G*R_tilde';
+    sol_NIST.(epoch_id_NYA2).H_ENU = inv(sol_NYA2.(epoch_id_NYA2).G_ENU'*sol_NYA2.(epoch_id_NYA2).G_ENU);
+    sol_NIST.(epoch_id_NYA2).EDOP = sqrt(sol_NYA2.(epoch_id_NYA2).H_ENU(1,1));
+    sol_NIST.(epoch_id_NYA2).NDOP = sqrt(sol_NYA2.(epoch_id_NYA2).H_ENU(2,2));
+    sol_NIST.(epoch_id_NYA2).VDOP = sqrt(sol_NYA2.(epoch_id_NYA2).H_ENU(3,3));
+
 end
 
+%% Plot NIST solution vs time
+% Convert struct into arrays
+NIST_relative_position = zeros(3,1);
+for i = 1:length(gps_epochs_NIST)
+    epoch_id_NIST = sprintf('epoch%d', i);
+    NIST_relative_position(:,i) = sol_NIST.(epoch_id_NIST).relative_position;
+end
+
+figure()
+xlabel('Time')
+ylabel('Relative Position')
+title('NIST Relative Position')
+subplot(3,1,1)
+plot(gps_epochs_NIST, NIST_relative_position(1,:)')
+ylabel('East')
+grid minor
+subplot(3,1,2)
+ylabel('North')
+plot(gps_epochs_NIST, NIST_relative_position(2,:)')
+grid minor
+subplot(3,1,3)
+ylabel('Up')
+plot(gps_epochs_NIST, NIST_relative_position(3,:)')
+grid minor
